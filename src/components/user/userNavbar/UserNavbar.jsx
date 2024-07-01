@@ -26,12 +26,12 @@ const UserNavbar = () => {
     },
   ];
 
-  const navDataSecond = [
-    {
-      name: "Profile",
-      path: "/",
-    },
-  ];
+  // const navDataSecond = [
+  //   {
+  //     name: "Profile",
+  //     path: "/",
+  //   },
+  // ];
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavClick = () => {
@@ -43,9 +43,9 @@ const UserNavbar = () => {
         <div className="navbar">
           <div className="logo">Travel App</div>
           <div className="menu-toggle">
-            <div className="profile-pic">
+            {/* <div className="profile-pic">
               <img src={profilePic} alt="" />
-            </div>
+            </div> */}
             <div
               className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}
               onClick={handleNavClick}
@@ -66,24 +66,24 @@ const UserNavbar = () => {
         >
           <div className="link">
             <ul className="nav-links">
-              {navDataFirst.map((item) => (
-                <li className="nav-item" onClick={handleNavClick}>
+              {navDataFirst.map((item, index) => (
+                <li className="nav-item" onClick={handleNavClick} key={index}>
                   <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul>
-            <ul className="nav-links">
+            {/* <ul className="nav-links">
               {navDataSecond.map((item) => (
                 <li className="nav-item" onClick={handleNavClick}>
                   <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
 
-          <div className="auth">
+          {/* <div className="auth">
             <h1>Logout</h1>
-          </div>
+          </div> */}
         </div>
       </div>
     </nav>
