@@ -1,0 +1,119 @@
+@import "@/index.scss";
+
+.with-us {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px;
+
+    .top {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+
+      h2 {
+        font-size: 50px;
+        span {
+          display: block;
+          color: $light-green;
+        }
+      }
+      p {
+        font-size: 20px;
+        line-height: 30px;
+        color: $gray;
+      }
+      .title {
+        letter-spacing: 1px;
+      }
+    }
+
+    .cards {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 30px;
+
+      .card {
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5px;
+        h2 {
+          font-size: 50px;
+        }
+        p {
+          font-size: 15px;
+          color: $gray;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+
+  .image {
+    width: 600px;
+
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .with-us {
+    .content {
+      gap: 35px;
+
+      .top {
+        gap: 16px;
+
+        h2 {
+          font-size: 40px;
+        }
+        p {
+          font-size: 18px;
+          line-height: 26px;
+        }
+      }
+
+      .cards {
+        gap: 28px;
+
+        .card {
+          width: 260px;
+
+          h2 {
+            font-size: 40px;
+          }
+          p {
+            font-size: 14px;
+            line-height: 20px;
+          }
+        }
+      }
+
+      .buttons {
+        button {
+          padding: 14px 28px;
+        }
+      }
+    }
+
+    .image {
+      width: 480px;
+    }
+  }
+}

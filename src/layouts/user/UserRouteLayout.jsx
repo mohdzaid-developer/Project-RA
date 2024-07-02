@@ -6,7 +6,6 @@ const UserRouteLayout = ({ children }) => {
   return (
     <>
       <UserNavbar />
-      <div style={{ marginTop: "100px" }}></div>
       {children}
       <Footer />
     </>

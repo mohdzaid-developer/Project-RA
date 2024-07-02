@@ -4,12 +4,6 @@ import { useState } from "react";
 //Routing
 import { Link } from "react-router-dom";
 
-//Assets
-import profilePic from "../../../assets/profilePic.jpg";
-
-//Redux
-import { useSelector } from "react-redux";
-
 const UserNavbar = () => {
   const navDataFirst = [
     {
@@ -17,21 +11,15 @@ const UserNavbar = () => {
       path: "/",
     },
     {
-      name: "About",
+      name: "Bali",
       path: "/about",
     },
     {
-      name: "Contact",
+      name: "Phuket",
       path: "/contact-us",
     },
   ];
 
-  // const navDataSecond = [
-  //   {
-  //     name: "Profile",
-  //     path: "/",
-  //   },
-  // ];
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavClick = () => {
@@ -41,11 +29,8 @@ const UserNavbar = () => {
     <nav>
       <div className="nav-container">
         <div className="navbar">
-          <div className="logo">Travel App</div>
+          <div className="logo">Project RA</div>
           <div className="menu-toggle">
-            {/* <div className="profile-pic">
-              <img src={profilePic} alt="" />
-            </div> */}
             <div
               className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}
               onClick={handleNavClick}
@@ -72,13 +57,6 @@ const UserNavbar = () => {
                 </li>
               ))}
             </ul>
-            {/* <ul className="nav-links">
-              {navDataSecond.map((item) => (
-                <li className="nav-item" onClick={handleNavClick}>
-                  <Link to={item.path}>{item.name}</Link>
-                </li>
-              ))}
-            </ul> */}
           </div>
 
           {/* <div className="auth">
