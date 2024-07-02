@@ -1,5 +1,5 @@
 import "./userNavbar.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 //Routing
 import { Link } from "react-router-dom";
@@ -23,12 +23,33 @@ const UserNavbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavClick = () => {
+    if (!navOpen) {
+      setNavbarColor(false);
+    }
     setNavOpen(!navOpen);
   };
+
+  const [navbarColor, setNavbarColor] = useState(false);
+
+  const changeNavbarColor = () => {
+    if (!navOpen && window.scrollY >= window.innerHeight * 0.8) {
+      setNavbarColor(true);
+    } else {
+      setNavbarColor(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeNavbarColor);
+    return () => {
+      window.removeEventListener("scroll", changeNavbarColor);
+    };
+  }, [navOpen]);
+
   return (
     <nav>
       <div className="nav-container">
-        <div className="navbar">
+        <div className={navbarColor ? "navbar navbar-colored" : "navbar"}>
           <div className="logo">Project RA</div>
           <div className="menu-toggle">
             <div
