@@ -57,8 +57,8 @@ const Testimonial = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {data.map((item) => (
-          <SwiperSlide>
+        {data.map((item, index) => (
+          <SwiperSlide key={index}>
             <img src={item.profilePic} alt="" />
             <h4>{item.name}</h4>
             <div className="message">
