@@ -1,0 +1,81 @@
+@import "@/index.scss";
+
+.testimonial {
+  padding-bottom: 100px;
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    h2 {
+      font-size: 50px;
+      text-align: center;
+      span {
+        display: block;
+        color: $light-green;
+      }
+    }
+    p {
+      text-align: center;
+      font-size: 20px;
+      line-height: 30px;
+      color: $gray;
+    }
+    .title {
+      letter-spacing: 1px;
+    }
+  }
+
+  .swiper-wrapper {
+    cursor: pointer;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 10px;
+      padding: 30px 90px;
+      img {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+      }
+      h4 {
+        font-size: 30px;
+        letter-spacing: 1px;
+      }
+
+      .message {
+        p {
+          font-size: 14px;
+          text-align: center;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+        }
+      }
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $dark-green !important;
+  }
+}
+
+@media (max-width: 1700px) {
+  .testimonial {
+    padding-bottom: 80px;
+
+    .content {
+      gap: 8px;
+      h2 {
+        font-size: 40px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 28px;
+      }
+    }
+  }
+}

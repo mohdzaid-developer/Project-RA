@@ -16,7 +16,10 @@ const Hero = () => {
   return (
     <>
       <section className="hero" ref={ref}>
-        <motion.h1 style={{ y: textY }}>Project RA</motion.h1>
+        <motion.h1 style={{ y: textY }}>
+          Don’t Listen To What They Say, <br /> Go See.
+        </motion.h1>
+
         <motion.div
           className="heroImg1"
           style={{

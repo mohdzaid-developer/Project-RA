@@ -6,6 +6,8 @@ import WhyUs from "./components/whyUs/WhyUs";
 import WithUs from "./components/withUs/WithUs";
 import Experience from "./components/experience/Experience";
 import Faq from "./components/faq/Faq";
+import Gallery from "./components/gallery/Gallery";
+import Testimonial from "./components/testimonial/Testimonial";
 
 const Home = () => {
   return (
@@ -14,7 +16,9 @@ const Home = () => {
       <section className="home">
         <WithUs />
         <Experience />
-        {/* <WhyUs /> */}
+        <Gallery />
+        <WhyUs />
+        <Testimonial />
         <Faq />
       </section>
     </>
