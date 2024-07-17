@@ -19,23 +19,9 @@ export const UserOtp = lazy(() => import("../pages/user/authRoutes/otp/Otp"));
 export const UserHome = lazy(() =>
   import("../pages/user/unprotectedRoutes/home/Home")
 );
-export const UserAbout = lazy(() =>
-  import("../pages/user/unprotectedRoutes/about/About")
-);
-export const UserContact = lazy(() =>
-  import("../pages/user/unprotectedRoutes/contact/Contact")
-);
 export const UserTermsAndCondition = lazy(() =>
   import(
     "../pages/user/unprotectedRoutes/termsAndConditions/TermsAndConditions"
-  )
-);
-export const UserAllTrips = lazy(() =>
-  import("../pages/user/unprotectedRoutes/trip/allTrips/AllTrips")
-);
-export const UserSingleTripDetails = lazy(() =>
-  import(
-    "../pages/user/unprotectedRoutes/trip/singleTripDetails/SingleTripDetails"
   )
 );
 
