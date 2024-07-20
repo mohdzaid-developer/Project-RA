@@ -1,24 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+@import url("https://db.onlinewebfonts.com/c/2e46652a2dcb3173f0d40d4266f1debe?family=Cygre+Light");
 
-$dark-green: #009e9d;
-$light-green: #58c994;
-$yellow: #f9f871;
-$black: #333333;
-$gray: #666666;
-$white: #fafafa;
+$dark-orange: #bc6c25;
+$light-orange: #dda15e;
+$text-orange: #fefae0;
+$light-green: #606c38;
+$dark-green: #283618;
+$neon-green: #52e515;
+$black: #151515;
+$gray: #393939;
+$white: #fff;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Libre Franklin", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  scroll-behavior: smooth;
+  font-family: "Cygre Light";
 }
 
 body {
-  color: $black;
+  background-color: $black;
 }
 
 body::-webkit-scrollbar {
@@ -47,26 +48,7 @@ p {
   color: $gray;
 }
 
-img {
-  width: 100%;
-}
-
-.button-style {
-  padding: 15px 30px;
-  background-color: transparent;
-  border: 2px solid $dark-green;
-  border-radius: 5px;
-  color: $dark-green;
-  transition: 0.3s all;
-
-  &:hover {
-    background-color: $dark-green;
-    color: $white;
-  }
-}
-
-@media (max-width: 1700px) {
-  button {
-    padding: 14px 28px;
-  }
+h2 {
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 2px;
 }

@@ -1,10 +1,17 @@
 import "./home.scss";
 
+//Components
+import Gallery from "./components/gallery/Gallery";
+import Hero from "./components/hero/Hero";
+import Introduction from "./components/introduction/Introduction";
+
 const Home = () => {
   return (
-    <>
-      <h1>hero</h1>
-    </>
+    <section className="home">
+      <Hero />
+      <Introduction />
+      <Gallery />
+    </section>
   );
 };
 

@@ -8,6 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 
 //Util
 import ScrollToTop from "./utils/scrollToTop/ScrollToTop.jsx";
+import SmoothScrolling from "./utils/smoothScrolling/SmoothScrolling.jsx";
 
 //Redux
 import { Provider } from "react-redux";
@@ -18,7 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <ScrollToTop>
         <Provider store={store}>
-          <App />
+          <SmoothScrolling>
+            <App />
+          </SmoothScrolling>
         </Provider>
       </ScrollToTop>
     </BrowserRouter>

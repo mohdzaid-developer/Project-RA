@@ -35,15 +35,7 @@ import {
   UserForgetPassword,
   UserOtp,
   UserHome,
-  UserAbout,
-  UserContact,
   UserTermsAndCondition,
-  UserAllTrips,
-  UserSingleTripDetails,
-  UserPlanTrip,
-  UserMyTrips,
-  UserViewProfile,
-  UserEditProfile,
   UserPayment,
 } from "./pageConfig/UserPageConfig";
 import {
@@ -93,43 +85,11 @@ const userUnprotectedRoutesData = [
     element: <UserHome />,
   },
   {
-    path: "/about",
-    element: <UserAbout />,
-  },
-  {
-    path: "/contact-us",
-    element: <UserContact />,
-  },
-  {
     path: "/terms-and-conditions",
     element: <UserTermsAndCondition />,
   },
-  {
-    path: "/trips",
-    element: <UserAllTrips />,
-  },
-  {
-    path: "/trip/:id",
-    element: <UserSingleTripDetails />,
-  },
 ];
 const userProtectedRoutesData = [
-  {
-    path: "/plan-trip",
-    element: <UserPlanTrip />,
-  },
-  {
-    path: "/my-trips",
-    element: <UserMyTrips />,
-  },
-  {
-    path: "/profile",
-    element: <UserViewProfile />,
-  },
-  {
-    path: "/edit-profile",
-    element: <UserEditProfile />,
-  },
   {
     path: "/payment",
     element: <UserPayment />,
@@ -204,82 +164,80 @@ const App = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
-      <ScrollToTop>
-        <Routes>
-          {userAuthRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  <UserAuthProtectedRoutes>
-                    <AuthRouteLayout>{route.element}</AuthRouteLayout>
-                  </UserAuthProtectedRoutes>
-                </Suspense>
-              }
-            />
-          ))}
-          {userUnprotectedRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
+      <Routes>
+        {userAuthRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                <UserAuthProtectedRoutes>
+                  <AuthRouteLayout>{route.element}</AuthRouteLayout>
+                </UserAuthProtectedRoutes>
+              </Suspense>
+            }
+          />
+        ))}
+        {userUnprotectedRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                <UserRouteLayout>{route.element}</UserRouteLayout>
+              </Suspense>
+            }
+          />
+        ))}
+        {userProtectedRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                <UserAccountProtectedRoutes>
                   <UserRouteLayout>{route.element}</UserRouteLayout>
-                </Suspense>
-              }
-            />
-          ))}
-          {userProtectedRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  <UserAccountProtectedRoutes>
-                    <UserRouteLayout>{route.element}</UserRouteLayout>
-                  </UserAccountProtectedRoutes>
-                </Suspense>
-              }
-            />
-          ))}
-          {adminAuthRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  {window.innerWidth > 1000 ? (
-                    <AdminAuthProtectedRoutes>
-                      <AuthRouteLayout>{route.element}</AuthRouteLayout>
-                    </AdminAuthProtectedRoutes>
-                  ) : (
-                    <MobileScreen />
-                  )}
-                </Suspense>
-              }
-            />
-          ))}
-          {adminProtectedRoutesData.map((route, index) => (
-            <Route
-              key={index}
-              path={route.path}
-              element={
-                <Suspense fallback={<Loader />}>
-                  {window.innerWidth > 1000 ? (
-                    <AdminAccountProtectedRoutes>
-                      <AdminRouteLayout>{route.element}</AdminRouteLayout>
-                    </AdminAccountProtectedRoutes>
-                  ) : (
-                    <MobileScreen />
-                  )}
-                </Suspense>
-              }
-            />
-          ))}
-          <Route path="*" element={<Fallback />} />
-        </Routes>
-      </ScrollToTop>
+                </UserAccountProtectedRoutes>
+              </Suspense>
+            }
+          />
+        ))}
+        {adminAuthRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                {window.innerWidth > 1000 ? (
+                  <AdminAuthProtectedRoutes>
+                    <AuthRouteLayout>{route.element}</AuthRouteLayout>
+                  </AdminAuthProtectedRoutes>
+                ) : (
+                  <MobileScreen />
+                )}
+              </Suspense>
+            }
+          />
+        ))}
+        {adminProtectedRoutesData.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={
+              <Suspense fallback={<Loader />}>
+                {window.innerWidth > 1000 ? (
+                  <AdminAccountProtectedRoutes>
+                    <AdminRouteLayout>{route.element}</AdminRouteLayout>
+                  </AdminAccountProtectedRoutes>
+                ) : (
+                  <MobileScreen />
+                )}
+              </Suspense>
+            }
+          />
+        ))}
+        <Route path="*" element={<Fallback />} />
+      </Routes>
     </>
   );
 };

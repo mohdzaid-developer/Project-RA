@@ -4,6 +4,9 @@ import { useState, useEffect } from "react";
 //Routing
 import { Link } from "react-router-dom";
 
+//Assets
+import logo from "@/assets/logo.svg";
+
 const UserNavbar = () => {
   const navDataFirst = [
     {
@@ -23,34 +26,18 @@ const UserNavbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavClick = () => {
-    if (!navOpen) {
-      setNavbarColor(false);
-    }
     setNavOpen(!navOpen);
   };
-
-  const [navbarColor, setNavbarColor] = useState(false);
-
-  const changeNavbarColor = () => {
-    if (!navOpen && window.scrollY >= window.innerHeight * 0.8) {
-      setNavbarColor(true);
-    } else {
-      setNavbarColor(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavbarColor);
-    return () => {
-      window.removeEventListener("scroll", changeNavbarColor);
-    };
-  }, [navOpen]);
 
   return (
     <nav>
       <div className="nav-container">
-        <div className={navbarColor ? "navbar navbar-colored" : "navbar"}>
-          <div className="logo">Project RA</div>
+        <div className="navbar">
+          <div className="logo">
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
+          </div>
           <div className="menu-toggle">
             <div
               className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}
