@@ -1,0 +1,70 @@
+@import "@/index.scss";
+
+.faq-container {
+  margin: 100px 50px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 50px;
+  .accordion {
+    width: 100%;
+
+    .faq {
+      width: 70%;
+      cursor: pointer;
+      margin-bottom: 50px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid $white;
+
+      .title {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .test {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 100px;
+          h1 {
+            font-size: 1.5rem;
+            color: $white;
+          }
+
+          p {
+            color: $white;
+          }
+        }
+
+        img {
+          height: 30px;
+        }
+      }
+
+      .content {
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0, 1, 0, 1);
+        p {
+          margin-left: 150px;
+          margin-top: 50px;
+          color: $white;
+          line-height: 30px;
+        }
+      }
+
+      .content.show {
+        max-height: 999px;
+        padding-top: 0.5rem;
+        transition: all 0.3s cubic-bezier(1, 0, 1, 0);
+
+        p {
+          margin-left: 150px;
+          margin-top: 30px;
+          color: $white;
+          line-height: 30px;
+        }
+      }
+    }
+  }
+}

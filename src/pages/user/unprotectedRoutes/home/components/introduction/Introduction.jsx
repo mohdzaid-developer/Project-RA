@@ -1,6 +1,7 @@
 import "./introduction.scss";
 
-import ScrollText from "@/components/user/scrollText/ScrollText";
+//Component
+import ScrollText from "./scrollText/ScrollText";
 
 const Introduction = () => {
   const content = [

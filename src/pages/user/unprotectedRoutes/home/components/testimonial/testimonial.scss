@@ -1,0 +1,92 @@
+@import "@/index.scss";
+
+.testimonial {
+  margin: 100px 0;
+  padding-bottom: 200px;
+  padding: 100px;
+  background-color: $light-orange;
+
+  .content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+
+    h2 {
+      color: $white;
+      font-size: 50px;
+      text-align: center;
+    }
+
+    img {
+      position: absolute;
+      top: -20px;
+      right: 300px;
+      height: 50px;
+    }
+  }
+
+  .swiper-wrapper {
+    cursor: pointer;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+
+      .top-card {
+        background-color: $white;
+        border-radius: 20px;
+        height: 300px;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        top: -50px;
+        left: 70px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+        img {
+          height: 80px;
+        }
+      }
+      .bottom-card {
+        background-color: $white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 300px;
+        width: 900px;
+        padding: 50px;
+        padding-left: 100px;
+        box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
+          rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+          rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px,
+          rgba(0, 0, 0, 0.07) 0px 32px 64px;
+
+        .message {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          gap: 25px;
+          p {
+            font-size: 16px;
+            color: $black;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: $light-green !important;
+  }
+}

@@ -1,14 +1,16 @@
+import { useState } from "react";
 import "./footer.scss";
 
-//Assets
-import facebookImg from "../../../assets/facebookImg.svg";
-import twitterImg from "../../../assets/instagramImg.svg";
-import instagramImg from "../../../assets/twitterImg.svg";
-import linkendInImg from "../../../assets/linkedInImg.svg";
-import buttonArrowImg from "../../../assets/buttonArrow.svg";
-import closeImg from "../../../assets/error.png";
+//Routing
 import { Link } from "react-router-dom";
-import { useState } from "react";
+
+//Assets
+import facebookImg from "@/assets/facebookImg.svg";
+import twitterImg from "@/assets/instagramImg.svg";
+import instagramImg from "@/assets/twitterImg.svg";
+import linkendInImg from "@/assets/linkedInImg.svg";
+import buttonArrowImg from "@/assets/rightArrow.svg";
+import closeImg from "@/assets/error.png";
 
 const Footer = () => {
   const [open, setOpen] = useState(false);

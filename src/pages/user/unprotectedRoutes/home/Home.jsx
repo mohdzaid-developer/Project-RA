@@ -4,6 +4,8 @@ import "./home.scss";
 import Gallery from "./components/gallery/Gallery";
 import Hero from "./components/hero/Hero";
 import Introduction from "./components/introduction/Introduction";
+import Testimonial from "./components/testimonial/Testimonial";
+import Faq from "./components/faq/Faq";
 
 const Home = () => {
   return (
@@ -11,6 +13,8 @@ const Home = () => {
       <Hero />
       <Introduction />
       <Gallery />
+      <Faq />
+      <Testimonial />
     </section>
   );
 };
