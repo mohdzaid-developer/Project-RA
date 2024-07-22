@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./footer.scss";
 
+import { AnimatePresence, motion } from "framer-motion";
+import { footerFadeInAnimation } from "@/utils/animations/animations";
+
 //Routing
 import { Link } from "react-router-dom";
 
@@ -20,30 +23,38 @@ const Footer = () => {
       <h2 className="heading">
         Journey Beyond Boundaries, Discover the <br /> World with Us
       </h2>
-      {open && (
-        <div className="form">
-          <div className="content">
-            <h2>Get in touch</h2>
-            <img src={closeImg} alt="" onClick={() => setOpen(false)} />
-          </div>
-          <div className="form-container">
-            <div className="left">
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Phone" />
-              <input type="text" placeholder="Email" />
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            className="form"
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={footerFadeInAnimation}
+          >
+            <div className="content">
+              <h2>Get in touch</h2>
+              <img src={closeImg} alt="" onClick={() => setOpen(false)} />
             </div>
-            <div className="right">
-              <div className="input">
-                <p>Tell us how can we help</p>
-                <input type="text"></input>
+            <div className="form-container">
+              <div className="left">
+                <input type="text" placeholder="Name" />
+                <input type="text" placeholder="Phone" />
+                <input type="text" placeholder="Email" />
               </div>
-              <button>
-                Submit <img src={buttonArrowImg} alt="" />
-              </button>
+              <div className="right">
+                <div className="input">
+                  <p>Tell us how can we help</p>
+                  <input type="text"></input>
+                </div>
+                <button>
+                  Submit <img src={buttonArrowImg} alt="" />
+                </button>
+              </div>
             </div>
-          </div>
-        </div>
-      )}
+          </motion.div>
+        )}
+      </AnimatePresence>
       <div className="links">
         <div className="left">
           <Link to="/">Privacy Policy</Link>

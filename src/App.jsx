@@ -37,6 +37,8 @@ import {
   UserHome,
   UserTermsAndCondition,
   UserPayment,
+  UserBali,
+  UserPhuket,
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
@@ -83,6 +85,14 @@ const userUnprotectedRoutesData = [
   {
     path: "/",
     element: <UserHome />,
+  },
+  {
+    path: "/bali",
+    element: <UserBali />,
+  },
+  {
+    path: "/phuket",
+    element: <UserPhuket />,
   },
   {
     path: "/terms-and-conditions",

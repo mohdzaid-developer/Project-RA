@@ -15,11 +15,11 @@ const UserNavbar = () => {
     },
     {
       name: "Bali",
-      path: "/about",
+      path: "/bali",
     },
     {
       name: "Phuket",
-      path: "/contact-us",
+      path: "/phuket",
     },
   ];
 
