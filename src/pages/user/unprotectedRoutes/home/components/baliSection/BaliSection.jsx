@@ -1,29 +1,37 @@
 import "./baliSection.scss";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/utils/animations/animations";
 
+//Assets
 import rightArrow from "@/assets/colorRightArrow.svg";
 
 const BaliSection = () => {
   return (
     <section className="baliSection">
-      <div className="container">
-        <div className="left">
+      <motion.div
+        className="container"
+        variants={fadeInAnimation}
+        initial="initial"
+        whileInView="animate"
+      >
+        <motion.div className="left" variants={fadeInAnimation}>
           <h2>
             Enchanted <span>Bali</span>
           </h2>
-          <p>
+          <motion.p variants={fadeInAnimation}>
             Experience the magic of Enchanted Bali, where every corner reveals a
             new adventure. <br /> From the tranquil beaches to the spiritual
             heart of Ubud, let the island's <br /> natural beauty and vibrant
             culture captivate your senses.
-          </p>
-        </div>
+          </motion.p>
+        </motion.div>
 
-        <div className="right">
+        <motion.div className="right" variants={fadeInAnimation}>
           <button>
             Know More <img src={rightArrow} alt="" />
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

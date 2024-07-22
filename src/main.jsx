@@ -19,9 +19,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <ScrollToTop>
         <Provider store={store}>
-          <SmoothScrolling>
-            <App />
-          </SmoothScrolling>
+          {/* <SmoothScrolling> */}
+          <App />
+          {/* </SmoothScrolling> */}
         </Provider>
       </ScrollToTop>
     </BrowserRouter>

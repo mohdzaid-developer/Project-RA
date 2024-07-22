@@ -1,4 +1,6 @@
 import "./phuketSection.scss";
+import { motion } from "framer-motion";
+import { fadeInAnimation } from "@/utils/animations/animations";
 
 //Assets
 import rightArrow from "@/assets/colorRightArrow.svg";
@@ -6,8 +8,13 @@ import rightArrow from "@/assets/colorRightArrow.svg";
 const PhuketSection = () => {
   return (
     <section className="phuketSection">
-      <div className="container">
-        <div className="left">
+      <motion.div
+        className="container"
+        variants={fadeInAnimation}
+        initial="initial"
+        whileInView="animate"
+      >
+        <motion.div className="left" variants={fadeInAnimation}>
           <h2>
             Enchanted <span>Phuket</span>
           </h2>
@@ -18,14 +25,14 @@ const PhuketSection = () => {
             bustling markets, <br /> and relax in luxury as you embrace the
             charm and allure of this stunning island.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="right">
+        <motion.div className="right" variants={fadeInAnimation}>
           <button>
             Know More <img src={rightArrow} alt="" />
           </button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
