@@ -1,7 +1,7 @@
 import "./authLeftSide.scss";
 
 const AuthLeftSide = () => {
-  return <div>AuthLeftSide</div>;
+  return <section className="authLeftSide"></section>;
 };
 
 export default AuthLeftSide;
