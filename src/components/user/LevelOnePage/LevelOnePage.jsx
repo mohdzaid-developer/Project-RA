@@ -1,4 +1,6 @@
 import "./levelOnePage.scss";
+
+//Components
 import Hero from "./components/hero/Hero";
 import Gallery from "./components/gallery/Gallery";
 import Packages from "./components/packages/Packages";
@@ -8,7 +10,7 @@ const LevelOnePage = ({ data }) => {
     <section className="levelOnePage">
       <Hero data={data} />
       <Gallery data={data} />
-      <Packages />
+      <Packages data={data} />
     </section>
   );
 };

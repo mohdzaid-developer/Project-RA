@@ -1,22 +1,27 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./packages.scss";
 
-//Animation
+//Routing
+import { Link } from "react-router-dom";
+
+// Animation
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
-const Packages = () => {
+//Assets
+import buttonArrowImg from "@/assets/rightArrow.svg";
+
+const Packages = ({ data }) => {
+  const [currentIndex, setCurrentIndex] = useState(1);
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    const details = gsap.utils.toArray(
-      ".desktopContentSection:not(:first-child)"
-    );
-    const photos = gsap.utils.toArray(".desktopPhoto:not(:first-child)");
+    const details = gsap.utils.toArray(".desktopContentSection");
+    const photos = gsap.utils.toArray(".desktopPhoto");
 
-    gsap.set(photos, { yPercent: 101 });
-
-    const allPhotos = gsap.utils.toArray(".desktopPhoto");
+    gsap.set(photos.slice(1), { yPercent: 101 });
 
     let mm = gsap.matchMedia();
 
@@ -33,16 +38,38 @@ const Packages = () => {
         let animation = gsap
           .timeline()
           .to(photos[index], { yPercent: 0 })
-          .set(allPhotos[index], { autoAlpha: 0 });
+          .set(photos[index], { autoAlpha: 1 });
 
         ScrollTrigger.create({
           trigger: headline,
-          start: "top 80%",
-          end: "top 50%",
+          start: "top 50%",
+          end: "bottom 50%",
           animation: animation,
           scrub: true,
-          markers: false,
+          onEnter: () => setCurrentIndex(index + 1),
+          onEnterBack: () => setCurrentIndex(index + 1),
+          onLeaveBack: () => setCurrentIndex(index),
         });
+      });
+
+      // Control the visibility of the fixed center div
+      ScrollTrigger.create({
+        trigger: ".packages",
+        start: "top top",
+        end: "bottom 50%",
+        onEnter: () => setIsVisible(true),
+        onLeave: () => setIsVisible(false),
+        onEnterBack: () => setIsVisible(true),
+        onLeaveBack: () => setIsVisible(false),
+      });
+
+      // Make the fixed container disappear when the last section is 50% out of view
+      ScrollTrigger.create({
+        trigger: details[details.length - 1],
+        start: "top 50%",
+        end: "bottom bottom",
+        onLeave: () => setIsVisible(false),
+        onEnterBack: () => setIsVisible(true),
       });
     });
 
@@ -51,116 +78,57 @@ const Packages = () => {
       ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
+
   return (
     <div className="packages">
       <div className="gallery">
         <div className="packages-left">
           <div className="desktopContent">
-            <div className="desktopContentSection">
-              <h2>Friends</h2>
-              <p>
-                Red is a color often associated with strong emotions such as
-                passion, love, and anger. It's a bold and attention-grabbing
-                color that can evoke feelings of excitement, warmth, and energy.
-              </p>
-            </div>
-            <div className="desktopContentSection">
-              <h2>Family</h2>
-              <p>
-                Green is a color that is often associated with nature, growth,
-                and harmony. It is a calming and relaxing color that can evoke
-                feelings of balance, stability, and freshness. In color
-                psychology, green is said to represent balance and stability,
-                making it a popular choice for branding and marketing in the
-                health and wellness industry.
-              </p>
-            </div>
-            <div className="desktopContentSection">
-              <h2>Couple</h2>
-              <p>
-                Pink is a color that is often associated with femininity,
-                romance, and sweetness. It is a softer and more delicate shade
-                of red that can evoke feelings of warmth, love, and nurturing.
-              </p>
-              <p>
-                In the world of branding and marketing, pink is often used to
-                target a female audience or to promote products that are
-                associated with beauty, love, or romance.
-              </p>
-              <p>
-                Pink is also used in the food industry, as it is associated with
-                sweetness and desserts. Pink is often used in breast cancer
-                awareness campaigns, as it has become the signature color of the
-                movement. Pink is also commonly used in baby showers and
-                weddings, as it symbolizes love, innocence, and new beginnings.
-              </p>
-            </div>
-            <div className="desktopContentSection">
-              <h2>Custom</h2>
-              <p>
-                Blue is a color that is often associated with calmness, trust,
-                and reliability. It is a peaceful and serene color that can
-                evoke feelings of stability, security, and professionalism. In
-                color psychology, blue is said to represent loyalty and trust,
-                making it a popular choice for branding and marketing in the
-                finance and technology industries.
-              </p>
-            </div>
+            {data.packageData.map((item, index) => (
+              <div className="desktopContentSection" key={index}>
+                {item.test}
+
+                <div className="content">
+                  <div className="logo">
+                    <img src={item.logo} alt="" />
+                  </div>
+
+                  <div className="line"></div>
+
+                  <div className="text">
+                    <h2>{item.packageName}</h2>
+                    <p>{item.description}</p>
+                  </div>
+
+                  <div className="button">
+                    <Link to={`${item.url}`}>
+                      View Package <img src={buttonArrowImg} alt="" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
         <div className="packages-right">
-          <div className="mobileContent">
-            <div className="mobilePhoto red"></div>
-            <h2>Friends</h2>
-            <p>
-              Red is a color often associated with strong emotions such as
-              passion, love, and anger. It's a bold and attention-grabbing color
-              that can evoke feelings of excitement, warmth, and energy.
-            </p>
-
-            <div className="mobilePhoto green"></div>
-            <h2>Family</h2>
-            <p>
-              Green is a color that is often associated with nature, growth, and
-              harmony. It is a calming and relaxing color that can evoke
-              feelings of balance, stability, and freshness. In color
-              psychology, green is said to represent balance and stability,
-              making it a popular choice for branding and marketing in the
-              health and wellness industry.
-            </p>
-
-            <div className="mobilePhoto pink"></div>
-            <h2>Couple</h2>
-            <p>
-              Pink is a color that is often associated with femininity, romance,
-              and sweetness. It is a softer and more delicate shade of red that
-              can evoke feelings of warmth, love, and nurturing. In the world of
-              branding and marketing, pink is often used to target a female
-              audience or to promote products that are associated with beauty,
-              love, or romance.
-            </p>
-
-            <div className="mobilePhoto blue"></div>
-            <h2>Custom</h2>
-            <p>
-              Blue is a color that is often associated with calmness, trust, and
-              reliability. It is a peaceful and serene color that can evoke
-              feelings of stability, security, and professionalism. In color
-              psychology, blue is said to represent loyalty and trust, making it
-              a popular choice for branding and marketing in the finance and
-              technology industries.
-            </p>
-          </div>
-
           <div className="desktopPhotos">
-            <div className="desktopPhoto red"></div>
-            <div className="desktopPhoto green"></div>
-            <div className="desktopPhoto pink"></div>
-            <div className="desktopPhoto blue"></div>
+            {data.packageData.map((item, index) => (
+              <div
+                key={index}
+                className="desktopPhoto"
+                style={{ backgroundImage: `url(${item.leftImg})` }}
+              ></div>
+            ))}
           </div>
         </div>
       </div>
+      {isVisible && (
+        <div className="fixed-center">
+          <div className="number">{`0${currentIndex}`}</div>
+          <div className="total">/04</div>
+        </div>
+      )}
     </div>
   );
 };
