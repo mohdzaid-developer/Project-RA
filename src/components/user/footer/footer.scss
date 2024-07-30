@@ -66,7 +66,7 @@ footer {
       align-items: flex-start;
       gap: 100px;
 
-      .left {
+      .form-container-left {
         width: 50%;
         display: flex;
         justify-content: center;
@@ -87,7 +87,7 @@ footer {
         }
       }
 
-      .right {
+      .form-container-right {
         width: 50%;
         display: flex;
         justify-content: center;
@@ -138,7 +138,7 @@ footer {
     justify-content: space-between;
     align-items: flex-end;
 
-    .left {
+    .links-left {
       display: flex;
       justify-content: space-between;
       align-items: flex-start;
@@ -158,7 +158,7 @@ footer {
       }
     }
 
-    .right {
+    .links-right {
       button {
         background-color: transparent;
         display: flex;
@@ -206,7 +206,7 @@ footer {
       .form-container {
         gap: 90px;
 
-        .left {
+        .form-container-left {
           gap: 40px;
 
           input {
@@ -214,7 +214,7 @@ footer {
           }
         }
 
-        .right {
+        .form-container-right {
           gap: 40px;
 
           .input {
@@ -239,7 +239,7 @@ footer {
     }
 
     .links {
-      .left {
+      .links-left {
         gap: 34px;
 
         a {
@@ -254,7 +254,7 @@ footer {
         }
       }
 
-      .right {
+      .links-right {
         button {
           gap: 18px;
           font-size: 20px;

@@ -14,7 +14,7 @@ const BaliSection = () => {
         initial="initial"
         whileInView="animate"
       >
-        <motion.div className="left" variants={fadeInAnimation}>
+        <motion.div className="baliSection-left" variants={fadeInAnimation}>
           <h2>
             Enchanted <span>Bali</span>
           </h2>
@@ -26,7 +26,7 @@ const BaliSection = () => {
           </motion.p>
         </motion.div>
 
-        <motion.div className="right" variants={fadeInAnimation}>
+        <motion.div className="baliSection-right" variants={fadeInAnimation}>
           <button>
             Know More <img src={rightArrow} alt="" />
           </button>

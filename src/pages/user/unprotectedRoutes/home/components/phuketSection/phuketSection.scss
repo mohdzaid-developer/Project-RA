@@ -21,7 +21,7 @@
     justify-content: space-between;
     align-items: flex-end;
 
-    .left {
+    .phuketSection-left {
       h2 {
         color: $white;
         font-size: 48px;
@@ -38,7 +38,7 @@
       }
     }
 
-    .right {
+    .phuketSection-right {
       button {
         background-color: transparent;
         display: flex;
@@ -62,7 +62,7 @@
 @media (max-width: 1700px) {
   .phuketSection {
     .container {
-      .left {
+      .phuketSection-left {
         h2 {
           font-size: 48px;
           margin-bottom: 20px;
@@ -74,7 +74,7 @@
         }
       }
 
-      .right {
+      .phuketSection-right {
         button {
           gap: 18px;
           font-size: 20px;

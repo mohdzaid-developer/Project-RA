@@ -37,12 +37,12 @@ const Footer = () => {
               <img src={closeImg} alt="" onClick={() => setOpen(false)} />
             </div>
             <div className="form-container">
-              <div className="left">
+              <div className="form-container-left">
                 <input type="text" placeholder="Name" />
                 <input type="text" placeholder="Phone" />
                 <input type="text" placeholder="Email" />
               </div>
-              <div className="right">
+              <div className="form-container-right">
                 <div className="input">
                   <p>Tell us how can we help</p>
                   <input type="text"></input>
@@ -56,7 +56,7 @@ const Footer = () => {
         )}
       </AnimatePresence>
       <div className="links">
-        <div className="left">
+        <div className="links-left">
           <Link to="/">Privacy Policy</Link>
           <Link to="/">Terms & Conditions</Link>
           <div className="socials">
@@ -74,7 +74,7 @@ const Footer = () => {
             </a>
           </div>
         </div>
-        <div className="right">
+        <div className="links-right">
           <button onClick={() => setOpen(true)}>
             Reach out <img src={buttonArrowImg} alt="" />
           </button>

@@ -14,7 +14,7 @@ const PhuketSection = () => {
         initial="initial"
         whileInView="animate"
       >
-        <motion.div className="left" variants={fadeInAnimation}>
+        <motion.div className="phuketSection-left" variants={fadeInAnimation}>
           <h2>
             Enchanted <span>Phuket</span>
           </h2>
@@ -27,7 +27,7 @@ const PhuketSection = () => {
           </p>
         </motion.div>
 
-        <motion.div className="right" variants={fadeInAnimation}>
+        <motion.div className="phuketSection-right" variants={fadeInAnimation}>
           <button>
             Know More <img src={rightArrow} alt="" />
           </button>

@@ -5,16 +5,9 @@ import "./gallery.scss";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-//Assets
-import img1 from "@/assets/bali1.svg";
-import img2 from "@/assets/bali2.svg";
-import img3 from "@/assets/homeBali.svg";
-import img4 from "@/assets/bali3.svg";
-import img5 from "@/assets/bali4.svg";
-
 gsap.registerPlugin(ScrollTrigger);
 
-const Gallery = () => {
+const Gallery = ({ data }) => {
   const containerRef = useRef(null);
   const textOverlayRef = useRef(null);
   const imagesRef = useRef([]);
@@ -100,10 +93,10 @@ const Gallery = () => {
   return (
     <>
       <div className="level-one-gallery">
-        <h2>Bali | Gallery</h2>
+        <h2>{data.title} | Gallery</h2>
       </div>
       <div className="level-one-gallery-container" ref={containerRef}>
-        {[img1, img2, img3, img4, img5].map((image, i) => (
+        {data.galleryImg.map((image, i) => (
           <div className="image" key={i}>
             <img
               src={image}
