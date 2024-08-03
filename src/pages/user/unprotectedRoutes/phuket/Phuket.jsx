@@ -1,7 +1,7 @@
 import "./phuket.scss";
 
 //Component
-import LevelOnePage from "@/components/user/pages/LevelOnePage/LevelOnePage";
+import LevelOnePage from "@/components/user/pages/levelOnePage/LevelOnePage";
 
 //Config
 import { data } from "./config/config";
