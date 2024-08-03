@@ -1,11 +1,17 @@
+import { useState } from "react";
 import "./userNavbar.scss";
-import { useState, useEffect } from "react";
 
 //Routing
 import { Link } from "react-router-dom";
 
 //Assets
 import logo from "@/assets/logo.svg";
+import logout from "@/assets/logout.png";
+import login from "@/assets/user.png";
+import facebookImg from "@/assets/facebookImg.svg";
+import twitterImg from "@/assets/instagramImg.svg";
+import instagramImg from "@/assets/twitterImg.svg";
+import linkendInImg from "@/assets/linkedInImg.svg";
 
 const UserNavbar = () => {
   const navDataFirst = [
@@ -20,6 +26,17 @@ const UserNavbar = () => {
     {
       name: "Phuket",
       path: "/phuket",
+    },
+  ];
+
+  const navDataSecond = [
+    {
+      name: "Profile",
+      path: "/",
+    },
+    {
+      name: "Trips",
+      path: "/bali",
     },
   ];
 
@@ -65,11 +82,35 @@ const UserNavbar = () => {
                 </li>
               ))}
             </ul>
+            <ul className="nav-links">
+              {navDataSecond.map((item, index) => (
+                <li className="nav-item" onClick={handleNavClick} key={index}>
+                  <Link to={item.path}>{item.name}</Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* <div className="auth">
-            <h1>Logout</h1>
-          </div> */}
+          <div className="auth">
+            <button>
+              <img src={logout} alt="" />
+              Logout
+            </button>
+          </div>
+          <div className="socials">
+            <a href="#">
+              <img src={facebookImg} alt="" />
+            </a>
+            <a href="#">
+              <img src={instagramImg} alt="" />
+            </a>
+            <a href="#">
+              <img src={twitterImg} alt="" />
+            </a>
+            <a href="#">
+              <img src={linkendInImg} alt="" />
+            </a>
+          </div>
         </div>
       </div>
     </nav>
