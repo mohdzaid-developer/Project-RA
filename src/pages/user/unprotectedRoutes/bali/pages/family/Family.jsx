@@ -1,7 +1,8 @@
-import React from "react";
+//Components
+import LevelTwoPage from "@/components/user/pages/levelTwoPage/LevelTwoPage";
 
 const Family = () => {
-  return <div>Family</div>;
+  return <LevelTwoPage />;
 };
 
 export default Family;

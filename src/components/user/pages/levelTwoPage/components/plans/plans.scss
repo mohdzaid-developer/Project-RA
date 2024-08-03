@@ -1,0 +1,88 @@
+@import "@/index.scss";
+
+.plans {
+  width: 100%;
+  background-color: $light-orange;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px;
+  gap: 100px;
+  background-image: url("@/assets/planBackground.svg");
+  background-position: left;
+  margin-bottom: 150px;
+
+  .left {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px;
+
+    h2 {
+      font-size: 50px;
+      color: $text-orange;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+
+      button {
+        padding: 12px 25px;
+        background-color: transparent;
+        color: $text-orange;
+        border: 1px solid $light-green;
+        border-radius: 5px;
+        font-size: 19px;
+        font-weight: 500;
+
+        &.active {
+          background-color: $light-green;
+        }
+      }
+    }
+
+    .text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 20px;
+      p {
+        color: $white;
+        font-size: 16px;
+        line-height: 28px;
+      }
+    }
+
+    .urlButton {
+      button {
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        font-size: 20px;
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 14px;
+        padding: 22px 20px;
+
+        img {
+          height: 28px;
+        }
+      }
+    }
+  }
+
+  .right {
+    width: 55%;
+    img {
+      width: 100%;
+    }
+  }
+}

@@ -16,7 +16,7 @@ import levelOneCoupleImage from "@/assets/levelOneCoupleImage.svg";
 import levelOneCustomImage from "@/assets/levelOneCustomImage.svg";
 
 export const data = {
-  title: "Bali",
+  title: "Enchanted Bali",
   heroImg: heroImg,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

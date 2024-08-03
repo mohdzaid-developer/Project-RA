@@ -1,7 +1,8 @@
-import React from "react";
+//Components
+import LevelTwoPage from "@/components/user/pages/levelTwoPage/LevelTwoPage";
 
 const Couple = () => {
-  return <div>Couple</div>;
+  return <LevelTwoPage />;
 };
 
 export default Couple;

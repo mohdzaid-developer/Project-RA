@@ -1,5 +1,3 @@
-import "./phuket.scss";
-
 //Component
 import LevelOnePage from "@/components/user/pages/levelOnePage/LevelOnePage";
 

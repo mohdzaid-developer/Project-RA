@@ -56,7 +56,7 @@ const Hero = ({ data }) => {
       style={{ backgroundImage: `url(${data.heroImg})` }}
     >
       <motion.div className="container" ref={targetRef} style={{ y, x, scale }}>
-        <h2>Enchanted {data.title}</h2>
+        <h2>{data.title}</h2>
       </motion.div>
 
       <div className="text">

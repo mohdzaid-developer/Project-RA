@@ -39,6 +39,13 @@ import {
   UserPayment,
   UserBali,
   UserPhuket,
+  UserBaliFriends,
+  UserBaliFriendsStandard,
+  UserBaliFriendsDelux,
+  UserBaliFriendsPremium,
+  UserBaliFamily,
+  UserBaliCouple,
+  UserBaliCustom,
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
@@ -89,6 +96,34 @@ const userUnprotectedRoutesData = [
   {
     path: "/bali",
     element: <UserBali />,
+  },
+  {
+    path: "/bali/friends",
+    element: <UserBaliFriends />,
+  },
+  {
+    path: "/bali/friends/standard",
+    element: <UserBaliFriendsStandard />,
+  },
+  {
+    path: "/bali/friends/delux",
+    element: <UserBaliFriendsDelux />,
+  },
+  {
+    path: "/bali/friends/premium",
+    element: <UserBaliFriendsPremium />,
+  },
+  {
+    path: "/bali/family",
+    element: <UserBaliFamily />,
+  },
+  {
+    path: "/bali/couple",
+    element: <UserBaliCouple />,
+  },
+  {
+    path: "/bali/custom",
+    element: <UserBaliCustom />,
   },
   {
     path: "/phuket",

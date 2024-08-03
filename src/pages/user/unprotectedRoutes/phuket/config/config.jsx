@@ -16,7 +16,7 @@ import levelOneCoupleImage from "@/assets/levelOneCoupleImage.svg";
 import levelOneCustomImage from "@/assets/levelOneCustomImage.svg";
 
 export const data = {
-  title: "Phuket",
+  title: "Enchanted Phuket",
   heroImg: heroImg,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

@@ -1,5 +1,3 @@
-import "./bali.scss";
-
 //Component
 import LevelOnePage from "@/components/user/pages/levelOnePage/LevelOnePage";
 
@@ -8,7 +6,7 @@ import { data } from "./config/config";
 
 const Bali = () => {
   return (
-    <section className="bali">
+    <section>
       <LevelOnePage data={data} />
     </section>
   );

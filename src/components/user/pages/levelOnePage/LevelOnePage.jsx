@@ -1,5 +1,3 @@
-import "./levelOnePage.scss";
-
 //Components
 import Hero from "./components/hero/Hero";
 import Gallery from "./components/gallery/Gallery";

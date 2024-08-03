@@ -1,5 +1,3 @@
-import "./home.scss";
-
 //Components
 import Gallery from "./components/gallery/Gallery";
 import Hero from "./components/hero/Hero";
