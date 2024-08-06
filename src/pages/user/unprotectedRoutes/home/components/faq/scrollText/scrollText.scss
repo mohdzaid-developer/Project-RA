@@ -1,0 +1,69 @@
+@import "@/index.scss";
+
+.faq-outer {
+  .faq-inner {
+    p {
+      display: inline;
+      line-height: 1.3;
+
+      .faq-text-container {
+        position: relative;
+        overflow: hidden;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 60px;
+
+        .faq-highlighted-text {
+          color: $light-green;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          transition: clip-path 0.1s ease;
+
+          &:before {
+            content: attr(data-text);
+            display: inline-block;
+            opacity: 1;
+            font-size: 60px;
+            color: $light-green;
+          }
+        }
+
+        .faq-static-text {
+          position: relative;
+          z-index: 0;
+          font-size: 60px;
+          color: $gray;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .faq-outer {
+    .faq-inner {
+      p {
+        line-height: 1.3;
+
+        .faq-text-container {
+          margin-bottom: 8px;
+          font-size: 50px;
+
+          .faq-highlighted-text {
+            &:before {
+              font-size: 50px;
+            }
+          }
+
+          .faq-static-text {
+            font-size: 50px;
+          }
+        }
+      }
+    }
+  }
+}

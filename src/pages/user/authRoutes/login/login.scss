@@ -1,1 +1,14 @@
-@import "../../../../index.scss";
+@import "@/index.scss";
+
+.auth {
+  width: 50%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h2 {
+    color: $text-orange;
+    font-size: 56px;
+  }
+}

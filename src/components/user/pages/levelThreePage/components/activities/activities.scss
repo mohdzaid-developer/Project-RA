@@ -1,0 +1,44 @@
+@import "@/index.scss";
+
+.splide-wrapper {
+  position: relative;
+  width: 100%;
+  padding: 0 50px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 50px;
+
+  h2 {
+    font-size: 40px;
+    color: $white;
+  }
+}
+
+.splide__arrows {
+  position: absolute;
+  bottom: -2rem;
+  right: 50px;
+}
+
+.splide__arrow {
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  background-color: $light-orange !important;
+
+  svg {
+    fill: $white !important;
+  }
+}
+
+.splide__arrow--prev {
+  left: -50px !important;
+}
+
+.splide__arrow--next {
+  left: 0 !important;
+}

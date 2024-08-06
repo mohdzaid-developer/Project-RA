@@ -1,0 +1,149 @@
+@import "@/index.scss";
+
+.why {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-green;
+  padding: 100px 130px;
+
+  .why-container {
+    width: 100%;
+    background-color: $black;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 100px;
+    padding: 80px 100px;
+
+    h2 {
+      color: $white;
+      font-size: 48px;
+    }
+
+    .progress {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+
+      .progress-box {
+        .progress-bar {
+          position: relative;
+          right: 120px;
+          top: 130px;
+          width: 255px;
+          height: 10px !important;
+          transform: rotate(90deg);
+
+          .MuiLinearProgress-root {
+            height: 10px !important;
+            border-radius: 5px;
+            background-color: $gray;
+
+            .MuiLinearProgress-bar {
+              background-color: $neon-green;
+              border-radius: 5px;
+            }
+          }
+        }
+
+        .text-container {
+          padding-left: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 48px;
+
+          p {
+            font-size: 24px;
+            color: $gray;
+            cursor: pointer;
+            transition: color 0.3s ease;
+          }
+
+          p.active {
+            color: $white;
+          }
+        }
+      }
+
+      .show {
+        width: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 50px;
+        img {
+          height: 300px;
+        }
+        p {
+          font-size: 22px;
+          color: $white;
+          line-height: 38px;
+          letter-spacing: 1.1px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .why {
+    padding: 70px 100px;
+
+    .why-container {
+      border-radius: 18x;
+      gap: 80px;
+      padding: 50px 80px;
+
+      h2 {
+        font-size: 42px;
+      }
+
+      .progress {
+        .progress-box {
+          .progress-bar {
+            right: 100px;
+            top: 115px;
+            width: 210px;
+            height: 10px !important;
+
+            .MuiLinearProgress-root {
+              height: 10px !important;
+
+              .MuiLinearProgress-bar {
+                border-radius: 5px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 35px;
+            gap: 40px;
+
+            p {
+              font-size: 22px;
+            }
+          }
+        }
+
+        .show {
+          gap: 40px;
+          img {
+            height: 250px;
+          }
+          p {
+            font-size: 18px;
+            line-height: 30px;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}

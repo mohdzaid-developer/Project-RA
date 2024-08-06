@@ -1,0 +1,90 @@
+@import "@/index.scss";
+
+.phuketSection {
+  margin: 50px 0;
+  margin-bottom: 100px;
+  width: 100%;
+  height: 100vh;
+  background-image: url("@/assets/homePhuket.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 50px;
+
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .phuketSection-left {
+      h2 {
+        color: $white;
+        font-size: 48px;
+        margin-bottom: 20px;
+        span {
+          color: $light-orange;
+        }
+      }
+
+      p {
+        color: $white;
+        font-size: 24px;
+        line-height: 40px;
+      }
+    }
+
+    .phuketSection-right {
+      button {
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 24px;
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 18px;
+        padding: 24px 22px;
+
+        img {
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .phuketSection {
+    .container {
+      .phuketSection-left {
+        h2 {
+          font-size: 48px;
+          margin-bottom: 20px;
+        }
+
+        p {
+          font-size: 24px;
+          line-height: 40px;
+        }
+      }
+
+      .phuketSection-right {
+        button {
+          gap: 18px;
+          font-size: 20px;
+          padding: 20px 18px;
+
+          img {
+            height: 24px;
+          }
+        }
+      }
+    }
+  }
+}

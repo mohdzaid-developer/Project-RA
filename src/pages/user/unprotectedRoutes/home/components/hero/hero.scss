@@ -1,0 +1,94 @@
+@import "@/index.scss";
+
+.hero {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba($color: #000000, $alpha: 0.3);
+  }
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .content {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 0 50px;
+
+    .left {
+      color: $text-orange;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      h2 {
+        font-size: 48px;
+        font-weight: 100;
+        letter-spacing: 2px;
+      }
+
+      h1 {
+        font-size: 96px;
+        font-weight: 400;
+        letter-spacing: 2px;
+      }
+    }
+
+    .right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      p {
+        font-size: 20px;
+        color: $dark-green;
+      }
+      img {
+        height: 30px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .hero {
+    .content {
+      bottom: 50px;
+      padding: 0 40px;
+
+      .left {
+        h2 {
+          font-size: 35px;
+        }
+
+        h1 {
+          font-size: 70px;
+        }
+      }
+
+      .right {
+        gap: 9px;
+        p {
+          font-size: 18px;
+        }
+        img {
+          height: 28px;
+        }
+      }
+    }
+  }
+}

@@ -1,17 +1,26 @@
-@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
+@import url("https://db.onlinewebfonts.com/c/2e46652a2dcb3173f0d40d4266f1debe?family=Cygre+Light");
+
+$dark-orange: #bc6c25;
+$light-orange: #dda15e;
+$text-orange: #fefae0;
+$light-green: #606c38;
+$dark-green: #283618;
+$neon-green: #52e515;
+$black: #151515;
+$gray: #393939;
+$white: #fff;
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Libre Franklin", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-  scroll-behavior: smooth;
+  font-family: "Cygre Light";
 }
 
-$primary-color: #3498db;
-$secondary-color: #2ecc71;
+body {
+  background-color: $black;
+}
 
 body::-webkit-scrollbar {
   width: 0px;
@@ -20,6 +29,7 @@ body::-webkit-scrollbar {
 button {
   border: none;
   outline: none;
+  cursor: pointer;
 }
 input {
   outline: none;
@@ -31,10 +41,15 @@ li {
 
 a {
   text-decoration: none;
+  color: $black;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+p {
+  color: $gray;
+}
+
+h2 {
+  font-family: "Italiana", sans-serif;
+  letter-spacing: 2px;
+  font-weight: 100;
 }

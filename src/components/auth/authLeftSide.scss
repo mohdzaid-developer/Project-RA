@@ -1,1 +1,10 @@
-@import "../../index.scss";
+@import "@/index.scss";
+
+.authLeftSide {
+  width: 50%;
+  height: 100vh;
+  background-image: url("../../assets/authLeftImg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}

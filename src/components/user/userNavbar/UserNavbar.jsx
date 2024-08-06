@@ -1,14 +1,17 @@
-import "./userNavbar.scss";
 import { useState } from "react";
+import "./userNavbar.scss";
 
 //Routing
 import { Link } from "react-router-dom";
 
 //Assets
-import profilePic from "../../../assets/profilePic.jpg";
-
-//Redux
-import { useSelector } from "react-redux";
+import logo from "@/assets/logo.svg";
+import logout from "@/assets/logout.png";
+import login from "@/assets/user.png";
+import facebookImg from "@/assets/facebookImg.svg";
+import twitterImg from "@/assets/instagramImg.svg";
+import instagramImg from "@/assets/twitterImg.svg";
+import linkendInImg from "@/assets/linkedInImg.svg";
 
 const UserNavbar = () => {
   const navDataFirst = [
@@ -17,12 +20,12 @@ const UserNavbar = () => {
       path: "/",
     },
     {
-      name: "About",
-      path: "/about",
+      name: "Bali",
+      path: "/bali",
     },
     {
-      name: "Contact",
-      path: "/contact-us",
+      name: "Phuket",
+      path: "/phuket",
     },
   ];
 
@@ -31,21 +34,28 @@ const UserNavbar = () => {
       name: "Profile",
       path: "/",
     },
+    {
+      name: "Trips",
+      path: "/bali",
+    },
   ];
+
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavClick = () => {
     setNavOpen(!navOpen);
   };
+
   return (
     <nav>
       <div className="nav-container">
         <div className="navbar">
-          <div className="logo">Travel App</div>
+          <div className="logo">
+            <Link to="/">
+              <img src={logo} alt="" />
+            </Link>
+          </div>
           <div className="menu-toggle">
-            <div className="profile-pic">
-              <img src={profilePic} alt="" />
-            </div>
             <div
               className={navOpen ? "hamBox hamBoxOpen" : "hamBox"}
               onClick={handleNavClick}
@@ -66,15 +76,15 @@ const UserNavbar = () => {
         >
           <div className="link">
             <ul className="nav-links">
-              {navDataFirst.map((item) => (
-                <li className="nav-item" onClick={handleNavClick}>
+              {navDataFirst.map((item, index) => (
+                <li className="nav-item" onClick={handleNavClick} key={index}>
                   <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
             </ul>
             <ul className="nav-links">
-              {navDataSecond.map((item) => (
-                <li className="nav-item" onClick={handleNavClick}>
+              {navDataSecond.map((item, index) => (
+                <li className="nav-item" onClick={handleNavClick} key={index}>
                   <Link to={item.path}>{item.name}</Link>
                 </li>
               ))}
@@ -82,7 +92,24 @@ const UserNavbar = () => {
           </div>
 
           <div className="auth">
-            <h1>Logout</h1>
+            <button>
+              <img src={logout} alt="" />
+              Logout
+            </button>
+          </div>
+          <div className="socials">
+            <a href="#">
+              <img src={facebookImg} alt="" />
+            </a>
+            <a href="#">
+              <img src={instagramImg} alt="" />
+            </a>
+            <a href="#">
+              <img src={twitterImg} alt="" />
+            </a>
+            <a href="#">
+              <img src={linkendInImg} alt="" />
+            </a>
           </div>
         </div>
       </div>
