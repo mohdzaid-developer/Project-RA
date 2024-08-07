@@ -2,10 +2,10 @@ import { lazy } from "react";
 
 //Auth Routes
 export const UserLogin = lazy(() =>
-  import("@/pages/user/authRoutes/login/login")
+  import("@/pages/user/authRoutes/signInUp/Authentication")
 );
 export const UserSignup = lazy(() =>
-  import("@/pages/user/authRoutes/signup/Signup")
+  import("@/pages/user/authRoutes/signInUp/Authentication")
 );
 export const UserChangePassword = lazy(() =>
   import("@/pages/user/authRoutes/changePassword/ChangePassword")
