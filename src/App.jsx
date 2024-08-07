@@ -19,7 +19,6 @@ import AdminAuthProtectedRoutes from "./protectedRoutes/admin/AdminAuthProtected
 import AdminAccountProtectedRoutes from "./protectedRoutes/admin/AdminAccountProtectedRoutes";
 
 //Layouts
-import AuthRouteLayout from "./layouts/auth/AuthRouteLayout";
 import UserRouteLayout from "./layouts/user/UserRouteLayout";
 import AdminRouteLayout from "./layouts/admin/AdminRouteLayout";
 
@@ -217,7 +216,7 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <UserAuthProtectedRoutes>
-                  <AuthRouteLayout>{route.element}</AuthRouteLayout>
+                  {route.element}
                 </UserAuthProtectedRoutes>
               </Suspense>
             }
@@ -255,7 +254,7 @@ const App = () => {
               <Suspense fallback={<Loader />}>
                 {window.innerWidth > 1000 ? (
                   <AdminAuthProtectedRoutes>
-                    <AuthRouteLayout>{route.element}</AuthRouteLayout>
+                    {route.element}
                   </AdminAuthProtectedRoutes>
                 ) : (
                   <MobileScreen />

@@ -7,13 +7,12 @@
 
   .gallery {
     display: flex;
+    flex-direction: row;
 
     .packages-left {
       width: 50%;
 
       .desktopContent {
-        margin: auto;
-        width: 80%;
         .desktopContentSection {
           min-height: 100vh;
           display: flex;
