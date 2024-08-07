@@ -5,9 +5,10 @@ import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
+import { userLoginValidationSchema } from "@/components/user/validation/validations";
 
 const SignIn = ({ setSliderPosition, sliderPosition }) => {
-  // const [login]=useLoginMutation()
+  const [studentLogin] = useUserLoginMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -20,10 +21,9 @@ const SignIn = ({ setSliderPosition, sliderPosition }) => {
   };
 
   // collecting data
+  const [errors, setErrors] = useState({});
   const [data, setData] = useState({
-    fullName: "",
     password: "",
-    repeatPassword: "",
     email: "",
   });
   const onChangeHandler = (e) => {
@@ -32,46 +32,32 @@ const SignIn = ({ setSliderPosition, sliderPosition }) => {
   };
 
   const handleSignIn = async (e) => {
-    e.preventDefault();
-    console.log(data);
-    const fullnameRegex = /^[a-zA-z]{4,}$/;
-    const mailformat =
-      /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    // Define the password validation criteria using regular expressions
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,}$/;
-
-    if (data) {
-      // email validation
-      if (!data.email.match(mailformat)) {
-        return alert("Invalid email !");
-      }
-
-      //  password validation
-      if (!passwordRegex.test(data.password)) {
-        return toast.error(
-          "Password must be between 8 and 15 characters, & include at least one uppercase letter, one lowercase letter, & one number & special char ."
-        );
-      }
-
-      let res = await login({ ...data });
-      console.log(res);
-      if (res && res.error && res.error.data && res.error.data.message) {
-        alert(res.error.data.message);
-      }
-      if (res && res.data) {
-        localStorage.setItem("data", JSON.stringify(res.data));
-        // dispatch(setUsers(res.data))
+    try {
+      await userLoginValidationSchema.validate(data, { abortEarly: false });
+      const response = await studentLogin(data);
+      if (response?.data?.data) {
+        sessionStorage.setItem("user", JSON.stringify(response?.data?.data));
         navigate("/dashboard");
         setData({
-          fullName: "",
           password: "",
-          repeatPassword: "",
           email: "",
         });
       }
-    } else {
-      alert("please enter all the fields");
+
+      if (response?.error?.data?.message) {
+        alert(response?.error?.data?.message);
+      }
+    } catch (err) {
+      console.log(err)
+      if (err && err.inner) {
+        const newErrors = {};
+        err.inner.forEach((error) => {
+          newErrors[error.path] = error.message;
+        });
+        setErrors(newErrors);
+      } else {
+        toast.error("Something went wrong !");
+      }
     }
   };
   return (
@@ -90,6 +76,7 @@ const SignIn = ({ setSliderPosition, sliderPosition }) => {
             placeholder="Enter Email"
             onChange={onChangeHandler}
           />
+          {errors?.email && <p style={{ color: "red" }}>{errors?.email}</p>}
         </div>
 
         <div className="authSlide">
@@ -100,6 +87,9 @@ const SignIn = ({ setSliderPosition, sliderPosition }) => {
             placeholder="Enter your Password  "
             onChange={onChangeHandler}
           />
+          {errors?.password && (
+            <p style={{ color: "red" }}>{errors?.password}</p>
+          )}
           <Link to="/forget-password">
             {" "}
             <h3>Forget Password</h3>
@@ -107,12 +97,12 @@ const SignIn = ({ setSliderPosition, sliderPosition }) => {
         </div>
       </div>
 
-      {/* <Link to="/dashboard"> */}
-        <button className="authButton" onClick={handleSignIn}>Sign In</button>
-      {/* </Link> */}
+      <button className="authButton" onClick={handleSignIn}>
+        Sign In
+      </button>
 
       <div className="none">
-        create new account <span onClick={changeSlider}>Sign Up</span>
+        create new account <span onClick={()=>navigate("/login")}>Sign Up</span>
       </div>
     </div>
   );

@@ -1,13 +1,13 @@
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const UserAuthProtectedRoutes = ({ children }) => {
+export const UserAuthProtectedRoutes = ({ children }) => {
   const { isAuthenticated } = useSelector((state) => state.authUser);
 
   if (!isAuthenticated) {
     return children;
   }
-  return <Navigate to="/profile" />;
+  return <Navigate to="/dashboard" />;
 };
 
 export default UserAuthProtectedRoutes;

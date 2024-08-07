@@ -68,7 +68,7 @@ import {
 // Routes Data
 const userAuthRoutesData = [
   {
-    path: "/signup",
+    path: "/register",
     element: <UserSignup />,
   },
   {

@@ -1,6 +1,6 @@
 import React from 'react'
 import "./ChangePassword.css"
-import "../Presel/Authentication/components/SignIn/SignIn.css"
+import "../signInUp/components/signIn/SignIn.css"
 import { Link } from 'react-router-dom'
 
 const ChangePassword = () => {

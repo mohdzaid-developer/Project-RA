@@ -4,53 +4,56 @@ import "./Authentication.scss";
 //components
 import SignIn from "./components/signIn/SignIn";
 import SignUp from "./components/signUp/SignUp";
-import { useLocation } from "react-router-dom";
+import { useLocation, Navigate, useNavigate } from "react-router-dom";
 
 const Authentication = () => {
-  const location=useLocation()
-  console.log(location)
+  const navigate = useNavigate();
+  const location = useLocation();
   const [sliderPosition, setSliderPosition] = useState(1);
+
+  const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
+  if (otpData) {
+    return <Navigate to="/otp" />;
+  }
 
   let a = "already have an account";
   let b = "create new account";
 
   const changeSlider = () => {
-    if (sliderPosition) {
-      setSliderPosition(false);
+    if (location?.pathname=="/login") {
+      navigate("/register")
     } else {
-      setSliderPosition(1);
+      navigate("/login")
     }
   };
 
   return (
     <div className="authContainer">
       <div className="authMiddle">
-        <div className={`signUp ${sliderPosition ? "in" : "out"}`}>
+        <div className={`signUp ${location?.pathname=="/login" ? "in" : "out"}`}>
           <SignIn
             setSliderPosition={setSliderPosition}
             sliderPosition={sliderPosition}
           />
         </div>
-        <div className={`signUp ${sliderPosition ? "out" : "in"}`}>
+        <div className={`signUp ${location?.pathname=="/login" ? "out" : "in"}`}>
           <SignUp
             setSliderPosition={setSliderPosition}
             sliderPosition={sliderPosition}
           />
         </div>
 
-        {/* silder */}
-
         <div
           className="authsilder"
           style={
-            !sliderPosition
+            location?.pathname!="/login"
               ? { left: "0", transition: "2s" }
               : { right: "0", transition: "2s !important" }
           }
         >
-          <p>{sliderPosition ? b : a}</p>
+          <p>{location?.pathname=="/login" ? b : a}</p>
           <button onClick={changeSlider}>
-            {sliderPosition ? "SignUp" : "SignIn"}
+            {location?.pathname=="/login" ? "SignUp" : "SignIn"}
           </button>
         </div>
       </div>

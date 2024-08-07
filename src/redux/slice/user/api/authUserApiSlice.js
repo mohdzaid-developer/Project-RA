@@ -29,14 +29,23 @@ export const authUserApi = createApi({
         headers: {
           Authorization: `Bearer ${getOtpAccessToken()}`,
         },
-        body: data,
+        body: {otp:data},
       }),
     }),
     userResendOtp: builder.mutation({
       query: (data) => ({
         url: "user/auth/otp-resend",
         method: "POST",
-        body: data,
+        headers: {
+          Authorization: `Bearer ${getOtpAccessToken("refresh")}`,
+        },
+      }),
+    }),
+    userForgetPassword: builder.mutation({
+      query: (data) => ({
+        url: "user/auth/forget-password",
+        method: "POST",
+        body:data
       }),
     }),
   }),
@@ -47,4 +56,5 @@ export const {
   useUserSignUpMutation,
   useUserOtpVerifyMutation,
   useUserResendOtpMutation,
+  useUserForgetPasswordMutation
 } = authUserApi;

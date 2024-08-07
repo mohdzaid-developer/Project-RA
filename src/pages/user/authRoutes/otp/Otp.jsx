@@ -1,36 +1,73 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "../forgetPassword/ForgetPassword.css";
 import "../signInUp/components/signIn/SignIn.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useUserOtpVerifyMutation,useUserResendOtpMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import {
+  useUserOtpVerifyMutation,
+  useUserResendOtpMutation,
+} from "@/redux/slice/user/api/authUserApiSlice";
+import { otpValidationSchema } from "@/components/user/validation/validations";
+import { toast } from "react-hot-toast";
 
 const Otp = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [userOtpVerify,{isLoading:otpVerifyLoading}]=useUserOtpVerifyMutation()
-  const [userResendOtp,{isLoading:resendOtpLoading}]=useUserResendOtpMutation()
+  const [userOtpVerify, { isLoading: otpVerifyLoading }] =
+    useUserOtpVerifyMutation();
+  const [userResendOtp, { isLoading: resendOtpLoading }] =
+    useUserResendOtpMutation();
 
+  const [errors, setErrors] = useState({});
   const [otp, setOtp] = useState("");
 
   const handleSubmit = async () => {
-    if (!otp || otp.length < 4) {
-      return alert("invalid otp");
-    }
+    try {
+      await otpValidationSchema.validate({ otp: otp }, { abortEarly: false });
+      const response = await userOtpVerify(otp);
+      if (response?.data?.data?.message) {
+        toast.success("Email verification successful!");
+        sessionStorage?.removeItem("otpInfo")
+        if(response?.data?.data?.changePassword){
+          navigate("/change-password")
+        }else{
+          navigate("/login")
+        }
 
-    const res=await userOtpVerify()
-
-    if (res && res.data && res.data.data && res.data.data.message) {
-      alert(res.data.data.message);
-      if (res.data.data.message != "invalid otp !.") {
-        dispatch(removeOtp());
-        sessionStorage.removeItem("data");
-        navigate("/dashboard");
+      }else{
+        console.log(response)
+        if(response?.error?.data?.errors[0]?.message){
+          toast.error(response?.error?.data?.errors[0]?.message)
+        }
       }
-    } else {
-      console.log(res);
+    } catch (err) {
+      const newErrors = {};
+      err.inner.forEach((err) => {
+        newErrors[err.path] = err?.message;
+      });
+      setErrors(newErrors);
     }
+  };
+
+  const handleResendOtp = async () => {
+    setOtp("")
+    // setOtpArray(new Array(6).fill(""));
+    // setIsResendDisabled(true);
+    // setCount(30);
+    const response = await userResendOtp();
+    if (response?.data?.data) {
+      toast.success("Successfully Sent Otp!");
+      setErrors({});
+      sessionStorage.setItem("otpInfo",JSON.stringify({...response?.data?.data}))
+    }
+    if (response && response.error) {
+      toast.error(response.error.data.message);
+      setErrors({});
+    }
+    // setTimeout(() => {
+    //   setIsResendDisabled(false);
+    // }, 30000);
   };
   return (
     <div className="forgetpassword">
@@ -51,7 +88,10 @@ const Otp = () => {
                   setOtp(e.target.value);
                 }}
               />
-              <h3>resend</h3>
+              {errors?.otp && (
+                <p style={{ color: "red" }}>{errors?.otp}</p>
+              )}
+              <h3 onClick={handleResendOtp}>resend</h3>
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../signIn/SignIn.css";
 // import { useRegisterMutation } from '../../../../../redux/Apis/authSlice'
 import { useNavigate } from "react-router-dom";
@@ -6,9 +6,10 @@ import { toast } from "react-hot-toast";
 // import { setOtp } from '../../../../../redux/authSlice';
 import { useDispatch, useSelector } from "react-redux";
 import { useUserSignUpMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { userSignUpSchema } from "@/components/user/validation/validations";
 
 const SignUp = ({ setSliderPosition, sliderPosition }) => {
-  const [register]=useUserSignUpMutation()
+  const [studentSignUp] = useUserSignUpMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -21,55 +22,38 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
   };
 
   // collecting data
+  const [errors, setErrors] = useState({});
   const [data, setData] = useState({
     fullName: "",
     email: "",
     phone: "",
     password: "",
   });
-  const onChangeHandler = (e) => {
+  const onChangeHandler = async (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
+
+    try {
+      await userSignUpSchema.validateAt(name, { [name]: value });
+      setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
+    } catch (err) {
+      setErrors((prevErrors) => ({ ...prevErrors, [name]: err.message }));
+    }
   };
 
-  const handleSignUp = async (e) => {
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const fullNameRegex = /^[a-zA-z]{4,}$/;
-    const mailFormat =
-      /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    // Define the password validation criteria using regular expressions
-    const passwordRegex =
-      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*!])[A-Za-z\d@#$%^&*!]{8,}$/;
-
-    if (data) {
-      console.log(data)
-      if (data.fullName == "") {
-        return alert("please enter your full name");
-      } else if (!data.fullName.match(fullNameRegex)) {
-        return alert(
-          "A minimum 4 characters name contains a combination only characters"
+    try {
+      await userSignUpSchema.validate(data, { abortEarly: false });
+      const response = await studentSignUp(data);
+      if (response && response.data) {
+        sessionStorage.setItem(
+          "beforeLoginAccessToken",
+          JSON.stringify(response.data.data.accessToken)
         );
-      }
-      // email validation
-      else if (!data.email.match(mailFormat)) {
-        return alert("Invalid email !");
-      }
-
-      //  password validation
-      // if (!passwordRegex.test(data.password)) {
-      //   return alert(
-      //     "Password must be between 8 and 15 characters, & include at least one uppercase letter, one lowercase letter, & one number & special char ."
-      //   );
-      // }
-      let res = await register({ ...data });
-      if (res && res.error && res.error.data && res.error.data.message) {
-        alert(res.error.data.message);
-      }
-      if (res && res.data && res.data.data && res.data.data.message) {
-        alert(res.data.data.message);
-
-        // dispatch(setOtp(res.data.data));
-        sessionStorage.setItem("data", JSON.stringify(res.data.data));
+        sessionStorage.setItem("otpInfo", JSON.stringify(response.data.data));
+        toast.success(response.data.data.message);
         navigate("/otp");
         setData({
           fullName: "",
@@ -77,9 +61,22 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
           email: "",
           password: "",
         });
+        setErrors({});
       }
-    } else {
-      alert("please enter all the fields");
+
+      if (response?.error?.data?.message) {
+        toast.error(response.error.data.message);
+        setErrors({});
+      }
+    } catch (err) {
+      const newErrors = {};
+      console.log(err);
+      if (err) {
+        err.inner.forEach((err) => {
+          newErrors[err.path] = err.message;
+        });
+        setErrors(newErrors);
+      }
     }
   };
 
@@ -100,6 +97,9 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
             placeholder="Enter your Full Name"
             onChange={onChangeHandler}
           />
+          {errors?.fullName && (
+            <p style={{ color: "red" }}>{errors?.fullName}</p>
+          )}
         </div>
 
         <div className="authSlide">
@@ -110,6 +110,7 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
             placeholder="Enter Email  "
             onChange={onChangeHandler}
           />
+          {errors?.email && <p style={{ color: "red" }}>{errors?.email}</p>}
         </div>
 
         <div className="authSlide">
@@ -120,24 +121,28 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
             placeholder="Enter your phone number  "
             onChange={onChangeHandler}
           />
+          {errors?.phone && <p style={{ color: "red" }}>{errors?.phone}</p>}
         </div>
 
         <div className="authSlide">
           <input
             type="password"
-            name="repeatPassword"
-            value={data.repeatPassword}
+            name="password"
+            value={data.password}
             placeholder="Enter your Password again"
             onChange={onChangeHandler}
           />
+          {errors?.password && (
+            <p style={{ color: "red" }}>{errors?.password}</p>
+          )}
         </div>
       </div>
 
-      <button className="authButton" onClick={handleSignUp}>
+      <button className="authButton" onClick={handleSubmit}>
         Sign Up
       </button>
-      <div className="nonee">
-        already have an account <span onClick={changeSlider}>Sign in</span>
+      <div className="none">
+        already have an account <span onClick={()=>navigate("/register")}>Sign in</span>
       </div>
     </div>
   );

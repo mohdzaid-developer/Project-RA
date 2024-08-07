@@ -6,12 +6,10 @@ export const getUserAccessToken = () => {
   return JSON.parse(sessionStorage.getItem("user"));
 };
 
-export const getOtpAccessToken = () => {
-  return JSON.parse(sessionStorage.getItem("data"))?.token;
+export const getOtpAccessToken = (type) => {
+  const data=JSON.parse(sessionStorage.getItem("otpInfo"))
+  if(type=="refresh"){
+    return JSON.parse(sessionStorage.getItem("otpInfo"))?.refreshToken;
+  }
+  return JSON.parse(sessionStorage.getItem("otpInfo"))?.accessToken;
 };
-
-export const getRefreshAccessToken = () => {
-  return JSON.parse(sessionStorage.getItem("admin"))
-  ? JSON.parse(sessionStorage.getItem("admin")).accessToken
-  : JSON.parse(sessionStorage.getItem("subAdmin"))?.accessToken;
-}
