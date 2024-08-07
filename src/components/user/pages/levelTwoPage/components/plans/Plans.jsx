@@ -17,7 +17,7 @@ const Plans = ({ data }) => {
   return (
     <section className="plans">
       <div className="left">
-        <h2>{data.title} Escape Plans</h2>
+        <h2>{data.planTitle} Escape Plans</h2>
         <div className="buttons">
           {data.plans.map((item, index) => (
             <button

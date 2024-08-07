@@ -5,7 +5,7 @@ import baliFriendsDelux from "@/assets/baliFriendsDelux.svg";
 import baliFriendsPremium from "@/assets/baliFriendsPremium.svg";
 
 export const data = {
-  title: "Couple",
+  title: "Couple Package",
   heroImg: heroImg,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,
@@ -15,7 +15,7 @@ export const data = {
   ],
   xRange1: ["0%", "-28%"],
   xRange2: ["0%", "-26%"],
-
+  planTitle: "Couple",
   plans: [
     {
       title: "Standard",

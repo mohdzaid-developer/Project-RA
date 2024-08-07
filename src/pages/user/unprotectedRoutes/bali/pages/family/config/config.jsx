@@ -5,7 +5,7 @@ import baliFriendsDelux from "@/assets/baliFriendsDelux.svg";
 import baliFriendsPremium from "@/assets/baliFriendsPremium.svg";
 
 export const data = {
-  title: "Family",
+  title: "Family Package",
   heroImg: heroImg,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,
@@ -15,7 +15,7 @@ export const data = {
   ],
   xRange1: ["0%", "-28%"],
   xRange2: ["0%", "-26%"],
-
+  planTitle: "Family",
   plans: [
     {
       title: "Standard",
