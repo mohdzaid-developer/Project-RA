@@ -41,7 +41,6 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
     }
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -70,7 +69,6 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
       }
     } catch (err) {
       const newErrors = {};
-      console.log(err);
       if (err) {
         err.inner.forEach((err) => {
           newErrors[err.path] = err.message;
@@ -142,7 +140,8 @@ const SignUp = ({ setSliderPosition, sliderPosition }) => {
         Sign Up
       </button>
       <div className="none">
-        already have an account <span onClick={()=>navigate("/register")}>Sign in</span>
+        already have an account{" "}
+        <span onClick={() => navigate("/register")}>Sign in</span>
       </div>
     </div>
   );

@@ -1,4 +1,9 @@
 import "./baliSection.scss";
+
+//Routing
+import { useNavigate } from "react-router-dom";
+
+//Animations
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "@/utils/animations/animations";
 
@@ -6,6 +11,7 @@ import { fadeInAnimation } from "@/utils/animations/animations";
 import rightArrow from "@/assets/colorRightArrow.svg";
 
 const BaliSection = () => {
+  const navigate = useNavigate();
   return (
     <section className="baliSection">
       <motion.div
@@ -27,7 +33,7 @@ const BaliSection = () => {
         </motion.div>
 
         <motion.div className="baliSection-right" variants={fadeInAnimation}>
-          <button>
+          <button onClick={() => navigate("/bali")}>
             Know More <img src={rightArrow} alt="" />
           </button>
         </motion.div>

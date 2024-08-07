@@ -48,7 +48,6 @@ const SignIn = ({ setSliderPosition, sliderPosition }) => {
         alert(response?.error?.data?.message);
       }
     } catch (err) {
-      console.log(err)
       if (err && err.inner) {
         const newErrors = {};
         err.inner.forEach((error) => {

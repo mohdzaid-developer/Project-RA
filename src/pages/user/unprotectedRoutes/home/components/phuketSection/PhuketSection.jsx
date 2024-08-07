@@ -1,4 +1,9 @@
 import "./phuketSection.scss";
+
+//Routing
+import { useNavigate } from "react-router-dom";
+
+//Animation
 import { motion } from "framer-motion";
 import { fadeInAnimation } from "@/utils/animations/animations";
 
@@ -6,6 +11,8 @@ import { fadeInAnimation } from "@/utils/animations/animations";
 import rightArrow from "@/assets/colorRightArrow.svg";
 
 const PhuketSection = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="phuketSection">
       <motion.div
@@ -28,7 +35,7 @@ const PhuketSection = () => {
         </motion.div>
 
         <motion.div className="phuketSection-right" variants={fadeInAnimation}>
-          <button>
+          <button onClick={() => navigate("/phuket")}>
             Know More <img src={rightArrow} alt="" />
           </button>
         </motion.div>

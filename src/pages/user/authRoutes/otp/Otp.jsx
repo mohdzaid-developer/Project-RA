@@ -28,17 +28,15 @@ const Otp = () => {
       const response = await userOtpVerify(otp);
       if (response?.data?.data?.message) {
         toast.success("Email verification successful!");
-        sessionStorage?.removeItem("otpInfo")
-        if(response?.data?.data?.changePassword){
-          navigate("/change-password")
-        }else{
-          navigate("/login")
+        sessionStorage?.removeItem("otpInfo");
+        if (response?.data?.data?.changePassword) {
+          navigate("/change-password");
+        } else {
+          navigate("/login");
         }
-
-      }else{
-        console.log(response)
-        if(response?.error?.data?.errors[0]?.message){
-          toast.error(response?.error?.data?.errors[0]?.message)
+      } else {
+        if (response?.error?.data?.errors[0]?.message) {
+          toast.error(response?.error?.data?.errors[0]?.message);
         }
       }
     } catch (err) {
@@ -51,7 +49,7 @@ const Otp = () => {
   };
 
   const handleResendOtp = async () => {
-    setOtp("")
+    setOtp("");
     // setOtpArray(new Array(6).fill(""));
     // setIsResendDisabled(true);
     // setCount(30);
@@ -59,7 +57,10 @@ const Otp = () => {
     if (response?.data?.data) {
       toast.success("Successfully Sent Otp!");
       setErrors({});
-      sessionStorage.setItem("otpInfo",JSON.stringify({...response?.data?.data}))
+      sessionStorage.setItem(
+        "otpInfo",
+        JSON.stringify({ ...response?.data?.data })
+      );
     }
     if (response && response.error) {
       toast.error(response.error.data.message);
@@ -88,9 +89,7 @@ const Otp = () => {
                   setOtp(e.target.value);
                 }}
               />
-              {errors?.otp && (
-                <p style={{ color: "red" }}>{errors?.otp}</p>
-              )}
+              {errors?.otp && <p style={{ color: "red" }}>{errors?.otp}</p>}
               <h3 onClick={handleResendOtp}>resend</h3>
             </div>
           </div>
