@@ -6,7 +6,7 @@ import AuthLeftSide from "@/components/auth/AuthLeftSide";
 const AuthRouteLayout = ({ children }) => {
   return (
     <div className="authRouteLayout">
-      <AuthLeftSide />
+      {/* <AuthLeftSide /> */}
       {children}
     </div>
   );

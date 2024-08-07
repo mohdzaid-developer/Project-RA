@@ -1,3 +1,4 @@
+import { getOtpAccessToken } from "@/utils/accessToken/accessToken";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const authUserApi = createApi({
@@ -8,13 +9,42 @@ export const authUserApi = createApi({
   }),
   endpoints: (builder) => ({
     userLogin: builder.mutation({
-      query: (login) => ({
-        url: "admin/auth/login",
+      query: (data) => ({
+        url: "user/auth/login",
         method: "POST",
-        body: login,
+        body: data,
+      }),
+    }),
+    userSignUp: builder.mutation({
+      query: (data) => ({
+        url: "user/auth/signup",
+        method: "POST",
+        body: data,
+      }),
+    }),
+    userOtpVerify: builder.mutation({
+      query: (data) => ({
+        url: "user/auth/otp",
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getOtpAccessToken()}`,
+        },
+        body: data,
+      }),
+    }),
+    userResendOtp: builder.mutation({
+      query: (data) => ({
+        url: "user/auth/otp-resend",
+        method: "POST",
+        body: data,
       }),
     }),
   }),
 });
 
-export const { useUserLoginMutation } = authUserApi;
+export const {
+  useUserLoginMutation,
+  useUserSignUpMutation,
+  useUserOtpVerifyMutation,
+  useUserResendOtpMutation,
+} = authUserApi;
