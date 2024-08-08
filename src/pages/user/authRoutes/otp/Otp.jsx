@@ -30,13 +30,13 @@ const Otp = () => {
         toast.success("Email verification successful!");
         sessionStorage?.removeItem("otpInfo")
         if(response?.data?.data?.changePassword){
+          sessionStorage.setItem("changePasswordInfo",JSON.stringify({...response?.data?.data}))
           navigate("/change-password")
         }else{
           navigate("/login")
         }
 
       }else{
-        console.log(response)
         if(response?.error?.data?.errors[0]?.message){
           toast.error(response?.error?.data?.errors[0]?.message)
         }

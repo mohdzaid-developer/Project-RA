@@ -2,14 +2,17 @@ import { lazy } from "react";
 
 //Auth Routes
 export const AdminLogin = lazy(() =>
-  import("../pages/admin/authRoutes/login/Login")
+  import("../pages/admin/authRoutes/signInUp/Authentication")
 );
-export const AdminForgetPassword = lazy(() =>
-  import("../pages/admin/authRoutes/forgetPassword/ForgetPassword")
+export const AdminSignUp = lazy(() =>
+  import("../pages/admin/authRoutes/signInUp/Authentication")
 );
-export const AdminChangePassword = lazy(() =>
-  import("../pages/admin/authRoutes/changePassword/ChangePassword")
-);
+// export const AdminForgetPassword = lazy(() =>
+//   import("../pages/admin/authRoutes/forgetPassword/ForgetPassword")
+// );
+// export const AdminChangePassword = lazy(() =>
+//   import("../pages/admin/authRoutes/changePassword/ChangePassword")
+// );
 export const AdminOtp = lazy(() => import("../pages/admin/authRoutes/otp/Otp"));
 
 //Protected Routes

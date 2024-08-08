@@ -1,3 +1,4 @@
+import { getAdminOtpAccessToken } from "@/utils/accessToken/accessToken";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const authAdminApi = createApi({
@@ -8,13 +9,44 @@ export const authAdminApi = createApi({
   }),
   endpoints: (builder) => ({
     adminLogin: builder.mutation({
-      query: (login) => ({
+      query: (data) => ({
         url: "admin/auth/login",
         method: "POST",
-        body: login,
+        body: data,
+      }),
+    }),
+    adminSignUp: builder.mutation({
+      query: (data) => ({
+        url: "admin/auth/signup",
+        method: "POST",
+        body: data,
+      }),
+    }),
+    adminOtpVerify: builder.mutation({
+      query: (data) => ({
+        url: "admin/auth/otp",
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getAdminOtpAccessToken()}`,
+        },
+        body: { otp: data },
+      }),
+    }),
+    adminResendOtp: builder.mutation({
+      query: (data) => ({
+        url: "admin/auth/otp-resend",
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getAdminOtpAccessToken("refresh")}`,
+        },
       }),
     }),
   }),
 });
 
-export const { useAdminLoginMutation } = authAdminApi;
+export const {
+  useAdminLoginMutation,
+  useAdminSignUpMutation,
+  useAdminOtpVerifyMutation,
+  useAdminResendOtpMutation,
+} = authAdminApi;
