@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { fadeInAnimation } from "@/utils/animations/animations";
 
 //Assets
-import rightArrow from "@/assets/colorRightArrow.svg";
+import rightArrow from "@/assets/colorRightArrow.webp";
 
 const BaliSection = () => {
   const navigate = useNavigate();

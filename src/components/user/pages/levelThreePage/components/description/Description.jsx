@@ -1,10 +1,10 @@
 import "./description.scss";
 
 //Assets
-import descImg1 from "@/assets/descImg1.svg";
-import descImg2 from "@/assets/descImg2.svg";
-import descImg3 from "@/assets/descImg3.svg";
-import descImg4 from "@/assets/descImg4.svg";
+import descImg1 from "@/assets/descImg1.webp";
+import descImg2 from "@/assets/descImg2.webp";
+import descImg3 from "@/assets/descImg3.webp";
+import descImg4 from "@/assets/descImg4.webp";
 
 const Description = () => {
   return (
