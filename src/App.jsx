@@ -34,14 +34,33 @@ import {
   UserTermsAndCondition,
   UserPayment,
   UserBali,
-  UserPhuket,
   UserBaliFriends,
   UserBaliFriendsStandard,
   UserBaliFriendsDelux,
   UserBaliFriendsPremium,
   UserBaliFamily,
+  UserBaliFamilyStandard,
+  UserBaliFamilyDelux,
+  UserBaliFamilyPremium,
   UserBaliCouple,
+  UserBaliCoupleStandard,
+  UserBaliCoupleDelux,
+  UserBaliCouplePremium,
   UserBaliCustom,
+  UserPhuket,
+  UserPhuketFriends,
+  UserPhuketFriendsStandard,
+  UserPhuketFriendsDelux,
+  UserPhuketFriendsPremium,
+  UserPhuketCouple,
+  UserPhuketCoupleStandard,
+  UserPhuketCoupleDelux,
+  UserPhuketCouplePremium,
+  UserPhuketFamily,
+  UserPhuketFamilyStandard,
+  UserPhuketFamilyDelux,
+  UserPhuketFamilyPremium,
+  UserPhuketCustom,
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
@@ -113,8 +132,32 @@ const userUnprotectedRoutesData = [
     element: <UserBaliFamily />,
   },
   {
+    path: "/bali/family/standard",
+    element: <UserBaliFamilyStandard />,
+  },
+  {
+    path: "/bali/family/delux",
+    element: <UserBaliFamilyDelux />,
+  },
+  {
+    path: "/bali/family/premium",
+    element: <UserBaliFamilyPremium />,
+  },
+  {
     path: "/bali/couple",
     element: <UserBaliCouple />,
+  },
+  {
+    path: "/bali/couple/standard",
+    element: <UserBaliCoupleStandard />,
+  },
+  {
+    path: "/bali/couple/delux",
+    element: <UserBaliCoupleDelux />,
+  },
+  {
+    path: "/bali/couple/premium",
+    element: <UserBaliCouplePremium />,
   },
   {
     path: "/bali/custom",
@@ -123,6 +166,58 @@ const userUnprotectedRoutesData = [
   {
     path: "/phuket",
     element: <UserPhuket />,
+  },
+  {
+    path: "/phuket/friends",
+    element: <UserPhuketFriends />,
+  },
+  {
+    path: "/phuket/friends/standard",
+    element: <UserPhuketFriendsStandard />,
+  },
+  {
+    path: "/phuket/friends/delux",
+    element: <UserPhuketFriendsDelux />,
+  },
+  {
+    path: "/phuket/friends/premium",
+    element: <UserPhuketFriendsPremium />,
+  },
+  {
+    path: "/phuket/family",
+    element: <UserPhuketFamily />,
+  },
+  {
+    path: "/phuket/family/standard",
+    element: <UserPhuketFamilyStandard />,
+  },
+  {
+    path: "/phuket/family/delux",
+    element: <UserPhuketFamilyDelux />,
+  },
+  {
+    path: "/phuket/family/premium",
+    element: <UserPhuketFamilyPremium />,
+  },
+  {
+    path: "/phuket/couple",
+    element: <UserPhuketCouple />,
+  },
+  {
+    path: "/phuket/couple/standard",
+    element: <UserPhuketCoupleStandard />,
+  },
+  {
+    path: "/phuket/couple/delux",
+    element: <UserPhuketCoupleDelux />,
+  },
+  {
+    path: "/phuket/couple/premium",
+    element: <UserPhuketCouplePremium />,
+  },
+  {
+    path: "/phuket/custom",
+    element: <UserPhuketCustom />,
   },
   {
     path: "/terms-and-conditions",

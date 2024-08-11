@@ -1,7 +1,7 @@
 import "./fallback.scss";
 
 const Fallback = () => {
-  return <div>Page Not Found!</div>;
+  return <div style={{ color: "white" }}>Page Not Found!</div>;
 };
 
 export default Fallback;

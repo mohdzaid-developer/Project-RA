@@ -29,7 +29,6 @@ const SignUp = () => {
     }
   };
 
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -54,7 +53,6 @@ const SignUp = () => {
       }
     } catch (err) {
       const newErrors = {};
-      console.log(err);
       if (err) {
         err.inner.forEach((err) => {
           newErrors[err.path] = err.message;
@@ -126,7 +124,8 @@ const SignUp = () => {
         Sign Up
       </button>
       <div className="none">
-        already have an account <span onClick={()=>navigate("/register")}>Sign in</span>
+        already have an account{" "}
+        <span onClick={() => navigate("/register")}>Sign in</span>
       </div>
     </div>
   );

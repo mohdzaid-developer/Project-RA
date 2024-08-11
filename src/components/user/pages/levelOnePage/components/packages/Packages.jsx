@@ -52,7 +52,6 @@ const Packages = ({ data }) => {
         });
       });
 
-      // Control the visibility of the fixed center div
       ScrollTrigger.create({
         trigger: ".packages",
         start: "top top",
@@ -63,7 +62,6 @@ const Packages = ({ data }) => {
         onLeaveBack: () => setIsVisible(false),
       });
 
-      // Make the fixed container disappear when the last section is 50% out of view
       ScrollTrigger.create({
         trigger: details[details.length - 1],
         start: "top 50%",

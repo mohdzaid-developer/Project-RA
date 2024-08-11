@@ -51,7 +51,7 @@ const Otp = () => {
   };
 
   const handleResendOtp = async () => {
-    setOtp("")
+    setOtp("");
     // setOtpArray(new Array(6).fill(""));
     // setIsResendDisabled(true);
     // setCount(30);
@@ -59,7 +59,10 @@ const Otp = () => {
     if (response?.data?.data) {
       toast.success("Successfully Sent Otp!");
       setErrors({});
-      sessionStorage.setItem("otpInfo",JSON.stringify({...response?.data?.data}))
+      sessionStorage.setItem(
+        "otpInfo",
+        JSON.stringify({ ...response?.data?.data })
+      );
     }
     if (response && response.error) {
       toast.error(response.error.data.message);
@@ -88,9 +91,7 @@ const Otp = () => {
                   setOtp(e.target.value);
                 }}
               />
-              {errors?.otp && (
-                <p style={{ color: "red" }}>{errors?.otp}</p>
-              )}
+              {errors?.otp && <p style={{ color: "red" }}>{errors?.otp}</p>}
               <h3 onClick={handleResendOtp}>resend</h3>
             </div>
           </div>
