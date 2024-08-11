@@ -54,6 +54,7 @@ const SignUp = () => {
     } catch (err) {
       const newErrors = {};
       if (err) {
+        console.log(err)
         err.inner.forEach((err) => {
           newErrors[err.path] = err.message;
         });
