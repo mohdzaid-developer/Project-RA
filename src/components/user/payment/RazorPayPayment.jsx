@@ -12,7 +12,7 @@ const RazorpayPayment = () => {
 
   let location = useLocation();
   useEffect(()=>{
-    if(location?.pathname=="/bali/couple/standard"){
+    if(location?.pathname){
       let separatedUrl=location?.pathname?.split("/")
       if(separatedUrl){
         setDetails({
@@ -33,7 +33,7 @@ const RazorpayPayment = () => {
   };
   useEffect(() => {
     const script = document.createElement("script");
-    script.src = "https://checkout.razorpay.com/v1/checkout.js";
+    script.src = `${import.meta.env.VITE_API_RAZOR_PAY}`;
     script.async = true;
     document.body.appendChild(script);
 
@@ -54,7 +54,7 @@ const RazorpayPayment = () => {
     try {
       await createOrderSchema.validate(details, { abortEarly: false });
       const response = await fetch(
-        "http://localhost:5000/api/v1/payment/create-order",
+        `${import.meta.env.VITE_API_BASE_URL}payment/create-order`,
         {
           method: "POST",
           headers: {
@@ -91,7 +91,7 @@ const RazorpayPayment = () => {
         callback_url: "http://localhost:3000/payment-success",
         handler: function (response) {
           console.log(response);
-          fetch("http://localhost:5000/api/v1/payment/verify-payment", {
+          fetch(`${import.meta.env.VITE_API_BASE_URL}payment/verify-payment`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
