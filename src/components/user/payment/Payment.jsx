@@ -145,48 +145,55 @@ const Payment = () => {
       <h2>Book Your Slot</h2>
       <form className="payment-form">
         <div className="input-fields">
-          <div className="input">
-            <label htmlFor="">Number of Adults</label>
-            <input
-              type="phone"
-              name="no_of_adults"
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          {(location.pathname === "/bali/family/standard" ||
-            location.pathname === "/bali/family/delux" ||
-            location.pathname === "/bali/family/premium" ||
-            location.pathname === "/bali/family/custom") && (
+          <div className="container">
             <div className="input">
-              <label htmlFor="">Number of Children</label>
+              <label htmlFor="">Start date :</label>
               <input
-                type="phone"
-                name="no_of_children"
+                type="date"
+                name="start_date"
                 onChange={handleChange}
                 required
               />
             </div>
-          )}
-
-          <div className="input">
-            <label htmlFor="">Start date</label>
-            <input
-              type="date"
-              name="start_date"
-              onChange={handleChange}
-              required
-            />
+            <div className="input">
+              <label htmlFor="">Number of Adults :</label>
+              <input
+                type="phone"
+                name="no_of_adults"
+                onChange={handleChange}
+                required
+              />
+            </div>
           </div>
-          <div className="input">
-            <label htmlFor="">End date</label>
-            <input
-              type="date"
-              name="end_date"
-              onChange={handleChange}
-              required
-            />
+          <div className="container">
+            <div className="input">
+              <label htmlFor="">End date :</label>
+              <input
+                type="date"
+                name="end_date"
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            {(location.pathname === "/bali/family/standard" ||
+              location.pathname === "/bali/family/delux" ||
+              location.pathname === "/bali/family/premium" ||
+              location.pathname === "/bali/family/custom" ||
+              location.pathname === "/phuket/family/standard" ||
+              location.pathname === "/phuket/family/delux" ||
+              location.pathname === "/phuket/family/premium" ||
+              location.pathname === "/phuket/family/custom") && (
+              <div className="input">
+                <label htmlFor="">Number of Children :</label>
+                <input
+                  type="phone"
+                  name="no_of_children"
+                  onChange={handleChange}
+                  required
+                />
+              </div>
+            )}
           </div>
         </div>
         <button onClick={handlePayment}>
