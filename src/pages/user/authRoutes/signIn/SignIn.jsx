@@ -7,11 +7,13 @@ import { toast } from "react-hot-toast";
 //Routing
 import { Link, useNavigate } from "react-router-dom";
 
+//Validation
+import { userLoginValidationSchema } from "@/utils/validation/validations";
+
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Redux
-import { userLoginValidationSchema } from "@/components/user/validation/validations";
 import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
 
 const SignIn = () => {

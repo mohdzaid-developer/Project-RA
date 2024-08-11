@@ -1,10 +1,20 @@
 import { useState } from "react";
-import "./ForgetPassword.css";
-// import "../signIn/SignIn.css";
-import { Link, Navigate, useNavigate } from "react-router-dom";
-import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
-import { forgetPasswordValidationSchema } from "@/components/user/validation/validations";
+import "./forgetPassword.scss";
+
+//Alert
 import { toast } from "react-hot-toast";
+
+//Routing
+import { Navigate, useNavigate } from "react-router-dom";
+
+//Validation
+import { forgetPasswordValidationSchema } from "@/utils/validation/validations";
+
+//Assets
+import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Redux
+import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
 
 const ForgetPassword = () => {
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
@@ -60,33 +70,28 @@ const ForgetPassword = () => {
     }
   };
   return (
-    <div className="forgetpassword">
-      <div className="middleSlide">
-        <div className="auth">
-          <div className="auth-heading">
-            <h2>Forget Password</h2>
-          </div>
-
-          <div className="authSlides">
-            <div className="authSlide">
-              <input
-                type="text"
-                name="email"
-                id=""
-                placeholder="Enter Email  "
-                onChange={handleChange}
-              />
-              {errors?.email && <p style={{ color: "red" }}>{errors?.email}</p>}
-              <Link to="/login">
-                {" "}
-                <h3>go to signIn</h3>
-              </Link>
-            </div>
+    <div className="forgetPassword-container">
+      <div className="content">
+        <h2>Forget Password</h2>
+      </div>
+      <div className="form-container">
+        <div className="form-container-right">
+          <div>
+            <label htmlFor="">Email : </label>
+            <input type="text" name="email" onChange={handleChange} />
+            {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit
+            Submit <img src={buttonArrowImg} alt="" />
           </button>
+
+          <div className="login">
+            <p>
+              Want to go Login?{" "}
+              <span onClick={() => navigate("/login")}>Login</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

@@ -1,21 +1,21 @@
 import { useState } from "react";
-import "../../../user/authRoutes/forgetPassword/ForgetPassword.css";
+// import "../../../user/authRoutes/forgetPassword/ForgetPassword.css";
 import "../signInUp/components/signIn/SignIn.css";
 import { useNavigate } from "react-router-dom";
 import {
   useAdminOtpVerifyMutation,
   useAdminResendOtpMutation,
 } from "@/redux/slice/admin/api/authAdminApiSlice";
-import { otpValidationSchema } from "@/components/user/validation/validations";
+import { otpValidationSchema } from "@/utils/validation/validations";
 import { toast } from "react-hot-toast";
 
 const Otp = () => {
   const navigate = useNavigate();
 
   const [adminOtpVerify, { isLoading: otpVerifyLoading }] =
-  useAdminOtpVerifyMutation();
+    useAdminOtpVerifyMutation();
   const [adminResendOtp, { isLoading: resendOtpLoading }] =
-  useAdminResendOtpMutation();
+    useAdminResendOtpMutation();
 
   const [errors, setErrors] = useState({});
   const [otp, setOtp] = useState("");
@@ -25,18 +25,21 @@ const Otp = () => {
       await otpValidationSchema.validate({ otp: otp }, { abortEarly: false });
       const response = await adminOtpVerify(otp);
       if (response?.data?.data) {
-        if(response?.data?.data?.isLogin==true){
-          sessionStorage?.removeItem("adminOtpInfo")
-          sessionStorage.setItem("admin",JSON.stringify({...response?.data?.data}))
-          navigate("/admin/dashboard")
-        }else{
+        if (response?.data?.data?.isLogin == true) {
+          sessionStorage?.removeItem("adminOtpInfo");
+          sessionStorage.setItem(
+            "admin",
+            JSON.stringify({ ...response?.data?.data })
+          );
+          navigate("/admin/dashboard");
+        } else {
           toast.success("Email verification successful!");
-          sessionStorage?.removeItem("adminOtpInfo")
-          navigate("/admin/login")
+          sessionStorage?.removeItem("adminOtpInfo");
+          navigate("/admin/login");
         }
-      }else{
-        if(response?.error?.data?.errors[0]?.message){
-          toast.error(response?.error?.data?.errors[0]?.message)
+      } else {
+        if (response?.error?.data?.errors[0]?.message) {
+          toast.error(response?.error?.data?.errors[0]?.message);
         }
       }
     } catch (err) {
@@ -49,7 +52,7 @@ const Otp = () => {
   };
 
   const handleResendOtp = async () => {
-    setOtp("")
+    setOtp("");
     // setOtpArray(new Array(6).fill(""));
     // setIsResendDisabled(true);
     // setCount(30);
@@ -57,7 +60,10 @@ const Otp = () => {
     if (response?.data?.data) {
       toast.success("Successfully Sent Otp!");
       setErrors({});
-      sessionStorage.setItem("adminOtpInfo",JSON.stringify({...response?.data?.data}))
+      sessionStorage.setItem(
+        "adminOtpInfo",
+        JSON.stringify({ ...response?.data?.data })
+      );
     }
     if (response && response.error) {
       toast.error(response.error.data.message);
@@ -86,9 +92,7 @@ const Otp = () => {
                   setOtp(e.target.value);
                 }}
               />
-              {errors?.otp && (
-                <p style={{ color: "red" }}>{errors?.otp}</p>
-              )}
+              {errors?.otp && <p style={{ color: "red" }}>{errors?.otp}</p>}
               <h3 onClick={handleResendOtp}>resend</h3>
             </div>
           </div>
