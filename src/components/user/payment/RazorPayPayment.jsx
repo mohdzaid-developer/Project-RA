@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { createOrderSchema } from "../validation/validations";
-import {toast} from "react-hot-toast";
+import { createOrderSchema } from "@/utils/validation/validations";
+import { toast } from "react-hot-toast";
 
 const RazorpayPayment = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [errors, setErrors] = useState({});
   const [details, setDetails] = useState(null);
   const [normalAmount, setNormalAmount] = useState(null);
   const [totalAmount, setTotalAmount] = useState(null);
 
   let location = useLocation();
-  useEffect(()=>{
-    if(location?.pathname){
-      let separatedUrl=location?.pathname?.split("/")
-      if(separatedUrl){
+  useEffect(() => {
+    if (location?.pathname) {
+      let separatedUrl = location?.pathname?.split("/");
+      if (separatedUrl) {
         setDetails({
           ...details,
-          destination:separatedUrl[1],
-          package:separatedUrl[2],
-          plan:separatedUrl[3]
-        })
+          destination: separatedUrl[1],
+          package: separatedUrl[2],
+          plan: separatedUrl[3],
+        });
       }
     }
-  },[location])
+  }, [location]);
   const handleOnChange = (e) => {
     const { name, value } = e.target;
     setDetails({
@@ -42,14 +42,14 @@ const RazorpayPayment = () => {
     };
   }, []);
 
-  useEffect(()=>{
-    console.log(errors)
-  },[errors])
+  useEffect(() => {
+    console.log(errors);
+  }, [errors]);
 
   const handlePayment = async () => {
-    let userData=JSON.parse(sessionStorage.getItem("user"))
-    if(!userData){
-      navigate("/logon")
+    let userData = JSON.parse(sessionStorage.getItem("user"));
+    if (!userData) {
+      navigate("/logon");
     }
     try {
       await createOrderSchema.validate(details, { abortEarly: false });
@@ -59,7 +59,7 @@ const RazorpayPayment = () => {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            "Authorization": `Bearer ${userData?.accessToken}`,
+            Authorization: `Bearer ${userData?.accessToken}`,
           },
           body: JSON.stringify({
             amount: 2000,
@@ -95,7 +95,7 @@ const RazorpayPayment = () => {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
-              "Authorization": `Bearer ${userData?.accessToken}`,
+              Authorization: `Bearer ${userData?.accessToken}`,
             },
             body: JSON.stringify({
               orderId: response.razorpay_order_id,
@@ -127,7 +127,7 @@ const RazorpayPayment = () => {
       rzp.open();
     } catch (err) {
       if (err) {
-        console.log(err)
+        console.log(err);
         const newErrors = {};
         err.inner.forEach((error) => {
           newErrors[error.path] = error.message;

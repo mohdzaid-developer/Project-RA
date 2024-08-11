@@ -1,18 +1,26 @@
 import { useState } from "react";
-import "../forgetPassword/ForgetPassword.css";
-// import "../signIn/SignIn.css";
-import { useDispatch, useSelector } from "react-redux";
+import "./otp.scss";
+
+//Alert
+import { toast } from "react-hot-toast";
+
+//Routing
 import { useNavigate } from "react-router-dom";
+
+//Assets
+import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Validation
+import { otpValidationSchema } from "@/utils/validation/validations";
+
+//Redux
 import {
   useUserOtpVerifyMutation,
   useUserResendOtpMutation,
 } from "@/redux/slice/user/api/authUserApiSlice";
-import { otpValidationSchema } from "@/components/user/validation/validations";
-import { toast } from "react-hot-toast";
 
 const Otp = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
 
   const [userOtpVerify, { isLoading: otpVerifyLoading }] =
     useUserOtpVerifyMutation();
@@ -54,9 +62,6 @@ const Otp = () => {
 
   const handleResendOtp = async () => {
     setOtp("");
-    // setOtpArray(new Array(6).fill(""));
-    // setIsResendDisabled(true);
-    // setCount(30);
     const response = await userResendOtp();
     if (response?.data?.data) {
       toast.success("Successfully Sent Otp!");
@@ -70,37 +75,42 @@ const Otp = () => {
       toast.error(response.error.data.message);
       setErrors({});
     }
-    // setTimeout(() => {
-    //   setIsResendDisabled(false);
-    // }, 30000);
   };
-  return (
-    <div className="forgetpassword">
-      <div className="middleSlide">
-        <div className="auth">
-          <div className="auth-heading">
-            <h2>Verify Otp</h2>
-          </div>
 
-          <div className="authSlides">
-            <div className="authSlide">
-              <input
-                type="text"
-                name=""
-                id=""
-                placeholder="Enter otp"
-                onChange={(e) => {
-                  setOtp(e.target.value);
-                }}
-              />
-              {errors?.otp && <p style={{ color: "red" }}>{errors?.otp}</p>}
-              <h3 onClick={handleResendOtp}>resend</h3>
+  return (
+    <div className="otp-container">
+      <div className="content">
+        <h2>Verify Otp</h2>
+      </div>
+      <div className="form-container">
+        <div className="form-container-right">
+          <div>
+            <label htmlFor="">Otp : </label>
+            <input
+              type="text"
+              onChange={(e) => {
+                setOtp(e.target.value);
+              }}
+            />
+            {errors?.otp && <p className="error-text">{errors?.otp}</p>}
+
+            <div className="resend">
+              <p onClick={handleResendOtp}>Resend Otp</p>
             </div>
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit
+            Submit <img src={buttonArrowImg} alt="" />
           </button>
+
+          <div className="forget-password">
+            <p>
+              Want to change Email?{" "}
+              <span onClick={() => navigate("/forget-password")}>
+                Forget Password
+              </span>
+            </p>
+          </div>
         </div>
       </div>
     </div>

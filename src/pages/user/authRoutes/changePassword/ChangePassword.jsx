@@ -1,10 +1,20 @@
-import React, { useEffect, useState } from "react";
-import "./ChangePassword.css";
-// import "../signIn/SignIn.css";
-import { Link, useNavigate } from "react-router-dom";
-import { changePasswordValidationSchema } from "@/components/user/validation/validations";
-import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useEffect, useState } from "react";
+import "./changePassword.scss";
+
+//Routing
+import { useNavigate } from "react-router-dom";
+
+//Alert
 import { toast } from "react-hot-toast";
+
+//Assets
+import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Validation
+import { changePasswordValidationSchema } from "@/utils/validation/validations";
+
+//Redux
+import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
 
 const ChangePassword = () => {
   const navigate = useNavigate();
@@ -83,48 +93,36 @@ const ChangePassword = () => {
       navigate("/login");
     }
   }, []);
+
   return (
-    <div className="forgetpassword">
-      <div className="middleSlide">
-        <div className="auth">
-          <div className="auth-heading">
-            <h2>Change Password</h2>
+    <div className="changePassword-container">
+      <div className="content">
+        <h2>Change Password</h2>
+      </div>
+      <div className="form-container">
+        <div className="form-container-right">
+          <div>
+            <label htmlFor="">Password : </label>
+            <input type="password" name="password" onChange={handleChange} />
+            {errors?.password && (
+              <p className="error-text">{errors?.password}</p>
+            )}
           </div>
 
-          <div className="authSlides">
-            <div className="authSlide">
-              <input
-                type="password"
-                name="password"
-                id=""
-                placeholder="Enter password  "
-                onChange={handleChange}
-              />
-              {errors?.password && (
-                <p style={{ color: "red" }}>{errors?.password}</p>
-              )}
-            </div>
-
-            <div className="authSlide">
-              <input
-                type="password"
-                name="confirmPassword"
-                id=""
-                placeholder="Enter password again  "
-                onChange={handleChange}
-              />
-              {errors?.confirmPassword && (
-                <p style={{ color: "red" }}>{errors?.confirmPassword}</p>
-              )}
-              <Link to="/login">
-                {" "}
-                <h3>go back</h3>
-              </Link>
-            </div>
+          <div>
+            <label htmlFor="">Confirm Password : </label>
+            <input
+              type="password"
+              name="confirmPassword"
+              onChange={handleChange}
+            />
+            {errors?.confirmPassword && (
+              <p className="error-text">{errors?.confirmPassword}</p>
+            )}
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit
+            Submit <img src={buttonArrowImg} alt="" />
           </button>
         </div>
       </div>

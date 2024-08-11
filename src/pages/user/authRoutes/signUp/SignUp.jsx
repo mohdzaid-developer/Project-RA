@@ -7,12 +7,14 @@ import { useNavigate, Navigate } from "react-router-dom";
 //Alert
 import { toast } from "react-hot-toast";
 
+//Validation
+import { userSignUpSchema } from "@/utils/validation/validations";
+
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Redux
 import { useUserSignUpMutation } from "@/redux/slice/user/api/authUserApiSlice";
-import { userSignUpSchema } from "@/components/user/validation/validations";
 
 const SignUp = () => {
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
@@ -130,7 +132,7 @@ const SignUp = () => {
             Submit <img src={buttonArrowImg} alt="" />
           </button>
 
-          <div className="signUp">
+          <div className="signIn">
             <p>
               Already have an account!{" "}
               <span onClick={() => navigate("/login")}> login</span>
