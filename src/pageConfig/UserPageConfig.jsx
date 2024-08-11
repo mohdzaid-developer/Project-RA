@@ -2,10 +2,10 @@ import { lazy } from "react";
 
 //Auth Routes
 export const UserLogin = lazy(() =>
-  import("@/pages/user/authRoutes/signInUp/Authentication")
+  import("@/pages/user/authRoutes/signIn/SignIn")
 );
 export const UserSignup = lazy(() =>
-  import("@/pages/user/authRoutes/signInUp/Authentication")
+  import("@/pages/user/authRoutes/signUp/SignUp")
 );
 export const UserChangePassword = lazy(() =>
   import("@/pages/user/authRoutes/changePassword/ChangePassword")
@@ -139,15 +139,10 @@ export const UserTermsAndCondition = lazy(() =>
 );
 
 //Protected Routes
-export const UserViewProfile = lazy(() =>
-  import("@/pages/user/protectedRoutes/profile/viewProfile/ViewProfile")
+export const UserProfile = lazy(() =>
+  import("@/pages/user/protectedRoutes/profile/Profile")
 );
-export const UserEditProfile = lazy(() =>
-  import("@/pages/user/protectedRoutes/profile/editProfile/EditProfile")
-);
-export const UserPlanTrip = lazy(() =>
-  import("@/pages/user/protectedRoutes/trip/planTrip/PlanTrip")
-);
+
 export const UserMyTrips = lazy(() =>
   import("@/pages/user/protectedRoutes/trip/myTrips/MyTrips")
 );

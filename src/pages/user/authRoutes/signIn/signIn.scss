@@ -1,0 +1,116 @@
+@import "@/index.scss";
+
+.signIn-container {
+  width: 100%;
+  height: 100vh;
+  background-color: $light-orange;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 60px;
+      color: $white;
+    }
+    img {
+      height: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  .form-container {
+    width: 50%;
+    height: 70vh;
+    border-radius: 10px;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    .form-container-right {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+
+      div {
+        width: 100%;
+
+        label {
+          color: $text-orange;
+        }
+        input {
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid $white;
+          color: $white;
+          padding: 5px 0;
+          padding-top: 10px;
+          font-size: 16px;
+
+          &::placeholder {
+            color: $text-orange;
+          }
+        }
+
+        .forgetPassword {
+          margin-top: 20px;
+          text-align: right;
+          a {
+            color: $dark-orange;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .authButton {
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 18px;
+        font-size: 22px;
+        color: $white;
+        border: 1px solid $white;
+        border-radius: 16px;
+        padding: 20px 18px;
+
+        img {
+          height: 28px;
+        }
+      }
+    }
+  }
+
+  .signUp {
+    p {
+      text-align: center;
+      font-size: 16px;
+      span {
+        color: $dark-orange;
+        cursor: pointer;
+        font-weight: 600;
+      }
+    }
+  }
+}

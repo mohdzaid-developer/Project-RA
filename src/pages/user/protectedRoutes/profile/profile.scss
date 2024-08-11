@@ -1,0 +1,88 @@
+@import "@/index.scss";
+
+.profile {
+  margin-bottom: 100px;
+  width: 100%;
+  height: 100vh;
+  background-color: $light-orange;
+
+  padding: 120px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 60px;
+      color: $white;
+    }
+    img {
+      height: 30px;
+      cursor: pointer;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  .form-container {
+    border-radius: 10px;
+    padding: 100px 50px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    .form-container-left {
+      width: 40%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        width: 200px;
+        height: 200px;
+      }
+    }
+
+    .form-container-right {
+      width: 60%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 50px;
+
+      div {
+        width: 100%;
+
+        label {
+          color: $text-orange;
+        }
+        input {
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid $white;
+          color: $white;
+          padding: 15px 10px;
+          &::placeholder {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}

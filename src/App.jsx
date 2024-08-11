@@ -17,6 +17,7 @@ import AdminAccountProtectedRoutes from "./protectedRoutes/admin/AdminAccountPro
 
 //Layouts
 import UserRouteLayout from "./layouts/user/UserRouteLayout";
+import AuthRouteLayout from "./layouts/auth/AuthRouteLayout";
 import AdminRouteLayout from "./layouts/admin/AdminRouteLayout";
 
 //Pages
@@ -30,9 +31,10 @@ import {
   UserChangePassword,
   UserForgetPassword,
   UserOtp,
+  UserProfile,
+  UserPayment,
   UserHome,
   UserTermsAndCondition,
-  UserPayment,
   UserBali,
   UserBaliFriends,
   UserBaliFriendsStandard,
@@ -82,7 +84,7 @@ import {
 // Routes Data
 const userAuthRoutesData = [
   {
-    path: "/register",
+    path: "/signup",
     element: <UserSignup />,
   },
   {
@@ -226,6 +228,10 @@ const userUnprotectedRoutesData = [
 ];
 const userProtectedRoutesData = [
   {
+    path: "/profile",
+    element: <UserProfile />,
+  },
+  {
     path: "/payment",
     element: <UserPayment />,
   },
@@ -311,7 +317,7 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <UserAuthProtectedRoutes>
-                  {route.element}
+                  <AuthRouteLayout> {route.element}</AuthRouteLayout>
                 </UserAuthProtectedRoutes>
               </Suspense>
             }

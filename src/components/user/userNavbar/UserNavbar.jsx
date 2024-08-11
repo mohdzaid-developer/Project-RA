@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./userNavbar.scss";
 
 //Routing
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Assets
 import logo from "@/assets/logo.webp";
@@ -13,7 +13,17 @@ import twitterImg from "@/assets/instagramImg.webp";
 import instagramImg from "@/assets/twitterImg.webp";
 import linkendInImg from "@/assets/linkedInImg.webp";
 
+//Redux
+import { useDispatch, useSelector } from "react-redux";
+import { setLogout } from "@/redux/slice/user/state/authUserSlice";
+
 const UserNavbar = () => {
+  const user = sessionStorage.getItem("user");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { isAuthenticated } = useSelector((state) => state.authUser);
+
   const navDataFirst = [
     {
       name: "Home",
@@ -32,7 +42,7 @@ const UserNavbar = () => {
   const navDataSecond = [
     {
       name: "Profile",
-      path: "/",
+      path: "/profile",
     },
     {
       name: "Trips",
@@ -43,6 +53,17 @@ const UserNavbar = () => {
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavClick = () => {
+    setNavOpen(!navOpen);
+  };
+  const handleLogin = () => {
+    navigate("/login");
+    setNavOpen(!navOpen);
+  };
+
+  const handleLogout = () => {
+    dispatch(setLogout());
+    sessionStorage.removeItem("user");
+    navigate("/login");
     setNavOpen(!navOpen);
   };
 
@@ -92,10 +113,17 @@ const UserNavbar = () => {
           </div>
 
           <div className="auth">
-            <button>
-              <img src={logout} alt="" />
-              Logout
-            </button>
+            {isAuthenticated && user ? (
+              <button onClick={handleLogout}>
+                <img src={logout} alt="" />
+                Logout
+              </button>
+            ) : (
+              <button onClick={handleLogin}>
+                <img src={login} alt="" />
+                Login
+              </button>
+            )}
           </div>
           <div className="socials">
             <a href="#">

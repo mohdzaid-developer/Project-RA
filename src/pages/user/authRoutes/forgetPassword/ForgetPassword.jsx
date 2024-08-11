@@ -1,10 +1,10 @@
-import {useState} from "react";
+import { useState } from "react";
 import "./ForgetPassword.css";
-import "../../authRoutes/signInUp/components/signIn/SignIn.css";
+import "../signIn/SignIn.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
 import { forgetPasswordValidationSchema } from "@/components/user/validation/validations";
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 const ForgetPassword = () => {
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
@@ -42,11 +42,8 @@ const ForgetPassword = () => {
         setUser({
           email: "",
         });
-        navigate("/otp")
-        sessionStorage.setItem(
-          "otpInfo",
-          JSON.stringify(response.data.data)
-        );
+        navigate("/otp");
+        sessionStorage.setItem("otpInfo", JSON.stringify(response.data.data));
       }
       if (response && response.error) {
         toast.error(response.error.data.message);

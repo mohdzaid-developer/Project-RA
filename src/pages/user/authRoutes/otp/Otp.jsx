@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../forgetPassword/ForgetPassword.css";
-import "../signInUp/components/signIn/SignIn.css";
+import "../signIn/SignIn.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import {
@@ -28,17 +28,19 @@ const Otp = () => {
       const response = await userOtpVerify(otp);
       if (response?.data?.data?.message) {
         toast.success("Email verification successful!");
-        sessionStorage?.removeItem("otpInfo")
-        if(response?.data?.data?.changePassword){
-          sessionStorage.setItem("changePasswordInfo",JSON.stringify({...response?.data?.data}))
-          navigate("/change-password")
-        }else{
-          navigate("/login")
+        sessionStorage?.removeItem("otpInfo");
+        if (response?.data?.data?.changePassword) {
+          sessionStorage.setItem(
+            "changePasswordInfo",
+            JSON.stringify({ ...response?.data?.data })
+          );
+          navigate("/change-password");
+        } else {
+          navigate("/login");
         }
-
-      }else{
-        if(response?.error?.data?.errors[0]?.message){
-          toast.error(response?.error?.data?.errors[0]?.message)
+      } else {
+        if (response?.error?.data?.errors[0]?.message) {
+          toast.error(response?.error?.data?.errors[0]?.message);
         }
       }
     } catch (err) {

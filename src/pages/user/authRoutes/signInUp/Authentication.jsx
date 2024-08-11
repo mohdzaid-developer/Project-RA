@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./Authentication.scss";
 
 //components
-import SignIn from "./components/signIn/SignIn";
-import SignUp from "./components/signUp/SignUp";
+import SignIn from "../signIn/SignIn";
+import SignUp from "../signUp/SignUp";
 import { useLocation, Navigate, useNavigate } from "react-router-dom";
 
 const Authentication = () => {
@@ -20,23 +20,27 @@ const Authentication = () => {
   let b = "create new account";
 
   const changeSlider = () => {
-    if (location?.pathname=="/login") {
-      navigate("/register")
+    if (location?.pathname == "/login") {
+      navigate("/register");
     } else {
-      navigate("/login")
+      navigate("/login");
     }
   };
 
   return (
     <div className="authContainer">
       <div className="authMiddle">
-        <div className={`signUp ${location?.pathname=="/login" ? "in" : "out"}`}>
+        <div
+          className={`signUp ${location?.pathname == "/login" ? "in" : "out"}`}
+        >
           <SignIn
             setSliderPosition={setSliderPosition}
             sliderPosition={sliderPosition}
           />
         </div>
-        <div className={`signUp ${location?.pathname=="/login" ? "out" : "in"}`}>
+        <div
+          className={`signUp ${location?.pathname == "/login" ? "out" : "in"}`}
+        >
           <SignUp
             setSliderPosition={setSliderPosition}
             sliderPosition={sliderPosition}
@@ -46,14 +50,14 @@ const Authentication = () => {
         <div
           className="authsilder"
           style={
-            location?.pathname!="/login"
+            location?.pathname != "/login"
               ? { left: "0", transition: "2s" }
               : { right: "0", transition: "2s !important" }
           }
         >
-          <p>{location?.pathname=="/login" ? b : a}</p>
+          <p>{location?.pathname == "/login" ? b : a}</p>
           <button onClick={changeSlider}>
-            {location?.pathname=="/login" ? "SignUp" : "SignIn"}
+            {location?.pathname == "/login" ? "SignUp" : "SignIn"}
           </button>
         </div>
       </div>

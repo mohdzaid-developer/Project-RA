@@ -7,7 +7,7 @@ export const UserAuthProtectedRoutes = ({ children }) => {
   if (!isAuthenticated) {
     return children;
   }
-  return <Navigate to="/dashboard" />;
+  return <Navigate to="/profile" />;
 };
 
 export default UserAuthProtectedRoutes;

@@ -55,6 +55,7 @@ const Footer = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
       <div className="links">
         <div className="links-left">
           <Link to="/">Privacy Policy</Link>
