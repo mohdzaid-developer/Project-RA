@@ -60,3 +60,34 @@ export const changePasswordValidationSchema = Yup.object({
     .required("Confirm password is required!"),
 });
 
+
+export const createOrderSchema = Yup.object({
+  destination: Yup.string().required('Destination is required.'),
+  package: Yup.string().required('Package is required.'),
+  plan: Yup.string().required('Plan is required.'),
+  start_date: Yup
+    .date()
+    .required('Start date is required.')
+    .typeError('Start date must be a valid date.')
+    .min(new Date(), 'Start date must be in the future.'),
+  end_date: Yup
+    .date()
+    .required('End date is required.')
+    .typeError('End date must be a valid date.')
+    .min(Yup.ref('start_date'), 'End date must be after start date.'),
+  no_of_adults: Yup
+    .number()
+    .required('Number of adults is required.')
+    .integer('Number of adults must be an integer.')
+    .positive('Number of adults must be greater than zero.')
+    .min(1, 'There must be at least 1 adult.'),
+  no_of_children: Yup
+    .number()
+    .required('Number of children is required.')
+    .integer('Number of children must be an integer.')
+    .min(0, 'Number of children cannot be negative.'),
+  // totalAmount: Yup
+  //   .number()
+  //   .required('Total amount is required.')
+  //   .positive('Total amount must be greater than zero.')
+});
