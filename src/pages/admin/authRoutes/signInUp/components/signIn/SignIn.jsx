@@ -1,18 +1,17 @@
-import { userLoginValidationSchema } from "@/components/user/validation/validations";
-import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
-import { useState } from "react";
-import { toast } from "react-hot-toast";
-import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 import "./SignIn.css";
+import { useAdminLoginMutation } from "@/redux/slice/admin/api/authAdminApiSlice";
+import { toast } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { adminLoginValidationSchema } from "@/components/admin/validation/validations";
 
 const SignIn = () => {
-  const [userLogin] = useUserLoginMutation();
+  const [adminLogin] = useAdminLoginMutation();
   const navigate = useNavigate();
 
   // collecting data
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
-    password: "",
     email: "",
   });
   const onChangeHandler = (e) => {
@@ -22,13 +21,12 @@ const SignIn = () => {
 
   const handleSignIn = async (e) => {
     try {
-      await userLoginValidationSchema.validate(data, { abortEarly: false });
-      const response = await userLogin(data);
+      await adminLoginValidationSchema.validate(data, { abortEarly: false });
+      const response = await adminLogin(data);
       if (response?.data?.data) {
-        sessionStorage.setItem("user", JSON.stringify(response?.data?.data));
-        navigate("/dashboard");
+        sessionStorage.setItem("adminOtpInfo", JSON.stringify(response?.data?.data));
+        navigate("/admin/otp");
         setData({
-          password: "",
           email: "",
         });
       }
@@ -66,23 +64,6 @@ const SignIn = () => {
           />
           {errors?.email && <p style={{ color: "red" }}>{errors?.email}</p>}
         </div>
-
-        <div className="authSlide">
-          <input
-            type="password"
-            name="password"
-            id=""
-            placeholder="Enter your Password  "
-            onChange={onChangeHandler}
-          />
-          {errors?.password && (
-            <p style={{ color: "red" }}>{errors?.password}</p>
-          )}
-          <Link to="/forget-password">
-            {" "}
-            <h3>Forget Password</h3>
-          </Link>
-        </div>
       </div>
 
       <button className="authButton" onClick={handleSignIn}>
@@ -90,7 +71,7 @@ const SignIn = () => {
       </button>
 
       <div className="none">
-        create new account <span onClick={()=>navigate("/login")}>Sign Up</span>
+        create new account <span onClick={()=>navigate("/admin/login")}>Sign Up</span>
       </div>
     </div>
   );

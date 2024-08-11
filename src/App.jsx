@@ -6,9 +6,6 @@ import { Routes, Route } from "react-router-dom";
 //ALert
 import { Toaster } from "react-hot-toast";
 
-//Utils
-import ScrollToTop from "./utils/scrollToTop/ScrollToTop";
-
 //Loader
 import Loader from "./utils/loader/Loader";
 
@@ -67,8 +64,7 @@ import {
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
-  AdminForgetPassword,
-  AdminChangePassword,
+  AdminSignUp,
   AdminOtp,
   AdminDashboard,
   AdminAllUsers,
@@ -240,13 +236,17 @@ const adminAuthRoutesData = [
     element: <AdminLogin />,
   },
   {
-    path: "/admin/forget-password",
-    element: <AdminForgetPassword />,
+    path: "/admin/register",
+    element: <AdminSignUp />,
   },
-  {
-    path: "/admin/change-password",
-    element: <AdminChangePassword />,
-  },
+  // {
+  //   path: "/admin/forget-password",
+  //   element: <AdminForgetPassword />,
+  // },
+  // {
+  //   path: "/admin/change-password",
+  //   element: <AdminChangePassword />,
+  // },
   {
     path: "/admin/otp",
     element: <AdminOtp />,

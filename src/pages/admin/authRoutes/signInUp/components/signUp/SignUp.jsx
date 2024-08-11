@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import "../signIn/SignIn.css";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
-import { useUserSignUpMutation } from "@/redux/slice/user/api/authUserApiSlice";
-import { userSignUpSchema } from "@/components/user/validation/validations";
+import { useAdminSignUpMutation } from "@/redux/slice/admin/api/authAdminApiSlice";
+import { adminSignUpValidationSchema } from "@/components/admin/validation/validations";
 
 const SignUp = () => {
-  const [userSignUp] = useUserSignUpMutation();
+  const [adminSignUp] = useAdminSignUpMutation();
   const navigate = useNavigate();
 
   // collecting data
@@ -14,15 +14,13 @@ const SignUp = () => {
   const [data, setData] = useState({
     fullName: "",
     email: "",
-    phone: "",
-    password: "",
   });
   const onChangeHandler = async (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
 
     try {
-      await userSignUpSchema.validateAt(name, { [name]: value });
+      await adminSignUpValidationSchema.validateAt(name, { [name]: value });
       setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
     } catch (err) {
       setErrors((prevErrors) => ({ ...prevErrors, [name]: err.message }));
@@ -32,17 +30,15 @@ const SignUp = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await userSignUpSchema.validate(data, { abortEarly: false });
-      const response = await userSignUp(data);
+      await adminSignUpValidationSchema.validate(data, { abortEarly: false });
+      const response = await adminSignUp(data);
       if (response && response.data) {
-        sessionStorage.setItem("otpInfo", JSON.stringify(response.data.data));
+        sessionStorage.setItem("adminOtpInfo", JSON.stringify(response.data.data));
         toast.success(response.data.data.message);
-        navigate("/otp");
+        navigate("/admin/otp");
         setData({
           fullName: "",
-          phone: "",
           email: "",
-          password: "",
         });
         setErrors({});
       }
@@ -94,30 +90,6 @@ const SignUp = () => {
           />
           {errors?.email && <p style={{ color: "red" }}>{errors?.email}</p>}
         </div>
-
-        <div className="authSlide">
-          <input
-            type="phone"
-            name="phone"
-            value={data.phone}
-            placeholder="Enter your phone number  "
-            onChange={onChangeHandler}
-          />
-          {errors?.phone && <p style={{ color: "red" }}>{errors?.phone}</p>}
-        </div>
-
-        <div className="authSlide">
-          <input
-            type="password"
-            name="password"
-            value={data.password}
-            placeholder="Enter your Password again"
-            onChange={onChangeHandler}
-          />
-          {errors?.password && (
-            <p style={{ color: "red" }}>{errors?.password}</p>
-          )}
-        </div>
       </div>
 
       <button className="authButton" onClick={handleSubmit}>
@@ -125,7 +97,7 @@ const SignUp = () => {
       </button>
       <div className="none">
         already have an account{" "}
-        <span onClick={() => navigate("/register")}>Sign in</span>
+        <span onClick={() => navigate("/admin/register")}>Sign in</span>
       </div>
     </div>
   );
