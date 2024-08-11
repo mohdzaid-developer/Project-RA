@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./ChangePassword.css";
-import "../signIn/SignIn.css";
+// import "../signIn/SignIn.css";
 import { Link, useNavigate } from "react-router-dom";
 import { changePasswordValidationSchema } from "@/components/user/validation/validations";
 import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
