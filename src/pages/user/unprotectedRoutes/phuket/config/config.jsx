@@ -1,19 +1,19 @@
 //Assets
-import heroImg from "@/assets/phuketHero.svg";
-import img1 from "@/assets/phuket1.svg";
-import img2 from "@/assets/phuket2.svg";
-import img3 from "@/assets/homePhuket.svg";
-import img4 from "@/assets/phuket3.svg";
-import img5 from "@/assets/phuket4.svg";
-import levelOnePackageLogo from "@/assets/levelOnePackageLogo.svg";
-import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.svg";
-import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.svg";
-import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.svg";
-import levelOneCustomLogo from "@/assets/levelOneCustomLogo.svg";
-import levelOneFriendsImage from "@/assets/levelOneFriendsImage.svg";
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.svg";
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.svg";
-import levelOneCustomImage from "@/assets/levelOneCustomImage.svg";
+import heroImg from "@/assets/phuketHero.webp";
+import img1 from "@/assets/phuket1.webp";
+import img2 from "@/assets/phuket2.webp";
+import img3 from "@/assets/homePhuket.webp";
+import img4 from "@/assets/phuket3.webp";
+import img5 from "@/assets/phuket4.webp";
+import levelOnePackageLogo from "@/assets/levelOnePackageLogo.webp";
+import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.webp";
+import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.webp";
+import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
+import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
+import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
+import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 
 export const data = {
   title: "Enchanted Phuket",

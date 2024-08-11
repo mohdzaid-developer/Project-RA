@@ -17,13 +17,13 @@ import { store } from "./redux/store/store.js";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <ScrollToTop>
-        <Provider store={store}>
-          <SmoothScrolling>
-            <App />
-          </SmoothScrolling>
-        </Provider>
-      </ScrollToTop>
+      <Provider store={store}>
+        {/* <SmoothScrolling> */}
+        <ScrollToTop>
+          <App />
+        </ScrollToTop>
+        {/* </SmoothScrolling> */}
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

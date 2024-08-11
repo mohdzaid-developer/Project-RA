@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./faq.scss";
 
 //Assets
-import downArrow from "../../../../../../assets/downArrow.svg";
-import rightArrow from "../../../../../../assets/rightArrow.svg";
+import downArrow from "../../../../../../assets/downArrow.webp";
+import rightArrow from "../../../../../../assets/rightArrow.webp";
 import ScrollText from "./scrollText/ScrollText";
 
 const Faq = () => {

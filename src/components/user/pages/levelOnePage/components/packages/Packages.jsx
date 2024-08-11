@@ -9,7 +9,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 //Assets
-import buttonArrowImg from "@/assets/rightArrow.svg";
+import buttonArrowImg from "@/assets/rightArrow.webp";
 
 const Packages = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(1);

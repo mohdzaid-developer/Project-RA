@@ -1,5 +1,5 @@
 //Assets
-import baliFriendsDelux from "@/assets/baliFriendsDelux.svg";
+import baliFriendsDelux from "@/assets/baliFriendsDelux.webp";
 
 export const data = {
   title: "Deluxe Escape Plan",

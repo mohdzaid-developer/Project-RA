@@ -1,5 +1,5 @@
 //Assets
-import baliFriendsStandard from "@/assets/baliFriendsStandard.svg";
+import baliFriendsStandard from "@/assets/baliFriendsStandard.webp";
 
 export const data = {
   title: "Standard Escape Plan",

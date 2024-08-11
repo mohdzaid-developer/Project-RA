@@ -5,13 +5,13 @@ import "./userNavbar.scss";
 import { Link } from "react-router-dom";
 
 //Assets
-import logo from "@/assets/logo.svg";
-import logout from "@/assets/logout.png";
-import login from "@/assets/user.png";
-import facebookImg from "@/assets/facebookImg.svg";
-import twitterImg from "@/assets/instagramImg.svg";
-import instagramImg from "@/assets/twitterImg.svg";
-import linkendInImg from "@/assets/linkedInImg.svg";
+import logo from "@/assets/logo.webp";
+import logout from "@/assets/logout.webp";
+import login from "@/assets/user.webp";
+import facebookImg from "@/assets/facebookImg.webp";
+import twitterImg from "@/assets/instagramImg.webp";
+import instagramImg from "@/assets/twitterImg.webp";
+import linkendInImg from "@/assets/linkedInImg.webp";
 
 const UserNavbar = () => {
   const navDataFirst = [

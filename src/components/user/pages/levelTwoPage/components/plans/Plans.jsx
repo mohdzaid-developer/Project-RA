@@ -5,7 +5,7 @@ import "./plans.scss";
 import { useNavigate } from "react-router-dom";
 
 //Assets
-import buttonArrowImg from "@/assets/rightArrow.svg";
+import buttonArrowImg from "@/assets/rightArrow.webp";
 
 const Plans = ({ data }) => {
   const navigate = useNavigate();

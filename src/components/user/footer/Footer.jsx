@@ -8,12 +8,12 @@ import { footerFadeInAnimation } from "@/utils/animations/animations";
 import { Link } from "react-router-dom";
 
 //Assets
-import facebookImg from "@/assets/facebookImg.svg";
-import twitterImg from "@/assets/instagramImg.svg";
-import instagramImg from "@/assets/twitterImg.svg";
-import linkendInImg from "@/assets/linkedInImg.svg";
-import buttonArrowImg from "@/assets/rightArrow.svg";
-import closeImg from "@/assets/error.png";
+import facebookImg from "@/assets/facebookImg.webp";
+import twitterImg from "@/assets/instagramImg.webp";
+import instagramImg from "@/assets/twitterImg.webp";
+import linkendInImg from "@/assets/linkedInImg.webp";
+import buttonArrowImg from "@/assets/rightArrow.webp";
+import closeImg from "@/assets/error.webp";
 
 const Footer = () => {
   const [open, setOpen] = useState(false);

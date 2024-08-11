@@ -6,18 +6,18 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import imagesLoaded from "imagesloaded";
 
-import img1 from "@/assets/galleryImg1.svg";
-import img2 from "@/assets/galleryImg2.svg";
-import img3 from "@/assets/galleryImg3.svg";
-import img4 from "@/assets/galleryImg4.svg";
-import img5 from "@/assets/galleryImg5.svg";
-import img6 from "@/assets/galleryImg6.svg";
-import img7 from "@/assets/galleryImg7.svg";
-import img8 from "@/assets/galleryImg8.svg";
-import img9 from "@/assets/galleryImg9.svg";
-import img10 from "@/assets/galleryImg10.svg";
-import img11 from "@/assets/galleryImg11.svg";
-import img12 from "@/assets/galleryImg12.svg";
+import img1 from "@/assets/galleryImg1.webp";
+import img2 from "@/assets/galleryImg2.webp";
+import img3 from "@/assets/galleryImg3.webp";
+import img4 from "@/assets/galleryImg4.webp";
+import img5 from "@/assets/galleryImg5.webp";
+import img6 from "@/assets/galleryImg6.webp";
+import img7 from "@/assets/galleryImg7.webp";
+import img8 from "@/assets/galleryImg8.webp";
+import img9 from "@/assets/galleryImg9.webp";
+import img10 from "@/assets/galleryImg10.webp";
+import img11 from "@/assets/galleryImg11.webp";
+import img12 from "@/assets/galleryImg12.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 

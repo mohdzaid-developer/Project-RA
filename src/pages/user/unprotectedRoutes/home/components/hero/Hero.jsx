@@ -5,7 +5,7 @@ import { fadeInAnimation } from "@/utils/animations/animations";
 
 //Assets
 import heroVideo from "@/assets/heroVideo.mp4";
-import heroArrow from "@/assets/heroArrow.svg";
+import heroArrow from "@/assets/heroArrow.webp";
 
 const Hero = () => {
   return (

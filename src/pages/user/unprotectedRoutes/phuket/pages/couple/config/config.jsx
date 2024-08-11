@@ -1,8 +1,8 @@
 //Assets
-import heroImg from "@/assets/levelTwoBaliFriends.svg";
-import baliFriendsStandard from "@/assets/baliFriendsStandard.svg";
-import baliFriendsDelux from "@/assets/baliFriendsDelux.svg";
-import baliFriendsPremium from "@/assets/baliFriendsPremium.svg";
+import heroImg from "@/assets/levelTwoBaliFriends.webp";
+import baliFriendsStandard from "@/assets/baliFriendsStandard.webp";
+import baliFriendsDelux from "@/assets/baliFriendsDelux.webp";
+import baliFriendsPremium from "@/assets/baliFriendsPremium.webp";
 
 export const data = {
   title: "Couple Package",
