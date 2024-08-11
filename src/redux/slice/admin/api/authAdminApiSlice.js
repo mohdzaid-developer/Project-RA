@@ -15,13 +15,6 @@ export const authAdminApi = createApi({
         body: data,
       }),
     }),
-    adminSignUp: builder.mutation({
-      query: (data) => ({
-        url: "admin/auth/signup",
-        method: "POST",
-        body: data,
-      }),
-    }),
     adminOtpVerify: builder.mutation({
       query: (data) => ({
         url: "admin/auth/otp",
@@ -33,7 +26,7 @@ export const authAdminApi = createApi({
       }),
     }),
     adminResendOtp: builder.mutation({
-      query: (data) => ({
+      query: () => ({
         url: "admin/auth/otp-resend",
         method: "POST",
         headers: {
@@ -46,7 +39,6 @@ export const authAdminApi = createApi({
 
 export const {
   useAdminLoginMutation,
-  useAdminSignUpMutation,
   useAdminOtpVerifyMutation,
   useAdminResendOtpMutation,
 } = authAdminApi;

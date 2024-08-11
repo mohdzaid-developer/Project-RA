@@ -1,0 +1,65 @@
+@import "@/index.scss";
+
+.payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 100px;
+
+  h2 {
+    color: $white;
+    font-size: 48px;
+  }
+
+  .payment-form {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .input-fields {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 40px;
+
+      .input {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+        label {
+          color: $white;
+          font-size: 18px;
+        }
+        input {
+          background-color: transparent;
+          border: none;
+          border-bottom: 1px solid $white;
+          color: $white;
+        }
+      }
+    }
+
+    button {
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      font-size: 22px;
+      color: $white;
+      border: 1px solid $white;
+      border-radius: 16px;
+      padding: 20px 18px;
+
+      img {
+        height: 28px;
+      }
+    }
+  }
+}

@@ -66,7 +66,6 @@ import {
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
-  AdminSignUp,
   AdminOtp,
   AdminDashboard,
   AdminAllUsers,
@@ -241,18 +240,6 @@ const adminAuthRoutesData = [
     path: "/admin/login",
     element: <AdminLogin />,
   },
-  {
-    path: "/admin/register",
-    element: <AdminSignUp />,
-  },
-  // {
-  //   path: "/admin/forget-password",
-  //   element: <AdminForgetPassword />,
-  // },
-  // {
-  //   path: "/admin/change-password",
-  //   element: <AdminChangePassword />,
-  // },
   {
     path: "/admin/otp",
     element: <AdminOtp />,
