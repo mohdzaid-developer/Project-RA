@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./ForgetPassword.css";
-import "../signIn/SignIn.css";
+// import "../signIn/SignIn.css";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
 import { forgetPasswordValidationSchema } from "@/components/user/validation/validations";
