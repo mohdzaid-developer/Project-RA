@@ -1,16 +1,27 @@
-import React, { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import { createOrderSchema } from "@/utils/validation/validations";
+import { useEffect, useState } from "react";
+import "./payment.scss";
+
+//Alert
 import { toast } from "react-hot-toast";
 
-const RazorpayPayment = () => {
+//Routing
+import { useLocation, useNavigate } from "react-router-dom";
+
+//Assets
+import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Validation
+import { createOrderSchema } from "@/utils/validation/validations";
+
+const Payment = () => {
+  let location = useLocation();
   const navigate = useNavigate();
+
   const [errors, setErrors] = useState({});
   const [details, setDetails] = useState(null);
   const [normalAmount, setNormalAmount] = useState(null);
   const [totalAmount, setTotalAmount] = useState(null);
 
-  let location = useLocation();
   useEffect(() => {
     if (location?.pathname) {
       let separatedUrl = location?.pathname?.split("/");
@@ -24,13 +35,15 @@ const RazorpayPayment = () => {
       }
     }
   }, [location]);
-  const handleOnChange = (e) => {
+
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setDetails({
       ...details,
       [name]: value,
     });
   };
+
   useEffect(() => {
     const script = document.createElement("script");
     script.src = `${import.meta.env.VITE_API_RAZOR_PAY}`;
@@ -42,14 +55,10 @@ const RazorpayPayment = () => {
     };
   }, []);
 
-  useEffect(() => {
-    console.log(errors);
-  }, [errors]);
-
   const handlePayment = async () => {
     let userData = JSON.parse(sessionStorage.getItem("user"));
     if (!userData) {
-      navigate("/logon");
+      navigate("/login");
     }
     try {
       await createOrderSchema.validate(details, { abortEarly: false });
@@ -80,17 +89,15 @@ const RazorpayPayment = () => {
         return;
       }
 
-      // Open Razorpay Checkout
       const options = {
         key: "rzp_test_e6zf5ZgkpupNAu",
         amount: order.data.amount_due,
         currency: order.data.currency,
-        name: "Your Company Name",
-        description: "Test Transaction",
+        name: "Come Fly With Me",
+        description: "Transaction",
         order_id: order.data.id,
         callback_url: "http://localhost:3000/payment-success",
         handler: function (response) {
-          console.log(response);
           fetch(`${import.meta.env.VITE_API_BASE_URL}payment/verify-payment`, {
             method: "POST",
             headers: {
@@ -113,11 +120,6 @@ const RazorpayPayment = () => {
               console.error(err);
             });
         },
-        // prefill: {
-        //   name: 'Your Name',
-        //   email: 'your.email@example.com',
-        //   contact: '9999999999'
-        // },
         theme: {
           color: "#F37254",
         },
@@ -127,7 +129,6 @@ const RazorpayPayment = () => {
       rzp.open();
     } catch (err) {
       if (err) {
-        console.log(err);
         const newErrors = {};
         err.inner.forEach((error) => {
           newErrors[error.path] = error.message;
@@ -140,36 +141,61 @@ const RazorpayPayment = () => {
   };
 
   return (
-    <div>
-      <h1>Razorpay Payment Gateway Integration</h1>
-      <form id="payment-form">
-        <input
-          type="number"
-          placeholder="no_of_adults"
-          name="no_of_adults"
-          onChange={handleOnChange}
-          required
-        />
-        <input
-          type="number"
-          placeholder="no_of_children"
-          name="no_of_children"
-          onChange={handleOnChange}
-          required
-        />
-        <input
-          type="date"
-          name="start_date"
-          onChange={handleOnChange}
-          required
-        />
-        <input type="date" name="end_date" onChange={handleOnChange} required />
-        <button type="button" onClick={handlePayment}>
-          Pay Now
+    <div className="payment">
+      <h2>Book Your Slot</h2>
+      <form className="payment-form">
+        <div className="input-fields">
+          <div className="input">
+            <label htmlFor="">Number of Adults</label>
+            <input
+              type="phone"
+              name="no_of_adults"
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          {(location.pathname === "/bali/family/standard" ||
+            location.pathname === "/bali/family/delux" ||
+            location.pathname === "/bali/family/premium" ||
+            location.pathname === "/bali/family/custom") && (
+            <div className="input">
+              <label htmlFor="">Number of Children</label>
+              <input
+                type="phone"
+                name="no_of_children"
+                onChange={handleChange}
+                required
+              />
+            </div>
+          )}
+
+          <div className="input">
+            <label htmlFor="">Start date</label>
+            <input
+              type="date"
+              name="start_date"
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="input">
+            <label htmlFor="">End date</label>
+            <input
+              type="date"
+              name="end_date"
+              onChange={handleChange}
+              required
+            />
+          </div>
+        </div>
+        <button onClick={handlePayment}>
+          Book Now
+          <img src={buttonArrowImg} alt="" />
         </button>
       </form>
     </div>
   );
 };
 
-export default RazorpayPayment;
+export default Payment;

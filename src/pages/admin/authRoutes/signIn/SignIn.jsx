@@ -1,30 +1,43 @@
-import React, { useState } from "react";
-import "./SignIn.css";
-import { useAdminLoginMutation } from "@/redux/slice/admin/api/authAdminApiSlice";
+import { useState, useEffect } from "react";
+import "./signIn.scss";
+
+//Alert
 import { toast } from "react-hot-toast";
+
+//Routing
 import { useNavigate } from "react-router-dom";
+
+//Validation
 import { adminLoginValidationSchema } from "@/components/admin/validation/validations";
+
+//Assets
+import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Redux
+import { useAdminLoginMutation } from "@/redux/slice/admin/api/authAdminApiSlice";
 
 const SignIn = () => {
   const [adminLogin] = useAdminLoginMutation();
   const navigate = useNavigate();
 
-  // collecting data
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
     email: "",
   });
-  const onChangeHandler = (e) => {
+  const handleChange = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });
   };
 
-  const handleSignIn = async (e) => {
+  const handleSubmit = async (e) => {
     try {
       await adminLoginValidationSchema.validate(data, { abortEarly: false });
       const response = await adminLogin(data);
       if (response?.data?.data) {
-        sessionStorage.setItem("adminOtpInfo", JSON.stringify(response?.data?.data));
+        sessionStorage.setItem(
+          "adminOtpInfo",
+          JSON.stringify(response?.data?.data)
+        );
         navigate("/admin/otp");
         setData({
           email: "",
@@ -46,32 +59,30 @@ const SignIn = () => {
       }
     }
   };
+
+  useEffect(() => {
+    const otpData = JSON.parse(sessionStorage.getItem("adminOtpInfo"));
+    if (otpData) {
+      navigate("/admin/otp");
+    }
+  }, []);
   return (
-    <div className="auth">
-      <div className="auth-heading">
-        <h2>SignIn</h2>
-        <p>with your account</p>
+    <div className="signIn-container">
+      <div className="content">
+        <h2>Admin Login</h2>
       </div>
+      <div className="form-container">
+        <div className="form-container-right">
+          <div>
+            <label htmlFor="">Email : </label>
+            <input type="email" name="email" onChange={handleChange} />
+            {errors?.email && <p className="error-text">{errors?.email}</p>}
+          </div>
 
-      <div className="authSlides">
-        <div className="authSlide">
-          <input
-            type="email"
-            name="email"
-            id=""
-            placeholder="Enter Email"
-            onChange={onChangeHandler}
-          />
-          {errors?.email && <p style={{ color: "red" }}>{errors?.email}</p>}
+          <button className="authButton" onClick={handleSubmit}>
+            Submit <img src={buttonArrowImg} alt="" />
+          </button>
         </div>
-      </div>
-
-      <button className="authButton" onClick={handleSignIn}>
-        Sign In
-      </button>
-
-      <div className="none">
-        create new account <span onClick={()=>navigate("/admin/login")}>Sign Up</span>
       </div>
     </div>
   );

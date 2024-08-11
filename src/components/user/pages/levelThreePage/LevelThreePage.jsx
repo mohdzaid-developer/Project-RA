@@ -1,9 +1,9 @@
 //Components
-import RazorpayPayment from "../../payment/RazorPayPayment";
 import Hero from "../levelOnePage/components/hero/Hero";
+import Introduction from "./components/introduction/Introduction";
 import Activities from "./components/activities/Activities";
 import Description from "./components/description/Description";
-import Introduction from "./components/introduction/Introduction";
+import Payment from "../../payment/Payment";
 
 const LevelThreePage = ({ data }) => {
   return (
@@ -11,8 +11,8 @@ const LevelThreePage = ({ data }) => {
       <Hero data={data} />
       <Introduction />
       <Activities />
-      <RazorpayPayment/>
       <Description />
+      <Payment />
     </section>
   );
 };
