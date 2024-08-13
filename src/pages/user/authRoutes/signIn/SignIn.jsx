@@ -37,7 +37,7 @@ const SignIn = () => {
       const response = await userLogin(data);
       if (response?.data?.data) {
         sessionStorage.setItem("user", JSON.stringify(response?.data?.data));
-        navigate("/dashboard");
+        navigate("/profile");
         setData({
           password: "",
           email: "",
