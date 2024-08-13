@@ -3,7 +3,7 @@ export const getAdminAccessToken = () => {
 };
 
 export const getUserAccessToken = () => {
-  return JSON.parse(sessionStorage.getItem("user"));
+  return JSON.parse(sessionStorage.getItem("user"))?.accessToken;
 };
 
 export const getOtpAccessToken = (type) => {
@@ -11,13 +11,12 @@ export const getOtpAccessToken = (type) => {
   if (type == "refresh") {
     return JSON.parse(sessionStorage.getItem("otpInfo"))?.refreshToken;
   }
-  if ((type == "changePassword")) {
+  if (type == "changePassword") {
     return (
       JSON.parse(sessionStorage.getItem("changePasswordInfo"))?.accessToken ??
       JSON.parse(sessionStorage.getItem("user"))?.accessToken
     );
   }
-  console.log(JSON.parse(sessionStorage.getItem("otpInfo")))
   return JSON.parse(sessionStorage.getItem("otpInfo"))?.accessToken;
 };
 

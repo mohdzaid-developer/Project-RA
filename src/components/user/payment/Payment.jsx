@@ -58,7 +58,7 @@ const Payment = () => {
   const handlePayment = async () => {
     let userData = JSON.parse(sessionStorage.getItem("user"));
     if (!userData) {
-      navigate("/login");
+      navigate(`/login?page=${location?.pathname.replace(/\//g, "?")}`);
     }
     try {
       await createOrderSchema.validate(details, { abortEarly: false });
