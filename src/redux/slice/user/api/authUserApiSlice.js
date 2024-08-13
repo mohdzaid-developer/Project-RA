@@ -1,4 +1,4 @@
-import { getOtpAccessToken } from "@/utils/accessToken/accessToken";
+import { getOtpAccessToken, getUserAccessToken } from "@/utils/accessToken/accessToken";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const authUserApi = createApi({
@@ -58,6 +58,28 @@ export const authUserApi = createApi({
         body:data
       }),
     }),
+    userGetProfile: builder.query({
+      query: () => ({
+        url: `user/profile`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getUserAccessToken()}`,
+        },
+      }),
+      providesTags:["getUserProfile"]
+    }),
+
+    userProfilePicUpload: builder.mutation({
+      query: (data) => ({
+        url: "user/profile",
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getUserAccessToken()}`,
+        },
+        body: {profileDetails:data},
+      }),
+      invalidatesTags:["getUserProfile"]
+    }),
   }),
 });
 
@@ -67,5 +89,7 @@ export const {
   useUserOtpVerifyMutation,
   useUserResendOtpMutation,
   useUserForgetPasswordMutation,
-  useUserChangePasswordMutation
+  useUserChangePasswordMutation,
+  useUserGetProfileQuery,
+  useUserProfilePicUploadMutation
 } = authUserApi;
