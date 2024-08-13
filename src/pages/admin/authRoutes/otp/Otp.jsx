@@ -18,9 +18,12 @@ import {
   useAdminOtpVerifyMutation,
   useAdminResendOtpMutation,
 } from "@/redux/slice/admin/api/authAdminApiSlice";
+import { useDispatch } from "react-redux";
+import { setLogin } from "@/redux/slice/admin/state/authAdminSlice";
 
 const Otp = () => {
   const navigate = useNavigate();
+  const dispatch=useDispatch()
 
   const [adminOtpVerify, { isLoading: otpVerifyLoading }] =
     useAdminOtpVerifyMutation();
@@ -35,12 +38,14 @@ const Otp = () => {
       await otpValidationSchema.validate({ otp: otp }, { abortEarly: false });
       const response = await adminOtpVerify(otp);
       if (response?.data?.data) {
+        console.log(response)
         if (response?.data?.data?.isLogin == true) {
           sessionStorage?.removeItem("adminOtpInfo");
           sessionStorage.setItem(
             "admin",
             JSON.stringify({ ...response?.data?.data })
           );
+          dispatch(setLogin())
           navigate("/admin/dashboard");
         } else {
           toast.success("Email verification successful!");

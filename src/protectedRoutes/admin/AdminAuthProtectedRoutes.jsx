@@ -3,9 +3,18 @@ import { useSelector } from "react-redux";
 
 const AdminAuthProtectedRoutes = ({ children }) => {
   const { isAuthenticated } = useSelector((state) => state.authAdmin);
+  const { isAuthenticated:userIsAuthenticated } = useSelector((state) => state.authUser);
+  const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !userIsAuthenticated) {
     return children;
+  }
+  if (userIsAuthenticated==true) {
+    console.log("object")
+    return <Navigate to="/profile"/>;
+  }
+  if (otpData) {
+    return <Navigate to="/otp"/>;
   }
   return <Navigate to="/admin/dashboard" />;
 };

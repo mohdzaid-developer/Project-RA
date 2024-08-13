@@ -5,6 +5,7 @@ const UserAccountProtectedRoutes = ({ children }) => {
   const { isAuthenticated } = useSelector((state) => state.authUser);
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
   const adminOtpInfo = JSON.parse(sessionStorage.getItem("adminOtpInfo"));
+  const { isAuthenticated:AdminIsAuthenticated } = useSelector((state) => state.authAdmin);
 
   if (isAuthenticated) {
     return children;
@@ -14,6 +15,9 @@ const UserAccountProtectedRoutes = ({ children }) => {
   }
   if (adminOtpInfo) {
     return <Navigate to="/admin/otp" />;
+  }
+  if (AdminIsAuthenticated) {
+    return <Navigate to="/admin/dashboard" />;
   }
   return <Navigate to="/login" />;
 };
