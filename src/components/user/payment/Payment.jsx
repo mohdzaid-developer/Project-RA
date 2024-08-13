@@ -11,7 +11,10 @@ import { useLocation, useNavigate } from "react-router-dom";
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Validation
-import { createOrderSchema } from "@/utils/validation/validations";
+import {
+  createOrderSchema,
+  createOrderSchemaSecond,
+} from "@/utils/validation/validations";
 
 const Payment = () => {
   let location = useLocation();
@@ -55,13 +58,18 @@ const Payment = () => {
     };
   }, []);
 
-  const handlePayment = async () => {
+  const handlePayment = async (e) => {
+    e.preventDefault();
     let userData = JSON.parse(sessionStorage.getItem("user"));
     if (!userData) {
       navigate(`/login?page=${location?.pathname.replace(/\//g, "?")}`);
     }
     try {
-      await createOrderSchema.validate(details, { abortEarly: false });
+      if (location?.pathname?.includes("family")) {
+        await createOrderSchema.validate(details, { abortEarly: false });
+      } else {
+        await createOrderSchemaSecond.validate(details, { abortEarly: false });
+      }
       const response = await fetch(
         `${import.meta.env.VITE_API_BASE_URL}payment/create-order`,
         {

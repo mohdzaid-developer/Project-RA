@@ -15,9 +15,12 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Redux
 import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useDispatch } from "react-redux";
+import { setLogin } from "@/redux/slice/user/state/authUserSlice";
 
 const SignIn = () => {
   const navigate = useNavigate();
+  const dispatch=useDispatch()
   const [userLogin] = useUserLoginMutation();
   let location = useLocation();
 
@@ -39,6 +42,7 @@ const SignIn = () => {
       const response = await userLogin(data);
       if (response?.data?.data) {
         sessionStorage.setItem("user", JSON.stringify(response?.data?.data));
+        dispatch(setLogin())
         if (separatedUrl) {
           navigate(`/${separatedUrl}`);
         } else {
