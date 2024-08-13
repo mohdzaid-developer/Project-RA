@@ -1,7 +1,7 @@
 //Components
-import Gallery from "./components/gallery/Gallery";
 import Hero from "./components/hero/Hero";
 import Introduction from "./components/introduction/Introduction";
+import Gallery from "./components/gallery/Gallery";
 import Testimonial from "./components/testimonial/Testimonial";
 import Faq from "./components/faq/Faq";
 import BaliSection from "./components/baliSection/BaliSection";

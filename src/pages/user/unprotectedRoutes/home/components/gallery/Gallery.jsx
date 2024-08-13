@@ -101,9 +101,10 @@ const Gallery = () => {
       setLoading(false);
     });
   }, []);
+
   return (
     <>
-      <div className="gallery">
+      <div className="home-gallery">
         <h2>Gallery</h2>
         <p>An Experience filled with love</p>
       </div>
