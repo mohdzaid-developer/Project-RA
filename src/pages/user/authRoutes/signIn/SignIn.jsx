@@ -5,7 +5,7 @@ import "./signIn.scss";
 import { toast } from "react-hot-toast";
 
 //Routing
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 //Validation
 import { userLoginValidationSchema } from "@/utils/validation/validations";
@@ -19,6 +19,7 @@ import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
 const SignIn = () => {
   const navigate = useNavigate();
   const [userLogin] = useUserLoginMutation();
+  let location = useLocation();
 
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
@@ -32,12 +33,17 @@ const SignIn = () => {
   };
 
   const handleSubmit = async (e) => {
+    let separatedUrl = location?.pathname?.split("=")[1]?.replace(/\?/g, "/");
     try {
       await userLoginValidationSchema.validate(data, { abortEarly: false });
       const response = await userLogin(data);
       if (response?.data?.data) {
         sessionStorage.setItem("user", JSON.stringify(response?.data?.data));
-        navigate("/dashboard");
+        if (separatedUrl) {
+          navigate(`/${separatedUrl}`);
+        } else {
+          navigate("/dashboard");
+        }
         setData({
           password: "",
           email: "",
