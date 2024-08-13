@@ -42,7 +42,7 @@ const SignIn = () => {
         if (separatedUrl) {
           navigate(`/${separatedUrl}`);
         } else {
-          navigate("/dashboard");
+          navigate("/profile");
         }
         setData({
           password: "",
