@@ -1,7 +1,7 @@
-import "./payment.scss";
+import "./trips.scss";
 
 //Assets
-import payment from "@/assets/payment.png";
+import trip from "@/assets/trip.png";
 
 //Components
 import AdminNavbar from "@/components/admin/adminNavbar/AdminNavbar";
@@ -21,10 +21,11 @@ import {
 // Data
 import { data } from "./data";
 
-const Payment = () => {
+const Trips = () => {
   return (
-    <section className="payment-container">
-      <AdminNavbar title="Payments" image={payment} />
+    <section className="trips-container">
+      <AdminNavbar title="Trips" image={trip} />
+
       <section className="payments">
         <TableContainer component={Paper} className="table">
           <Table aria-label="simple table">
@@ -61,4 +62,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default Trips;

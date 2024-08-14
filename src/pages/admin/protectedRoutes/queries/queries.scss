@@ -1,1 +1,52 @@
-@import "../../../../index.scss";
+@import "@/index.scss";
+
+.query-container {
+  margin-left: 15vw;
+
+  .payments {
+    padding: 30px;
+    margin-top: 10vh;
+
+    .pagination {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      ul {
+        li {
+          div {
+            color: white;
+          }
+          button {
+            border: none;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .table {
+      .table-head {
+        background-color: $light-orange;
+        tr {
+          th {
+            color: $white;
+
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+      }
+
+      .table-body {
+        background-color: $text-orange;
+        tr {
+          td {
+            font-size: 14px;
+            font-family: "DM Sans", sans-serif;
+          }
+        }
+      }
+    }
+  }
+}

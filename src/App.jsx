@@ -68,16 +68,11 @@ import {
   AdminLogin,
   AdminOtp,
   AdminDashboard,
-  AdminAllUsers,
-  AdminSingleUser,
-  AdminAllTrips,
-  AdminSingleTrip,
+  AdminUsers,
+  AdminTrips,
+  AdminSingleTripDetails,
   AdminPayment,
   AdminQueries,
-  AdminAllActivities,
-  AdminAddActivity,
-  AdminAllLocations,
-  AdminAddLocation,
 } from "./pageConfig/AdminPageConfig";
 
 // Routes Data
@@ -252,19 +247,15 @@ const adminProtectedRoutesData = [
   },
   {
     path: "/admin/users",
-    element: <AdminAllUsers />,
-  },
-  {
-    path: "/admin/user/:id",
-    element: <AdminSingleUser />,
+    element: <AdminUsers />,
   },
   {
     path: "/admin/trips",
-    element: <AdminAllTrips />,
+    element: <AdminTrips />,
   },
   {
     path: "/admin/trip/:id",
-    element: <AdminSingleTrip />,
+    element: <AdminSingleTripDetails />,
   },
   {
     path: "/admin/payment",
@@ -273,22 +264,6 @@ const adminProtectedRoutesData = [
   {
     path: "/admin/queries",
     element: <AdminQueries />,
-  },
-  {
-    path: "/admin/activities",
-    element: <AdminAllActivities />,
-  },
-  {
-    path: "/admin/activity",
-    element: <AdminAddActivity />,
-  },
-  {
-    path: "/admin/locations",
-    element: <AdminAllLocations />,
-  },
-  {
-    path: "/admin/location",
-    element: <AdminAddLocation />,
   },
 ];
 
