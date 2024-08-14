@@ -15,10 +15,16 @@ import {
   createOrderSchema,
   createOrderSchemaSecond,
 } from "@/utils/validation/validations";
+import { useDispatch, useSelector } from "react-redux";
+import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 
 const Payment = () => {
+  const { isAuthenticated, paramsQuery } = useSelector(
+    (state) => state.authUser
+  );
   let location = useLocation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [errors, setErrors] = useState({});
   const [details, setDetails] = useState(null);
@@ -26,6 +32,9 @@ const Payment = () => {
   const [totalAmount, setTotalAmount] = useState(null);
 
   useEffect(() => {
+    if (isAuthenticated == true) {
+      dispatch(setParamsQuery(null));
+    }
     if (location?.pathname) {
       let separatedUrl = location?.pathname?.split("/");
       if (separatedUrl) {
@@ -91,9 +100,10 @@ const Payment = () => {
       );
 
       const order = await response.json();
-
+      if (response?.status == 400) {
+        toast.error("Please select start date that is at least one month from today")
+      }
       if (!order || !order.data || !order.data.id) {
-        alert("Failed to create order. Please try again.");
         return;
       }
 
@@ -136,6 +146,7 @@ const Payment = () => {
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (err) {
+      console.log(err);
       if (err) {
         const newErrors = {};
         err.inner.forEach((error) => {
@@ -162,6 +173,9 @@ const Payment = () => {
                 onChange={handleChange}
                 required
               />
+              {errors?.start_date && (
+                <p className="error-text">{errors?.start_date}</p>
+              )}
             </div>
             <div className="input">
               <label htmlFor="">Number of Adults :</label>
@@ -171,6 +185,9 @@ const Payment = () => {
                 onChange={handleChange}
                 required
               />
+              {errors?.no_of_adults && (
+                <p className="error-text">{errors?.no_of_adults}</p>
+              )}
             </div>
           </div>
           <div className="container">
@@ -182,6 +199,9 @@ const Payment = () => {
                 onChange={handleChange}
                 required
               />
+              {errors?.end_date && (
+                <p className="error-text">{errors?.end_date}</p>
+              )}
             </div>
 
             {(location.pathname === "/bali/family/standard" ||
@@ -200,6 +220,9 @@ const Payment = () => {
                   onChange={handleChange}
                   required
                 />
+                {errors?.no_of_children && (
+                  <p className="error-text">{errors?.no_of_children}</p>
+                )}
               </div>
             )}
           </div>

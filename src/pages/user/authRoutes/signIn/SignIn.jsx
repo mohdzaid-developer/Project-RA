@@ -16,7 +16,7 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 //Redux
 import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
 import { useDispatch } from "react-redux";
-import { setLogin } from "@/redux/slice/user/state/authUserSlice";
+import { setLogin, setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 
 const SignIn = () => {
   const navigate = useNavigate();
@@ -36,16 +36,18 @@ const SignIn = () => {
   };
 
   const handleSubmit = async (e) => {
-    let separatedUrl = location?.pathname?.split("=")[1]?.replace(/\?/g, "/");
+    let separatedUrl = location?.search?.split("=")[1]?.replace(/\?/g, "/");
     try {
       await userLoginValidationSchema.validate(data, { abortEarly: false });
       const response = await userLogin(data);
       if (response?.data?.data) {
         sessionStorage.setItem("user", JSON.stringify(response?.data?.data));
-        dispatch(setLogin())
         if (separatedUrl) {
-          navigate(`/${separatedUrl}`);
+          dispatch(setParamsQuery(separatedUrl))
+          dispatch(setLogin())
+          navigate(`${separatedUrl}`);
         } else {
+          dispatch(setLogin())
           navigate("/profile");
         }
         setData({
