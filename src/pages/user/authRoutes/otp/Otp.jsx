@@ -99,9 +99,22 @@ const Otp = () => {
             </div>
           </div>
 
-          <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
-          </button>
+          {otpVerifyLoading ? (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+              disabled={otpVerifyLoading}
+            >
+              Please Wait...
+            </button>
+          ) : (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+            >
+              Submit <img src={buttonArrowImg} alt="" />
+            </button>
+          )}
 
           <div className="forget-password">
             <p>

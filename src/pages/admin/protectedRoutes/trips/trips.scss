@@ -7,6 +7,19 @@
     padding: 30px;
     margin-top: 10vh;
 
+    
+    .css-vgpeob-MuiButtonBase-root-MuiTab-root {
+      color: aliceblue !important;
+    }
+
+    .list-data-headings{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+
+
     .pagination {
       margin-top: 20px;
       display: flex;
@@ -26,6 +39,7 @@
     }
 
     .table {
+      margin-top: 10px;
       .table-head {
         background-color: $light-orange;
         tr {

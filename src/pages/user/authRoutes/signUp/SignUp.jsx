@@ -22,7 +22,7 @@ const SignUp = () => {
     return <Navigate to="/otp" />;
   }
   const navigate = useNavigate();
-  const [userSignUp] = useUserSignUpMutation();
+  const [userSignUp, { isLoading: signUpLoading }] = useUserSignUpMutation();
 
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
@@ -128,10 +128,23 @@ const SignUp = () => {
             )}
           </div>
 
-          <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
-          </button>
-
+          {signUpLoading ? (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+              disabled={signUpLoading}
+            >
+              Please Wait...
+            </button>
+          ) : (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+              disabled={signUpLoading}
+            >
+              Submit <img src={buttonArrowImg} alt="" />
+            </button>
+          )}
           <div className="signIn">
             <p>
               Already have an account!{" "}

@@ -19,7 +19,8 @@ import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserAp
 const ChangePassword = () => {
   const navigate = useNavigate();
 
-  const [studentUpdatePassword] = useUserChangePasswordMutation();
+  const [studentUpdatePassword, { isLoading: changePasswordLoading }] =
+    useUserChangePasswordMutation();
   const [password, setPassword] = useState({
     password: "",
     confirmPassword: "",
@@ -121,9 +122,22 @@ const ChangePassword = () => {
             )}
           </div>
 
-          <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
-          </button>
+          {changePasswordLoading ? (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+              disabled={changePasswordLoading}
+            >
+              Please Wait...
+            </button>
+          ) : (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+            >
+              Submit <img src={buttonArrowImg} alt="" />
+            </button>
+          )}
         </div>
       </div>
     </div>

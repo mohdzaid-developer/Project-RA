@@ -12,12 +12,6 @@ const Profile = () => {
     useUserGetProfileQuery();
 
   const [imageUpload] = useUserProfilePicUploadMutation();
-  const handleFileChange = async (event) => {
-    const formsData = new FormData();
-    formsData.append("image", event.target.files[0]);
-    console.log(event.target.files.buffer);
-    const res = await imageUpload({ formsData });
-  };
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];

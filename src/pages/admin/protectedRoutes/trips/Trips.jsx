@@ -1,7 +1,11 @@
+import { useEffect, useState } from "react";
 import "./trips.scss";
 
 //Assets
 import trip from "@/assets/trip.png";
+
+//Router
+import { useNavigate } from "react-router-dom";
 
 //Components
 import AdminNavbar from "@/components/admin/adminNavbar/AdminNavbar";
@@ -16,41 +20,123 @@ import {
   TableBody,
   Paper,
   Pagination,
+  Typography,
+  Tabs,
+  Tab,
+  ThemeProvider,
+  createTheme,
 } from "@mui/material";
 
-// Data
-import { data } from "./data";
+// redux
+import { useAdminGetAllBookingQuery } from "@/redux/slice/admin/api/authAdminApiSlice";
 
+// MUI Restyling
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: "#FF9F43",
+    },
+  },
+  components: {
+    MuiTab: {
+      styleOverrides: {
+        root: {
+          textTransform: "none",
+          fontFamily: "Montserrat",
+        },
+      },
+    },
+  },
+});
+
+//static data
+const plans = ["standard", "delux", "premium"];
+const packages = ["friends", "family", "couples"];
 const Trips = () => {
+  const navigate=useNavigate()
+  const [value, setValue] = useState(0);
+  const [destination, setDestination] = useState("bali");
+  const [selectedPlan, setSelectedPlan] = useState("");
+  const [selectedPackage, setSelectedPackages] = useState("");
+  const { data: allBookingList,isLoading:allBookingIsLoading} = useAdminGetAllBookingQuery({
+    destination,
+    selectedPlan,
+    selectedPackage,
+  });
+  const handleTabs = (event, newValue) => {
+    setValue(newValue);
+    if (newValue == 0) {
+      setDestination("bali");
+    } else {
+      setDestination("phuket");
+    }
+  };
+
   return (
     <section className="trips-container">
       <AdminNavbar title="Trips" image={trip} />
 
       <section className="payments">
+        <ThemeProvider theme={theme}>
+          <div className="list-data-headings">
+            <Tabs
+              value={value}
+              onChange={handleTabs}
+              className="mui-tabs-container"
+            >
+              <Tab label="Bali" className="each-tab small-text-700" />
+              <Tab label="Phuket" className="each-tab small-text-700" />
+            </Tabs>
+
+            <div className="filter-popUp">
+              <select onChange={(e) => setSelectedPackages(e.target.value)}>
+              <option selected disabled>Select Package</option>
+                {packages.map((item) => (
+                  <option value={item}>
+                    {item}
+                  </option>
+                ))}
+              </select>
+              <select onChange={(e) => setSelectedPlan(e.target.value)}>
+              <option selected disabled>Select Plan</option>
+                {plans.map((item) => (
+                  <option value={item}>{item}</option>
+                ))}
+              </select>
+            </div>
+          </div>
+        </ThemeProvider>
+
         <TableContainer component={Paper} className="table">
           <Table aria-label="simple table">
             <TableHead className="table-head">
               <TableRow>
-                <TableCell align="center">Id</TableCell>
-                <TableCell align="center">Amount</TableCell>
-                <TableCell align="center">Payer</TableCell>
-                <TableCell align="center">Account Number</TableCell>
-                <TableCell align="center">Date</TableCell>
+                <TableCell align="center">Sl.No</TableCell>
+                <TableCell align="center">Destination</TableCell>
+                <TableCell align="center">Plan</TableCell>
+                <TableCell align="center">Package</TableCell>
+                <TableCell align="center">Total Amount</TableCell>
+                <TableCell align="center">Paid Amount</TableCell>
+                <TableCell align="center">Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody className="table-body">
-              {data.map((row) => (
-                <TableRow key={row.id}>
-                  <TableCell align="center">{row.id}</TableCell>
-                  <TableCell align="center">{row.amount}</TableCell>
-                  <TableCell align="center">{row.payer}</TableCell>
-                  <TableCell align="center">{row.accountNumber}</TableCell>
-                  <TableCell align="center">{row.date}</TableCell>
-                </TableRow>
-              ))}
+              {allBookingIsLoading?<h3>Loading...</h3>:allBookingList?.data?.length > 0?
+                allBookingList?.data?.map((row, index) => (
+                  <TableRow key={row.id} onClick={()=>navigate(`/admin/trip/${row.order_id}`)}>
+                    <TableCell align="center">{index + 1}</TableCell>
+                    <TableCell align="center">{row?.destination}</TableCell>
+                    <TableCell align="center">{row?.plan}</TableCell>
+                    <TableCell align="center">{row?.package}</TableCell>
+                    <TableCell align="center">{row?.total_amount}</TableCell>
+                    <TableCell align="center">{row?.paid_amount}</TableCell>
+                    <TableCell align="center">{row?.status}</TableCell>
+                  </TableRow>
+                )):  <h3>No Data Found</h3>}
             </TableBody>
           </Table>
         </TableContainer>
+
         <Pagination
           count={5}
           size="small"
@@ -61,5 +147,14 @@ const Trips = () => {
     </section>
   );
 };
+
+function TabPanel(props) {
+  const { children, value, index } = props;
+  return (
+    <div>
+      {value === index && <Typography component={"div"}>{children}</Typography>}
+    </div>
+  );
+}
 
 export default Trips;

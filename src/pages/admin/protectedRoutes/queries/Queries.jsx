@@ -15,7 +15,7 @@ import {
   TableCell,
   TableBody,
   Paper,
-  Pagination,
+  Pagination
 } from "@mui/material";
 
 // Data
@@ -27,6 +27,7 @@ const Queries = () => {
       <AdminNavbar title="Queries" image={query} />
 
       <section className="payments">
+
         <TableContainer component={Paper} className="table">
           <Table aria-label="simple table">
             <TableHead className="table-head">

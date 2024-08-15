@@ -21,7 +21,7 @@ import { setLogin, setParamsQuery } from "@/redux/slice/user/state/authUserSlice
 const SignIn = () => {
   const navigate = useNavigate();
   const dispatch=useDispatch()
-  const [userLogin] = useUserLoginMutation();
+  const [userLogin,{isLoading:loginLoading}] = useUserLoginMutation();
   let location = useLocation();
 
   const [errors, setErrors] = useState({});
@@ -96,9 +96,12 @@ const SignIn = () => {
             </div>
           </div>
 
+          {loginLoading?<button className="authButton" onClick={handleSubmit} disabled={loginLoading}>
+            Please Wait...
+          </button>:
           <button className="authButton" onClick={handleSubmit}>
             Submit <img src={buttonArrowImg} alt="" />
-          </button>
+          </button>}
 
           <div className="signUp">
             <p>

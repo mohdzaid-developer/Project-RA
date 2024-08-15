@@ -22,7 +22,8 @@ const ForgetPassword = () => {
     return <Navigate to="/otp" />;
   }
   const navigate = useNavigate();
-  const [studentForgetPassword] = useUserForgetPasswordMutation();
+  const [studentForgetPassword, { isLoading: forgetPasswordLoading }] =
+    useUserForgetPasswordMutation();
   const [user, setUser] = useState({
     email: "",
   });
@@ -82,9 +83,22 @@ const ForgetPassword = () => {
             {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
 
-          <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
-          </button>
+          {forgetPasswordLoading ? (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+              disabled={forgetPasswordLoading}
+            >
+              Please Wait...
+            </button>
+          ) : (
+            <button
+              className="authButton"
+              onClick={handleSubmit}
+            >
+              Submit <img src={buttonArrowImg} alt="" />
+            </button>
+          )}
 
           <div className="login">
             <p>

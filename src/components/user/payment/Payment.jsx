@@ -93,7 +93,8 @@ const Payment = () => {
             receipt: "receipt#1",
             bookingDetails: {
               ...details,
-              totalAmount: 5000,
+              total_amount: 5000,
+              paid_amount:2000
             },
           }),
         }
