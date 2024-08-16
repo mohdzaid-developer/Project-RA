@@ -1,5 +1,8 @@
 import "./profile.scss";
-import profileImg from "@/assets/profile.webp";
+import profileImg from "@/assets/profile.png";
+
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import {
@@ -8,16 +11,10 @@ import {
 } from "@/redux/slice/user/api/authUserApiSlice";
 
 const Profile = () => {
-  const { data: profileDetails, isLoading: profileLoading } =
+  const { data: profileDetails, isLoading: isProfileLoading } =
     useUserGetProfileQuery();
 
-  const [imageUpload] = useUserProfilePicUploadMutation();
-  const handleFileChange = async (event) => {
-    const formsData = new FormData();
-    formsData.append("image", event.target.files[0]);
-    console.log(event.target.files.buffer);
-    const res = await imageUpload({ formsData });
-  };
+  const [imageUpload, { isImageLoading }] = useUserProfilePicUploadMutation();
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];
@@ -28,7 +25,7 @@ const Profile = () => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = async () => {
-      const res = await imageUpload(reader.result);
+      await imageUpload(reader.result);
     };
   };
   return (
@@ -43,8 +40,13 @@ const Profile = () => {
             className="changeImage"
             onChange={handleImageUpload}
           />
-          <img src={profileDetails?.data?.profilePic ?? profileImg} alt="" />
+          {isImageLoading ? (
+            <CircularProgressBar />
+          ) : (
+            <img src={profileDetails?.data?.profilePic ?? profileImg} alt="" />
+          )}
         </div>
+
         <div className="form-container-right">
           <div>
             <label htmlFor="">Name : </label>

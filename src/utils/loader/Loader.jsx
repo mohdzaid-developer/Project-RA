@@ -5,7 +5,7 @@ const Loader = () => {
     <div>
       <Watch
         radius="35"
-        color="#dda15e"
+        color="#fefae0"
         ariaLabel="watch-loading"
         wrapperStyle={{
           height: "100vh",
