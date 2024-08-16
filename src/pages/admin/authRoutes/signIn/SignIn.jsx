@@ -8,7 +8,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 //Validation
-import { adminLoginValidationSchema } from "@/components/admin/validation/validations";
+import { adminLoginValidationSchema } from "@/utils/validation/adminValidations";
 
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";

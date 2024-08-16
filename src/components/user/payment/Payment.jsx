@@ -14,7 +14,7 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 import {
   createOrderSchema,
   createOrderSchemaSecond,
-} from "@/utils/validation/validations";
+} from "@/utils/validation/userValidations";
 import { useDispatch, useSelector } from "react-redux";
 import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 
@@ -101,7 +101,9 @@ const Payment = () => {
 
       const order = await response.json();
       if (response?.status == 400) {
-        toast.error("Please select start date that is at least one month from today")
+        toast.error(
+          "Please select start date that is at least one month from today"
+        );
       }
       if (!order || !order.data || !order.data.id) {
         return;

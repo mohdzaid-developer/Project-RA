@@ -11,7 +11,10 @@ import { useNavigate } from "react-router-dom";
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Validation
-import { otpValidationSchema } from "@/utils/validation/validations";
+import { otpValidationSchema } from "@/utils/validation/userValidations";
+
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import {
@@ -95,12 +98,24 @@ const Otp = () => {
             {errors?.otp && <p className="error-text">{errors?.otp}</p>}
 
             <div className="resend">
-              <p onClick={handleResendOtp}>Resend Otp</p>
+              <p onClick={handleResendOtp}>
+                {resendOtpLoading ? (
+                  <CircularProgressBar color="#ffffff" />
+                ) : (
+                  " Resend Otp"
+                )}
+              </p>
             </div>
           </div>
 
-          <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+          <button onClick={handleSubmit} className="authButton">
+            {otpVerifyLoading ? (
+              <CircularProgressBar color="#ffffff" />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
 
           <div className="forget-password">

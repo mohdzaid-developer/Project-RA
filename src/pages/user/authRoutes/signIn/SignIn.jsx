@@ -8,21 +8,28 @@ import { toast } from "react-hot-toast";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 //Validation
-import { userLoginValidationSchema } from "@/utils/validation/validations";
+import { userLoginValidationSchema } from "@/utils/validation/userValidations";
 
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
+
 //Redux
 import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
 import { useDispatch } from "react-redux";
-import { setLogin, setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
+import {
+  setLogin,
+  setParamsQuery,
+} from "@/redux/slice/user/state/authUserSlice";
 
 const SignIn = () => {
-  const navigate = useNavigate();
-  const dispatch=useDispatch()
-  const [userLogin] = useUserLoginMutation();
   let location = useLocation();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const [userLogin, { isLoading }] = useUserLoginMutation();
 
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
@@ -43,11 +50,11 @@ const SignIn = () => {
       if (response?.data?.data) {
         sessionStorage.setItem("user", JSON.stringify(response?.data?.data));
         if (separatedUrl) {
-          dispatch(setParamsQuery(separatedUrl))
-          dispatch(setLogin())
+          dispatch(setParamsQuery(separatedUrl));
+          dispatch(setLogin());
           navigate(`${separatedUrl}`);
         } else {
-          dispatch(setLogin())
+          dispatch(setLogin());
           navigate("/profile");
         }
         setData({
@@ -96,8 +103,14 @@ const SignIn = () => {
             </div>
           </div>
 
-          <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+          <button onClick={handleSubmit} className="authButton">
+            {isLoading ? (
+              <CircularProgressBar color="#ffffff" />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
 
           <div className="signUp">

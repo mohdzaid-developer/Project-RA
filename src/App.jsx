@@ -22,7 +22,7 @@ import AdminRouteLayout from "./layouts/admin/AdminRouteLayout";
 
 //Pages
 import Fallback from "./utils/fallback/Fallback";
-import MobileScreen from "./components/admin/mobileScreen/MobileScreen";
+import MobileScreen from "./components/global/mobileScreen/MobileScreen";
 
 //Routes
 import {

@@ -8,10 +8,13 @@ import { toast } from "react-hot-toast";
 import { Navigate, useNavigate } from "react-router-dom";
 
 //Validation
-import { forgetPasswordValidationSchema } from "@/utils/validation/validations";
+import { forgetPasswordValidationSchema } from "@/utils/validation/userValidations";
 
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
@@ -22,7 +25,8 @@ const ForgetPassword = () => {
     return <Navigate to="/otp" />;
   }
   const navigate = useNavigate();
-  const [studentForgetPassword] = useUserForgetPasswordMutation();
+  const [studentForgetPassword, { isLoading }] =
+    useUserForgetPasswordMutation();
   const [user, setUser] = useState({
     email: "",
   });
@@ -83,7 +87,13 @@ const ForgetPassword = () => {
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+            {isLoading ? (
+              <CircularProgressBar color="#ffffff" />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
 
           <div className="login">

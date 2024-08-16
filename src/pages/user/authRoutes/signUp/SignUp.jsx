@@ -8,10 +8,13 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 //Validation
-import { userSignUpSchema } from "@/utils/validation/validations";
+import { userSignUpSchema } from "@/utils/validation/userValidations";
 
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import { useUserSignUpMutation } from "@/redux/slice/user/api/authUserApiSlice";
@@ -22,7 +25,7 @@ const SignUp = () => {
     return <Navigate to="/otp" />;
   }
   const navigate = useNavigate();
-  const [userSignUp] = useUserSignUpMutation();
+  const [userSignUp, { isLoading }] = useUserSignUpMutation();
 
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
@@ -129,7 +132,13 @@ const SignUp = () => {
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+            {isLoading ? (
+              <CircularProgressBar color="#ffffff" />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
 
           <div className="signIn">

@@ -11,7 +11,10 @@ import { toast } from "react-hot-toast";
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Validation
-import { changePasswordValidationSchema } from "@/utils/validation/validations";
+import { changePasswordValidationSchema } from "@/utils/validation/userValidations";
+
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
@@ -19,7 +22,8 @@ import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserAp
 const ChangePassword = () => {
   const navigate = useNavigate();
 
-  const [studentUpdatePassword] = useUserChangePasswordMutation();
+  const [studentUpdatePassword, { isLoading }] =
+    useUserChangePasswordMutation();
   const [password, setPassword] = useState({
     password: "",
     confirmPassword: "",
@@ -122,7 +126,13 @@ const ChangePassword = () => {
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+            {isLoading ? (
+              <CircularProgressBar color="#ffffff" />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
         </div>
       </div>
