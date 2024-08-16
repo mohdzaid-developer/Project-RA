@@ -6,7 +6,7 @@
   left: 0;
   width: 15vw;
   height: 100vh;
-  background: $light-orange;
+  background: $dark-green;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -37,7 +37,7 @@
       h2 {
         text-align: center;
         font-weight: 600;
-        color: $white;
+        color: $text-orange;
         font-size: 22px;
       }
     }

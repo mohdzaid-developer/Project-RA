@@ -7,7 +7,6 @@ export const getUserAccessToken = () => {
 };
 
 export const getOtpAccessToken = (type) => {
-  // const data = JSON.parse(sessionStorage.getItem("otpInfo"));
   if (type == "refresh") {
     return JSON.parse(sessionStorage.getItem("otpInfo"))?.refreshToken;
   }
@@ -24,6 +23,5 @@ export const getAdminOtpAccessToken = (type) => {
   if (type == "refresh") {
     return JSON.parse(sessionStorage.getItem("adminOtpInfo"))?.refreshToken;
   }
-  console.log(JSON.parse(sessionStorage.getItem("adminOtpInfo")))
   return JSON.parse(sessionStorage.getItem("adminOtpInfo"))?.accessToken;
 };
