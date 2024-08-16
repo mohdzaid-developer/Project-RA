@@ -21,7 +21,7 @@ import AuthRouteLayout from "./layouts/auth/AuthRouteLayout";
 import AdminRouteLayout from "./layouts/admin/AdminRouteLayout";
 
 //Pages
-import Fallback from "./utils/fallback/Fallback";
+import Fallback from "./components/global/fallback/Fallback";
 import MobileScreen from "./components/global/mobileScreen/MobileScreen";
 
 //Routes
