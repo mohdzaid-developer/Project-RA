@@ -1,9 +1,5 @@
-import {
-  useAdminGetAllBookingQuery,
-  useAdminGetAllPaymentsQuery,
-} from "@/redux/slice/admin/api/adminApiSlice";
+import { useAdminGetAllBookingQuery } from "@/redux/slice/admin/api/adminApiSlice";
 import "./singleTripDetails.scss";
-import "../trips/trips.scss";
 import { useParams } from "react-router-dom";
 import AdminNavbar from "@/components/admin/adminNavbar/AdminNavbar";
 
