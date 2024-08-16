@@ -144,7 +144,7 @@ export const UserProfile = lazy(() =>
 );
 
 export const UserMyTrips = lazy(() =>
-  import("@/pages/user/protectedRoutes/trip/myTrips/MyTrips")
+  import("@/pages/user/protectedRoutes/myTrips/MyTrips")
 );
 export const UserPayment = lazy(() =>
   import("@/pages/user/protectedRoutes/payment/Payment")

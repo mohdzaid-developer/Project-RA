@@ -8,13 +8,16 @@ import { useNavigate, Navigate } from "react-router-dom";
 import { toast } from "react-hot-toast";
 
 //Validation
-import { userSignUpSchema } from "@/utils/validation/validations";
+import { userSignUpSchema } from "@/utils/validation/userValidations";
 
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
+
 //Redux
-import { useUserSignUpMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useUserSignUpMutation } from "@/redux/slice/user/api/userApiSlice";
 
 const SignUp = () => {
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
@@ -22,7 +25,7 @@ const SignUp = () => {
     return <Navigate to="/otp" />;
   }
   const navigate = useNavigate();
-  const [userSignUp, { isLoading: signUpLoading }] = useUserSignUpMutation();
+  const [userSignUp, { isLoading }] = useUserSignUpMutation();
 
   const [errors, setErrors] = useState({});
   const [data, setData] = useState({
@@ -128,23 +131,16 @@ const SignUp = () => {
             )}
           </div>
 
-          {signUpLoading ? (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-              disabled={signUpLoading}
-            >
-              Please Wait...
-            </button>
-          ) : (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-              disabled={signUpLoading}
-            >
-              Submit <img src={buttonArrowImg} alt="" />
-            </button>
-          )}
+          <button className="authButton" onClick={handleSubmit}>
+            {isLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
+          </button>
+
           <div className="signIn">
             <p>
               Already have an account!{" "}

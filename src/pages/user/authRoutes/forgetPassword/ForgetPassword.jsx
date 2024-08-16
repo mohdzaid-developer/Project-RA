@@ -8,13 +8,16 @@ import { toast } from "react-hot-toast";
 import { Navigate, useNavigate } from "react-router-dom";
 
 //Validation
-import { forgetPasswordValidationSchema } from "@/utils/validation/validations";
+import { forgetPasswordValidationSchema } from "@/utils/validation/userValidations";
 
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
+
 //Redux
-import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/userApiSlice";
 
 const ForgetPassword = () => {
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));
@@ -22,7 +25,7 @@ const ForgetPassword = () => {
     return <Navigate to="/otp" />;
   }
   const navigate = useNavigate();
-  const [studentForgetPassword, { isLoading: forgetPasswordLoading }] =
+  const [studentForgetPassword, { isLoading }] =
     useUserForgetPasswordMutation();
   const [user, setUser] = useState({
     email: "",
@@ -83,22 +86,15 @@ const ForgetPassword = () => {
             {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
 
-          {forgetPasswordLoading ? (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-              disabled={forgetPasswordLoading}
-            >
-              Please Wait...
-            </button>
-          ) : (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-            >
-              Submit <img src={buttonArrowImg} alt="" />
-            </button>
-          )}
+          <button className="authButton" onClick={handleSubmit}>
+            {isLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
+          </button>
 
           <div className="login">
             <p>

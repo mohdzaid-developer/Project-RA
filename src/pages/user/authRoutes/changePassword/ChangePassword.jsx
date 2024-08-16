@@ -11,15 +11,18 @@ import { toast } from "react-hot-toast";
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Validation
-import { changePasswordValidationSchema } from "@/utils/validation/validations";
+import { changePasswordValidationSchema } from "@/utils/validation/userValidations";
+
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
-import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useUserChangePasswordMutation } from "@/redux/slice/user/api/userApiSlice";
 
 const ChangePassword = () => {
   const navigate = useNavigate();
 
-  const [studentUpdatePassword, { isLoading: changePasswordLoading }] =
+  const [studentUpdatePassword, { isLoading }] =
     useUserChangePasswordMutation();
   const [password, setPassword] = useState({
     password: "",
@@ -122,22 +125,15 @@ const ChangePassword = () => {
             )}
           </div>
 
-          {changePasswordLoading ? (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-              disabled={changePasswordLoading}
-            >
-              Please Wait...
-            </button>
-          ) : (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-            >
-              Submit <img src={buttonArrowImg} alt="" />
-            </button>
-          )}
+          <button className="authButton" onClick={handleSubmit}>
+            {isLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
+          </button>
         </div>
       </div>
     </div>

@@ -25,8 +25,7 @@ import {
 } from "@mui/material";
 
 // Redux
-import { useAdminGetAllUsersQuery } from "@/redux/slice/admin/api/authAdminApiSlice";
-
+import { useAdminGetAllUsersQuery } from "@/redux/slice/admin/api/adminApiSlice";
 
 // MUI Restyling
 const theme = createTheme({
@@ -50,8 +49,9 @@ const theme = createTheme({
 const Users = () => {
   const [value, setValue] = useState(0);
   const [isBooked, setIsBooked] = useState(true);
-  const {data:allUserList,isLoading:allUserIsLoading}=useAdminGetAllUsersQuery({isBooked})
-console.log(allUserList)
+  const { data: allUserList, isLoading: allUserIsLoading } =
+    useAdminGetAllUsersQuery({ isBooked });
+  console.log(allUserList);
   const handleTabs = (event, newValue) => {
     setValue(newValue);
     if (newValue == 0) {
@@ -90,16 +90,30 @@ console.log(allUserList)
               </TableRow>
             </TableHead>
             <TableBody className="table-body">
-              {allUserIsLoading?<h3>Loading...</h3>:allUserList?.data?.length > 0?
+              {allUserIsLoading ? (
+                <h3>Loading...</h3>
+              ) : allUserList?.data?.length > 0 ? (
                 allUserList?.data?.map((row, index) => (
-                  <TableRow key={row.id} onClick={()=>navigate(`/admin/trip/${row.order_id}`)}>
+                  <TableRow
+                    key={row.id}
+                    onClick={() => navigate(`/admin/trip/${row.order_id}`)}
+                  >
                     <TableCell align="center">{index + 1}</TableCell>
-                    <TableCell align="center"><img src={row?.profilePic} alt="profile" className="profile-pic"/></TableCell>
+                    <TableCell align="center">
+                      <img
+                        src={row?.profilePic}
+                        alt="profile"
+                        className="profile-pic"
+                      />
+                    </TableCell>
                     <TableCell align="center">{row?.fullName}</TableCell>
                     <TableCell align="center">{row?.email}</TableCell>
                     <TableCell align="center">{row?.phone}</TableCell>
                   </TableRow>
-                )):  <h3>No Data Found</h3>}
+                ))
+              ) : (
+                <h3>No Data Found</h3>
+              )}
             </TableBody>
           </Table>
         </TableContainer>

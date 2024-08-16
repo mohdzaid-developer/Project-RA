@@ -11,19 +11,21 @@ import { useNavigate } from "react-router-dom";
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Validation
-import { otpValidationSchema } from "@/utils/validation/validations";
+import { otpValidationSchema } from "@/utils/validation/userValidations";
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import {
   useAdminOtpVerifyMutation,
   useAdminResendOtpMutation,
-} from "@/redux/slice/admin/api/authAdminApiSlice";
+} from "@/redux/slice/admin/api/adminApiSlice";
 import { useDispatch } from "react-redux";
 import { setLogin } from "@/redux/slice/admin/state/authAdminSlice";
 
 const Otp = () => {
   const navigate = useNavigate();
-  const dispatch=useDispatch()
+  const dispatch = useDispatch();
 
   const [adminOtpVerify, { isLoading: otpVerifyLoading }] =
     useAdminOtpVerifyMutation();
@@ -38,14 +40,14 @@ const Otp = () => {
       await otpValidationSchema.validate({ otp: otp }, { abortEarly: false });
       const response = await adminOtpVerify(otp);
       if (response?.data?.data) {
-        console.log(response)
+        console.log(response);
         if (response?.data?.data?.isLogin == true) {
           sessionStorage?.removeItem("adminOtpInfo");
           sessionStorage.setItem(
             "admin",
             JSON.stringify({ ...response?.data?.data })
           );
-          dispatch(setLogin())
+          dispatch(setLogin());
           navigate("/admin/dashboard");
         } else {
           toast.success("Email verification successful!");
@@ -105,7 +107,13 @@ const Otp = () => {
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+            {otpVerifyLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
 
           <div className="forget-password">

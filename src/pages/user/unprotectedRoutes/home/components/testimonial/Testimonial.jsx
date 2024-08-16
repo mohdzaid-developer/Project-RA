@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 
 //Assets
 import quotes from "@/assets/quotes.webp";
-import profileImg from "@/assets/profile.webp";
+import profileImg from "@/assets/profile.png";
 
 const Testimonial = () => {
   const data = [

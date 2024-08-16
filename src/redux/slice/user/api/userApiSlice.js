@@ -1,13 +1,17 @@
-import { getOtpAccessToken, getUserAccessToken } from "@/utils/accessToken/accessToken";
+import {
+  getOtpAccessToken,
+  getUserAccessToken,
+} from "@/utils/accessToken/accessToken";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const authUserApi = createApi({
-  reducerPath: "authUserApi",
+export const userApi = createApi({
+  reducerPath: "userApi",
   tagTypes: [],
   baseQuery: fetchBaseQuery({
     baseUrl: `${import.meta.env.VITE_API_BASE_URL}`,
   }),
   endpoints: (builder) => ({
+    //Authentication
     userLogin: builder.mutation({
       query: (data) => ({
         url: "user/auth/login",
@@ -29,7 +33,7 @@ export const authUserApi = createApi({
         headers: {
           Authorization: `Bearer ${getOtpAccessToken()}`,
         },
-        body: {otp:data},
+        body: { otp: data },
       }),
     }),
     userResendOtp: builder.mutation({
@@ -45,7 +49,7 @@ export const authUserApi = createApi({
       query: (data) => ({
         url: "user/auth/forget-password",
         method: "POST",
-        body:data
+        body: data,
       }),
     }),
     userChangePassword: builder.mutation({
@@ -55,9 +59,11 @@ export const authUserApi = createApi({
         headers: {
           Authorization: `Bearer ${getOtpAccessToken("changePassword")}`,
         },
-        body:data
+        body: data,
       }),
     }),
+
+    //Profile
     userGetProfile: builder.query({
       query: () => ({
         url: `user/profile`,
@@ -66,9 +72,8 @@ export const authUserApi = createApi({
           Authorization: `Bearer ${getUserAccessToken()}`,
         },
       }),
-      providesTags:["getUserProfile"]
+      providesTags: ["getUserProfile"],
     }),
-
     userProfilePicUpload: builder.mutation({
       query: (data) => ({
         url: "user/profile",
@@ -76,9 +81,33 @@ export const authUserApi = createApi({
         headers: {
           Authorization: `Bearer ${getUserAccessToken()}`,
         },
-        body: {profileDetails:data},
+        body: { profileDetails: data },
       }),
-      invalidatesTags:["getUserProfile"]
+      invalidatesTags: ["getUserProfile"],
+    }),
+
+    //Payment
+    createOrder: builder.mutation({
+      query: (body) => ({
+        url: "payment/create-order",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${body.accessToken}`,
+        },
+        body: JSON.stringify(body.orderDetails),
+      }),
+    }),
+    verifyPayment: builder.mutation({
+      query: (body) => ({
+        url: "payment/verify-payment",
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${body.accessToken}`,
+        },
+        body: JSON.stringify(body),
+      }),
     }),
   }),
 });
@@ -91,5 +120,7 @@ export const {
   useUserForgetPasswordMutation,
   useUserChangePasswordMutation,
   useUserGetProfileQuery,
-  useUserProfilePicUploadMutation
-} = authUserApi;
+  useUserProfilePicUploadMutation,
+  useCreateOrderMutation,
+  useVerifyPaymentMutation,
+} = userApi;

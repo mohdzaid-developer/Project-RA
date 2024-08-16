@@ -11,13 +11,16 @@ import { useNavigate } from "react-router-dom";
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Validation
-import { otpValidationSchema } from "@/utils/validation/validations";
+import { otpValidationSchema } from "@/utils/validation/userValidations";
+
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import {
   useUserOtpVerifyMutation,
   useUserResendOtpMutation,
-} from "@/redux/slice/user/api/authUserApiSlice";
+} from "@/redux/slice/user/api/userApiSlice";
 
 const Otp = () => {
   const navigate = useNavigate();
@@ -47,8 +50,8 @@ const Otp = () => {
           navigate("/login");
         }
       } else {
-        if (response?.error?.data?.errors[0]?.message) {
-          toast.error(response?.error?.data?.errors[0]?.message);
+        if (response?.error) {
+          toast.error(response?.error.data.message);
         }
       }
     } catch (err) {
@@ -95,26 +98,21 @@ const Otp = () => {
             {errors?.otp && <p className="error-text">{errors?.otp}</p>}
 
             <div className="resend">
-              <p onClick={handleResendOtp}>Resend Otp</p>
+              <p onClick={handleResendOtp}>
+                {resendOtpLoading ? <CircularProgressBar /> : " Resend Otp"}
+              </p>
             </div>
           </div>
 
-          {otpVerifyLoading ? (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-              disabled={otpVerifyLoading}
-            >
-              Please Wait...
-            </button>
-          ) : (
-            <button
-              className="authButton"
-              onClick={handleSubmit}
-            >
-              Submit <img src={buttonArrowImg} alt="" />
-            </button>
-          )}
+          <button onClick={handleSubmit} className="authButton">
+            {otpVerifyLoading ? (
+              <CircularProgressBar color="#ffffff" />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
+          </button>
 
           <div className="forget-password">
             <p>

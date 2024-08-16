@@ -1,7 +1,7 @@
 import {
   useAdminGetAllBookingQuery,
   useAdminGetAllPaymentsQuery,
-} from "@/redux/slice/admin/api/authAdminApiSlice";
+} from "@/redux/slice/admin/api/adminApiSlice";
 import "./singleTripDetails.scss";
 import "../trips/trips.scss";
 import { useParams } from "react-router-dom";
@@ -20,10 +20,7 @@ const SingleTripDetails = () => {
       selectedPackage: "",
       id,
     });
-  // const { data: singlePaymentDetails, isLoading: allPaymentIsLoading } =
-  //   useAdminGetAllPaymentsQuery({
-  //     id,
-  //   });
+
   return (
     <section className="trips-container">
       <AdminNavbar title="Trips" image={trip} />
@@ -111,7 +108,11 @@ const SingleTripDetails = () => {
             {statusNames?.map((item) => (
               <button
                 className="status-btn"
-                id={singleBookingDetails?.data[0]?.status == item.toLowerCase()?"selected":""}
+                id={
+                  singleBookingDetails?.data[0]?.status == item.toLowerCase()
+                    ? "selected"
+                    : ""
+                }
               >
                 {item}
               </button>

@@ -1,5 +1,6 @@
 //Validation
 import * as Yup from "yup";
+
 //ADMIN
 export const adminLoginValidationSchema = Yup.object({
   email: Yup.string()
@@ -23,5 +24,5 @@ export const adminSignUpValidationSchema = Yup.object({
     .matches(
       /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
       "Please enter your email address in format: example@gmail.com"
-    )
+    ),
 });

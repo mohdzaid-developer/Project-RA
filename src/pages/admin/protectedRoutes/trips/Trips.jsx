@@ -28,7 +28,7 @@ import {
 } from "@mui/material";
 
 // redux
-import { useAdminGetAllBookingQuery } from "@/redux/slice/admin/api/authAdminApiSlice";
+import { useAdminGetAllBookingQuery } from "@/redux/slice/admin/api/adminApiSlice";
 
 // MUI Restyling
 const theme = createTheme({
@@ -53,16 +53,17 @@ const theme = createTheme({
 const plans = ["standard", "delux", "premium"];
 const packages = ["friends", "family", "couples"];
 const Trips = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate();
   const [value, setValue] = useState(0);
   const [destination, setDestination] = useState("bali");
   const [selectedPlan, setSelectedPlan] = useState("");
   const [selectedPackage, setSelectedPackages] = useState("");
-  const { data: allBookingList,isLoading:allBookingIsLoading} = useAdminGetAllBookingQuery({
-    destination,
-    selectedPlan,
-    selectedPackage,
-  });
+  const { data: allBookingList, isLoading: allBookingIsLoading } =
+    useAdminGetAllBookingQuery({
+      destination,
+      selectedPlan,
+      selectedPackage,
+    });
   const handleTabs = (event, newValue) => {
     setValue(newValue);
     if (newValue == 0) {
@@ -90,15 +91,17 @@ const Trips = () => {
 
             <div className="filter-popUp">
               <select onChange={(e) => setSelectedPackages(e.target.value)}>
-              <option selected disabled>Select Package</option>
+                <option selected disabled>
+                  Select Package
+                </option>
                 {packages.map((item) => (
-                  <option value={item}>
-                    {item}
-                  </option>
+                  <option value={item}>{item}</option>
                 ))}
               </select>
               <select onChange={(e) => setSelectedPlan(e.target.value)}>
-              <option selected disabled>Select Plan</option>
+                <option selected disabled>
+                  Select Plan
+                </option>
                 {plans.map((item) => (
                   <option value={item}>{item}</option>
                 ))}
@@ -121,9 +124,14 @@ const Trips = () => {
               </TableRow>
             </TableHead>
             <TableBody className="table-body">
-              {allBookingIsLoading?<h3>Loading...</h3>:allBookingList?.data?.length > 0?
+              {allBookingIsLoading ? (
+                <h3>Loading...</h3>
+              ) : allBookingList?.data?.length > 0 ? (
                 allBookingList?.data?.map((row, index) => (
-                  <TableRow key={row.id} onClick={()=>navigate(`/admin/trip/${row.order_id}`)}>
+                  <TableRow
+                    key={row.id}
+                    onClick={() => navigate(`/admin/trip/${row.order_id}`)}
+                  >
                     <TableCell align="center">{index + 1}</TableCell>
                     <TableCell align="center">{row?.destination}</TableCell>
                     <TableCell align="center">{row?.plan}</TableCell>
@@ -132,7 +140,10 @@ const Trips = () => {
                     <TableCell align="center">{row?.paid_amount}</TableCell>
                     <TableCell align="center">{row?.status}</TableCell>
                   </TableRow>
-                )):  <h3>No Data Found</h3>}
+                ))
+              ) : (
+                <h3>No Data Found</h3>
+              )}
             </TableBody>
           </Table>
         </TableContainer>
