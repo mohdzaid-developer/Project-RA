@@ -1,42 +1,52 @@
 import { useEffect, useState } from "react";
 import "./payment.scss";
 
-//Alert
+// Alert
 import { toast } from "react-hot-toast";
 
-//Routing
+// Routing
 import { useLocation, useNavigate } from "react-router-dom";
 
-//Assets
+// Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
-//Validation
+// Validations
 import {
   createOrderSchema,
   createOrderSchemaSecond,
 } from "@/utils/validation/userValidations";
-import { useDispatch, useSelector } from "react-redux";
+
+//Component
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
+
+// Redux
 import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  useCreateOrderMutation,
+  useVerifyPaymentMutation,
+} from "@/redux/slice/user/api/userApiSlice";
 
 const Payment = () => {
-  const { isAuthenticated, paramsQuery } = useSelector(
-    (state) => state.authUser
-  );
   let location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const { isAuthenticated } = useSelector((state) => state.authUser);
+
   const [errors, setErrors] = useState({});
   const [details, setDetails] = useState(null);
-  const [normalAmount, setNormalAmount] = useState(null);
-  const [totalAmount, setTotalAmount] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [createOrder] = useCreateOrderMutation();
+  const [verifyPayment] = useVerifyPaymentMutation();
 
   useEffect(() => {
-    if (isAuthenticated == true) {
+    if (isAuthenticated === true) {
       dispatch(setParamsQuery(null));
     }
     if (location?.pathname) {
-      let separatedUrl = location?.pathname?.split("/");
+      const separatedUrl = location?.pathname?.split("/");
       if (separatedUrl) {
         setDetails({
           ...details,
@@ -69,95 +79,90 @@ const Payment = () => {
 
   const handlePayment = async (e) => {
     e.preventDefault();
+    setIsLoading(true);
+
     let userData = JSON.parse(sessionStorage.getItem("user"));
     if (!userData) {
       navigate(`/login?page=${location?.pathname.replace(/\//g, "?")}`);
+      setIsLoading(false);
+      return;
     }
+
     try {
       if (location?.pathname?.includes("family")) {
         await createOrderSchema.validate(details, { abortEarly: false });
       } else {
         await createOrderSchemaSecond.validate(details, { abortEarly: false });
       }
-      const response = await fetch(
-        `${import.meta.env.VITE_API_BASE_URL}payment/create-order`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${userData?.accessToken}`,
-          },
-          body: JSON.stringify({
-            amount: 2000,
-            currency: "INR",
-            receipt: "receipt#1",
-            bookingDetails: {
-              ...details,
-              totalAmount: 5000,
-            },
-          }),
-        }
-      );
 
-      const order = await response.json();
-      if (response?.status == 400) {
+      const orderResponse = await createOrder({
+        accessToken: userData.accessToken,
+        orderDetails: {
+          amount: 2000,
+          currency: "INR",
+          receipt: "receipt#1",
+          bookingDetails: {
+            ...details,
+            totalAmount: 5000,
+          },
+        },
+      }).unwrap();
+
+      if (orderResponse?.status === 400) {
         toast.error(
-          "Please select start date that is at least one month from today"
+          "Please select a start date that is at least one month from today"
         );
-      }
-      if (!order || !order.data || !order.data.id) {
+        setIsLoading(false);
         return;
       }
 
       const options = {
         key: "rzp_test_e6zf5ZgkpupNAu",
-        amount: order.data.amount_due,
-        currency: order.data.currency,
+        amount: orderResponse.data.amount_due,
+        currency: orderResponse.data.currency,
         name: "Come Fly With Me",
         description: "Transaction",
-        order_id: order.data.id,
+        order_id: orderResponse.data.id,
         callback_url: "http://localhost:3000/payment-success",
-        handler: function (response) {
-          fetch(`${import.meta.env.VITE_API_BASE_URL}payment/verify-payment`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${userData?.accessToken}`,
-            },
-            body: JSON.stringify({
+        handler: async function (response) {
+          try {
+            const verificationResponse = await verifyPayment({
+              accessToken: userData.accessToken,
               orderId: response.razorpay_order_id,
               paymentId: response.razorpay_payment_id,
               signature: response.razorpay_signature,
               amount: 2000,
               currency: "rupees",
-              order_id: order.data.id,
-            }),
-          })
-            .then((res) => {
-              console.log(res.data.message);
-            })
-            .catch((err) => {
-              console.error(err);
-            });
+              order_id: orderResponse.data.id,
+            }).unwrap();
+
+            toast.success("Payment successful!");
+            setDetails(null);
+          } catch (err) {
+            toast.error("Payment verification failed!");
+            console.error(err);
+          } finally {
+            setIsLoading(false);
+          }
         },
         theme: {
-          color: "#F37254",
+          color: "#151515",
         },
       };
 
       const rzp = new window.Razorpay(options);
       rzp.open();
     } catch (err) {
-      console.log(err);
-      if (err) {
+      if (err.inner) {
         const newErrors = {};
         err.inner.forEach((error) => {
           newErrors[error.path] = error.message;
         });
         setErrors(newErrors);
       } else {
-        toast.error("Something went wrong !");
+        toast.error("Something went wrong!");
       }
+      setIsLoading(false);
     }
   };
 
@@ -173,6 +178,7 @@ const Payment = () => {
                 type="date"
                 name="start_date"
                 onChange={handleChange}
+                value={details?.start_date || ""}
                 required
               />
               {errors?.start_date && (
@@ -185,6 +191,7 @@ const Payment = () => {
                 type="phone"
                 name="no_of_adults"
                 onChange={handleChange}
+                value={details?.no_of_adults || ""}
                 required
               />
               {errors?.no_of_adults && (
@@ -199,6 +206,7 @@ const Payment = () => {
                 type="date"
                 name="end_date"
                 onChange={handleChange}
+                value={details?.end_date || ""}
                 required
               />
               {errors?.end_date && (
@@ -220,6 +228,7 @@ const Payment = () => {
                   type="phone"
                   name="no_of_children"
                   onChange={handleChange}
+                  value={details?.no_of_children || ""}
                   required
                 />
                 {errors?.no_of_children && (
@@ -229,9 +238,16 @@ const Payment = () => {
             )}
           </div>
         </div>
+
         <button onClick={handlePayment}>
-          Book Now
-          <img src={buttonArrowImg} alt="" />
+          {isLoading ? (
+            <CircularProgressBar />
+          ) : (
+            <>
+              Book Now
+              <img src={buttonArrowImg} alt="" />
+            </>
+          )}
         </button>
       </form>
     </div>

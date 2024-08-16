@@ -33,6 +33,7 @@ import {
   UserOtp,
   UserProfile,
   UserPayment,
+  UserMyTrips,
   UserHome,
   UserTermsAndCondition,
   UserBali,
@@ -228,6 +229,10 @@ const userProtectedRoutesData = [
   {
     path: "/payment",
     element: <UserPayment />,
+  },
+  {
+    path: "/my-trips",
+    element: <UserMyTrips />,
   },
 ];
 const adminAuthRoutesData = [

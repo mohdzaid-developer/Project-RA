@@ -17,7 +17,7 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
-import { useAdminLoginMutation } from "@/redux/slice/admin/api/authAdminApiSlice";
+import { useAdminLoginMutation } from "@/redux/slice/admin/api/adminApiSlice";
 
 const SignIn = () => {
   const [adminLogin, { isLoading }] = useAdminLoginMutation();

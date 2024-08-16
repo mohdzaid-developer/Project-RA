@@ -1,8 +1,8 @@
 import { getAdminOtpAccessToken } from "@/utils/accessToken/accessToken";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
-export const authAdminApi = createApi({
-  reducerPath: "authAdminApi",
+export const adminApi = createApi({
+  reducerPath: "adminApi",
   tagTypes: [],
   baseQuery: fetchBaseQuery({
     baseUrl: `${import.meta.env.VITE_API_BASE_URL}`,
@@ -41,4 +41,4 @@ export const {
   useAdminLoginMutation,
   useAdminOtpVerifyMutation,
   useAdminResendOtpMutation,
-} = authAdminApi;
+} = adminApi;

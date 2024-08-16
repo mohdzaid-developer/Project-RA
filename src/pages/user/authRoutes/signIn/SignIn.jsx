@@ -17,7 +17,7 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
-import { useUserLoginMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useUserLoginMutation } from "@/redux/slice/user/api/userApiSlice";
 import { useDispatch } from "react-redux";
 import {
   setLogin,

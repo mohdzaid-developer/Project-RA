@@ -17,7 +17,7 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
-import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useUserForgetPasswordMutation } from "@/redux/slice/user/api/userApiSlice";
 
 const ForgetPassword = () => {
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));

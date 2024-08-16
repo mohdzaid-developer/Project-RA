@@ -8,13 +8,14 @@ import CircularProgressBar from "@/components/global/circularProgressBar/Circula
 import {
   useUserGetProfileQuery,
   useUserProfilePicUploadMutation,
-} from "@/redux/slice/user/api/authUserApiSlice";
+} from "@/redux/slice/user/api/userApiSlice";
 
 const Profile = () => {
   const { data: profileDetails, isLoading: isProfileLoading } =
     useUserGetProfileQuery();
 
-  const [imageUpload, { isImageLoading }] = useUserProfilePicUploadMutation();
+  const [imageUpload, { isLoading: isImageLoading }] =
+    useUserProfilePicUploadMutation();
 
   const handleImageUpload = (event) => {
     const file = event.target.files[0];

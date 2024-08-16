@@ -17,7 +17,7 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
-import { useUserSignUpMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useUserSignUpMutation } from "@/redux/slice/user/api/userApiSlice";
 
 const SignUp = () => {
   const otpData = JSON.parse(sessionStorage.getItem("otpInfo"));

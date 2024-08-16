@@ -19,7 +19,7 @@ import CircularProgressBar from "@/components/global/circularProgressBar/Circula
 import {
   useAdminOtpVerifyMutation,
   useAdminResendOtpMutation,
-} from "@/redux/slice/admin/api/authAdminApiSlice";
+} from "@/redux/slice/admin/api/adminApiSlice";
 import { useDispatch } from "react-redux";
 import { setLogin } from "@/redux/slice/admin/state/authAdminSlice";
 

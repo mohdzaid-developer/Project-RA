@@ -20,7 +20,7 @@ import CircularProgressBar from "@/components/global/circularProgressBar/Circula
 import {
   useUserOtpVerifyMutation,
   useUserResendOtpMutation,
-} from "@/redux/slice/user/api/authUserApiSlice";
+} from "@/redux/slice/user/api/userApiSlice";
 
 const Otp = () => {
   const navigate = useNavigate();
@@ -99,11 +99,7 @@ const Otp = () => {
 
             <div className="resend">
               <p onClick={handleResendOtp}>
-                {resendOtpLoading ? (
-                  <CircularProgressBar  />
-                ) : (
-                  " Resend Otp"
-                )}
+                {resendOtpLoading ? <CircularProgressBar /> : " Resend Otp"}
               </p>
             </div>
           </div>

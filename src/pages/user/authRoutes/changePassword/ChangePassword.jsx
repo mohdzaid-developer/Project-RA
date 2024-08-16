@@ -17,7 +17,7 @@ import { changePasswordValidationSchema } from "@/utils/validation/userValidatio
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
-import { useUserChangePasswordMutation } from "@/redux/slice/user/api/authUserApiSlice";
+import { useUserChangePasswordMutation } from "@/redux/slice/user/api/userApiSlice";
 
 const ChangePassword = () => {
   const navigate = useNavigate();
