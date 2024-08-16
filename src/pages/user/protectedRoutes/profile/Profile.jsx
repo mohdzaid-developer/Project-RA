@@ -43,13 +43,7 @@ const Profile = () => {
             className="changeImage"
             onChange={handleImageUpload}
           />
-          <img
-            src={
-              profileDetails?.data?.profilePic
-                ??profileImg
-            }
-            alt=""
-          />
+          <img src={profileDetails?.data?.profilePic ?? profileImg} alt="" />
         </div>
         <div className="form-container-right">
           <div>

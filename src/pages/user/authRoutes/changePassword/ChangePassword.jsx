@@ -127,7 +127,7 @@ const ChangePassword = () => {
 
           <button className="authButton" onClick={handleSubmit}>
             {isLoading ? (
-              <CircularProgressBar color="#ffffff" />
+              <CircularProgressBar />
             ) : (
               <>
                 Submit <img src={buttonArrowImg} alt="" />

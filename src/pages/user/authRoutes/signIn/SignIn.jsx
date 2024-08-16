@@ -64,7 +64,7 @@ const SignIn = () => {
       }
 
       if (response?.error?.data?.message) {
-        alert(response?.error?.data?.message);
+        toast.error(response?.error?.data?.message);
       }
     } catch (err) {
       if (err && err.inner) {
@@ -105,7 +105,7 @@ const SignIn = () => {
 
           <button onClick={handleSubmit} className="authButton">
             {isLoading ? (
-              <CircularProgressBar color="#ffffff" />
+              <CircularProgressBar />
             ) : (
               <>
                 Submit <img src={buttonArrowImg} alt="" />

@@ -13,11 +13,14 @@ import { adminLoginValidationSchema } from "@/utils/validation/adminValidations"
 //Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
+
 //Redux
 import { useAdminLoginMutation } from "@/redux/slice/admin/api/authAdminApiSlice";
 
 const SignIn = () => {
-  const [adminLogin] = useAdminLoginMutation();
+  const [adminLogin, { isLoading }] = useAdminLoginMutation();
   const navigate = useNavigate();
 
   const [errors, setErrors] = useState({});
@@ -45,7 +48,7 @@ const SignIn = () => {
       }
 
       if (response?.error?.data?.message) {
-        alert(response?.error?.data?.message);
+        toast.error(response?.error?.data?.message);
       }
     } catch (err) {
       if (err && err.inner) {
@@ -80,7 +83,13 @@ const SignIn = () => {
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+            {isLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
         </div>
       </div>

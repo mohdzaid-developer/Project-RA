@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 
 const CircularProgressBar = ({
-  color = "white",
   barSize = 20,
   thickness = 5,
   width = "20px",
@@ -23,7 +22,7 @@ const CircularProgressBar = ({
         size={barSize}
         thickness={thickness}
         sx={{
-          color,
+          color: "#fefae0",
         }}
       />
     </Box>

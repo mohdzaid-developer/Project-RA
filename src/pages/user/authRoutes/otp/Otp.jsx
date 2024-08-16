@@ -50,8 +50,8 @@ const Otp = () => {
           navigate("/login");
         }
       } else {
-        if (response?.error?.data?.errors[0]?.message) {
-          toast.error(response?.error?.data?.errors[0]?.message);
+        if (response?.error) {
+          toast.error(response?.error.data.message);
         }
       }
     } catch (err) {
@@ -100,7 +100,7 @@ const Otp = () => {
             <div className="resend">
               <p onClick={handleResendOtp}>
                 {resendOtpLoading ? (
-                  <CircularProgressBar color="#ffffff" />
+                  <CircularProgressBar  />
                 ) : (
                   " Resend Otp"
                 )}

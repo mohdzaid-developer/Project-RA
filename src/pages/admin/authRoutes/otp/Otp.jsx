@@ -12,6 +12,8 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 
 //Validation
 import { otpValidationSchema } from "@/utils/validation/userValidations";
+//Components
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Redux
 import {
@@ -105,7 +107,13 @@ const Otp = () => {
           </div>
 
           <button className="authButton" onClick={handleSubmit}>
-            Submit <img src={buttonArrowImg} alt="" />
+            {otpVerifyLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Submit <img src={buttonArrowImg} alt="" />
+              </>
+            )}
           </button>
 
           <div className="forget-password">
