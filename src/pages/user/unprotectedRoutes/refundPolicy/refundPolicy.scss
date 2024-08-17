@@ -1,0 +1,44 @@
+@import "@/index.scss";
+
+.refund-policy {
+  .hero {
+    height: 70vh;
+    background-image: url("@/assets/restHeroImg.webp");
+    background-position: bottom;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+      font-size: 60px;
+      color: $text-orange;
+      letter-spacing: 2px;
+    }
+  }
+
+  .content {
+    padding: 100px 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px;
+    .data {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 15px;
+      h3 {
+        color: $dark-orange;
+        font-size: 20px;
+      }
+      p {
+        color: $white;
+        font-size: 16px;
+        line-height: 32px;
+        letter-spacing: 1px;
+      }
+    }
+  }
+}

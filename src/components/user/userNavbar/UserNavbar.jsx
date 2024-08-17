@@ -50,7 +50,7 @@ const UserNavbar = () => {
     },
     {
       name: "Trips",
-      path: "/bali",
+      path: "/my-trips",
     },
   ];
 
