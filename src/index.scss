@@ -67,9 +67,11 @@ h2 {
 }
 
 .error-text {
-  color: red;
+  color: #ff3333;
   font-size: 12px;
   margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .authButton {

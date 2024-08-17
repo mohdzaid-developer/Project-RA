@@ -41,12 +41,16 @@ const UserNavbar = () => {
 
   const navDataSecond = [
     {
+      name: "About",
+      path: "/about-us",
+    },
+    {
       name: "Profile",
       path: "/profile",
     },
     {
       name: "Trips",
-      path: "/bali",
+      path: "/my-trips",
     },
   ];
 

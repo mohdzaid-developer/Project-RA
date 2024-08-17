@@ -19,6 +19,18 @@ export const UserOtp = lazy(() => import("@/pages/user/authRoutes/otp/Otp"));
 export const UserHome = lazy(() =>
   import("@/pages/user/unprotectedRoutes/home/Home")
 );
+export const UserAbout = lazy(() =>
+  import("@/pages/user/unprotectedRoutes/about/About")
+);
+export const UserPrivacyPolicy = lazy(() =>
+  import("@/pages/user/unprotectedRoutes/privacyPolicy/PrivacyPolicy")
+);
+export const UserRefundPolicy = lazy(() =>
+  import("@/pages/user/unprotectedRoutes/refundPolicy/RefundPolicy")
+);
+export const UserTermsAndCondition = lazy(() =>
+  import("@/pages/user/unprotectedRoutes/termsAndConditions/TermsAndConditions")
+);
 
 //Bali
 export const UserBali = lazy(() =>
@@ -132,10 +144,6 @@ export const UserPhuketFamilyPremium = lazy(() =>
 );
 export const UserPhuketCustom = lazy(() =>
   import("@/pages/user/unprotectedRoutes/phuket/pages/custom/Custom")
-);
-
-export const UserTermsAndCondition = lazy(() =>
-  import("@/pages/user/unprotectedRoutes/termsAndConditions/TermsAndConditions")
 );
 
 //Protected Routes

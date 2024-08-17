@@ -30,7 +30,7 @@ const Footer = () => {
   const [errors, setErrors] = useState({});
   const [details, setDetails] = useState(null);
 
-  const handleChange =async(e) => {
+  const handleChange = async (e) => {
     const { name, value } = e.target;
     setDetails({ ...details, [name]: value });
     try {
@@ -43,7 +43,7 @@ const Footer = () => {
 
   const handleSubmit = async () => {
     try {
-      await userContactUsSchema.validate({...details}, { abortEarly: false });
+      await userContactUsSchema.validate({ ...details }, { abortEarly: false });
       const response = await PostContactUs({ ...details });
       if (response && response.data) {
         sessionStorage.setItem("otpInfo", JSON.stringify(response.data.data));
@@ -66,13 +66,20 @@ const Footer = () => {
       const newErrors = {};
       if (err) {
         err.inner.forEach((err) => {
-          console.log(err)
+          console.log(err);
           newErrors[err.path] = err.message;
         });
         setErrors(newErrors);
       }
     }
   };
+
+  const handleFormClose = () => {
+    setOpen(false);
+    setDetails(null);
+    setErrors({});
+  };
+
   return (
     <footer>
       <h2 className="heading">
@@ -81,7 +88,7 @@ const Footer = () => {
       <AnimatePresence>
         {open && (
           <motion.div
-            className="form"
+            className="form-test"
             initial="initial"
             animate="animate"
             exit="exit"
@@ -89,44 +96,54 @@ const Footer = () => {
           >
             <div className="content">
               <h2>Get in touch</h2>
-              <img src={closeImg} alt="" onClick={() => setOpen(false)} />
+              <img src={closeImg} alt="" onClick={handleFormClose} />
             </div>
             <div className="form-container">
               <div className="form-container-left">
-                <input
-                  type="text"
-                  placeholder="Name"
-                  name="fullName"
-                  onChange={handleChange}
-                />
-                {errors?.fullName && (
-                  <p className="error-text">{errors?.fullName}</p>
-                )}
-                <input
-                  type="text"
-                  placeholder="Phone"
-                  name="phone"
-                  onChange={handleChange}
-                />
-                {errors?.phone && <p className="error-text">{errors?.phone}</p>}
-                <input
-                  type="text"
-                  placeholder="Email"
-                  name="email"
-                  onChange={handleChange}
-                />
-                {errors?.email && <p className="error-text">{errors?.email}</p>}
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Name"
+                    name="fullName"
+                    onChange={handleChange}
+                  />
+                  {errors?.fullName && (
+                    <p className="error-text">{errors?.fullName}</p>
+                  )}
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Phone"
+                    name="phone"
+                    onChange={handleChange}
+                  />
+                  {errors?.phone && (
+                    <p className="error-text">{errors?.phone}</p>
+                  )}
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Email"
+                    name="email"
+                    onChange={handleChange}
+                  />
+                  {errors?.email && (
+                    <p className="error-text">{errors?.email}</p>
+                  )}
+                </div>
               </div>
               <div className="form-container-right">
                 <div className="input">
-                  <p>Tell us how can we help</p>
-                  <input
+                  <p className="title">Tell us how can we help</p>
+                  <textarea
                     type="text"
                     name="message"
                     onChange={handleChange}
                   />
                   {errors?.message && (
-                    <p style={{color:"red"}}>{errors?.message}</p>
+                    <p className="error-text">{errors?.message}</p>
                   )}
                 </div>
                 <button onClick={handleSubmit} className="authButton">
@@ -146,8 +163,9 @@ const Footer = () => {
 
       <div className="links">
         <div className="links-left">
-          <Link to="/">Privacy Policy</Link>
-          <Link to="/">Terms & Conditions</Link>
+          <Link to="/privacy-policy">Privacy Policy</Link>
+          <Link to="/terms-and-conditions">Terms & Conditions</Link>
+          <Link to="/refund-policy">Refund Policy</Link>
           <div className="socials">
             <a href="#">
               <img src={facebookImg} alt="" />

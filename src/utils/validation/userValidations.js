@@ -128,9 +128,7 @@ export const userContactUsSchema = Yup.object({
     .matches(/^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/, "Invalid mobile number!")
     .required("Mobile number is required!"),
   message: Yup.string()
-    .required("Message is required!")
-    .matches(
-      /^(?:[a-zA-Z]+ ?){40,256}$/,
-      "Message should contain at least 40 letters!"
-    ),
+    .min(40, "Message must be at least 40 characters!")
+    .max(100, "Message must be at most 100 characters!")
+    .required("Message is required!"),
 });
