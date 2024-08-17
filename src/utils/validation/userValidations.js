@@ -60,32 +60,27 @@ export const changePasswordValidationSchema = Yup.object({
     .required("Confirm password is required!"),
 });
 
-
 export const createOrderSchema = Yup.object({
-  destination: Yup.string().required('Destination is required.'),
-  package: Yup.string().required('Package is required.'),
-  plan: Yup.string().required('Plan is required.'),
-  start_date: Yup
-    .date()
-    .required('Start date is required.')
-    .typeError('Start date must be a valid date.')
-    .min(new Date(), 'Start date must be in the future.'),
-  end_date: Yup
-    .date()
-    .required('End date is required.')
-    .typeError('End date must be a valid date.')
-    .min(Yup.ref('start_date'), 'End date must be after start date.'),
-  no_of_adults: Yup
-    .number()
-    .required('Number of adults is required.')
-    .integer('Number of adults must be an integer.')
-    .positive('Number of adults must be greater than zero.')
-    .min(1, 'There must be at least 1 adult.'),
-  no_of_children: Yup
-    .number()
-    .required('Number of children is required.')
-    .integer('Number of children must be an integer.')
-    .min(0, 'Number of children cannot be negative.'),
+  destination: Yup.string().required("Destination is required."),
+  package: Yup.string().required("Package is required."),
+  plan: Yup.string().required("Plan is required."),
+  start_date: Yup.date()
+    .required("Start date is required.")
+    .typeError("Start date must be a valid date.")
+    .min(new Date(), "Start date must be in the future."),
+  end_date: Yup.date()
+    .required("End date is required.")
+    .typeError("End date must be a valid date.")
+    .min(Yup.ref("start_date"), "End date must be after start date."),
+  no_of_adults: Yup.number()
+    .required("Number of adults is required.")
+    .integer("Number of adults must be an integer.")
+    .positive("Number of adults must be greater than zero.")
+    .min(1, "There must be at least 1 adult."),
+  no_of_children: Yup.number()
+    .required("Number of children is required.")
+    .integer("Number of children must be an integer.")
+    .min(0, "Number of children cannot be negative."),
   // totalAmount: Yup
   //   .number()
   //   .required('Total amount is required.')
@@ -93,27 +88,49 @@ export const createOrderSchema = Yup.object({
 });
 
 export const createOrderSchemaSecond = Yup.object({
-  destination: Yup.string().required('Destination is required.'),
-  package: Yup.string().required('Package is required.'),
-  plan: Yup.string().required('Plan is required.'),
-  start_date: Yup
-    .date()
-    .required('Start date is required.')
-    .typeError('Start date must be a valid date.')
-    .min(new Date(), 'Start date must be in the future.'),
-  end_date: Yup
-    .date()
-    .required('End date is required.')
-    .typeError('End date must be a valid date.')
-    .min(Yup.ref('start_date'), 'End date must be after start date.'),
-  no_of_adults: Yup
-    .number()
-    .required('Number of adults is required.')
-    .integer('Number of adults must be an integer.')
-    .positive('Number of adults must be greater than zero.')
-    .min(1, 'There must be at least 1 adult.'),
+  destination: Yup.string().required("Destination is required."),
+  package: Yup.string().required("Package is required."),
+  plan: Yup.string().required("Plan is required."),
+  start_date: Yup.date()
+    .required("Start date is required.")
+    .typeError("Start date must be a valid date.")
+    .min(new Date(), "Start date must be in the future."),
+  end_date: Yup.date()
+    .required("End date is required.")
+    .typeError("End date must be a valid date.")
+    .min(Yup.ref("start_date"), "End date must be after start date."),
+  no_of_adults: Yup.number()
+    .required("Number of adults is required.")
+    .integer("Number of adults must be an integer.")
+    .positive("Number of adults must be greater than zero.")
+    .min(1, "There must be at least 1 adult."),
   // totalAmount: Yup
   //   .number()
   //   .required('Total amount is required.')
   //   .positive('Total amount must be greater than zero.')
+});
+
+export const userContactUsSchema = Yup.object({
+  fullName: Yup.string()
+    .matches(
+      /^(?:[a-zA-Z]+ ?){3,256}$/,
+      "Full name should contain at least 3 letters!"
+    )
+    .required("Full name is required!"),
+  email: Yup.string()
+    .email("Please enter a valid email address")
+    .required("Email is required!")
+    .matches(
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      "Please enter your email address in format: example@gmail.com"
+    ),
+  phone: Yup.string()
+    .matches(/^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/, "Invalid mobile number!")
+    .required("Mobile number is required!"),
+  message: Yup.string()
+    .required("Message is required!")
+    .matches(
+      /^(?:[a-zA-Z]+ ?){40,256}$/,
+      "Message should contain at least 40 letters!"
+    ),
 });

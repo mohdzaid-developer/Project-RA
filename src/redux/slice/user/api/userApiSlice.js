@@ -109,6 +109,14 @@ export const userApi = createApi({
         body: JSON.stringify(body),
       }),
     }),
+
+    postContactUs:builder.mutation({
+      query: (body) => ({
+        url: "contact-us",
+        method: "POST",
+        body: JSON.stringify(body),
+      }),
+    }),
   }),
 });
 
@@ -123,4 +131,5 @@ export const {
   useUserProfilePicUploadMutation,
   useCreateOrderMutation,
   useVerifyPaymentMutation,
+  usePostContactUsMutation
 } = userApi;
