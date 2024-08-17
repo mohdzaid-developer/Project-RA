@@ -1,5 +1,5 @@
 export const getAdminAccessToken = () => {
-  return JSON.parse(sessionStorage.getItem("admin"));
+  return JSON.parse(sessionStorage.getItem("admin"))?.accessToken;
 };
 
 export const getUserAccessToken = () => {
