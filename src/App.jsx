@@ -35,6 +35,9 @@ import {
   UserPayment,
   UserMyTrips,
   UserHome,
+  UserAbout,
+  UserPrivacyPolicy,
+  UserRefundPolicy,
   UserTermsAndCondition,
   UserBali,
   UserBaliFriends,
@@ -103,6 +106,10 @@ const userUnprotectedRoutesData = [
   {
     path: "/",
     element: <UserHome />,
+  },
+  {
+    path: "/about-us",
+    element: <UserAbout />,
   },
   {
     path: "/bali",
@@ -215,6 +222,14 @@ const userUnprotectedRoutesData = [
   {
     path: "/phuket/custom",
     element: <UserPhuketCustom />,
+  },
+  {
+    path: "/refund-policy",
+    element: <UserRefundPolicy />,
+  },
+  {
+    path: "/privacy-policy",
+    element: <UserPrivacyPolicy />,
   },
   {
     path: "/terms-and-conditions",

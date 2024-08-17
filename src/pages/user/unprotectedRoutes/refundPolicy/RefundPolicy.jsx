@@ -1,4 +1,4 @@
-import React from "react";
+import "./refundPolicy.scss";
 
 const RefundPolicy = () => {
   return <div>RefundPolicy</div>;
