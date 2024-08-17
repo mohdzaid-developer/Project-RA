@@ -1,4 +1,4 @@
-import "./queries.scss";
+import "../payment/payment.scss";
 
 //Assets
 import query from "@/assets/query.png";
@@ -15,7 +15,7 @@ import {
   TableCell,
   TableBody,
   Paper,
-  Pagination
+  Pagination,
 } from "@mui/material";
 
 // Data
@@ -23,11 +23,10 @@ import { data } from "./data";
 
 const Queries = () => {
   return (
-    <section className="query-container">
+    <section className="payment-container">
       <AdminNavbar title="Queries" image={query} />
 
       <section className="payments">
-
         <TableContainer component={Paper} className="table">
           <Table aria-label="simple table">
             <TableHead className="table-head">

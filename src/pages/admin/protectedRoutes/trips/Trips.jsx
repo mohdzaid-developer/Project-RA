@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import "./trips.scss";
 
 //Assets
@@ -12,23 +12,24 @@ import AdminNavbar from "@/components/admin/adminNavbar/AdminNavbar";
 
 //Mui
 import {
-  TableContainer,
+  Pagination,
+  Paper,
+  Tab,
   Table,
+  TableBody,
+  TableCell,
+  TableContainer,
   TableHead,
   TableRow,
-  TableCell,
-  TableBody,
-  Paper,
-  Pagination,
-  Typography,
   Tabs,
-  Tab,
   ThemeProvider,
+  Typography,
   createTheme,
 } from "@mui/material";
 
 // redux
 import { useAdminGetAllBookingQuery } from "@/redux/slice/admin/api/adminApiSlice";
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 // MUI Restyling
 const theme = createTheme({
@@ -52,18 +53,22 @@ const theme = createTheme({
 //static data
 const plans = ["standard", "delux", "premium"];
 const packages = ["friends", "family", "couples"];
+
 const Trips = () => {
   const navigate = useNavigate();
+
   const [value, setValue] = useState(0);
   const [destination, setDestination] = useState("bali");
   const [selectedPlan, setSelectedPlan] = useState("");
   const [selectedPackage, setSelectedPackages] = useState("");
+
   const { data: allBookingList, isLoading: allBookingIsLoading } =
     useAdminGetAllBookingQuery({
       destination,
       selectedPlan,
       selectedPackage,
     });
+
   const handleTabs = (event, newValue) => {
     setValue(newValue);
     if (newValue == 0) {
@@ -77,95 +82,85 @@ const Trips = () => {
     <section className="trips-container">
       <AdminNavbar title="Trips" image={trip} />
 
-      <section className="payments">
-        <ThemeProvider theme={theme}>
-          <div className="list-data-headings">
-            <Tabs
-              value={value}
-              onChange={handleTabs}
-              className="mui-tabs-container"
-            >
-              <Tab label="Bali" className="each-tab small-text-700" />
-              <Tab label="Phuket" className="each-tab small-text-700" />
-            </Tabs>
+      {allBookingIsLoading ? (
+        <div className="loader">
+          <CircularProgressBar />
+        </div>
+      ) : (
+        <section className="trips">
+          <ThemeProvider theme={theme}>
+            <div className="list-data-headings">
+              <Tabs
+                value={value}
+                onChange={handleTabs}
+                className="mui-tabs-container"
+              >
+                <Tab label="Bali" className="each-tab small-text-700" />
+                <Tab label="Phuket" className="each-tab small-text-700" />
+              </Tabs>
 
-            <div className="filter-popUp">
-              <select onChange={(e) => setSelectedPackages(e.target.value)}>
-                <option selected disabled>
-                  Select Package
-                </option>
-                {packages.map((item) => (
-                  <option value={item}>{item}</option>
-                ))}
-              </select>
-              <select onChange={(e) => setSelectedPlan(e.target.value)}>
-                <option selected disabled>
-                  Select Plan
-                </option>
-                {plans.map((item) => (
-                  <option value={item}>{item}</option>
-                ))}
-              </select>
+              <div className="filter-popUp">
+                <select onChange={(e) => setSelectedPackages(e.target.value)}>
+                  <option selected disabled>
+                    Select Package
+                  </option>
+                  {packages.map((item) => (
+                    <option value={item}>{item}</option>
+                  ))}
+                </select>
+                <select onChange={(e) => setSelectedPlan(e.target.value)}>
+                  <option selected disabled>
+                    Select Plan
+                  </option>
+                  {plans.map((item) => (
+                    <option value={item}>{item}</option>
+                  ))}
+                </select>
+              </div>
             </div>
-          </div>
-        </ThemeProvider>
+          </ThemeProvider>
 
-        <TableContainer component={Paper} className="table">
-          <Table aria-label="simple table">
-            <TableHead className="table-head">
-              <TableRow>
-                <TableCell align="center">Sl.No</TableCell>
-                <TableCell align="center">Destination</TableCell>
-                <TableCell align="center">Plan</TableCell>
-                <TableCell align="center">Package</TableCell>
-                <TableCell align="center">Total Amount</TableCell>
-                <TableCell align="center">Paid Amount</TableCell>
-                <TableCell align="center">Status</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody className="table-body">
-              {allBookingIsLoading ? (
-                <h3>Loading...</h3>
-              ) : allBookingList?.data?.length > 0 ? (
-                allBookingList?.data?.map((row, index) => (
-                  <TableRow
-                    key={row.id}
-                    onClick={() => navigate(`/admin/trip/${row.order_id}`)}
-                  >
-                    <TableCell align="center">{index + 1}</TableCell>
-                    <TableCell align="center">{row?.destination}</TableCell>
-                    <TableCell align="center">{row?.plan}</TableCell>
-                    <TableCell align="center">{row?.package}</TableCell>
-                    <TableCell align="center">{row?.total_amount}</TableCell>
-                    <TableCell align="center">{row?.paid_amount}</TableCell>
-                    <TableCell align="center">{row?.status}</TableCell>
+          {!allBookingList?.data.length > 0 ? (
+            <div className="no-data">
+              <h1>No data available!</h1>
+            </div>
+          ) : (
+            <TableContainer component={Paper} className="table">
+              <Table aria-label="simple table">
+                <TableHead className="table-head">
+                  <TableRow>
+                    <TableCell align="center">Sl.No</TableCell>
+                    <TableCell align="center">Destination</TableCell>
+                    <TableCell align="center">Plan</TableCell>
+                    <TableCell align="center">Package</TableCell>
+                    <TableCell align="center">Total Amount</TableCell>
+                    <TableCell align="center">Paid Amount</TableCell>
+                    <TableCell align="center">Status</TableCell>
                   </TableRow>
-                ))
-              ) : (
-                <h3>No Data Found</h3>
-              )}
-            </TableBody>
-          </Table>
-        </TableContainer>
-
-        <Pagination
-          count={5}
-          size="small"
-          color="standard"
-          className="pagination"
-        />
-      </section>
+                </TableHead>
+                <TableBody className="table-body">
+                  {allBookingList?.data?.map((row, index) => (
+                    <TableRow
+                      key={row.id}
+                      onClick={() => navigate(`/admin/trip/${row.order_id}`)}
+                    >
+                      <TableCell align="center">{index + 1}</TableCell>
+                      <TableCell align="center">{row?.destination}</TableCell>
+                      <TableCell align="center">{row?.plan}</TableCell>
+                      <TableCell align="center">{row?.package}</TableCell>
+                      <TableCell align="center">{row?.total_amount}</TableCell>
+                      <TableCell align="center">{row?.paid_amount}</TableCell>
+                      <TableCell align="center">{row?.status}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          )}
+        </section>
+      )}
     </section>
   );
 };
-
-function TabPanel(props) {
-  const { children, value, index } = props;
-  return (
-    <div>
-      {value === index && <Typography component={"div"}>{children}</Typography>}
-    </div>
-  );
-}
 
 export default Trips;
