@@ -1,4 +1,4 @@
-import { getAdminOtpAccessToken } from "@/utils/accessToken/accessToken";
+import { getAdminAccessToken, getAdminOtpAccessToken } from "@/utils/accessToken/accessToken";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const adminApi = createApi({
@@ -45,7 +45,20 @@ export const adminApi = createApi({
           Authorization: `Bearer ${getAdminOtpAccessToken()}`,
         },
       }),
+      providesTags:["getAllListOfTrips"]
     }),
+
+    adminUpdateTripStatus: builder.mutation({
+      query: ({status,id}) => ({
+        url: `payment/booking?bookingStatus=${status}&id=${id}`,
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${getAdminAccessToken()}`,
+        },
+      }),
+      invalidatesTags:["getAllListOfTrips"]
+    }),
+
     adminGetAllPayments: builder.query({
       query: () => ({
         url: `payment`,
@@ -64,6 +77,16 @@ export const adminApi = createApi({
         },
       }),
     }),
+    adminGetAllQueries: builder.query({
+      query: () => ({
+        url: `contact-us`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getAdminOtpAccessToken()}`,
+        },
+      }),
+    }),
+
   }),
 });
 
@@ -74,4 +97,6 @@ export const {
   useAdminGetAllBookingQuery,
   useAdminGetAllPaymentsQuery,
   useAdminGetAllUsersQuery,
+  useAdminGetAllQueriesQuery,
+  useAdminUpdateTripStatusMutation
 } = adminApi;

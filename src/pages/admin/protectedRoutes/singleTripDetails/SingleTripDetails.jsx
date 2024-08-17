@@ -1,14 +1,32 @@
-import { useAdminGetAllBookingQuery } from "@/redux/slice/admin/api/adminApiSlice";
 import "./singleTripDetails.scss";
 import { useParams } from "react-router-dom";
 import AdminNavbar from "@/components/admin/adminNavbar/AdminNavbar";
 
 //Assets
 import trip from "@/assets/trip.png";
+import PopUp from "@/components/global/popUp/PopUp";
+
+//Alert
+import { toast } from "react-hot-toast";
+
+//Redux
+import {
+  useAdminGetAllBookingQuery,
+  useAdminUpdateTripStatusMutation,
+} from "@/redux/slice/admin/api/adminApiSlice";
 
 const statusNames = ["Booked", "Reviewed", "Approved", "Done"];
+const selectedValues = {
+  booked: ["booked"],
+  reviewed: ["booked", "reviewed"],
+  approved: ["booked", "reviewed", "approved"],
+  done: ["booked", "reviewed", "approved", "done"],
+};
 const SingleTripDetails = () => {
   const { id } = useParams();
+
+  const [updateTripStatus, { isLoading: isStatusLoading }] =
+    useAdminUpdateTripStatusMutation();
   const { data: singleBookingDetails, isLoading: allBookingIsLoading } =
     useAdminGetAllBookingQuery({
       destination: "",
@@ -17,8 +35,27 @@ const SingleTripDetails = () => {
       id,
     });
 
+  const handleChangeStatus = async (status) => {
+    customPopUp.Confirm({
+      message: `Do you want to change status to
+                            ${status}
+                            for this trip ?`,
+      isLoading: isStatusLoading,
+      handleAction: async () => {
+        if (status) {
+          const response = await updateTripStatus({
+            id: id,
+            status: status,
+          });
+          toast.success(response?.data?.message);
+          window?.customPopUp.Close();
+        }
+      },
+    });
+  };
   return (
     <section className="trips-container">
+      <PopUp />
       <AdminNavbar title="Trips" image={trip} />
       <div className="single-trip-details">
         <div className="booking-details">
@@ -104,10 +141,18 @@ const SingleTripDetails = () => {
             {statusNames?.map((item) => (
               <button
                 className="status-btn"
+                onClick={() => handleChangeStatus(item)}
                 id={
-                  singleBookingDetails?.data[0]?.status == item.toLowerCase()
+                  selectedValues[
+                    singleBookingDetails?.data[0]?.status.toLowerCase()
+                  ]?.includes(item.toLowerCase())
                     ? "selected"
                     : ""
+                }
+                disabled={
+                  selectedValues[
+                    singleBookingDetails?.data[0]?.status.toLowerCase()
+                  ]?.includes(item.toLowerCase())
                 }
               >
                 {item}

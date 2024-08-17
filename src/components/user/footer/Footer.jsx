@@ -42,7 +42,6 @@ const Footer = () => {
   };
 
   const handleSubmit = async () => {
-    // e.preventDefault();
     try {
       await userContactUsSchema.validate({...details}, { abortEarly: false });
       const response = await PostContactUs({ ...details });
@@ -125,7 +124,7 @@ const Footer = () => {
                     type="text"
                     name="message"
                     onChange={handleChange}
-                  ></input>
+                  />
                   {errors?.message && (
                     <p style={{color:"red"}}>{errors?.message}</p>
                   )}
