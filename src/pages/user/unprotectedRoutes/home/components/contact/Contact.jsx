@@ -22,17 +22,21 @@ const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 2000);
+    const isComponentClosed = sessionStorage.getItem("isContactClosed");
+    if (!isComponentClosed) {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 2000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const [PostContactUs, { isLoading }] = usePostContactUsMutation();
 
   const [errors, setErrors] = useState({});
   const [details, setDetails] = useState(null);
+
   const handleChange = async (e) => {
     const { name, value } = e.target;
 
@@ -53,11 +57,11 @@ const Contact = () => {
         sessionStorage.setItem("otpInfo", JSON.stringify(response.data.data));
         toast.success(response.data.data.message);
         setIsVisible(false);
-        setData({
+        setDetails({
           fullName: "",
           phone: "",
           email: "",
-          password: "",
+          message: "",
         });
         setErrors({});
       }
@@ -77,6 +81,11 @@ const Contact = () => {
     }
   };
 
+  const handleClose = () => {
+    setIsVisible(false);
+    sessionStorage.setItem("isContactClosed", "true");
+  };
+
   return (
     <motion.div
       className={`form ${isVisible ? "visible" : ""}`}
@@ -87,7 +96,7 @@ const Contact = () => {
     >
       <div className="content">
         <h2>Get in touch</h2>
-        <img src={closeImg} alt="" onClick={() => setIsVisible(false)} />
+        <img src={closeImg} alt="Close" onClick={handleClose} />
       </div>
       <div className="form-container">
         <div className="form-container-left">
@@ -132,7 +141,7 @@ const Contact = () => {
               <CircularProgressBar />
             ) : (
               <>
-                Submit <img src={buttonArrowImg} alt="" />
+                Submit <img src={buttonArrowImg} alt="Arrow" />
               </>
             )}
           </button>

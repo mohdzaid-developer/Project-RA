@@ -37,7 +37,7 @@ export const data = {
       ),
       packageName: "Friends",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Picture this: The sun’s blazing down, the waves are crashing, and your squad is living their best lives. Bali is your playground, where every corner is an invitation to adventure. Kick off the day with a surf session at Kuta, dive into the local food scene with a feast of Babi Guling, and as the sun dips low, hit Seminyak’s hottest spots where the party never stops. And those secret waterfalls you’ve heard about? They’re waiting for you to discover. Ready to turn your Bali trip into legend? The island is calling, and it’s time to answer.",
       logo: levelOneFriendsLogo,
       url: "/bali/friends",
       leftImg: levelOneFriendsImage,
@@ -45,7 +45,7 @@ export const data = {
     {
       packageName: "Family",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Imagine the joy on your kids’ faces as they splash in crystal-clear waters, while you unwind under swaying palm trees. Bali isn’t just a destination—it’s a treasure trove of family adventures waiting to be discovered. Explore Ubud’s mystical Monkey Forest, embark on a thrilling rafting trip down the Ayung River, or simply spend the day building sandcastles at Sanur Beach. Every day in Bali is a new chapter in your family’s epic tale. Let’s make those family memories magical, where every smile is brighter under the Bali sun.",
       logo: levelOneFamilyLogo,
       url: "/bali/family",
       leftImg: levelOneFamilyImage,
@@ -53,7 +53,7 @@ export const data = {
     {
       packageName: "Couples",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Escape to Bali, where every sunset is a painting, and every moment is pure magic. Think private dinners under the stars, luxurious villas nestled in lush jungles, and spa days that leave you floating on air. Whether you’re hiking hand in hand to Uluwatu’s clifftop temples or sharing a sunrise on Mount Batur, Bali is the canvas where your love story unfolds. Let’s craft your romantic escape, where every whisper of the wind carries a secret meant just for you.",
       logo: levelOneCoupleLogo,
       url: "/bali/couple",
       leftImg: levelOneCoupleImage,
@@ -61,7 +61,7 @@ export const data = {
     {
       packageName: "Custom",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Your Bali, your rules. Whether you’re a thrill-seeker craving the rush of ATV rides through the jungle, a culture enthusiast eager to dive into the local traditions, or simply someone looking to unwind in paradise, we’ll design an itinerary that’s as unique as you are. From off-the-beaten-path temples to secret beaches that feel like your own private paradise, Bali is ready to be discovered—exactly how you want to experience it.",
       logo: levelOneCustomLogo,
       url: "/bali/custom",
       leftImg: levelOneCustomImage,

@@ -7,7 +7,7 @@ import Faq from "./components/faq/Faq";
 import BaliSection from "./components/baliSection/BaliSection";
 import PhuketSection from "./components/phuketSection/PhuketSection";
 import Why from "./components/why/Why";
-import Contact from "@/components/user/contact/Contact";
+import Contact from "./components/contact/Contact";
 
 const Home = () => {
   return (

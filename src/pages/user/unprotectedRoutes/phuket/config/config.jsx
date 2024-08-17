@@ -37,7 +37,7 @@ export const data = {
       ),
       packageName: "Friends",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Get ready to crank up the fun with your best mates in Phuket! This island is all about living it up—from adrenaline-pumping water sports and epic island-hopping adventures to vibrant nights out in Patong that you’ll be talking about for years. Imagine sailing the turquoise waters of Phang Nga Bay, exploring the hidden coves of Phi Phi, and then hitting the night markets where the energy is infectious. Phuket is your ultimate playground, where every day is an adventure, and every night is a story in the making.",
       logo: levelOneFriendsLogo,
       url: "/phuket/friends",
       leftImg: levelOneFriendsImage,
@@ -45,7 +45,7 @@ export const data = {
     {
       packageName: "Family",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Pack your bags and bring the whole family—Phuket is where unforgettable memories are made. Whether it’s exploring the colorful marine life at the Phuket Aquarium, taking a traditional Thai cooking class together, or just relaxing on the sun-kissed beaches of Kata, there’s something here for everyone. Watch as your kids’ eyes light up at the sight of elephants at a local sanctuary, and feel the bonds of family grow stronger with every new adventure. Phuket isn’t just a destination—it’s the backdrop for your family’s greatest story.",
       logo: levelOneFamilyLogo,
       url: "/phuket/family",
       leftImg: levelOneFamilyImage,
@@ -53,7 +53,7 @@ export const data = {
     {
       packageName: "Couples",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Escape to Phuket, where romance and luxury blend seamlessly. Picture yourselves on a private yacht, cruising along the Andaman Sea at sunset, or walking hand in hand through the historic streets of Old Phuket Town. Enjoy candlelit dinners on the beach, couples’ massages in world-class spas, and discover secret spots where it’s just the two of you. Phuket is more than just a destination—it’s the perfect setting for your love story, filled with moments that linger long after the trip is over.",
       logo: levelOneCoupleLogo,
       url: "/phuket/couple",
       leftImg: levelOneCoupleImage,
@@ -61,7 +61,7 @@ export const data = {
     {
       packageName: "Custom",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Phuket is an island of endless possibilities, and your adventure should be as unique as you are. Whether you’re dreaming of a high-octane adventure packed with water sports and jungle treks, a cultural immersion into Thai traditions, or a serene retreat in a luxury villa, we’ll tailor every detail to your desires. Let’s craft a journey that reflects your passions, where every experience is a new discovery, and every day is a masterpiece.",
       logo: levelOneCustomLogo,
       url: "/phuket/custom",
       leftImg: levelOneCustomImage,

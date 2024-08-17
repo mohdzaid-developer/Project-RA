@@ -11,5 +11,5 @@ export const data = {
     `it a top destination for tourists from around the world.`,
   ],
   xRange1: ["0%", "-28%"],
-  xRange2: ["0%", "-26%"],
+  xRange2: ["0%", "-22%"],
 };
