@@ -1,18 +1,18 @@
 @import "@/index.scss";
 
 .about-hero {
-  height: 70vh;
+  height: 100vh;
   background-image: url("@/assets/aboutHeroImg.webp");
   background-position: center;
   background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
 
   h2 {
     font-size: 60px;
     color: $white;
     letter-spacing: 2px;
+    text-align: center;
   }
 }

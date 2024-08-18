@@ -1,0 +1,40 @@
+@import "@/index.scss";
+
+.freedom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 80px;
+  padding: 80px 50px;
+
+  h2 {
+    color: $white;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+
+    p {
+      color: gray;
+      font-size: 15px;
+      line-height: 30px;
+      width: 20%;
+    }
+
+    .first-text {
+      text-align: right;
+    }
+
+    img {
+      width: 40%;
+      border-radius: 10px;
+    }
+  }
+}

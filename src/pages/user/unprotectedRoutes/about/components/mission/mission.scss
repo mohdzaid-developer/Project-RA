@@ -1,0 +1,37 @@
+@import "@/index.scss";
+
+.mission {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  padding: 80px 100px;
+  h2 {
+    color: $white;
+    font-size: 48px;
+    text-align: center;
+  }
+
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    img {
+      height: 380px;
+      border-radius: 10px;
+    }
+    p {
+      color: gray;
+      font-size: 16px;
+      text-align: center;
+      line-height: 26px;
+    }
+  }
+
+  .bottom-heading {
+    font-size: 30px;
+  }
+}
