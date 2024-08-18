@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../payment/payment.scss";
 
 //Assets
@@ -8,30 +9,23 @@ import AdminNavbar from "@/components/admin/adminNavbar/AdminNavbar";
 
 //Mui
 import {
-  TableContainer,
+  Pagination,
+  Paper,
   Table,
+  TableBody,
+  TableCell,
+  TableContainer,
   TableHead,
   TableRow,
-  TableCell,
-  TableBody,
-  Paper,
-  Pagination,
 } from "@mui/material";
-
-// Data
-import { data } from "./data";
 
 //Redux
 import { useAdminGetAllQueriesQuery } from "@/redux/slice/admin/api/adminApiSlice";
-import { useEffect } from "react";
 
 const Queries = () => {
   const { data: allQueriesList, isLoading: queryListLoading } =
-  useAdminGetAllQueriesQuery();
+    useAdminGetAllQueriesQuery();
 
-  useEffect(()=>{
-    console.log(allQueriesList)
-  },[allQueriesList])
   return (
     <section className="payment-container">
       <AdminNavbar title="Queries" image={query} />
@@ -49,24 +43,20 @@ const Queries = () => {
               </TableRow>
             </TableHead>
             <TableBody className="table-body">
-              {allQueriesList?.data?.map((row,index) => (
+              {allQueriesList?.data.response.map((row, index) => (
                 <TableRow key={row.id}>
-                  <TableCell align="center">{index+1}</TableCell>
-                  <TableCell align="center">{row.fullName }</TableCell>
+                  <TableCell align="center">{index + 1}</TableCell>
+                  <TableCell align="center">{row.fullName}</TableCell>
                   <TableCell align="center">{row.email}</TableCell>
                   <TableCell align="center">{row.message}</TableCell>
-                  <TableCell align="center">{row?.createdAt?.split("T")[0]}</TableCell>
+                  <TableCell align="center">
+                    {row?.createdAt?.split("T")[0]}
+                  </TableCell>
                 </TableRow>
               ))}
             </TableBody>
           </Table>
         </TableContainer>
-        <Pagination
-          count={5}
-          size="small"
-          color="standard"
-          className="pagination"
-        />
       </section>
     </section>
   );

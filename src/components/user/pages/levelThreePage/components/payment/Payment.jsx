@@ -1,19 +1,31 @@
 import { useEffect, useState } from "react";
 import "./payment.scss";
+
+//Alert
 import { toast } from "react-hot-toast";
+
+//Routing
 import { useLocation, useNavigate } from "react-router-dom";
+
+//Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Validation
 import {
   createOrderSchema,
   createOrderSchemaSecond,
 } from "@/utils/validation/userValidations";
+
+//Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
-import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
-import { useDispatch, useSelector } from "react-redux";
+
+//Redux
 import {
   useCreateOrderMutation,
   useVerifyPaymentMutation,
 } from "@/redux/slice/user/api/userApiSlice";
+import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Payment = () => {
   const location = useLocation();
