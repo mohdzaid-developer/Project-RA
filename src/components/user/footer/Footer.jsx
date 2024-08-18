@@ -7,6 +7,9 @@ import { footerFadeInAnimation } from "@/utils/animations/animations";
 //Routing
 import { Link } from "react-router-dom";
 
+//Alert
+import {toast} from "react-hot-toast";
+
 //Util
 import { userContactUsSchema } from "@/utils/validation/userValidations";
 
@@ -23,6 +26,7 @@ import closeImg from "@/assets/error.webp";
 
 //Redux
 import { usePostContactUsMutation } from "@/redux/slice/user/api/userApiSlice";
+
 
 const Footer = () => {
   const [PostContactUs, { isLoading }] = usePostContactUsMutation();
@@ -45,15 +49,14 @@ const Footer = () => {
     try {
       await userContactUsSchema.validate({ ...details }, { abortEarly: false });
       const response = await PostContactUs({ ...details });
-      if (response && response.data) {
-        sessionStorage.setItem("otpInfo", JSON.stringify(response.data.data));
-        toast.success(response.data.data.message);
-        navigate("/otp");
-        setData({
+      console.log(response)
+      if (response?.data?.data) {
+        toast.success(response?.data?.data?.message);
+        setDetails({
           fullName: "",
           phone: "",
           email: "",
-          password: "",
+          message: "",
         });
         setErrors({});
       }
@@ -105,6 +108,7 @@ const Footer = () => {
                     type="text"
                     placeholder="Name"
                     name="fullName"
+                    value={details?.fullName}
                     onChange={handleChange}
                   />
                   {errors?.fullName && (
@@ -116,6 +120,7 @@ const Footer = () => {
                     type="text"
                     placeholder="Phone"
                     name="phone"
+                    value={details?.phone}
                     onChange={handleChange}
                   />
                   {errors?.phone && (
@@ -127,6 +132,7 @@ const Footer = () => {
                     type="text"
                     placeholder="Email"
                     name="email"
+                    value={details?.email}
                     onChange={handleChange}
                   />
                   {errors?.email && (
@@ -140,6 +146,7 @@ const Footer = () => {
                   <textarea
                     type="text"
                     name="message"
+                    value={details?.message}
                     onChange={handleChange}
                   />
                   {errors?.message && (

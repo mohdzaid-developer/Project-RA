@@ -111,10 +111,10 @@ export const userApi = createApi({
     }),
 
     postContactUs:builder.mutation({
-      query: (body) => ({
+      query: (data) => ({
         url: "contact-us",
         method: "POST",
-        body: JSON.stringify(body),
+        body:{...data},
       }),
     }),
   }),
