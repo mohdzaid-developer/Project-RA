@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
 import "./payment.scss";
 
-// Alert
+//Alert
 import { toast } from "react-hot-toast";
 
-// Routing
+//Routing
 import { useLocation, useNavigate } from "react-router-dom";
 
-// Assets
+//Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
-// Validations
+//Validation
 import {
   createOrderSchema,
   createOrderSchemaSecond,
@@ -19,52 +19,75 @@ import {
 //Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
-// Redux
-import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
-import { useDispatch, useSelector } from "react-redux";
+//Redux
 import {
   useCreateOrderMutation,
   useVerifyPaymentMutation,
 } from "@/redux/slice/user/api/userApiSlice";
+import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
+import { useDispatch, useSelector } from "react-redux";
 
 const Payment = () => {
-  let location = useLocation();
+  const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
-
   const { isAuthenticated } = useSelector((state) => state.authUser);
 
   const [errors, setErrors] = useState({});
-  const [details, setDetails] = useState(null);
+  const [details, setDetails] = useState({
+    start_date: "",
+    end_date: "",
+  });
+  const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const [createOrder] = useCreateOrderMutation();
   const [verifyPayment] = useVerifyPaymentMutation();
 
   useEffect(() => {
-    if (isAuthenticated === true) {
+    if (isAuthenticated) {
       dispatch(setParamsQuery(null));
     }
     if (location?.pathname) {
       const separatedUrl = location?.pathname?.split("/");
       if (separatedUrl) {
-        setDetails({
-          ...details,
+        setDetails((prevDetails) => ({
+          ...prevDetails,
           destination: separatedUrl[1],
           package: separatedUrl[2],
           plan: separatedUrl[3],
-        });
+        }));
       }
     }
-  }, [location]);
+
+    // Calculate the minimum start date (1 month from today)
+    const oneMonthLater = new Date();
+    oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
+    const minDate = oneMonthLater.toISOString().split("T")[0];
+    setMinStartDate(minDate);
+  }, [location, isAuthenticated]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setDetails({
-      ...details,
+
+    setDetails((prevDetails) => ({
+      ...prevDetails,
       [name]: value,
-    });
+    }));
   };
+
+  useEffect(() => {
+    if (details.start_date) {
+      const startDate = new Date(details.start_date);
+      startDate.setDate(startDate.getDate() + 6);
+      const endDate = startDate.toISOString().split("T")[0];
+
+      setDetails((prevDetails) => ({
+        ...prevDetails,
+        end_date: endDate,
+      }));
+    }
+  }, [details.start_date]);
 
   useEffect(() => {
     const script = document.createElement("script");
@@ -89,6 +112,13 @@ const Payment = () => {
     }
 
     try {
+      const oneMonthLater = new Date(minStartDate);
+      if (new Date(details.start_date) < oneMonthLater) {
+        toast.error("Start date must be at least one month from today");
+        setIsLoading(false);
+        return;
+      }
+
       if (location?.pathname?.includes("family")) {
         await createOrderSchema.validate(details, { abortEarly: false });
       } else {
@@ -126,7 +156,7 @@ const Payment = () => {
         callback_url: "http://localhost:3000/payment-success",
         handler: async function (response) {
           try {
-            const verificationResponse = await verifyPayment({
+            await verifyPayment({
               accessToken: userData.accessToken,
               orderId: response.razorpay_order_id,
               paymentId: response.razorpay_payment_id,
@@ -173,12 +203,13 @@ const Payment = () => {
         <div className="input-fields">
           <div className="container">
             <div className="input">
-              <label htmlFor="">Start date :</label>
+              <label htmlFor="start_date">Start date :</label>
               <input
                 type="date"
                 name="start_date"
                 onChange={handleChange}
                 value={details?.start_date || ""}
+                min={minStartDate} // Prevent selecting a date before one month from today
                 required
               />
               {errors?.start_date && (
@@ -186,9 +217,9 @@ const Payment = () => {
               )}
             </div>
             <div className="input">
-              <label htmlFor="">Number of Adults :</label>
+              <label htmlFor="no_of_adults">Number of Adults :</label>
               <input
-                type="phone"
+                type="text"
                 name="no_of_adults"
                 onChange={handleChange}
                 value={details?.no_of_adults || ""}
@@ -201,12 +232,12 @@ const Payment = () => {
           </div>
           <div className="container">
             <div className="input">
-              <label htmlFor="">End date :</label>
+              <label htmlFor="end_date">End date :</label>
               <input
                 type="date"
                 name="end_date"
-                onChange={handleChange}
                 value={details?.end_date || ""}
+                readOnly
                 required
               />
               {errors?.end_date && (
@@ -223,9 +254,9 @@ const Payment = () => {
               location.pathname === "/phuket/family/premium" ||
               location.pathname === "/phuket/family/custom") && (
               <div className="input">
-                <label htmlFor="">Number of Children :</label>
+                <label htmlFor="no_of_children">Number of Children :</label>
                 <input
-                  type="phone"
+                  type="text"
                   name="no_of_children"
                   onChange={handleChange}
                   value={details?.no_of_children || ""}

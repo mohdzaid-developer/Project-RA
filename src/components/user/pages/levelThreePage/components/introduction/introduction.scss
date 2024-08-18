@@ -4,9 +4,9 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 80px;
   padding: 100px 50px;
 
   h2 {
@@ -14,17 +14,66 @@
     font-size: 40px;
   }
 
-  .text {
-    width: 70%;
+  .content {
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 10px;
-    flex-direction: column;
-    p {
-      color: $white;
-      font-size: 16px;
-      line-height: 28px;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    .card-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+
+      .card {
+        height: 350px;
+        width: 300px;
+        background-color: $dark-green;
+        color: $white;
+        border-radius: 10px;
+        padding: 30px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        h3 {
+          font-size: 20px;
+          line-height: 30px;
+          letter-spacing: 1px;
+        }
+        p {
+          color: gray;
+          font-size: 15px;
+          line-height: 25px;
+          span {
+            color: $white;
+          }
+        }
+      }
+
+      img {
+        height: 100px;
+      }
+    }
+
+    .card-container.card3 {
+      flex-direction: column;
+    }
+
+    .card-container.card1 .arrow {
+      transform: rotate(-90deg);
+    }
+    .card-container.card2 .arrow {
+      transform: rotate(-90deg);
+    }
+    .card-container.card4 .arrow {
+      transform: rotate(-180deg);
+    }
+    .card-container.card5 .arrow {
+      transform: rotate(-180deg);
     }
   }
 }
