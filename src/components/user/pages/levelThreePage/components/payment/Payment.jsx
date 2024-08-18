@@ -1,25 +1,25 @@
 import { useEffect, useState } from "react";
 import "./payment.scss";
 
-//Alert
+// Alert
 import { toast } from "react-hot-toast";
 
-//Routing
+// Routing
 import { useLocation, useNavigate } from "react-router-dom";
 
-//Assets
+// Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
-//Validation
+// Validation
 import {
   createOrderSchema,
   createOrderSchemaSecond,
 } from "@/utils/validation/userValidations";
 
-//Component
+// Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
-//Redux
+// Redux
 import {
   useCreateOrderMutation,
   useVerifyPaymentMutation,
@@ -37,6 +37,8 @@ const Payment = () => {
   const [details, setDetails] = useState({
     start_date: "",
     end_date: "",
+    no_of_adults: "",
+    no_of_children: "",
   });
   const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -65,7 +67,7 @@ const Payment = () => {
     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
     const minDate = oneMonthLater.toISOString().split("T")[0];
     setMinStartDate(minDate);
-  }, [location, isAuthenticated]);
+  }, [location, isAuthenticated, dispatch]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -167,7 +169,12 @@ const Payment = () => {
             }).unwrap();
 
             toast.success("Payment successful!");
-            setDetails(null);
+            setDetails({
+              start_date: "",
+              end_date: "",
+              no_of_adults: "",
+              no_of_children: "",
+            });
           } catch (err) {
             toast.error("Payment verification failed!");
             console.error(err);
