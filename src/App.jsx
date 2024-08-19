@@ -32,7 +32,6 @@ import {
   UserForgetPassword,
   UserOtp,
   UserProfile,
-  UserPayment,
   UserMyTrips,
   UserHome,
   UserAbout,
@@ -241,10 +240,6 @@ const userProtectedRoutesData = [
   {
     path: "/profile",
     element: <UserProfile />,
-  },
-  {
-    path: "/payment",
-    element: <UserPayment />,
   },
   {
     path: "/my-trips",

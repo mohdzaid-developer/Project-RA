@@ -15,6 +15,14 @@ export const UserForgetPassword = lazy(() =>
 );
 export const UserOtp = lazy(() => import("@/pages/user/authRoutes/otp/Otp"));
 
+//Protected Routes
+export const UserProfile = lazy(() =>
+  import("@/pages/user/protectedRoutes/profile/Profile")
+);
+export const UserMyTrips = lazy(() =>
+  import("@/pages/user/protectedRoutes/myTrips/MyTrips")
+);
+
 //Unprotected Routes
 export const UserHome = lazy(() =>
   import("@/pages/user/unprotectedRoutes/home/Home")
@@ -144,16 +152,4 @@ export const UserPhuketFamilyPremium = lazy(() =>
 );
 export const UserPhuketCustom = lazy(() =>
   import("@/pages/user/unprotectedRoutes/phuket/pages/custom/Custom")
-);
-
-//Protected Routes
-export const UserProfile = lazy(() =>
-  import("@/pages/user/protectedRoutes/profile/Profile")
-);
-
-export const UserMyTrips = lazy(() =>
-  import("@/pages/user/protectedRoutes/myTrips/MyTrips")
-);
-export const UserPayment = lazy(() =>
-  import("@/pages/user/protectedRoutes/payment/Payment")
 );

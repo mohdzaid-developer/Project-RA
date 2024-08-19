@@ -29,43 +29,62 @@ const Profile = () => {
       await imageUpload(reader.result);
     };
   };
+
   return (
     <div className="profile">
       <div className="content">
         <h2>Profile</h2>
       </div>
-      <div className="form-container">
-        <div className="form-container-left">
-          <input
-            type="file"
-            className="changeImage"
-            onChange={handleImageUpload}
-          />
-          {isImageLoading ? (
-            <CircularProgressBar />
-          ) : (
-            <img src={profileDetails?.data?.profilePic ?? profileImg} alt="" />
-          )}
-        </div>
 
-        <div className="form-container-right">
-          <div>
-            <label htmlFor="">Name : </label>
-            <input
-              type="text"
-              value={profileDetails?.data?.fullName}
-              readOnly
-            />
-          </div>
-          <div>
-            <label htmlFor="">Email : </label>
-            <input type="text" value={profileDetails?.data?.email} readOnly />
-          </div>
-          <div>
-            <label htmlFor="">Phone : </label>
-            <input type="text" value={profileDetails?.data?.phone} readOnly />
-          </div>
-        </div>
+      <div className="form-container">
+        {isProfileLoading ? (
+          <CircularProgressBar />
+        ) : (
+          <>
+            <div className="form-container-left">
+              <input
+                type="file"
+                className="changeImage"
+                onChange={handleImageUpload}
+              />
+              {isImageLoading ? (
+                <CircularProgressBar />
+              ) : (
+                <img
+                  src={profileDetails?.data?.profilePic ?? profileImg}
+                  alt=""
+                />
+              )}
+            </div>
+
+            <div className="form-container-right">
+              <div>
+                <label htmlFor="">Name : </label>
+                <input
+                  type="text"
+                  value={profileDetails?.data?.fullName}
+                  readOnly
+                />
+              </div>
+              <div>
+                <label htmlFor="">Email : </label>
+                <input
+                  type="text"
+                  value={profileDetails?.data?.email}
+                  readOnly
+                />
+              </div>
+              <div>
+                <label htmlFor="">Phone : </label>
+                <input
+                  type="text"
+                  value={profileDetails?.data?.phone}
+                  readOnly
+                />
+              </div>
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
