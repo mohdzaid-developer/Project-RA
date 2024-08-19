@@ -77,6 +77,7 @@ import {
   AdminSingleTripDetails,
   AdminPayment,
   AdminQueries,
+  AdminNewsLetter,
 } from "./pageConfig/AdminPageConfig";
 
 // Routes Data
@@ -284,6 +285,10 @@ const adminProtectedRoutesData = [
   {
     path: "/admin/queries",
     element: <AdminQueries />,
+  },
+  {
+    path: "/admin/news-letter",
+    element: <AdminNewsLetter />,
   },
 ];
 
