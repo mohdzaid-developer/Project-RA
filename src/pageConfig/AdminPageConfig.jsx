@@ -27,3 +27,6 @@ export const AdminPayment = lazy(() =>
 export const AdminQueries = lazy(() =>
   import("../pages/admin/protectedRoutes/queries/Queries")
 );
+export const AdminNewsLetter = lazy(() =>
+  import("../pages/admin/protectedRoutes/newsLetter/NewsLetter")
+);

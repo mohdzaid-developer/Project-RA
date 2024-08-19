@@ -45,6 +45,10 @@ const Sidebar = () => {
               <img src={query} alt="" />
               <Link to="/admin/queries">Queries</Link>
             </div>
+            <div className="link">
+              <img src={query} alt="" />
+              <Link to="/admin/news-letter">News Letter</Link>
+            </div>
           </div>
         </div>
 
