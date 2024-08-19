@@ -216,7 +216,7 @@ const Payment = () => {
                 name="start_date"
                 onChange={handleChange}
                 value={details?.start_date || ""}
-                min={minStartDate} // Prevent selecting a date before one month from today
+                min={minStartDate}
                 required
               />
               {errors?.start_date && (
@@ -225,13 +225,21 @@ const Payment = () => {
             </div>
             <div className="input">
               <label htmlFor="no_of_adults">Number of Adults :</label>
-              <input
-                type="text"
+              <select
                 name="no_of_adults"
                 onChange={handleChange}
                 value={details?.no_of_adults || ""}
                 required
-              />
+              >
+                <option value="" disabled>
+                  Select number of adults
+                </option>
+                {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
+                ))}
+              </select>
               {errors?.no_of_adults && (
                 <p className="error-text">{errors?.no_of_adults}</p>
               )}
@@ -262,13 +270,21 @@ const Payment = () => {
               location.pathname === "/phuket/family/custom") && (
               <div className="input">
                 <label htmlFor="no_of_children">Number of Children :</label>
-                <input
-                  type="text"
+                <select
                   name="no_of_children"
                   onChange={handleChange}
                   value={details?.no_of_children || ""}
                   required
-                />
+                >
+                  <option value="" disabled>
+                    Select number of children
+                  </option>
+                  {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
+                    <option key={num} value={num}>
+                      {num}
+                    </option>
+                  ))}
+                </select>
                 {errors?.no_of_children && (
                   <p className="error-text">{errors?.no_of_children}</p>
                 )}
