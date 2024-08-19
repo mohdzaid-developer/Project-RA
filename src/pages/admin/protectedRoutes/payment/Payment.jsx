@@ -1,31 +1,27 @@
 import "./payment.scss";
 
-//Routing
-import { useNavigate } from "react-router-dom";
-
 //Assets
 import payment from "@/assets/payment.png";
 
 //Components
 import AdminNavbar from "@/components/admin/adminNavbar/AdminNavbar";
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 //Mui
 import {
-  TableContainer,
+  Paper,
   Table,
+  TableBody,
+  TableCell,
+  TableContainer,
   TableHead,
   TableRow,
-  TableCell,
-  TableBody,
-  Paper,
 } from "@mui/material";
 
-// Data
+// Redux
 import { useAdminGetAllPaymentsQuery } from "@/redux/slice/admin/api/adminApiSlice";
-import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 const Payment = () => {
-  const navigate = useNavigate();
   const { data: allPaymentDetails, isLoading: allPaymentIsLoading } =
     useAdminGetAllPaymentsQuery();
 
@@ -59,10 +55,7 @@ const Payment = () => {
                   </TableHead>
                   <TableBody className="table-body">
                     {allPaymentDetails?.data?.map((row, index) => (
-                      <TableRow
-                        key={index}
-                        onClick={() => navigate(`/admin/trip/${row.order_id}`)}
-                      >
+                      <TableRow key={index}>
                         <TableCell align="center">
                           {row?.paymentId ?? "--"}
                         </TableCell>
