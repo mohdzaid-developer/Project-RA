@@ -43,6 +43,7 @@
           justify-content: flex-start;
           align-items: flex-end;
           gap: 20px;
+          position: relative;
 
           label {
             width: 30%;
@@ -100,6 +101,47 @@
 
       img {
         height: 28px;
+      }
+    }
+
+    .SigUp-Checkbox {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      .checkbox {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1440px) {
+          gap: 10px;
+        }
+        .checkbox-box {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+      #Checkbox-Para {
+        font-size: 14px;
+        color: rgb(191, 191, 211);
+        line-height: 20px;
+        font-weight: 400;
+        @media (max-width: 1450px) {
+          font-size: 12px;
+        }
+      }
+
+      .Checkbox {
+        color: blue;
+        font-weight: 600;
+        cursor: pointer;
       }
     }
   }
