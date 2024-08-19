@@ -55,22 +55,24 @@ const MyTrips = () => {
               <TableHead className="table-head">
                 <TableRow>
                   <TableCell align="center">Id</TableCell>
-                  <TableCell align="center">Name</TableCell>
-                  <TableCell align="center">Email</TableCell>
-                  <TableCell align="center">Message</TableCell>
+                  <TableCell align="center">Destination</TableCell>
+                  <TableCell align="center">Package</TableCell>
+                  <TableCell align="center">Plan</TableCell>
                   <TableCell align="center">Date</TableCell>
+                  <TableCell align="center">Status</TableCell>
                 </TableRow>
               </TableHead>
               <TableBody className="table-body">
                 {tripDetails?.data.map((row, index) => (
-                  <TableRow key={row.id}>
+                  <TableRow key={index}>
                     <TableCell align="center">{index + 1}</TableCell>
-                    <TableCell align="center">{row.fullName}</TableCell>
-                    <TableCell align="center">{row.email}</TableCell>
-                    <TableCell align="center">{row.message}</TableCell>
+                    <TableCell align="center">{row.destination}</TableCell>
+                    <TableCell align="center">{row.package}</TableCell>
+                    <TableCell align="center">{row.plan}</TableCell>
                     <TableCell align="center">
-                      {row?.createdAt?.split("T")[0]}
+                      {row?.booked_date?.split("T")[0]}
                     </TableCell>
+                    <TableCell align="center">{row.status}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
