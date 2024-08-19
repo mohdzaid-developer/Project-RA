@@ -6,12 +6,12 @@ import { Link, useNavigate } from "react-router-dom";
 
 //Assets
 import logo from "@/assets/logo.webp";
-import logout from "@/assets/logout.webp";
+import logout from "@/assets/navLogout.png";
 import login from "@/assets/user.webp";
-import facebookImg from "@/assets/facebookImg.webp";
-import twitterImg from "@/assets/instagramImg.webp";
-import instagramImg from "@/assets/twitterImg.webp";
-import linkendInImg from "@/assets/linkedInImg.webp";
+import facebookImg from "@/assets/navFacebook.png";
+import twitterImg from "@/assets/navTwitter.png";
+import instagramImg from "@/assets/navInstagram.png";
+import linkendInImg from "@/assets/navlinkedin.png";
 
 //Redux
 import { useDispatch, useSelector } from "react-redux";

@@ -85,6 +85,7 @@ const NewsLetter = () => {
   const handleClose = () => {
     setIsVisible(false);
     sessionStorage.setItem("isContactClosed", "true");
+    console.log("test");
   };
 
   return (

@@ -110,11 +110,12 @@ export const userApi = createApi({
       }),
     }),
 
-    postContactUs:builder.mutation({
+    //Contact Us
+    postContactUs: builder.mutation({
       query: (data) => ({
         url: "contact-us",
         method: "POST",
-        body:{...data},
+        body: { ...data },
       }),
     }),
 
@@ -124,6 +125,17 @@ export const userApi = createApi({
         method: "POST",
         body:{...data},
       }),
+      
+    //My Trips
+    userGetTrips: builder.query({
+      query: () => ({
+        url: `user/booking`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getUserAccessToken()}`,
+        },
+      }),
+      providesTags: ["getUserTrips"],
     }),
   }),
 });
@@ -141,4 +153,6 @@ export const {
   useVerifyPaymentMutation,
   usePostContactUsMutation,
   usePostNewsLetterMutation
+  useUserGetTripsQuery,
+
 } = userApi;

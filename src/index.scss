@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
-@import url("https://db.onlinewebfonts.com/c/2e46652a2dcb3173f0d40d4266f1debe?family=Cygre+Light");
+
+@font-face {
+  font-family: "Cygre Light";
+  src: url("./assets/Cygre-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 $dark-orange: #bc6c25;
 $light-orange: #dda15e;
