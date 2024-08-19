@@ -104,6 +104,10 @@ export const createOrderSchemaSecond = Yup.object({
     .integer("Number of adults must be an integer.")
     .positive("Number of adults must be greater than zero.")
     .min(1, "There must be at least 1 adult."),
+    termsAndCondition: Yup.boolean().oneOf(
+      [true],
+      "Please accept terms and conditions!"
+    ),
   // totalAmount: Yup
   //   .number()
   //   .required('Total amount is required.')

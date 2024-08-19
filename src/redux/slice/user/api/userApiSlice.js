@@ -37,7 +37,7 @@ export const userApi = createApi({
       }),
     }),
     userResendOtp: builder.mutation({
-      query: (data) => ({
+      query: () => ({
         url: "user/auth/otp-resend",
         method: "POST",
         headers: {
@@ -89,7 +89,7 @@ export const userApi = createApi({
     //Payment
     createOrder: builder.mutation({
       query: (body) => ({
-        url: "payment/create-order",
+        url: "/create-order",
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -100,7 +100,7 @@ export const userApi = createApi({
     }),
     verifyPayment: builder.mutation({
       query: (body) => ({
-        url: "payment/verify-payment",
+        url: "verify-payment-booking",
         method: "POST",
         headers: {
           "Content-Type": "application/json",

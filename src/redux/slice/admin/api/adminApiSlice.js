@@ -37,7 +37,7 @@ export const adminApi = createApi({
 
     adminGetAllBooking: builder.query({
       query: ({ selectedPackage, selectedPlan, destination, id }) => ({
-        url: `payment/booking?plan=${selectedPlan}&package=${selectedPackage}&destination=${destination}&id=${
+        url: `booking?plan=${selectedPlan}&package=${selectedPackage}&destination=${destination}&id=${
           id ?? ""
         }`,
         method: "GET",
@@ -50,7 +50,7 @@ export const adminApi = createApi({
 
     adminUpdateTripStatus: builder.mutation({
       query: ({status,id}) => ({
-        url: `payment/booking?bookingStatus=${status}&id=${id}`,
+        url: `booking?bookingStatus=${status}&id=${id}`,
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${getAdminAccessToken()}`,

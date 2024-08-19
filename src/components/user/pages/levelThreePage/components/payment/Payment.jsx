@@ -16,6 +16,7 @@ import {
   createOrderSchemaSecond,
 } from "@/utils/validation/userValidations";
 
+
 // Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
@@ -26,6 +27,7 @@ import {
 } from "@/redux/slice/user/api/userApiSlice";
 import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 import { useDispatch, useSelector } from "react-redux";
+import { Checkbox } from "@mui/material";
 
 const Payment = () => {
   const location = useLocation();
@@ -39,6 +41,7 @@ const Payment = () => {
     end_date: "",
     no_of_adults: "",
     no_of_children: "",
+    termsAndCondition:""
   });
   const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -70,11 +73,12 @@ const Payment = () => {
   }, [location, isAuthenticated, dispatch]);
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const newValue = type === "checkbox" ? checked : value;
 
     setDetails((prevDetails) => ({
       ...prevDetails,
-      [name]: value,
+      [name]: newValue,
     }));
   };
 
@@ -220,7 +224,7 @@ const Payment = () => {
                 required
               />
               {errors?.start_date && (
-                <p className="error-text">{errors?.start_date}</p>
+                <p className="error-text-booking">{errors?.start_date}</p>
               )}
             </div>
             <div className="input">
@@ -241,7 +245,7 @@ const Payment = () => {
                 ))}
               </select>
               {errors?.no_of_adults && (
-                <p className="error-text">{errors?.no_of_adults}</p>
+                <p className="error-text-booking">{errors?.no_of_adults}</p>
               )}
             </div>
           </div>
@@ -256,7 +260,7 @@ const Payment = () => {
                 required
               />
               {errors?.end_date && (
-                <p className="error-text">{errors?.end_date}</p>
+                <p className="error-text-booking">{errors?.end_date}</p>
               )}
             </div>
 
@@ -286,12 +290,33 @@ const Payment = () => {
                   ))}
                 </select>
                 {errors?.no_of_children && (
-                  <p className="error-text">{errors?.no_of_children}</p>
+                  <p className="error-text-booking">{errors?.no_of_children}</p>
                 )}
               </div>
             )}
           </div>
         </div>
+
+        <div className="SigUp-Checkbox">
+              <div className="checkbox">
+                <Checkbox
+                  required
+                  checked={details?.termsAndCondition}
+                  name="termsAndCondition"
+                  sx={{ color: "#E2E8F0" }}
+                  onChange={handleChange}
+                  className="checkbox-box"
+                />
+                <p id="Checkbox-Para">
+                  By creating an account means, you agree to the{" "}
+                  <span className="Checkbox">Terms & Conditions </span>and our{" "}
+                  <span className="Checkbox"> Privacy Policy</span>
+                </p>
+              </div>
+              {errors?.termsAndCondition && (
+                <p className="error-text">{errors?.termsAndCondition}</p>
+              )}
+            </div>
 
         <button onClick={handlePayment}>
           {isLoading ? (
