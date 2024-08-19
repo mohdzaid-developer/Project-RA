@@ -16,6 +16,7 @@ import {
   useAdminGetAllBookingQuery,
   useAdminUpdateTripStatusMutation,
 } from "@/redux/slice/admin/api/adminApiSlice";
+import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
 const statusNames = ["Booked", "Reviewed", "Approved", "Done"];
 const selectedValues = {
@@ -56,119 +57,125 @@ const SingleTripDetails = () => {
     });
   };
   return (
-    <section className="trips-container">
+    <section className="admin-trips-container">
       <PopUp />
       <AdminNavbar title="Trips" image={trip} />
-      <div className="single-trip-details">
-        <div className="top-container">
-          <div className="details">
-            <div className="trip-heading">
-              <h3>Trip Details</h3>
-            </div>
-
-            <div className="detail-container">
-              <div className="detail-slot">
-                <h2>Name :</h2>
-                <h3>{singleBookingDetails?.data[0]?.client_name ?? "--"}</h3>
-              </div>
-              <div className="detail-slot">
-                <h2>Email :</h2>
-                <h3>{singleBookingDetails?.data[0]?.email ?? "--"}</h3>
-              </div>
-              <div className="detail-slot">
-                <h2>Phone number :</h2>
-                <h3>{singleBookingDetails?.data[0]?.phone ?? "--"}</h3>
-              </div>
-              <div className="detail-slot">
-                <h2>Destination :</h2>
-                <h3>{singleBookingDetails?.data[0]?.destination ?? "--"}</h3>
-              </div>
-              <div className="detail-slot">
-                <h2>Package :</h2>
-                <h3>{singleBookingDetails?.data[0]?.package ?? "--"}</h3>
-              </div>
-              <div className="detail-slot">
-                <h2>Plan :</h2>
-                <h3>{singleBookingDetails?.data[0]?.plan ?? "--"}</h3>
+      {allBookingIsLoading ? (
+        <div className="loader">
+          <CircularProgressBar />
+        </div>
+      ) : (
+        <div className="single-trip-details">
+          <div className="top-container">
+            <div className="details">
+              <div className="trip-heading">
+                <h3>Trip Details</h3>
               </div>
 
-              <div className="detail-slot">
-                <h2>Number Of Adults :</h2>
-                <h3>{singleBookingDetails?.data[0]?.no_of_adults}</h3>
-              </div>
-
-              {singleBookingDetails?.data[0]?.no_of_children && (
+              <div className="detail-container">
                 <div className="detail-slot">
-                  <h2>Number of Children :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.no_of_children}</h3>
+                  <h2>Name :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.client_name ?? "--"}</h3>
                 </div>
-              )}
-              <div className="detail-slot">
-                <h2>Booked Date :</h2>
-                <h3>
-                  {singleBookingDetails?.data[0]?.booked_date?.split("T")[0]}
-                </h3>
+                <div className="detail-slot">
+                  <h2>Email :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.email ?? "--"}</h3>
+                </div>
+                <div className="detail-slot">
+                  <h2>Phone number :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.phone ?? "--"}</h3>
+                </div>
+                <div className="detail-slot">
+                  <h2>Destination :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.destination ?? "--"}</h3>
+                </div>
+                <div className="detail-slot">
+                  <h2>Package :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.package ?? "--"}</h3>
+                </div>
+                <div className="detail-slot">
+                  <h2>Plan :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.plan ?? "--"}</h3>
+                </div>
+
+                <div className="detail-slot">
+                  <h2>Number Of Adults :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.no_of_adults}</h3>
+                </div>
+
+                {singleBookingDetails?.data[0]?.no_of_children && (
+                  <div className="detail-slot">
+                    <h2>Number of Children :</h2>
+                    <h3>{singleBookingDetails?.data[0]?.no_of_children}</h3>
+                  </div>
+                )}
+                <div className="detail-slot">
+                  <h2>Booked Date :</h2>
+                  <h3>
+                    {singleBookingDetails?.data[0]?.booked_date?.split("T")[0]}
+                  </h3>
+                </div>
+                <div className="detail-slot">
+                  <h2>Trip Start Date :</h2>
+                  <h3>
+                    {singleBookingDetails?.data[0]?.start_date?.split("T")[0]}
+                  </h3>
+                </div>
+                <div className="detail-slot">
+                  <h2>Trip End Date :</h2>
+                  <h3>
+                    {singleBookingDetails?.data[0]?.end_date?.split("T")[0]}
+                  </h3>
+                </div>
               </div>
-              <div className="detail-slot">
-                <h2>Trip Start Date :</h2>
-                <h3>
-                  {singleBookingDetails?.data[0]?.start_date?.split("T")[0]}
-                </h3>
+            </div>
+
+            <div className="details">
+              <div className="trip-heading">
+                <h3>Payment Details</h3>
               </div>
-              <div className="detail-slot">
-                <h2>Trip End Date :</h2>
-                <h3>
-                  {singleBookingDetails?.data[0]?.end_date?.split("T")[0]}
-                </h3>
+
+              <div className="detail-container">
+                <div className="detail-slot">
+                  <h2>Total Amount :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.total_amount}</h3>
+                </div>
+                <div className="detail-slot">
+                  <h2>Paid Amount :</h2>
+                  <h3>{singleBookingDetails?.data[0]?.paid_amount}</h3>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="details">
+          <div className="bottom-container">
             <div className="trip-heading">
-              <h3>Payment Details</h3>
+              <h3>Process Status</h3>
             </div>
 
-            <div className="detail-container">
-              <div className="detail-slot">
-                <h2>Total Amount :</h2>
-                <h3>{singleBookingDetails?.data[0]?.total_amount}</h3>
-              </div>
-              <div className="detail-slot">
-                <h2>Paid Amount :</h2>
-                <h3>{singleBookingDetails?.data[0]?.paid_amount}</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="bottom-container">
-          <div className="trip-heading">
-            <h3>Process Status</h3>
-          </div>
-
-          <div className="status-container">
-            {statusNames?.map((item) => (
-              <button
-                className="status-btn"
-                onClick={() => handleChangeStatus(item)}
-                id={
-                  selectedValues[
+            <div className="status-container">
+              {statusNames?.map((item) => (
+                <button
+                  className="status-btn"
+                  onClick={() => handleChangeStatus(item)}
+                  id={
+                    selectedValues[
+                      singleBookingDetails?.data[0]?.status.toLowerCase()
+                    ]?.includes(item.toLowerCase())
+                      ? "selected"
+                      : ""
+                  }
+                  disabled={selectedValues[
                     singleBookingDetails?.data[0]?.status.toLowerCase()
-                  ]?.includes(item.toLowerCase())
-                    ? "selected"
-                    : ""
-                }
-                disabled={selectedValues[
-                  singleBookingDetails?.data[0]?.status.toLowerCase()
-                ]?.includes(item.toLowerCase())}
-              >
-                {item}
-              </button>
-            ))}
+                  ]?.includes(item.toLowerCase())}
+                >
+                  {item}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
-      </div>
+      )}
     </section>
   );
 };
