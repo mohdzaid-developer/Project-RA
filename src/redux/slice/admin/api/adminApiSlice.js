@@ -82,7 +82,16 @@ export const adminApi = createApi({
         url: `contact-us`,
         method: "GET",
         headers: {
-          Authorization: `Bearer ${getAdminOtpAccessToken()}`,
+          Authorization: `Bearer ${getAdminAccessToken()}`,
+        },
+      }),
+    }),
+    adminGetAllNewsLetters: builder.query({
+      query: () => ({
+        url: `news-letter`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${getAdminAccessToken()}`,
         },
       }),
     }),
@@ -98,5 +107,6 @@ export const {
   useAdminGetAllPaymentsQuery,
   useAdminGetAllUsersQuery,
   useAdminGetAllQueriesQuery,
-  useAdminUpdateTripStatusMutation
+  useAdminUpdateTripStatusMutation,
+  useAdminGetAllNewsLettersQuery
 } = adminApi;

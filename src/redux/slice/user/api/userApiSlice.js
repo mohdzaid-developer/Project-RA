@@ -117,6 +117,14 @@ export const userApi = createApi({
         body:{...data},
       }),
     }),
+
+    postNewsLetter:builder.mutation({
+      query: (data) => ({
+        url: "news-letter",
+        method: "POST",
+        body:{...data},
+      }),
+    }),
   }),
 });
 
@@ -131,5 +139,6 @@ export const {
   useUserProfilePicUploadMutation,
   useCreateOrderMutation,
   useVerifyPaymentMutation,
-  usePostContactUsMutation
+  usePostContactUsMutation,
+  usePostNewsLetterMutation
 } = userApi;
