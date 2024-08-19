@@ -33,7 +33,7 @@
     align-items: center;
 
     h2 {
-      font-size: 60px;
+      font-size: 45px;
       color: $white;
     }
     img {
@@ -56,7 +56,7 @@
       width: 50%;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       flex-direction: column;
       gap: 50px;
 
@@ -74,36 +74,6 @@
           }
         }
       }
-    }
-
-    .form-container-right {
-      width: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      flex-direction: column;
-      gap: 50px;
-
-      .input {
-        width: 100%;
-
-        .title {
-          color: $white;
-          margin-bottom: 10px;
-        }
-        textarea {
-          outline: none;
-          border: 1px solid white;
-          background-color: transparent;
-          width: 100%;
-          height: 150px;
-          border-radius: 5px;
-          color: $white;
-          padding: 10px;
-          padding-top: 10px;
-          resize: none;
-        }
-      }
 
       button {
         background-color: transparent;
@@ -117,6 +87,58 @@
 
         img {
           height: 30px;
+        }
+      }
+    }
+
+    .form-container-right {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 30px;
+
+      h3 {
+        font-size: 25px;
+        color: $white;
+      }
+      .list {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 20px;
+        p {
+          color: $white;
+          font-size: 20px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 10px;
+          img {
+            height: 32px;
+          }
+        }
+      }
+
+      .help {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+        .link {
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          gap: 30px;
+          a {
+            color: $white;
+            border: 1px solid $white;
+            padding: 15px 20px;
+            border-radius: 10px;
+          }
         }
       }
     }

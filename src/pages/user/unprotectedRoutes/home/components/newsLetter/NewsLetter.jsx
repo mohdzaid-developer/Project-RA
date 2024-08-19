@@ -11,6 +11,7 @@ import { userContactUsSchema } from "@/utils/validation/userValidations";
 //Assets
 import closeImg from "@/assets/error.webp";
 import buttonArrowImg from "@/assets/rightArrow.webp";
+import tick from "@/assets/checked.png";
 
 //Global Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
@@ -95,22 +96,11 @@ const NewsLetter = () => {
       variants={footerFadeInAnimation}
     >
       <div className="content">
-        <h2>Get in touch</h2>
+        <h2>Get an instant call back from our team</h2>
         <img src={closeImg} alt="Close" onClick={handleClose} />
       </div>
       <div className="form-container">
         <div className="form-container-left">
-          <div>
-            <input
-              type="text"
-              placeholder="Name"
-              name="fullName"
-              onChange={handleChange}
-            />
-            {errors?.fullName && (
-              <p className="error-text">{errors?.fullName}</p>
-            )}
-          </div>
           <div>
             <input
               type="text"
@@ -129,13 +119,6 @@ const NewsLetter = () => {
             />
             {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
-        </div>
-        <div className="form-container-right">
-          <div className="input">
-            <p className="title">Tell us how can we help</p>
-            <textarea name="message" onChange={handleChange} />
-            {errors?.message && <p className="error-text">{errors?.message}</p>}
-          </div>
           <button onClick={handleSubmit} className="authButton">
             {isLoading ? (
               <CircularProgressBar />
@@ -145,6 +128,30 @@ const NewsLetter = () => {
               </>
             )}
           </button>
+        </div>
+        <div className="form-container-right">
+          <h3>Don't miss out on our exclusive deals & offers !</h3>
+          <div className="list">
+            <p>
+              <img src={tick} alt="" />
+              Rated best travel partner
+            </p>
+            <p>
+              <img src={tick} alt="" />
+              Most experienced
+            </p>
+            <p>
+              <img src={tick} alt="" />
+              Choose from wide range of packages
+            </p>
+          </div>
+          <div className="help">
+            <h3>We are happy to help you</h3>
+            <div className="link">
+              <a href="#">+91-8989898989</a>
+              <a href="#">admin@comeflywithme.co.in</a>
+            </div>
+          </div>
         </div>
       </div>
     </motion.div>
