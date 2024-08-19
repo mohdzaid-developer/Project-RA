@@ -43,7 +43,7 @@ const Queries = () => {
               </TableRow>
             </TableHead>
             <TableBody className="table-body">
-              {allQueriesList?.data.response.map((row, index) => (
+              {allQueriesList?.data.map((row, index) => (
                 <TableRow key={row.id}>
                   <TableCell align="center">{index + 1}</TableCell>
                   <TableCell align="center">{row.fullName}</TableCell>
