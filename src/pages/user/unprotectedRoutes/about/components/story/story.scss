@@ -26,16 +26,6 @@
       text-align: center;
     }
 
-    .top-content {
-      p {
-        text-align: center;
-        color: lightgray;
-        font-size: 14px;
-        letter-spacing: 1px;
-        line-height: 25px;
-      }
-    }
-
     .content {
       width: 100%;
       display: flex;
@@ -44,6 +34,7 @@
       gap: 50px;
       img {
         width: 50%;
+        height: 500px;
         border-radius: 10px;
       }
 
@@ -59,20 +50,6 @@
           letter-spacing: 1px;
           line-height: 25px;
         }
-      }
-    }
-
-    .bottom-content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      gap: 30px;
-      p {
-        color: lightgray;
-        font-size: 14px;
-        letter-spacing: 1px;
-        line-height: 25px;
       }
     }
   }
