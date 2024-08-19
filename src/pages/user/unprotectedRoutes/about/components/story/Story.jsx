@@ -1,5 +1,5 @@
 import "./story.scss";
-import guy from "@/assets/guy.jpg";
+import guy from "@/assets/guy.webp";
 
 const Story = () => {
   return (
@@ -7,17 +7,15 @@ const Story = () => {
       <div className="story-container">
         <h2>Our Story: A Journey of Dreams and Determination</h2>
 
-        <div className="top-content">
-          <p>
-            I'm Vishnu, founder of Come Fly with Me. My love for travel began in
-            childhood, thanks to my parents, who believed that the world was the
-            best classroom. Each trip we took was an adventure that fueled my
-            passion for exploring.
-          </p>
-        </div>
         <div className="content">
           <img src={guy} alt="" />
           <div className="text">
+            <p>
+              I'm Vishnu, founder of Come Fly with Me. My love for travel began
+              in childhood, thanks to my parents, who believed that the world
+              was the best classroom. Each trip we took was an adventure that
+              fueled my passion for exploring.
+            </p>
             <p>
               In 2018, I moved to Australia and spent six years traveling across
               Asia as a solo budget traveler. I faced the challenges every
