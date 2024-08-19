@@ -122,7 +122,7 @@ export const userApi = createApi({
     //My Trips
     userGetTrips: builder.query({
       query: () => ({
-        url: `booking/user/booking`,
+        url: `user/booking`,
         method: "GET",
         headers: {
           Authorization: `Bearer ${getUserAccessToken()}`,
