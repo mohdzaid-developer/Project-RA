@@ -104,10 +104,10 @@ export const createOrderSchemaSecond = Yup.object({
     .integer("Number of adults must be an integer.")
     .positive("Number of adults must be greater than zero.")
     .min(1, "There must be at least 1 adult."),
-    termsAndCondition: Yup.boolean().oneOf(
-      [true],
-      "Please accept terms and conditions!"
-    ),
+  termsAndCondition: Yup.boolean().oneOf(
+    [true],
+    "Please accept terms and conditions!"
+  ),
   // totalAmount: Yup
   //   .number()
   //   .required('Total amount is required.')
@@ -135,4 +135,21 @@ export const userContactUsSchema = Yup.object({
     .min(40, "Message must be at least 40 characters!")
     .max(100, "Message must be at most 100 characters!")
     .required("Message is required!"),
+});
+
+export const userNewsLetterSchema = Yup.object({
+  email: Yup.string()
+    .email("Please enter a valid email address")
+    .required("Email is required!")
+    .matches(
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+      "Please enter your email address in format: example@gmail.com"
+    ),
+  phone: Yup.string()
+    .matches(/^(\+91[\-\s]?)?[0]?(91)?[6789]\d{9}$/, "Invalid mobile number!")
+    .required("Mobile number is required!"),
+  termsAndCondition: Yup.boolean().oneOf(
+    [true],
+    "Please accept terms and conditions!"
+  ),
 });

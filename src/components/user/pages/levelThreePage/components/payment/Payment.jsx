@@ -17,6 +17,9 @@ import {
 } from "@/utils/validation/userValidations";
 
 
+//Material Ui
+import { Checkbox } from "@mui/material";
+
 // Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
@@ -27,7 +30,7 @@ import {
 } from "@/redux/slice/user/api/userApiSlice";
 import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { Checkbox } from "@mui/material";
+
 
 const Payment = () => {
   const location = useLocation();

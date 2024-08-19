@@ -35,6 +35,7 @@ import {
   UserMyTrips,
   UserHome,
   UserAbout,
+  UserNewsLetter,
   UserPrivacyPolicy,
   UserRefundPolicy,
   UserTermsAndCondition,
@@ -110,6 +111,10 @@ const userUnprotectedRoutesData = [
   {
     path: "/about-us",
     element: <UserAbout />,
+  },
+  {
+    path: "/news-letter",
+    element: <UserNewsLetter />,
   },
   {
     path: "/bali",
