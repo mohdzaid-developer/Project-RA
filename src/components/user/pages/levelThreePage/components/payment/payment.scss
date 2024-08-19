@@ -64,6 +64,24 @@
               cursor: pointer;
             }
           }
+
+          select {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            width: 70%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $white;
+            color: $white;
+            padding-bottom: 10px;
+
+            option {
+              background-color: $black;
+              color: $white;
+              cursor: pointer;
+            }
+          }
         }
       }
     }
