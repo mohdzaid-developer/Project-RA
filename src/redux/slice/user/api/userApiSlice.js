@@ -119,13 +119,14 @@ export const userApi = createApi({
       }),
     }),
 
-    postNewsLetter:builder.mutation({
+    postNewsLetter: builder.mutation({
       query: (data) => ({
         url: "news-letter",
         method: "POST",
-        body:{...data},
+        body: { ...data },
       }),
-      
+    }),
+
     //My Trips
     userGetTrips: builder.query({
       query: () => ({
@@ -152,7 +153,6 @@ export const {
   useCreateOrderMutation,
   useVerifyPaymentMutation,
   usePostContactUsMutation,
-  usePostNewsLetterMutation
+  usePostNewsLetterMutation,
   useUserGetTripsQuery,
-
 } = userApi;
