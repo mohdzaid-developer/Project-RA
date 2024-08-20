@@ -34,6 +34,10 @@ const Sidebar = () => {
               <Link to="/admin/trips">Trips</Link>
             </div>
             <div className="link">
+              <img src={trip} alt="" />
+              <Link to="/admin/custom">Custom Trips</Link>
+            </div>
+            <div className="link">
               <img src={payment} alt="" />
               <Link to="/admin/payment">Payments</Link>
             </div>

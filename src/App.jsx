@@ -81,6 +81,7 @@ import {
   AdminUsers,
   AdminTrips,
   AdminSingleTripDetails,
+  AdminCustom,
   AdminPayment,
   AdminQueries,
   AdminNewsLetter,
@@ -248,15 +249,15 @@ const userUnprotectedRoutesData = [
   },
   {
     path: "/phuket/custom/standard",
-    element: <UserBaliCustomStandard />,
+    element: <UserPhuketCustomStandard />,
   },
   {
     path: "/phuket/custom/delux",
-    element: <UserBaliCustomDelux />,
+    element: <UserPhuketCustomDelux />,
   },
   {
     path: "/phuket/custom/premium",
-    element: <UserBaliCustomPremium />,
+    element: <UserPhuketCustomPremium />,
   },
   {
     path: "/refund-policy",
@@ -307,6 +308,10 @@ const adminProtectedRoutesData = [
   {
     path: "/admin/trip/:id",
     element: <AdminSingleTripDetails />,
+  },
+  {
+    path: "/admin/custom",
+    element: <AdminCustom />,
   },
   {
     path: "/admin/payment",

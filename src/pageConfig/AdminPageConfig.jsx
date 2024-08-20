@@ -21,6 +21,10 @@ export const AdminSingleTripDetails = lazy(() =>
   import("../pages/admin/protectedRoutes/singleTripDetails/SingleTripDetails")
 );
 
+export const AdminCustom = lazy(() =>
+  import("../pages/admin/protectedRoutes/custom/Custom")
+);
+
 export const AdminPayment = lazy(() =>
   import("../pages/admin/protectedRoutes/payment/Payment")
 );
