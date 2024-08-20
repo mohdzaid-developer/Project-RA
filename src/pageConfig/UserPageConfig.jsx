@@ -169,3 +169,17 @@ export const UserPhuketFamilyPremium = lazy(() =>
 export const UserPhuketCustom = lazy(() =>
   import("@/pages/user/unprotectedRoutes/phuket/pages/custom/Custom")
 );
+
+export const UserPhuketCustomStandard = lazy(() =>
+  import(
+    "@/pages/user/unprotectedRoutes/phuket/pages/custom/pages/standard/Standard"
+  )
+);
+export const UserPhuketCustomDelux = lazy(() =>
+  import("@/pages/user/unprotectedRoutes/phuket/pages/custom/pages/delux/Delux")
+);
+export const UserPhuketCustomPremium = lazy(() =>
+  import(
+    "@/pages/user/unprotectedRoutes/phuket/pages/custom/pages/premium/Premium"
+  )
+);

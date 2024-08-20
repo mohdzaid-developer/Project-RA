@@ -70,6 +70,9 @@ import {
   UserPhuketFamilyDelux,
   UserPhuketFamilyPremium,
   UserPhuketCustom,
+  UserPhuketCustomStandard,
+  UserPhuketCustomDelux,
+  UserPhuketCustomPremium,
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
@@ -242,6 +245,18 @@ const userUnprotectedRoutesData = [
   {
     path: "/phuket/custom",
     element: <UserPhuketCustom />,
+  },
+  {
+    path: "/phuket/custom/standard",
+    element: <UserBaliCustomStandard />,
+  },
+  {
+    path: "/phuket/custom/delux",
+    element: <UserBaliCustomDelux />,
+  },
+  {
+    path: "/phuket/custom/premium",
+    element: <UserBaliCustomPremium />,
   },
   {
     path: "/refund-policy",
