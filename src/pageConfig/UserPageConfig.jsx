@@ -30,6 +30,9 @@ export const UserHome = lazy(() =>
 export const UserAbout = lazy(() =>
   import("@/pages/user/unprotectedRoutes/about/About")
 );
+export const UserNewsLetter = lazy(() =>
+  import("@/pages/user/unprotectedRoutes/newsLetter/NewsLetter")
+);
 export const UserPrivacyPolicy = lazy(() =>
   import("@/pages/user/unprotectedRoutes/privacyPolicy/PrivacyPolicy")
 );
