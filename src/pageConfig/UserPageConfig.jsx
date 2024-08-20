@@ -98,6 +98,19 @@ export const UserBaliCouplePremium = lazy(() =>
 export const UserBaliCustom = lazy(() =>
   import("@/pages/user/unprotectedRoutes/bali/pages/custom/Custom")
 );
+export const UserBaliCustomStandard = lazy(() =>
+  import(
+    "@/pages/user/unprotectedRoutes/bali/pages/custom/pages/standard/Standard"
+  )
+);
+export const UserBaliCustomDelux = lazy(() =>
+  import("@/pages/user/unprotectedRoutes/bali/pages/custom/pages/delux/Delux")
+);
+export const UserBaliCustomPremium = lazy(() =>
+  import(
+    "@/pages/user/unprotectedRoutes/bali/pages/custom/pages/premium/Premium"
+  )
+);
 
 //Phuket
 export const UserPhuket = lazy(() =>

@@ -53,6 +53,9 @@ import {
   UserBaliCoupleDelux,
   UserBaliCouplePremium,
   UserBaliCustom,
+  UserBaliCustomStandard,
+  UserBaliCustomDelux,
+  UserBaliCustomPremium,
   UserPhuket,
   UserPhuketFriends,
   UserPhuketFriendsStandard,
@@ -171,6 +174,18 @@ const userUnprotectedRoutesData = [
   {
     path: "/bali/custom",
     element: <UserBaliCustom />,
+  },
+  {
+    path: "/bali/custom/standard",
+    element: <UserBaliCustomStandard />,
+  },
+  {
+    path: "/bali/custom/delux",
+    element: <UserBaliCustomDelux />,
+  },
+  {
+    path: "/bali/custom/premium",
+    element: <UserBaliCustomPremium />,
   },
   {
     path: "/phuket",
