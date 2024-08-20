@@ -1,26 +1,34 @@
 import { useEffect, useState } from "react";
 import "./payment.scss";
 
-// External Libraries
+// Alert
 import { toast } from "react-hot-toast";
+
+// Routing
 import { Link, useLocation, useNavigate } from "react-router-dom";
+
+// Assets
+import buttonArrowImg from "@/assets/rightArrow.webp";
+
+// MUI
 import { Checkbox } from "@mui/material";
 
-// Assets & Components
-import buttonArrowImg from "@/assets/rightArrow.webp";
+// Validation
+import {
+  createOrderSchema,
+  createOrderSchemaSecond,
+} from "@/utils/validation/userValidations";
+
+// Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
-// Redux  Validation
+// Redux
 import {
   useCreateOrderMutation,
   useVerifyPaymentMutation,
 } from "@/redux/slice/user/api/userApiSlice";
 import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  createOrderSchema,
-  createOrderSchemaSecond,
-} from "@/utils/validation/userValidations";
 
 const Payment = () => {
   const location = useLocation();
@@ -28,9 +36,7 @@ const Payment = () => {
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.authUser);
 
-  const [createOrder] = useCreateOrderMutation();
-  const [verifyPayment] = useVerifyPaymentMutation();
-
+  const [errors, setErrors] = useState({});
   const [details, setDetails] = useState({
     start_date: "",
     end_date: "",
@@ -40,98 +46,112 @@ const Payment = () => {
   });
   const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState({});
+
+  const [createOrder] = useCreateOrderMutation();
+  const [verifyPayment] = useVerifyPaymentMutation();
 
   useEffect(() => {
-    if (isAuthenticated) dispatch(setParamsQuery(null));
+    if (isAuthenticated) {
+      dispatch(setParamsQuery(null));
+    }
+    if (location?.pathname) {
+      const separatedUrl = location?.pathname?.split("/");
+      if (separatedUrl) {
+        setDetails((prevDetails) => ({
+          ...prevDetails,
+          destination: separatedUrl[1],
+          package: separatedUrl[2],
+          plan: separatedUrl[3],
+        }));
+      }
+    }
 
-    const separatedUrl = location.pathname.split("/");
-    setDetails((prevDetails) => ({
-      ...prevDetails,
-      destination: separatedUrl[1],
-      package: separatedUrl[2],
-      plan: separatedUrl[3],
-    }));
-
+    // Calculate the minimum start date (1 month from today)
     const oneMonthLater = new Date();
     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
-    setMinStartDate(oneMonthLater.toISOString().split("T")[0]);
-  }, [location.pathname, isAuthenticated, dispatch]);
+    const minDate = oneMonthLater.toISOString().split("T")[0];
+    setMinStartDate(minDate);
+  }, [location, isAuthenticated, dispatch]);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    const newValue = type === "checkbox" ? checked : value;
+
     setDetails((prevDetails) => ({
       ...prevDetails,
-      [name]: type === "checkbox" ? checked : value,
+      [name]: newValue,
     }));
   };
 
   useEffect(() => {
-    if (details.start_date && !location.pathname.includes("/custom")) {
-      const endDate = new Date(details.start_date);
-      endDate.setDate(endDate.getDate() + 6);
+    if (details.start_date) {
+      const startDate = new Date(details.start_date);
+      startDate.setDate(startDate.getDate() + 6);
+      const endDate = startDate.toISOString().split("T")[0];
+
       setDetails((prevDetails) => ({
         ...prevDetails,
-        end_date: endDate.toISOString().split("T")[0],
+        end_date: endDate,
       }));
     }
-  }, [details.start_date, location.pathname]);
+  }, [details.start_date]);
 
   useEffect(() => {
     const script = document.createElement("script");
     script.src = `${import.meta.env.VITE_API_RAZOR_PAY}`;
     script.async = true;
     document.body.appendChild(script);
-    return () => document.body.removeChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
   }, []);
-
-  const validateAndCreateOrder = async () => {
-    const validationSchema =
-      location.pathname.includes("family") &&
-      !location.pathname.includes("/custom")
-        ? createOrderSchema
-        : createOrderSchemaSecond;
-
-    await validationSchema.validate(details, { abortEarly: false });
-
-    const userData = JSON.parse(sessionStorage.getItem("user"));
-    if (!userData) {
-      navigate(`/login?page=${location.pathname.replace(/\//g, "?")}`);
-      return;
-    }
-
-    return await createOrder({
-      accessToken: userData.accessToken,
-      orderDetails: {
-        amount: 2000,
-        currency: "INR",
-        receipt: "receipt#1",
-        bookingDetails: { ...details, totalAmount: 5000 },
-      },
-    }).unwrap();
-  };
 
   const handlePayment = async (e) => {
     e.preventDefault();
     setIsLoading(true);
 
+    let userData = JSON.parse(sessionStorage.getItem("user"));
+    if (!userData) {
+      navigate(`/login?page=${location?.pathname.replace(/\//g, "?")}`);
+      setIsLoading(false);
+      return;
+    }
+
     try {
-      if (location.pathname.includes("/custom")) {
-        console.log("custom");
+      const oneMonthLater = new Date(minStartDate);
+      if (new Date(details.start_date) < oneMonthLater) {
+        toast.error("Start date must be at least one month from today");
         setIsLoading(false);
         return;
       }
 
-      if (
-        !location.pathname.includes("/custom") &&
-        new Date(details.start_date) < new Date(minStartDate)
-      ) {
-        toast.error("Start date must be at least one month from today");
-        return;
+      if (location?.pathname?.includes("family")) {
+        await createOrderSchema.validate(details, { abortEarly: false });
+      } else {
+        await createOrderSchemaSecond.validate(details, { abortEarly: false });
       }
 
-      const orderResponse = await validateAndCreateOrder();
-      if (!orderResponse) return;
+      const orderResponse = await createOrder({
+        accessToken: userData.accessToken,
+        orderDetails: {
+          amount: 2000,
+          currency: "INR",
+          receipt: "receipt#1",
+          bookingDetails: {
+            ...details,
+            totalAmount: 5000,
+          },
+        },
+      }).unwrap();
+
+      if (orderResponse?.status === 400) {
+        toast.error(
+          "Please select a start date that is at least one month from today"
+        );
+        setIsLoading(false);
+        return;
+      }
 
       const options = {
         key: "rzp_test_e6zf5ZgkpupNAu",
@@ -141,19 +161,13 @@ const Payment = () => {
         description: "Transaction",
         order_id: orderResponse.data.id,
         callback_url: "http://localhost:3000/payment-success",
-        handler: async (response) => {
+        handler: async function (response) {
           try {
-            const {
-              razorpay_order_id,
-              razorpay_payment_id,
-              razorpay_signature,
-            } = response;
             await verifyPayment({
-              accessToken: JSON.parse(sessionStorage.getItem("user"))
-                .accessToken,
-              orderId: razorpay_order_id,
-              paymentId: razorpay_payment_id,
-              signature: razorpay_signature,
+              accessToken: userData.accessToken,
+              orderId: response.razorpay_order_id,
+              paymentId: response.razorpay_payment_id,
+              signature: response.razorpay_signature,
               amount: 2000,
               currency: "rupees",
               order_id: orderResponse.data.id,
@@ -165,16 +179,17 @@ const Payment = () => {
               end_date: "",
               no_of_adults: "",
               no_of_children: "",
-              termsAndCondition: "",
             });
           } catch (err) {
             toast.error("Payment verification failed!");
-            setIsLoading(false);
+            console.error(err);
           } finally {
             setIsLoading(false);
           }
         },
-        theme: { color: "#151515" },
+        theme: {
+          color: "#151515",
+        },
       };
 
       const rzp = new window.Razorpay(options);
@@ -182,23 +197,16 @@ const Payment = () => {
     } catch (err) {
       if (err.inner) {
         const newErrors = {};
-        err.inner.forEach((error) => (newErrors[error.path] = error.message));
+        err.inner.forEach((error) => {
+          newErrors[error.path] = error.message;
+        });
         setErrors(newErrors);
-        setIsLoading(false);
       } else {
         toast.error("Something went wrong!");
-        setIsLoading(false);
       }
       setIsLoading(false);
     }
   };
-
-  const renderSelectOptions = (count) =>
-    Array.from({ length: count }, (_, i) => (
-      <option key={i + 1} value={i + 1}>
-        {i + 1}
-      </option>
-    ));
 
   return (
     <div className="payment">
@@ -212,12 +220,12 @@ const Payment = () => {
                 type="date"
                 name="start_date"
                 onChange={handleChange}
-                value={details.start_date}
-                min={location.pathname.includes("/custom") ? "" : minStartDate}
+                value={details?.start_date || ""}
+                min={minStartDate}
                 required
               />
-              {errors.start_date && (
-                <p className="error-text-booking">{errors.start_date}</p>
+              {errors?.start_date && (
+                <p className="error-text-booking">{errors?.start_date}</p>
               )}
             </div>
             <div className="input">
@@ -225,16 +233,20 @@ const Payment = () => {
               <select
                 name="no_of_adults"
                 onChange={handleChange}
-                value={details.no_of_adults}
+                value={details?.no_of_adults || ""}
                 required
               >
                 <option value="" disabled>
                   Select number of adults
                 </option>
-                {renderSelectOptions(10)}
+                {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
+                  <option key={num} value={num}>
+                    {num}
+                  </option>
+                ))}
               </select>
-              {errors.no_of_adults && (
-                <p className="error-text-booking">{errors.no_of_adults}</p>
+              {errors?.no_of_adults && (
+                <p className="error-text-booking">{errors?.no_of_adults}</p>
               )}
             </div>
           </div>
@@ -244,75 +256,78 @@ const Payment = () => {
               <input
                 type="date"
                 name="end_date"
-                value={details.end_date}
-                onChange={handleChange}
-                readOnly={!location.pathname.includes("/custom")}
+                value={details?.end_date || ""}
+                readOnly
                 required
               />
-              {errors.end_date && (
-                <p className="error-text-booking">{errors.end_date}</p>
+              {errors?.end_date && (
+                <p className="error-text-booking">{errors?.end_date}</p>
               )}
             </div>
 
-            {location.pathname.match(
-              /(family|custom)\/(standard|delux|premium)/
-            ) && (
+            {location.pathname.includes("custom") && (
               <div className="input">
                 <label htmlFor="no_of_children">Number of Children :</label>
                 <select
                   name="no_of_children"
                   onChange={handleChange}
-                  value={details.no_of_children}
+                  value={details?.no_of_children || ""}
                   required
                 >
                   <option value="" disabled>
                     Select number of children
                   </option>
-                  {renderSelectOptions(10)}
+                  {Array.from({ length: 10 }, (_, i) => i + 1).map((num) => (
+                    <option key={num} value={num}>
+                      {num}
+                    </option>
+                  ))}
                 </select>
-                {errors.no_of_children && (
-                  <p className="error-text-booking">{errors.no_of_children}</p>
+                {errors?.no_of_children && (
+                  <p className="error-text-booking">{errors?.no_of_children}</p>
                 )}
               </div>
             )}
           </div>
         </div>
 
-        <div className="terms-and-conditions">
-          <Checkbox
-            name="termsAndCondition"
-            checked={details.termsAndCondition}
-            onChange={handleChange}
-            required
-          />
-          <span>
-            I agree to the{" "}
-            <Link to="/terms-and-conditions" target="_blank">
-              Terms and Conditions
-            </Link>
-          </span>
-          {errors.termsAndCondition && (
-            <p className="error-text-booking">{errors.termsAndCondition}</p>
+        <div className="SigUp-Checkbox">
+          <div className="checkbox">
+            <Checkbox
+              required
+              checked={details?.termsAndCondition}
+              name="termsAndCondition"
+              sx={{ color: "#E2E8F0" }}
+              onChange={handleChange}
+              className="checkbox-box"
+            />
+            <p id="Checkbox-Para">
+              By booking slot means, you agree to the{" "}
+              <Link to="/terms-and-conditions" className="Checkbox">
+                Terms & Conditions{" "}
+              </Link>
+              and our{" "}
+              <Link to="/privacy-policy" className="Checkbox">
+                {" "}
+                Privacy Policy
+              </Link>
+            </p>
+          </div>
+          {errors?.termsAndCondition && (
+            <p className="error-text">{errors?.termsAndCondition}</p>
           )}
         </div>
 
-        <div className="payment-button-container">
-          <button
-            type="submit"
-            className="payment-button"
-            onClick={handlePayment}
-            disabled={isLoading}
-          >
-            {isLoading ? (
-              <CircularProgressBar />
-            ) : (
-              <>
-                <span>Pay Now</span>
-                <img src={buttonArrowImg} alt="Pay Now" />
-              </>
-            )}
-          </button>
-        </div>
+        <button onClick={handlePayment}>
+          {isLoading ? (
+            <CircularProgressBar />
+          ) : (
+            <>
+              Book Now
+              <img src={buttonArrowImg} alt="" />
+            </>
+          )}
+        </button>
       </form>
     </div>
   );
