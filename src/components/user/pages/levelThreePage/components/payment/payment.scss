@@ -130,7 +130,7 @@
       }
       #Checkbox-Para {
         font-size: 14px;
-        color: rgb(191, 191, 211);
+        color: $white;
         line-height: 20px;
         font-weight: 400;
         @media (max-width: 1450px) {
@@ -139,7 +139,7 @@
       }
 
       .Checkbox {
-        color: blue;
+        color: $text-orange;
         font-weight: 600;
         cursor: pointer;
       }

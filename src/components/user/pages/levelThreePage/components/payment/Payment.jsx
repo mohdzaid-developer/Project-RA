@@ -5,17 +5,19 @@ import "./payment.scss";
 import { toast } from "react-hot-toast";
 
 // Routing
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
+
+//Mui
+import { Checkbox } from "@mui/material";
 
 // Validation
 import {
   createOrderSchema,
   createOrderSchemaSecond,
 } from "@/utils/validation/userValidations";
-
 
 //Material Ui
 import { Checkbox } from "@mui/material";
@@ -44,7 +46,7 @@ const Payment = () => {
     end_date: "",
     no_of_adults: "",
     no_of_children: "",
-    termsAndCondition:""
+    termsAndCondition: "",
   });
   const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -301,25 +303,31 @@ const Payment = () => {
         </div>
 
         <div className="SigUp-Checkbox">
-              <div className="checkbox">
-                <Checkbox
-                  required
-                  checked={details?.termsAndCondition}
-                  name="termsAndCondition"
-                  sx={{ color: "#E2E8F0" }}
-                  onChange={handleChange}
-                  className="checkbox-box"
-                />
-                <p id="Checkbox-Para">
-                  By creating an account means, you agree to the{" "}
-                  <span className="Checkbox">Terms & Conditions </span>and our{" "}
-                  <span className="Checkbox"> Privacy Policy</span>
-                </p>
-              </div>
-              {errors?.termsAndCondition && (
-                <p className="error-text">{errors?.termsAndCondition}</p>
-              )}
-            </div>
+          <div className="checkbox">
+            <Checkbox
+              required
+              checked={details?.termsAndCondition}
+              name="termsAndCondition"
+              sx={{ color: "#E2E8F0" }}
+              onChange={handleChange}
+              className="checkbox-box"
+            />
+            <p id="Checkbox-Para">
+              By booking slot means, you agree to the{" "}
+              <Link to="/terms-and-conditions" className="Checkbox">
+                Terms & Conditions{" "}
+              </Link>
+              and our{" "}
+              <Link to="/privacy-policy" className="Checkbox">
+                {" "}
+                Privacy Policy
+              </Link>
+            </p>
+          </div>
+          {errors?.termsAndCondition && (
+            <p className="error-text">{errors?.termsAndCondition}</p>
+          )}
+        </div>
 
         <button onClick={handlePayment}>
           {isLoading ? (
