@@ -10,7 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
-//Mui
+// Mui
 import { Checkbox } from "@mui/material";
 
 // Validation
@@ -31,12 +31,16 @@ import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Payment = () => {
+  
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
   const { isAuthenticated } = useSelector((state) => state.authUser);
 
-  const [errors, setErrors] = useState({});
+  const [createOrder] = useCreateOrderMutation();
+  const [verifyPayment] = useVerifyPaymentMutation();
+
   const [details, setDetails] = useState({
     start_date: "",
     end_date: "",
@@ -46,9 +50,7 @@ const Payment = () => {
   });
   const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  const [createOrder] = useCreateOrderMutation();
-  const [verifyPayment] = useVerifyPaymentMutation();
+  const [errors, setErrors] = useState({});
 
   useEffect(() => {
     if (isAuthenticated) {
@@ -66,7 +68,6 @@ const Payment = () => {
       }
     }
 
-    // Calculate the minimum start date (1 month from today)
     const oneMonthLater = new Date();
     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
     const minDate = oneMonthLater.toISOString().split("T")[0];
