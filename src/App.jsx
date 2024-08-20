@@ -53,6 +53,9 @@ import {
   UserBaliCoupleDelux,
   UserBaliCouplePremium,
   UserBaliCustom,
+  UserBaliCustomStandard,
+  UserBaliCustomDelux,
+  UserBaliCustomPremium,
   UserPhuket,
   UserPhuketFriends,
   UserPhuketFriendsStandard,
@@ -67,6 +70,9 @@ import {
   UserPhuketFamilyDelux,
   UserPhuketFamilyPremium,
   UserPhuketCustom,
+  UserPhuketCustomStandard,
+  UserPhuketCustomDelux,
+  UserPhuketCustomPremium,
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
@@ -173,6 +179,18 @@ const userUnprotectedRoutesData = [
     element: <UserBaliCustom />,
   },
   {
+    path: "/bali/custom/standard",
+    element: <UserBaliCustomStandard />,
+  },
+  {
+    path: "/bali/custom/delux",
+    element: <UserBaliCustomDelux />,
+  },
+  {
+    path: "/bali/custom/premium",
+    element: <UserBaliCustomPremium />,
+  },
+  {
     path: "/phuket",
     element: <UserPhuket />,
   },
@@ -227,6 +245,18 @@ const userUnprotectedRoutesData = [
   {
     path: "/phuket/custom",
     element: <UserPhuketCustom />,
+  },
+  {
+    path: "/phuket/custom/standard",
+    element: <UserBaliCustomStandard />,
+  },
+  {
+    path: "/phuket/custom/delux",
+    element: <UserBaliCustomDelux />,
+  },
+  {
+    path: "/phuket/custom/premium",
+    element: <UserBaliCustomPremium />,
   },
   {
     path: "/refund-policy",

@@ -21,12 +21,12 @@ const Hero = ({ data }) => {
     const updateTransformValues = () => {
       if (window.innerWidth > 1700) {
         setTransformValues({
-          yRange: ["0%", "35%"],
+          yRange: ["0%", "32%"],
           xRange: data.xRange1,
         });
       } else if (window.innerWidth > 1500 && window.innerWidth < 1700) {
         setTransformValues({
-          yRange: ["0%", "32%"],
+          yRange: ["0%", "30%"],
           xRange: data.xRange2,
         });
       } else {

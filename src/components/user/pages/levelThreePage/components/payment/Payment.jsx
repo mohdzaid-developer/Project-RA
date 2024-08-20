@@ -10,7 +10,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 // Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
 
-//Mui
+// MUI
 import { Checkbox } from "@mui/material";
 
 // Validation
@@ -265,14 +265,7 @@ const Payment = () => {
               )}
             </div>
 
-            {(location.pathname === "/bali/family/standard" ||
-              location.pathname === "/bali/family/delux" ||
-              location.pathname === "/bali/family/premium" ||
-              location.pathname === "/bali/family/custom" ||
-              location.pathname === "/phuket/family/standard" ||
-              location.pathname === "/phuket/family/delux" ||
-              location.pathname === "/phuket/family/premium" ||
-              location.pathname === "/phuket/family/custom") && (
+            {location.pathname.includes("custom") && (
               <div className="input">
                 <label htmlFor="no_of_children">Number of Children :</label>
                 <select
