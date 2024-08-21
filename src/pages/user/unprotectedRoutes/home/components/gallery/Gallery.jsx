@@ -23,6 +23,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Gallery = () => {
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
   let lenis;
 
   const preloadImages = (selector = "img") => {
@@ -94,6 +96,16 @@ const Gallery = () => {
     });
   };
 
+  const handleImageClick = (image) => {
+    setCurrentImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage(null);
+  };
+
   useEffect(() => {
     preloadImages(".column__item-img").then(() => {
       initSmoothScrolling();
@@ -101,6 +113,19 @@ const Gallery = () => {
       setLoading(false);
     });
   }, []);
+
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.classList.add("no-scroll");
+    } else {
+      document.body.classList.remove("no-scroll");
+    }
+
+    // Clean up on unmount or modal close
+    return () => {
+      document.body.classList.remove("no-scroll");
+    };
+  }, [isModalOpen]);
 
   return (
     <>
@@ -112,119 +137,64 @@ const Gallery = () => {
         <main>
           <div className="columns">
             <div className="column">
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img1})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img2})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img3})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img4})` }}
-                  ></div>
-                </div>
-              </figure>
+              {[img1, img2, img3, img4].map((img, idx) => (
+                <figure
+                  className="column__item"
+                  key={idx}
+                  onClick={() => handleImageClick(img)}
+                >
+                  <div className="column__item-imgwrap">
+                    <div
+                      className="column__item-img"
+                      style={{ backgroundImage: `url(${img})` }}
+                    ></div>
+                  </div>
+                </figure>
+              ))}
             </div>
             <div className="column">
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img5})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img6})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img7})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img8})` }}
-                  ></div>
-                </div>
-              </figure>
+              {[img9, img10, img11, img12].map((img, idx) => (
+                <figure
+                  className="column__item"
+                  key={idx}
+                  onClick={() => handleImageClick(img)}
+                >
+                  <div className="column__item-imgwrap">
+                    <div
+                      className="column__item-img"
+                      style={{ backgroundImage: `url(${img})` }}
+                    ></div>
+                  </div>
+                </figure>
+              ))}
             </div>
             <div className="column">
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img9})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img10})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img11})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img12})` }}
-                  ></div>
-                </div>
-              </figure>
+              {[img5, img6, img7, img8].map((img, idx) => (
+                <figure
+                  className="column__item"
+                  key={idx}
+                  onClick={() => handleImageClick(img)}
+                >
+                  <div className="column__item-imgwrap">
+                    <div
+                      className="column__item-img"
+                      style={{ backgroundImage: `url(${img})` }}
+                    ></div>
+                  </div>
+                </figure>
+              ))}
             </div>
           </div>
         </main>
       </div>
+
+      {isModalOpen && (
+        <div className="modal" onClick={closeModal}>
+          <div className="modal-content">
+            <img src={currentImage} alt="Modal Content" />
+          </div>
+        </div>
+      )}
     </>
   );
 };
