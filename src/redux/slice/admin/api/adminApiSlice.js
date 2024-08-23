@@ -36,16 +36,28 @@ export const adminApi = createApi({
     }),
 
     adminGetAllBooking: builder.query({
-      query: ({ selectedPackage, selectedPlan, destination, id }) => ({
-        url: `booking?plan=${selectedPlan}&package=${selectedPackage}&destination=${destination}&id=${
+      query: ({ selectedPackage, selectedPlan, destination, id, status }) => ({
+        url: `booking?plan=${selectedPlan}&package=${selectedPackage}&destination=${destination}&bookingId=${
           id ?? ""
-        }`,
+        }&status=${status??""}`,
         method: "GET",
         headers: {
           Authorization: `Bearer ${getAdminOtpAccessToken()}`,
         },
       }),
       providesTags:["getAllListOfTrips"]
+    }),
+
+    createCustomOrder: builder.mutation({
+      query: (data) => ({
+        url: "/create-custom-order",
+        method: "PATCH",
+        headers: {
+          Authorization: `Bearer ${getAdminAccessToken()}`,
+        },
+        body:{...data},
+      }),
+      invalidatesTags:["getAllListOfTrips"]
     }),
 
     adminUpdateTripStatus: builder.mutation({
@@ -103,6 +115,7 @@ export const {
   useAdminLoginMutation,
   useAdminOtpVerifyMutation,
   useAdminResendOtpMutation,
+  useCreateCustomOrderMutation,
   useAdminGetAllBookingQuery,
   useAdminGetAllPaymentsQuery,
   useAdminGetAllUsersQuery,

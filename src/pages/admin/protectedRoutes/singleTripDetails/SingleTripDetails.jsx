@@ -15,8 +15,10 @@ import { toast } from "react-hot-toast";
 import {
   useAdminGetAllBookingQuery,
   useAdminUpdateTripStatusMutation,
+  useCreateCustomOrderMutation,
 } from "@/redux/slice/admin/api/adminApiSlice";
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
+import { useEffect, useState } from "react";
 
 const statusNames = ["Booked", "Reviewed", "Approved", "Done"];
 const selectedValues = {
@@ -28,15 +30,31 @@ const selectedValues = {
 const SingleTripDetails = () => {
   const { id } = useParams();
 
+  const [singleBookingDetails, setSingleBookingDetails] = useState({});
+
   const [updateTripStatus, { isLoading: isStatusLoading }] =
     useAdminUpdateTripStatusMutation();
-  const { data: singleBookingDetails, isLoading: allBookingIsLoading } =
+
+  const [createCustomOrder, { isLoading: isOrderLoading }] =
+    useCreateCustomOrderMutation();
+  const { data: singleBookingDetail, isLoading: allBookingIsLoading } =
     useAdminGetAllBookingQuery({
       destination: "",
       selectedPlan: "",
       selectedPackage: "",
       id,
     });
+
+  useEffect(() => {
+    if (singleBookingDetail) {
+      setSingleBookingDetails({ ...singleBookingDetail?.data[0] });
+    }
+  }, [singleBookingDetail]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setSingleBookingDetails({ ...singleBookingDetails, [name]: value });
+  };
 
   const handleChangeStatus = async (status) => {
     customPopUp.Confirm({
@@ -56,6 +74,21 @@ const SingleTripDetails = () => {
       },
     });
   };
+
+  const handleSubmit = async (data) => {
+    customPopUp.Confirm({
+      message: `Do you want to submit ?`,
+      isLoading: isStatusLoading,
+      handleAction: async () => {
+        if (data) {
+          const response = await createCustomOrder({ ...data });
+          toast.success(response?.data?.message);
+          window?.customPopUp.Close();
+        }
+      },
+    });
+  };
+
   return (
     <section className="admin-trips-container">
       <PopUp />
@@ -75,56 +108,72 @@ const SingleTripDetails = () => {
               <div className="detail-container">
                 <div className="detail-slot">
                   <h2>Name :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.client_name ?? "--"}</h3>
+                  <h3>{singleBookingDetails?.client_name ?? "--"}</h3>
                 </div>
                 <div className="detail-slot">
                   <h2>Email :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.email ?? "--"}</h3>
+                  <h3>{singleBookingDetails?.email ?? "--"}</h3>
                 </div>
                 <div className="detail-slot">
                   <h2>Phone number :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.phone ?? "--"}</h3>
+                  <h3>{singleBookingDetails?.phone ?? "--"}</h3>
                 </div>
                 <div className="detail-slot">
                   <h2>Destination :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.destination ?? "--"}</h3>
+                  <h3>{singleBookingDetails?.destination ?? "--"}</h3>
                 </div>
                 <div className="detail-slot">
                   <h2>Package :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.package ?? "--"}</h3>
+                  <h3>{singleBookingDetails?.package ?? "--"}</h3>
                 </div>
                 <div className="detail-slot">
                   <h2>Plan :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.plan ?? "--"}</h3>
+                  <h3>{singleBookingDetails?.plan ?? "--"}</h3>
                 </div>
 
                 <div className="detail-slot">
                   <h2>Number Of Adults :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.no_of_adults}</h3>
+                  <h3>{singleBookingDetails?.no_of_adults}</h3>
                 </div>
 
-                {singleBookingDetails?.data[0]?.no_of_children && (
+                {singleBookingDetails?.no_of_children && (
                   <div className="detail-slot">
                     <h2>Number of Children :</h2>
-                    <h3>{singleBookingDetails?.data[0]?.no_of_children}</h3>
+                    <h3>{singleBookingDetails?.no_of_children}</h3>
                   </div>
                 )}
                 <div className="detail-slot">
                   <h2>Booked Date :</h2>
-                  <h3>
-                    {singleBookingDetails?.data[0]?.booked_date?.split("T")[0]}
-                  </h3>
+                  <h3>{singleBookingDetails?.booked_date?.split("T")[0]}</h3>
                 </div>
                 <div className="detail-slot">
                   <h2>Trip Start Date :</h2>
                   <h3>
-                    {singleBookingDetails?.data[0]?.start_date?.split("T")[0]}
+                    {singleBookingDetails?.status == "request" ? (
+                      <input
+                        type="date"
+                        value={singleBookingDetails?.start_date?.split("T")[0]}
+                        name="start_date"
+                        onChange={handleChange}
+                      />
+                    ) : (
+                      singleBookingDetails?.start_date?.split("T")[0]
+                    )}
                   </h3>
                 </div>
                 <div className="detail-slot">
                   <h2>Trip End Date :</h2>
                   <h3>
-                    {singleBookingDetails?.data[0]?.end_date?.split("T")[0]}
+                    {singleBookingDetails?.status == "request" ? (
+                      <input
+                        type="date"
+                        value={singleBookingDetails?.end_date?.split("T")[0]}
+                        name="end_date"
+                        onChange={handleChange}
+                      />
+                    ) : (
+                      singleBookingDetails?.end_date?.split("T")[0]
+                    )}
                   </h3>
                 </div>
               </div>
@@ -138,11 +187,29 @@ const SingleTripDetails = () => {
               <div className="detail-container">
                 <div className="detail-slot">
                   <h2>Total Amount :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.total_amount}</h3>
+                  {singleBookingDetails?.status == "request" ? (
+                    <input
+                      type="number"
+                      placeholder="Enter Total Amount"
+                      name="total_amount"
+                      onChange={handleChange}
+                    />
+                  ) : (
+                    <h3>{singleBookingDetails?.total_amount}</h3>
+                  )}
                 </div>
                 <div className="detail-slot">
                   <h2>Paid Amount :</h2>
-                  <h3>{singleBookingDetails?.data[0]?.paid_amount}</h3>
+                  {singleBookingDetails?.status == "request" ? (
+                    <input
+                      type="number"
+                      placeholder="Enter Payable Amount"
+                      name="paid_amount"
+                      onChange={handleChange}
+                    />
+                  ) : (
+                    <h3>{singleBookingDetails?.paid_amount}</h3>
+                  )}
                 </div>
               </div>
             </div>
@@ -154,24 +221,33 @@ const SingleTripDetails = () => {
             </div>
 
             <div className="status-container">
-              {statusNames?.map((item) => (
+              {singleBookingDetails?.status == "request" ? (
                 <button
                   className="status-btn"
-                  onClick={() => handleChangeStatus(item)}
-                  id={
-                    selectedValues[
-                      singleBookingDetails?.data[0]?.status.toLowerCase()
-                    ]?.includes(item.toLowerCase())
-                      ? "selected"
-                      : ""
-                  }
-                  disabled={selectedValues[
-                    singleBookingDetails?.data[0]?.status.toLowerCase()
-                  ]?.includes(item.toLowerCase())}
+                  onClick={() => handleSubmit({ ...singleBookingDetails })}
                 >
-                  {item}
+                  Submit
                 </button>
-              ))}
+              ) : (
+                statusNames?.map((item) => (
+                  <button
+                    className="status-btn"
+                    onClick={() => handleChangeStatus(item)}
+                    id={
+                      selectedValues[
+                        singleBookingDetails?.status?.toLowerCase()
+                      ]?.includes(item?.toLowerCase())
+                        ? "selected"
+                        : ""
+                    }
+                    disabled={selectedValues[
+                      singleBookingDetails?.status?.toLowerCase()
+                    ]?.includes(item?.toLowerCase())}
+                  >
+                    {item}
+                  </button>
+                ))
+              )}
             </div>
           </div>
         </div>

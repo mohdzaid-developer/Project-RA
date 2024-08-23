@@ -120,7 +120,7 @@ const Trips = () => {
             </div>
           </ThemeProvider>
 
-          {!allBookingList?.data.length > 0 ? (
+          {!allBookingList?.data?.length > 0 ? (
             <div className="no-data">
               <h1>No data available!</h1>
             </div>
@@ -142,7 +142,7 @@ const Trips = () => {
                   {allBookingList?.data?.map((row, index) => (
                     <TableRow
                       key={row.id}
-                      onClick={() => navigate(`/admin/trip/${row.order_id}`)}
+                      onClick={() => navigate(`/admin/trip/${row._id}`)}
                     >
                       <TableCell align="center">{index + 1}</TableCell>
                       <TableCell align="center">{row?.destination}</TableCell>
