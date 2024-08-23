@@ -114,19 +114,6 @@ const Gallery = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (isModalOpen) {
-      document.body.classList.add("no-scroll");
-    } else {
-      document.body.classList.remove("no-scroll");
-    }
-
-    // Clean up on unmount or modal close
-    return () => {
-      document.body.classList.remove("no-scroll");
-    };
-  }, [isModalOpen]);
-
   return (
     <>
       <div className="home-gallery">
@@ -134,7 +121,7 @@ const Gallery = () => {
         <p>An Experience filled with love</p>
       </div>
       <div className={`demo-2 ${loading ? "loading" : ""}`}>
-        <main>
+        <main className="gallery-slide">
           <div className="columns">
             <div className="column">
               {[img1, img2, img3, img4].map((img, idx) => (
