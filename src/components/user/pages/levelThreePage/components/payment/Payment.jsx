@@ -24,8 +24,9 @@ import CircularProgressBar from "@/components/global/circularProgressBar/Circula
 
 // Redux
 import {
+  useCreateCustomOrderMutation,
   useCreateOrderMutation,
-  useVerifyPaymentMutation,
+  useUserGetCustomPendingOrderQuery,
 } from "@/redux/slice/user/api/userApiSlice";
 import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -35,7 +36,6 @@ const Payment = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state) => state.authUser);
-
   const [errors, setErrors] = useState({});
   const [details, setDetails] = useState({
     start_date: "",
@@ -43,13 +43,24 @@ const Payment = () => {
     no_of_adults: "",
     no_of_children: "",
     termsAndCondition: "",
+    total_amount: 5000,
   });
   const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const [createOrder] = useCreateOrderMutation();
-  const [verifyPayment] = useVerifyPaymentMutation();
+  const [createCustomOrder] = useCreateCustomOrderMutation();
 
+  const { data: singlePendingOrder,error } = useUserGetCustomPendingOrderQuery(
+    location?.search?.split("=")[1],
+    { skip: location?.search?.length <= 0 }
+  );
+
+  useEffect(() => {
+    if (singlePendingOrder?.data) {
+      setDetails({ ...singlePendingOrder?.data });
+    }
+  }, [singlePendingOrder]);
   useEffect(() => {
     if (isAuthenticated) {
       dispatch(setParamsQuery(null));
@@ -107,6 +118,39 @@ const Payment = () => {
     };
   }, []);
 
+  const paymentWindow=(orderResponse)=>{
+    console.log(orderResponse)
+    const options = {
+      key: "rzp_test_e6zf5ZgkpupNAu",
+      amount: orderResponse?.amount_due??orderResponse?.total_amount,
+      currency: orderResponse?.currency??"INR",
+      name: "Come Fly With Me",
+      description: "Transaction",
+      order_id: orderResponse?.id??orderResponse?.order_id,
+      callback_url: "http://localhost:3000/payment-success",
+      handler: async function (response) {
+        try {
+          toast.success("Payment successful!");
+          setDetails({
+            start_date: "",
+            end_date: "",
+            no_of_adults: "",
+            no_of_children: "",
+          });
+        } catch (err) {
+          toast.error("Payment verification failed!");
+        } finally {
+          setIsLoading(false);
+        }
+      },
+      theme: {
+        color: "#151515",
+      },
+    };
+
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  }
   const handlePayment = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -133,17 +177,10 @@ const Payment = () => {
       }
 
       const orderResponse = await createOrder({
-        accessToken: userData.accessToken,
-        orderDetails: {
-          amount: 2000,
-          currency: "INR",
-          receipt: "receipt#1",
-          bookingDetails: {
-            ...details,
-            totalAmount: 5000,
-          },
-        },
-      }).unwrap();
+        currency: "INR",
+        receipt: "receipt#1",
+        ...details,
+      });
 
       if (orderResponse?.status === 400) {
         toast.error(
@@ -152,48 +189,7 @@ const Payment = () => {
         setIsLoading(false);
         return;
       }
-
-      const options = {
-        key: "rzp_test_e6zf5ZgkpupNAu",
-        amount: orderResponse.data.amount_due,
-        currency: orderResponse.data.currency,
-        name: "Come Fly With Me",
-        description: "Transaction",
-        order_id: orderResponse.data.id,
-        callback_url: "http://localhost:3000/payment-success",
-        handler: async function (response) {
-          try {
-            await verifyPayment({
-              accessToken: userData.accessToken,
-              orderId: response.razorpay_order_id,
-              paymentId: response.razorpay_payment_id,
-              signature: response.razorpay_signature,
-              amount: 2000,
-              currency: "rupees",
-              order_id: orderResponse.data.id,
-            }).unwrap();
-
-            toast.success("Payment successful!");
-            setDetails({
-              start_date: "",
-              end_date: "",
-              no_of_adults: "",
-              no_of_children: "",
-            });
-          } catch (err) {
-            toast.error("Payment verification failed!");
-            console.error(err);
-          } finally {
-            setIsLoading(false);
-          }
-        },
-        theme: {
-          color: "#151515",
-        },
-      };
-
-      const rzp = new window.Razorpay(options);
-      rzp.open();
+      await paymentWindow({...orderResponse?.data?.data})
     } catch (err) {
       if (err.inner) {
         const newErrors = {};
@@ -208,6 +204,38 @@ const Payment = () => {
     }
   };
 
+  const handleCreateOrder = async (e) => {
+    e.preventDefault()
+    try {
+      await createOrderSchemaSecond.validate(details, { abortEarly: false });
+      const response = await createCustomOrder({ ...details });
+      console.log(response)
+      if (response?.data?.statusCode==201) {
+        toast.success(response?.data?.message)
+        setDetails({})
+      }else{
+        toast.error(response?.data?.message)
+      }
+    } catch (err) {
+      if (err.inner) {
+        const newErrors = {};
+        err.inner.forEach((error) => {
+          newErrors[error.path] = error.message;
+        });
+        setErrors(newErrors);
+      }
+    }
+  };
+
+  useEffect(()=>{
+    if(singlePendingOrder?.data?.total_amount){
+      paymentWindow({...singlePendingOrder?.data})
+    }
+    if(error){
+      toast?.error(singlePendingOrder?.data?.message)
+      navigate("/")
+    }
+  },[singlePendingOrder])
   return (
     <div className="payment">
       <h2>Book Your Slot</h2>
@@ -317,17 +345,29 @@ const Payment = () => {
             <p className="error-text">{errors?.termsAndCondition}</p>
           )}
         </div>
-
-        <button onClick={handlePayment}>
-          {isLoading ? (
-            <CircularProgressBar />
-          ) : (
-            <>
-              Book Now
-              <img src={buttonArrowImg} alt="" />
-            </>
-          )}
-        </button>
+        {details?.package == "custom" ? (
+           <button onClick={handleCreateOrder}>
+           {isLoading ? (
+             <CircularProgressBar />
+           ) : (
+             <>
+               Book Now
+               <img src={buttonArrowImg} alt="" />
+             </>
+           )}
+         </button>
+        ) : (
+          <button onClick={handlePayment}>
+            {isLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Book Now
+                <img src={buttonArrowImg} alt="" />
+              </>
+            )}
+          </button>
+        )}
       </form>
     </div>
   );

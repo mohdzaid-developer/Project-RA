@@ -88,14 +88,13 @@ export const userApi = createApi({
 
     //Payment
     createOrder: builder.mutation({
-      query: (body) => ({
+      query: (orderDetails) => ({
         url: "/create-order",
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${body.accessToken}`,
+          Authorization: `Bearer ${getUserAccessToken()}`,
         },
-        body: JSON.stringify(body.orderDetails),
+        body:orderDetails,
       }),
     }),
     verifyPayment: builder.mutation({
@@ -138,6 +137,28 @@ export const userApi = createApi({
       }),
       providesTags: ["getUserTrips"],
     }),
+
+    //Custom-order
+    createCustomOrder: builder.mutation({
+      query: (orderDetails) => ({
+        url: "/create-custom-order",
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${getUserAccessToken()}`,
+        },
+        body:orderDetails,
+      }),
+    }),
+    userGetCustomPendingOrder: builder.query({
+      query: (accessToken) => ({
+        url: `create-custom-order`,
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${accessToken}`,
+        },
+      }),
+      providesTags: ["getUserTrips"],
+    }),
   }),
 });
 
@@ -155,4 +176,6 @@ export const {
   usePostContactUsMutation,
   usePostNewsLetterMutation,
   useUserGetTripsQuery,
+  useCreateCustomOrderMutation,
+  useUserGetCustomPendingOrderQuery
 } = userApi;
