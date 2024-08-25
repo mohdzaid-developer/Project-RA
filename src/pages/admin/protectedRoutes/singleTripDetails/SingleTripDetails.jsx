@@ -43,11 +43,13 @@ const SingleTripDetails = () => {
       selectedPlan: "",
       selectedPackage: "",
       id,
+      pageNum: 1,
+      pageSize: 10,
     });
 
   useEffect(() => {
     if (singleBookingDetail) {
-      setSingleBookingDetails({ ...singleBookingDetail?.data[0] });
+      setSingleBookingDetails({ ...singleBookingDetail?.data?.data[0] });
     }
   }, [singleBookingDetail]);
 

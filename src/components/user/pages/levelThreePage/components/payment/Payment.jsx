@@ -51,7 +51,7 @@ const Payment = () => {
   const [createOrder] = useCreateOrderMutation();
   const [createCustomOrder] = useCreateCustomOrderMutation();
 
-  const { data: singlePendingOrder,error } = useUserGetCustomPendingOrderQuery(
+  const { data: singlePendingOrder, error } = useUserGetCustomPendingOrderQuery(
     location?.search?.split("=")[1],
     { skip: location?.search?.length <= 0 }
   );
@@ -118,15 +118,14 @@ const Payment = () => {
     };
   }, []);
 
-  const paymentWindow=(orderResponse)=>{
-    console.log(orderResponse)
+  const paymentWindow = (orderResponse) => {
     const options = {
       key: "rzp_test_e6zf5ZgkpupNAu",
-      amount: orderResponse?.amount_due??orderResponse?.total_amount,
-      currency: orderResponse?.currency??"INR",
+      amount: orderResponse?.amount_due ?? orderResponse?.total_amount,
+      currency: orderResponse?.currency ?? "INR",
       name: "Come Fly With Me",
       description: "Transaction",
-      order_id: orderResponse?.id??orderResponse?.order_id,
+      order_id: orderResponse?.id ?? orderResponse?.order_id,
       callback_url: "http://localhost:3000/payment-success",
       handler: async function (response) {
         try {
@@ -150,7 +149,7 @@ const Payment = () => {
 
     const rzp = new window.Razorpay(options);
     rzp.open();
-  }
+  };
   const handlePayment = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -169,12 +168,7 @@ const Payment = () => {
         setIsLoading(false);
         return;
       }
-
-      if (location?.pathname?.includes("family")) {
-        await createOrderSchema.validate(details, { abortEarly: false });
-      } else {
-        await createOrderSchemaSecond.validate(details, { abortEarly: false });
-      }
+      await createOrderSchemaSecond.validate(details, { abortEarly: false });
 
       const orderResponse = await createOrder({
         currency: "INR",
@@ -189,7 +183,7 @@ const Payment = () => {
         setIsLoading(false);
         return;
       }
-      await paymentWindow({...orderResponse?.data?.data})
+      await paymentWindow({ ...orderResponse?.data?.data });
     } catch (err) {
       if (err.inner) {
         const newErrors = {};
@@ -205,16 +199,16 @@ const Payment = () => {
   };
 
   const handleCreateOrder = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     try {
       await createOrderSchemaSecond.validate(details, { abortEarly: false });
       const response = await createCustomOrder({ ...details });
-      console.log(response)
-      if (response?.data?.statusCode==201) {
-        toast.success(response?.data?.message)
-        setDetails({})
-      }else{
-        toast.error(response?.data?.message)
+      console.log(response);
+      if (response?.data?.statusCode == 201) {
+        toast.success(response?.data?.message);
+        setDetails({});
+      } else {
+        toast.error(response?.data?.message);
       }
     } catch (err) {
       if (err.inner) {
@@ -227,15 +221,16 @@ const Payment = () => {
     }
   };
 
-  useEffect(()=>{
-    if(singlePendingOrder?.data?.total_amount){
-      paymentWindow({...singlePendingOrder?.data})
+  useEffect(() => {
+    console.log(singlePendingOrder)
+    if (singlePendingOrder?.data[0]?.total_amount) {
+      paymentWindow({ ...singlePendingOrder?.data[0] });
     }
-    if(error){
-      toast?.error(singlePendingOrder?.data?.message)
-      navigate("/")
+    if (error) {
+      toast?.error(singlePendingOrder?.data?.message);
+      navigate("/");
     }
-  },[singlePendingOrder])
+  }, [singlePendingOrder]);
   return (
     <div className="payment">
       <h2>Book Your Slot</h2>
@@ -346,16 +341,16 @@ const Payment = () => {
           )}
         </div>
         {details?.package == "custom" ? (
-           <button onClick={handleCreateOrder}>
-           {isLoading ? (
-             <CircularProgressBar />
-           ) : (
-             <>
-               Book Now
-               <img src={buttonArrowImg} alt="" />
-             </>
-           )}
-         </button>
+          <button onClick={handleCreateOrder}>
+            {isLoading ? (
+              <CircularProgressBar />
+            ) : (
+              <>
+                Book Now
+                <img src={buttonArrowImg} alt="" />
+              </>
+            )}
+          </button>
         ) : (
           <button onClick={handlePayment}>
             {isLoading ? (

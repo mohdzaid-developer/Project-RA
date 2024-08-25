@@ -1,4 +1,7 @@
-import { getAdminAccessToken, getAdminOtpAccessToken } from "@/utils/accessToken/accessToken";
+import {
+  getAdminAccessToken,
+  getAdminOtpAccessToken,
+} from "@/utils/accessToken/accessToken";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const adminApi = createApi({
@@ -36,16 +39,16 @@ export const adminApi = createApi({
     }),
 
     adminGetAllBooking: builder.query({
-      query: ({ selectedPackage, selectedPlan, destination, id, status }) => ({
+      query: ({ selectedPackage, selectedPlan, destination, id, status,pageNum,pageSize }) => ({
         url: `booking?plan=${selectedPlan}&package=${selectedPackage}&destination=${destination}&bookingId=${
           id ?? ""
-        }&status=${status??""}`,
+        }&status=${status ?? ""}&pageNum=${pageNum}&pageSize=${pageSize}`,
         method: "GET",
         headers: {
           Authorization: `Bearer ${getAdminOtpAccessToken()}`,
         },
       }),
-      providesTags:["getAllListOfTrips"]
+      providesTags: ["getAllListOfTrips"],
     }),
 
     createCustomOrder: builder.mutation({
@@ -55,25 +58,25 @@ export const adminApi = createApi({
         headers: {
           Authorization: `Bearer ${getAdminAccessToken()}`,
         },
-        body:{...data},
+        body: { ...data },
       }),
-      invalidatesTags:["getAllListOfTrips"]
+      invalidatesTags: ["getAllListOfTrips"],
     }),
 
     adminUpdateTripStatus: builder.mutation({
-      query: ({status,id}) => ({
-        url: `booking?bookingStatus=${status}&id=${id}`,
+      query: ({ status, id }) => ({
+        url: `booking?bookingStatus=${status}&bookingId=${id}`,
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${getAdminAccessToken()}`,
         },
       }),
-      invalidatesTags:["getAllListOfTrips"]
+      invalidatesTags: ["getAllListOfTrips"],
     }),
 
     adminGetAllPayments: builder.query({
-      query: () => ({
-        url: `payment`,
+      query: ({pageNum,pageSize}) => ({
+        url: `payment?pageNum=${pageNum}&pageSize=${pageSize}`,
         method: "GET",
         headers: {
           Authorization: `Bearer ${getAdminOtpAccessToken()}`,
@@ -81,8 +84,8 @@ export const adminApi = createApi({
       }),
     }),
     adminGetAllUsers: builder.query({
-      query: ({ isBooked }) => ({
-        url: `admin/management/user?isBooked=${isBooked}`,
+      query: ({ isBooked,pageNum,pageSize }) => ({
+        url: `admin/management/user?isBooked=${isBooked}&pageNum=${pageNum}&pageSize=${pageSize}`,
         method: "GET",
         headers: {
           Authorization: `Bearer ${getAdminOtpAccessToken()}`,
@@ -90,8 +93,8 @@ export const adminApi = createApi({
       }),
     }),
     adminGetAllQueries: builder.query({
-      query: () => ({
-        url: `contact-us`,
+      query: ({pageNum,pageSize}) => ({
+        url: `contact-us?pageNum=${pageNum}&pageSize=${pageSize}`,
         method: "GET",
         headers: {
           Authorization: `Bearer ${getAdminAccessToken()}`,
@@ -99,15 +102,14 @@ export const adminApi = createApi({
       }),
     }),
     adminGetAllNewsLetters: builder.query({
-      query: () => ({
-        url: `news-letter`,
+      query: ({pageNum,pageSize}) => ({
+        url: `news-letter?pageNum=${pageNum}&pageSize=${pageSize}`,
         method: "GET",
         headers: {
           Authorization: `Bearer ${getAdminAccessToken()}`,
         },
       }),
     }),
-
   }),
 });
 
@@ -121,5 +123,5 @@ export const {
   useAdminGetAllUsersQuery,
   useAdminGetAllQueriesQuery,
   useAdminUpdateTripStatusMutation,
-  useAdminGetAllNewsLettersQuery
+  useAdminGetAllNewsLettersQuery,
 } = adminApi;

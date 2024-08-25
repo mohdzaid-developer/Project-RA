@@ -19,6 +19,7 @@ import {
   TableCell,
   TableContainer,
   TableHead,
+  TablePagination,
   TableRow,
   Tabs,
   ThemeProvider,
@@ -59,13 +60,17 @@ const Custom = () => {
   const [destination, setDestination] = useState("bali");
   const [selectedPlan, setSelectedPlan] = useState("");
   const [selectedPackage, setSelectedPackages] = useState("");
+  const [page, setPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const { data: allBookingList, isLoading: allBookingIsLoading } =
     useAdminGetAllBookingQuery({
       destination,
       selectedPlan,
       selectedPackage,
-      status:"request"
+      status: "request",
+      pageNum: page,
+      pageSize: rowsPerPage,
     });
 
   const handleTabs = (event, newValue) => {
@@ -77,9 +82,17 @@ const Custom = () => {
     }
   };
 
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage + 1);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(1);
+  };
   return (
     <section className="trips-container">
-       <AdminNavbar title="Custom Trips" image={dashboard} />
+      <AdminNavbar title="Custom Trips" image={dashboard} />
 
       {allBookingIsLoading ? (
         <div className="loader">
@@ -119,7 +132,7 @@ const Custom = () => {
             </div>
           </ThemeProvider>
 
-          {!allBookingList?.data?.length > 0 ? (
+          {!allBookingList?.data?.data?.length > 0 ? (
             <div className="no-data">
               <h1>No data available!</h1>
             </div>
@@ -138,7 +151,7 @@ const Custom = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody className="table-body">
-                  {allBookingList?.data?.map((row, index) => (
+                  {allBookingList?.data?.data?.map((row, index) => (
                     <TableRow
                       key={row.id}
                       onClick={() => navigate(`/admin/trip/${row._id}`)}
@@ -154,6 +167,16 @@ const Custom = () => {
                   ))}
                 </TableBody>
               </Table>
+              <TablePagination
+                rowsPerPageOptions={[5, 10, 20]}
+                component="div"
+                count={allBookingList?.data?.totalResultsCount}
+                rowsPerPage={rowsPerPage}
+                page={page - 1}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+                className="table-pagination"
+              />
             </TableContainer>
           )}
         </section>
