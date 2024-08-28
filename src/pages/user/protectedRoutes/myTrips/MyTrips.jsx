@@ -1,4 +1,5 @@
 import "./myTrips.scss";
+import { useState } from "react";
 
 //Components
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
@@ -11,33 +12,30 @@ import {
   TableCell,
   TableContainer,
   TableHead,
+  TablePagination,
   TableRow,
 } from "@mui/material";
 
 import { useUserGetTripsQuery } from "@/redux/slice/user/api/userApiSlice";
 
+
 const MyTrips = () => {
-  const { data: tripDetails, isLoading: isTripLoading } =
-    useUserGetTripsQuery();
+  const [page, setPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
-  //   {
-  //     "_id": "66c1d712da0696bc63bb77d2",
-  //     "user_id": "66b857a0d452f0f66e9f599f",
-  //     "client_name": "Mohd Zaid",
-  //     "email": "za752911@gmail.com",
-  //     "phone": "8858289520",
-  //     "order_id": "order_OmLDm1Jpw4m7x5",
-  //     "destination": "phuket",
-  //     "package": "friends",
-  //     "plan": "standard",
-  //     "start_date": "2024-09-19T00:00:00.000Z",
-  //     "end_date": "2024-09-25T00:00:00.000Z",
-  //     "no_of_adults": 10,
-  //     "status": "Booked",
-  //     "booked_date": "2024-08-18T11:12:18.602Z",
-  //     "__v": 0
-  // }
+  const { data: tripDetails, isLoading: isTripLoading } = useUserGetTripsQuery({
+    pageNum: page,
+    pageSize: rowsPerPage,
+  });
 
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage + 1);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(1);
+  };
   return (
     <div className="my-trips">
       <div className="hero">
@@ -63,9 +61,11 @@ const MyTrips = () => {
                 </TableRow>
               </TableHead>
               <TableBody className="table-body">
-                {tripDetails?.data.map((row, index) => (
+                {tripDetails?.data?.data?.map((row, index) => (
                   <TableRow key={index}>
-                    <TableCell align="center">{index + 1}</TableCell>
+                    <TableCell align="center">
+                      {index + rowsPerPage * page - rowsPerPage + 1}
+                    </TableCell>
                     <TableCell align="center">{row.destination}</TableCell>
                     <TableCell align="center">{row.package}</TableCell>
                     <TableCell align="center">{row.plan}</TableCell>
@@ -80,6 +80,16 @@ const MyTrips = () => {
           </TableContainer>
         )}
       </section>
+      <TablePagination
+        rowsPerPageOptions={[5, 10, 20]}
+        component="div"
+        count={tripDetails?.data?.totalResultsCount}
+        rowsPerPage={rowsPerPage}
+        page={page - 1}
+        onPageChange={handleChangePage}
+        onRowsPerPageChange={handleChangeRowsPerPage}
+        className="table-pagination"
+      />
     </div>
   );
 };

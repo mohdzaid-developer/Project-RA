@@ -1,4 +1,5 @@
 import "./payment.scss";
+import { useState } from "react";
 
 //Assets
 import payment from "@/assets/payment.png";
@@ -15,6 +16,7 @@ import {
   TableCell,
   TableContainer,
   TableHead,
+  TablePagination,
   TableRow,
 } from "@mui/material";
 
@@ -22,9 +24,19 @@ import {
 import { useAdminGetAllPaymentsQuery } from "@/redux/slice/admin/api/adminApiSlice";
 
 const Payment = () => {
+  const [page, setPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
   const { data: allPaymentDetails, isLoading: allPaymentIsLoading } =
-    useAdminGetAllPaymentsQuery();
+    useAdminGetAllPaymentsQuery({ pageNum: page, pageSize: rowsPerPage });
 
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage + 1);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(1);
+  };
   return (
     <section className="payment-container">
       <AdminNavbar title="Payments" image={payment} />
@@ -35,7 +47,7 @@ const Payment = () => {
           </div>
         ) : (
           <>
-            {!allPaymentDetails?.data.length > 0 ? (
+            {!allPaymentDetails?.data?.data?.length > 0 ? (
               <div className="no-data">
                 <h1>No data available!</h1>
               </div>
@@ -54,10 +66,10 @@ const Payment = () => {
                     </TableRow>
                   </TableHead>
                   <TableBody className="table-body">
-                    {allPaymentDetails?.data?.map((row, index) => (
+                    {allPaymentDetails?.data?.data?.map((row, index) => (
                       <TableRow key={index}>
                         <TableCell align="center">
-                          {row?.paymentId ?? "--"}
+                          {row?.payment_id ?? "--"}
                         </TableCell>
                         <TableCell align="center">
                           {row?.email ?? "--"}
@@ -81,6 +93,16 @@ const Payment = () => {
                     ))}
                   </TableBody>
                 </Table>
+                <TablePagination
+                  rowsPerPageOptions={[5, 10, 20]}
+                  component="div"
+                  count={allPaymentDetails?.data?.totalResultsCount}
+                  rowsPerPage={rowsPerPage}
+                  page={page - 1}
+                  onPageChange={handleChangePage}
+                  onRowsPerPageChange={handleChangeRowsPerPage}
+                  className="table-pagination"
+                />
               </TableContainer>
             )}
           </>

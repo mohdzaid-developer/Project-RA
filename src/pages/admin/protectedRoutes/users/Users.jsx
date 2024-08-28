@@ -21,6 +21,7 @@ import {
   Tab,
   ThemeProvider,
   createTheme,
+  TablePagination,
 } from "@mui/material";
 
 // Redux
@@ -49,9 +50,15 @@ const theme = createTheme({
 const Users = () => {
   const [value, setValue] = useState(0);
   const [isBooked, setIsBooked] = useState(true);
+  const [page, setPage] = useState(1);
+  const [rowsPerPage, setRowsPerPage] = useState(10);
 
   const { data: allUserList, isLoading: allUserIsLoading } =
-    useAdminGetAllUsersQuery({ isBooked });
+    useAdminGetAllUsersQuery({
+      isBooked,
+      pageNum: page,
+      pageSize: rowsPerPage,
+    });
 
   const handleTabs = (event, newValue) => {
     setValue(newValue);
@@ -62,7 +69,14 @@ const Users = () => {
     }
   };
 
-  console.log(allUserList?.data);
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage + 1);
+  };
+
+  const handleChangeRowsPerPage = (event) => {
+    setRowsPerPage(+event.target.value);
+    setPage(1);
+  };
   return (
     <section className="users-container">
       <AdminNavbar title="Users" image={user} />
@@ -85,7 +99,7 @@ const Users = () => {
               </Tabs>
             </div>
           </ThemeProvider>
-          {!allUserList?.data.length > 0 ? (
+          {!allUserList?.data?.data?.length > 0 ? (
             <div className="no-data">
               <h1>No data available!</h1>
             </div>
@@ -102,12 +116,14 @@ const Users = () => {
                   </TableRow>
                 </TableHead>
                 <TableBody className="table-body">
-                  {allUserList?.data.map((row, index) => (
+                  {allUserList?.data?.data?.map((row, index) => (
                     <TableRow
                       key={row.id}
                       onClick={() => navigate(`/admin/trip/${row.order_id}`)}
                     >
-                      <TableCell align="center">{index + 1}</TableCell>
+                      <TableCell align="center">
+                        {index + rowsPerPage * page - rowsPerPage + 1}
+                      </TableCell>
                       <TableCell align="center">
                         <img
                           src={row?.profilePic}
@@ -122,6 +138,16 @@ const Users = () => {
                   ))}
                 </TableBody>
               </Table>
+              <TablePagination
+                rowsPerPageOptions={[5, 10, 20]}
+                component="div"
+                count={allUserList?.data?.totalResultsCount}
+                rowsPerPage={rowsPerPage}
+                page={page - 1}
+                onPageChange={handleChangePage}
+                onRowsPerPageChange={handleChangeRowsPerPage}
+                className="table-pagination"
+              />
             </TableContainer>
           )}
         </section>
