@@ -1,12 +1,12 @@
 //Assets
-import heroImg from "@/assets/levelTwoBaliFriends.webp";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
 import coupleStandard from "@/assets/coupleStandard.webp";
 import coupleDelux from "@/assets/coupleDelux.webp";
 import couplePremium from "@/assets/couplePremium.webp";
 
 export const data = {
   title: "Couple Package",
-  heroImg: heroImg,
+  heroImg: levelOneCoupleImage,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,
     ` its mesmerizing beauty and rich cultural heritage. Known as the`,

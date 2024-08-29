@@ -1,12 +1,12 @@
 //Assets
-import heroImg from "@/assets/levelTwoBaliFriends.webp";
+import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
 import friendsStandard from "@/assets/friendsStandard.webp";
 import friendsDelux from "@/assets/friendsDelux.webp";
 import friendsPremium from "@/assets/friendsPremium.webp";
 
 export const data = {
   title: "Friends Package",
-  heroImg: heroImg,
+  heroImg: levelOneFriendsImage,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,
     ` its mesmerizing beauty and rich cultural heritage. Known as the`,
