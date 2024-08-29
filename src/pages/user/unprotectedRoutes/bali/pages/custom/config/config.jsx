@@ -1,12 +1,12 @@
 //Assets
-import heroImg from "@/assets/levelTwoBaliFriends.webp";
-import baliFriendsStandard from "@/assets/baliFriendsStandard.webp";
-import baliFriendsDelux from "@/assets/baliFriendsDelux.webp";
-import baliFriendsPremium from "@/assets/baliFriendsPremium.webp";
+import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
+import familyStandard from "@/assets/familyStandard.webp";
+import familyDelux from "@/assets/familyDelux.webp";
+import familyPremium from "@/assets/familyPremium.webp";
 
 export const data = {
   title: "Custom Package",
-  heroImg: heroImg,
+  heroImg: levelOneCustomImage,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,
     ` its mesmerizing beauty and rich cultural heritage. Known as the`,
@@ -24,7 +24,7 @@ export const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
       ],
       url: "/bali/custom/standard",
-      image: baliFriendsStandard,
+      image: familyStandard,
     },
     {
       title: "Delux",
@@ -33,7 +33,7 @@ export const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
       ],
       url: "/bali/custom/delux",
-      image: baliFriendsDelux,
+      image: familyDelux,
     },
     {
       title: "Premium",
@@ -42,7 +42,7 @@ export const data = {
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
       ],
       url: "/bali/custom/premium",
-      image: baliFriendsPremium,
+      image: familyPremium,
     },
   ],
 };

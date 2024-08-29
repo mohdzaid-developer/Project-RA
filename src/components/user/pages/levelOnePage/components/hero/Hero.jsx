@@ -29,9 +29,29 @@ const Hero = ({ data }) => {
           yRange: ["0%", "30%"],
           xRange: data.xRange2,
         });
+      } else if (window.innerWidth > 1400 && window.innerWidth < 1500) {
+        setTransformValues({
+          yRange: ["0%", "28%"],
+          xRange: data.xRange3,
+        });
+      } else if (window.innerWidth > 1300 && window.innerWidth < 1400) {
+        setTransformValues({
+          yRange: ["0%", "28%"],
+          xRange: data.xRange4,
+        });
+      } else if (window.innerWidth > 1200 && window.innerWidth < 1300) {
+        setTransformValues({
+          yRange: ["0%", "28%"],
+          xRange: data.xRange5,
+        });
+      } else if (window.innerWidth > 1100 && window.innerWidth < 1200) {
+        setTransformValues({
+          yRange: ["0%", "28%"],
+          xRange: data.xRange6,
+        });
       } else {
         setTransformValues({
-          yRange: ["0%", "40%"],
+          yRange: ["0%", "20%"],
           xRange: ["0%", "-30%"],
           scaleRange: ["100%", "80%"],
         });

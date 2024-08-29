@@ -1,13 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./gallery.scss";
 
 //Animation
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { AnimatePresence, motion } from "framer-motion";
+import { footerFadeInAnimation } from "@/utils/animations/animations";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Gallery = ({ data }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
+
   const containerRef = useRef(null);
   const textOverlayRef = useRef(null);
   const imagesRef = useRef([]);
@@ -90,6 +95,16 @@ const Gallery = ({ data }) => {
     };
   }, []);
 
+  const handleImageClick = (image) => {
+    setCurrentImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage(null);
+  };
+
   return (
     <>
       <div className="level-one-gallery">
@@ -102,6 +117,7 @@ const Gallery = ({ data }) => {
               src={image}
               alt={`Image ${i + 1}`}
               ref={(el) => (imagesRef.current[i] = el)}
+              onClick={() => handleImageClick(image)}
             />
           </div>
         ))}
@@ -117,6 +133,23 @@ const Gallery = ({ data }) => {
           </p>
         </div>
       </div>
+
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className="modal"
+            onClick={closeModal}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={footerFadeInAnimation}
+          >
+            <div className="modal-content">
+              <img src={currentImage} alt="Modal Content" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

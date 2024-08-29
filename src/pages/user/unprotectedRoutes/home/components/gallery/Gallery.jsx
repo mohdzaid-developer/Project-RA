@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import "./gallery.scss";
 
+//Animations
+import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import imagesLoaded from "imagesloaded";
+import { footerFadeInAnimation } from "@/utils/animations/animations";
 
 import img1 from "@/assets/galleryImg1.webp";
 import img2 from "@/assets/galleryImg2.webp";
@@ -175,13 +178,22 @@ const Gallery = () => {
         </main>
       </div>
 
-      {isModalOpen && (
-        <div className="modal" onClick={closeModal}>
-          <div className="modal-content">
-            <img src={currentImage} alt="Modal Content" />
-          </div>
-        </div>
-      )}
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className="modal"
+            onClick={closeModal}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={footerFadeInAnimation}
+          >
+            <div className="modal-content">
+              <img src={currentImage} alt="Modal Content" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };
