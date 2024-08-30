@@ -25,10 +25,13 @@ const BaliSection = () => {
             Enchanted <span>Bali</span>
           </h2>
           <motion.p variants={fadeInAnimation}>
-            Experience the magic of Enchanted Bali, where every corner reveals a
-            new adventure. <br /> From the tranquil beaches to the spiritual
-            heart of Ubud, let the island's <br /> natural beauty and vibrant
-            culture captivate your senses.
+            There is no other place like Bali. A magical blend of a colorful
+            <br />
+            culture, friendly people, stunning nature, countless activities,
+            <br />
+            tropical weather, culinary delights, vibrant nightlife, and
+            beautiful accommodation. <br />
+            “Come Fly With Me" and uncover the secrets of this island of Gods.
           </motion.p>
         </motion.div>
 

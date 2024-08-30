@@ -15,22 +15,22 @@ const Why = () => {
     {
       image: whyImg1,
       content:
-        "With over a decade in the travel industry, our team of seasoned professionals has the knowledge and insider insights to curate the perfect travel experience. We ensure every detail is taken care of, so you can travel with confidence and peace of mind.",
+        "We don’t believe in overwhelming you with endless choices. Instead, we focus on a select few destinations to ensure every trip is extraordinary. Our handpicked locations promise unique experiences and immersive adventures that you won’t find elsewhere. We’re all about quality and exclusivity, curating each holiday to be an unforgettable adventure.",
     },
     {
       image: whyImg2,
       content:
-        "With over a decade in the travel industry, our team of seasoned professionals has the knowledge and insider insights to curate the perfect travel experience. We ensure every detail is taken care of, so you can travel with confidence and peace of mind.",
-    },
-    {
-      image: whyImg3,
-      content:
-        "With over a decade in the travel industry, our team of seasoned professionals has the knowledge and insider insights to curate the perfect travel experience. We ensure every detail is taken care of, so you can travel with confidence and peace of mind.",
+        "Who says luxury has to come with a hefty price tag? We bring you the best of both worlds—affordable luxury that doesn’t compromise on quality. Our packages are designed to give you a taste of opulence without stretching your wallet. Experience the finer things in life while still getting incredible value for your money.",
     },
     {
       image: whyImg4,
       content:
-        "With over a decade in the travel industry, our team of seasoned professionals has the knowledge and insider insights to curate the perfect travel experience. We ensure every detail is taken care of, so you can travel with confidence and peace of mind.",
+        "Dreaming of a getaway but worried about the cost? Our “Travel Now, Pay Later” option makes it easier to take the plunge. Enjoy your holiday without financial stress, and pay in a way that suits your budget. It’s all about making travel accessible and enjoyable for everyone, no matter your financial situation.",
+    },
+    {
+      image: whyImg3,
+      content:
+        "We’re not just a travel agency; we’re your travel partners. From the moment you start planning to the day you return home, we’re here to make your journey smooth and memorable. Our team is dedicated to ensuring every aspect of your holiday exceeds expectations, providing support and care every step of the way.",
     },
   ];
 
@@ -72,25 +72,25 @@ const Why = () => {
                 onClick={() => handleProgressClick(10)}
                 className={progress >= 10 ? "active" : ""}
               >
-                Expertise and Experience
+                Handpicked Destinations
               </p>
               <p
                 onClick={() => handleProgressClick(35)}
                 className={progress >= 35 ? "active" : ""}
               >
-                Personalized Service
+                Luxurious Experiences at Unbeatable Prices
               </p>
               <p
                 onClick={() => handleProgressClick(66)}
                 className={progress >= 66 ? "active" : ""}
               >
-                Comprehensive Support
+                Travel Now, Pay Later
               </p>
               <p
                 onClick={() => handleProgressClick(100)}
                 className={progress >= 100 ? "active" : ""}
               >
-                Exclusive Offers and Deals
+                Personalized Attention from Start to Finish
               </p>
             </div>
           </Box>
