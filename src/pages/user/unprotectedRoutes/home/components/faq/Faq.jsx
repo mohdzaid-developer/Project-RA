@@ -8,25 +8,36 @@ import ScrollText from "./scrollText/ScrollText";
 
 const Faq = () => {
   const content = [
-    "At Project RA, Travel Agency, we believe that travel is not",
+    "At Come Fly With Me, we believe that travel is not",
     "about the journey and the memories you create.",
   ];
 
   const faqData = [
     {
-      question: "This is question 1?",
+      question:
+        "What makes 'Come Fly With Me' different from other travel agencies?",
       answer:
-        "React is a JavaScript library for building user interfaces. It allows developers to create reusable UI components and efficiently update and render the user interface as the data changes.",
+        "At 'Come Fly With Me', we focus on a select few destinations to offer uniquely crafted travel experiences. Unlike other agencies with endless options, we provide personalized, customizable itineraries that cater specifically to your preferences and budget. Our “Travel Now, Pay Later” option also makes luxury travel more accessible and stress-free.",
     },
     {
-      question: "This is question 2?",
+      question: "How does the “Travel Now, Pay Later” option work?",
       answer:
-        "You can install React using the npm package manager. Run the command 'npm install react' to install the core React library. Additionally, you might need to install 'react-dom' for web rendering and 'react-scripts' for creating React applications with Create React App.",
+        "Our “Travel Now, Pay Later” option allows you to book your holiday and pay in installments. This flexible payment plan helps you manage your travel expenses better without delaying your dream vacation. For more details, please contact our customer service team.",
     },
     {
-      question: "This is question 3?",
+      question: "Can I customize my travel package?",
       answer:
-        "React components are the building blocks of a React application. They are reusable, self-contained pieces of UI that can be composed to create complex user interfaces. Components can be class components or functional components.",
+        "Absolutely! We offer customizable packages to ensure your holiday is tailored to your needs. Whether you have specific preferences, health considerations, or special requests, we’re here to create a personalized itinerary that suits you perfectly.",
+    },
+    {
+      question: "How long are your standard travel packages?",
+      answer:
+        "Our main packages are designed for 5 days and 5 nights. This duration is perfect for a quick yet enriching getaway, covering major attractions and ensuring you have a fulfilling travel experience without needing an extended break from your daily life.",
+    },
+    {
+      question: "What’s included in your travel packages?",
+      answer:
+        "Our packages include return flights, accommodation, visas, transfers, activities, and sightseeing. We aim to provide a complete travel experience so you can focus on enjoying your trip.",
     },
   ];
 

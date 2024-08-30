@@ -26,11 +26,13 @@ const PhuketSection = () => {
             Enchanted <span>Phuket</span>
           </h2>
           <p>
-            Escape to Paradise Phuket, a tropical haven where the turquoise
+            Unwind on Phuket’s stunning beaches, explore vibrant markets, or
             <br />
-            waters meet golden sands. Dive into thrilling activities, explore
-            bustling markets, <br /> and relax in luxury as you embrace the
-            charm and allure of this stunning island.
+            venture into lush rainforests. From thrilling water sports to quiet
+            <br />
+            moments by the sea, Book with "Come Fly With Me" for a
+            <br />
+            journey filled with sun, sea, and unforgettable experiences.
           </p>
         </motion.div>
 
