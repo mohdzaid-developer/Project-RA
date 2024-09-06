@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import "./newsLetter.scss";
 
-//Animation
+//Animations
 import { motion } from "framer-motion";
 import { footerFadeInAnimation } from "@/utils/animations/animations";
 

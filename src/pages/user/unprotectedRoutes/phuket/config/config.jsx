@@ -19,10 +19,10 @@ export const data = {
   title: "Enchanted Phuket",
   heroImg: heroImg,
   content: [
-    `Phuket, the enchanting island of Indonesia, beckons travelers with`,
-    ` its mesmerizing beauty and rich cultural heritage. Known as the`,
-    `"Island of the Gods,"Bali offers a diverse range of experiences,making `,
-    `it a top destination for tourists from around the world.`,
+    `Phuket is a slice of paradise where turquoise waters kiss golden sands, and every sunset paints`,
+    `the sky in dreamy hues. Lush greenery, vibrant markets, and hidden coves make this island a`,
+    `treasure trove of natural beauty and cultural charm. Whether you're soaking up the sun or`,
+    `exploring its wonders, Phuket's allure is simply irresistible.`,
   ],
   xRange1: ["0%", "-25.5%"],
   xRange2: ["0%", "-23%"],
@@ -36,32 +36,42 @@ export const data = {
         </div>
       ),
       packageName: "Friends",
-      description:
-        "Get ready to crank up the fun with your best mates in Phuket! This island is all about living it up—from adrenaline-pumping water sports and epic island-hopping adventures to vibrant nights out in Patong that you’ll be talking about for years. Imagine sailing the turquoise waters of Phang Nga Bay, exploring the hidden coves of Phi Phi, and then hitting the night markets where the energy is infectious. Phuket is your ultimate playground, where every day is an adventure, and every night is a story in the making.",
+      description: `Imagine this: You and your gang chilling like the Bollywood cast, but this time, the backdrop isn’t
+Goa, it's Phuket! Jet skis, beach volleyball, and a private yacht, perfect for your Insta reels,
+because "Phuket mein jo hota hai, woh Hyderabad mein viral hota hai"
+Book Now and make your travel dreams a reality—Hyderabadi style Shero ki tarah yaaro ke
+saath Phuket ki yaadon mein kho jao`,
       logo: levelOneFriendsLogo,
       url: "/phuket/friends",
       leftImg: levelOneFriendsImage,
     },
     {
       packageName: "Family",
-      description:
-        "Pack your bags and bring the whole family—Phuket is where unforgettable memories are made. Whether it’s exploring the colorful marine life at the Phuket Aquarium, taking a traditional Thai cooking class together, or just relaxing on the sun-kissed beaches of Kata, there’s something here for everyone. Watch as your kids’ eyes light up at the sight of elephants at a local sanctuary, and feel the bonds of family grow stronger with every new adventure. Phuket isn’t just a destination—it’s the backdrop for your family’s greatest story.",
+      description: `For the Entire Kutumbh Who Loves a Good Time "Family ke saath Phuket ka trip? Here’s the
+plan: You, your parents, your kiddos—basically, the entire crew on a fun-filled adventure where
+the only thing more memorable than the beaches are the laughs you’ll share. It’s like Hum
+Saath Saath Hain, but with more sunscreen and less saas-bahu drama`,
       logo: levelOneFamilyLogo,
       url: "/phuket/family",
       leftImg: levelOneFamilyImage,
     },
     {
       packageName: "Couples",
-      description:
-        "Escape to Phuket, where romance and luxury blend seamlessly. Picture yourselves on a private yacht, cruising along the Andaman Sea at sunset, or walking hand in hand through the historic streets of Old Phuket Town. Enjoy candlelit dinners on the beach, couples’ massages in world-class spas, and discover secret spots where it’s just the two of you. Phuket is more than just a destination—it’s the perfect setting for your love story, filled with moments that linger long after the trip is over.",
+      description: `"For the Lovebirds Who Want Their Own Bollywood Romance "Ab yeh nasha tumko Phuket le
+chal!" Picture this: A romantic dinner on the beach, with the soft strumming of a guitar in the
+background, just like in Aashiqui 2. Walk hand-in-hand down the shore, and before you know it,
+you're living the Celebrity-couple dream."`,
       logo: levelOneCoupleLogo,
       url: "/phuket/couple",
       leftImg: levelOneCoupleImage,
     },
     {
       packageName: "Custom",
-      description:
-        "Phuket is an island of endless possibilities, and your adventure should be as unique as you are. Whether you’re dreaming of a high-octane adventure packed with water sports and jungle treks, a cultural immersion into Thai traditions, or a serene retreat in a luxury villa, we’ll tailor every detail to your desires. Let’s craft a journey that reflects your passions, where every experience is a new discovery, and every day is a masterpiece.",
+      description: `Why settle for the usual when you can have a Phuket experience tailored just for us? Let’s
+design our dream escape—whether it’s sunset yacht rides or private beach dinners, we’ll turn
+every ‘what if’ into ‘oh yes!’ Our customized plan isn’t just a trip; it’s our very own love story,
+scripted and directed by us. Ready to make every moment unforgettable? Let’s start planning
+our perfect getaway, one cheeky detail at a time.`,
       logo: levelOneCustomLogo,
       url: "/phuket/custom",
       leftImg: levelOneCustomImage,
