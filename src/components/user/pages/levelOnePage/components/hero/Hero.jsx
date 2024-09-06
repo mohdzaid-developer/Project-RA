@@ -1,7 +1,7 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import "./hero.scss";
 
-import { useScroll, useTransform, motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollText from "./scrollText/ScrollText";
 
 const Hero = ({ data }) => {
