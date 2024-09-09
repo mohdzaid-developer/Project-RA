@@ -41,7 +41,7 @@
         flex-direction: column;
         gap: 15px;
         p {
-          color: $white;
+          color: lightgrey;
           font-size: 16px;
           line-height: 32px;
           letter-spacing: 1px;
@@ -58,7 +58,7 @@
             li {
               font-style: italic;
               list-style: circle;
-              color: $white;
+              color: lightgrey;
               font-size: 14px;
               line-height: 28px;
               margin-bottom: 15px;

@@ -1,5 +1,4 @@
 @import "@/index.scss";
-
 .privacy-policy {
   .hero {
     height: 70vh;
@@ -9,10 +8,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
     h2 {
       font-size: 60px;
       color: $text-orange;
       letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: bold;
     }
   }
 
@@ -23,21 +25,60 @@
     align-items: flex-start;
     flex-direction: column;
     gap: 50px;
-    .data {
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      gap: 15px;
-      h3 {
+
+    .section {
+      h2 {
+        font-size: 36px;
         color: $dark-orange;
-        font-size: 20px;
+        margin-bottom: 30px;
       }
+
       p {
-        color: $white;
+        color: lightgrey;
+
         font-size: 16px;
         line-height: 32px;
         letter-spacing: 1px;
+        margin-bottom: 20px;
+      }
+    }
+
+    .subsection {
+      padding-left: 20px;
+      margin-bottom: 50px;
+
+      h3 {
+        font-size: 24px;
+        color: $dark-orange;
+        margin-bottom: 15px;
+      }
+
+      .detail-section {
+        margin-bottom: 15px;
+        padding-left: 15px;
+
+        p {
+          font-size: 16px;
+          color: lightgrey;
+          margin-bottom: 10px;
+        }
+
+        ul {
+          margin-left: 20px;
+          padding-left: 10px;
+          list-style-type: disc;
+
+          li {
+            font-size: 16px;
+            color: lightgrey;
+            line-height: 1.6;
+            margin-bottom: 10px;
+
+            .list-label {
+              color: $white;
+            }
+          }
+        }
       }
     }
   }
