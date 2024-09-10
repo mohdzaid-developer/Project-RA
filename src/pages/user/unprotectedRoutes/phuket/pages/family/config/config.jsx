@@ -18,7 +18,7 @@ export const data = {
   planTitle: "Family",
   plans: [
     {
-      title: "Standard",
+      title: "Phuket family fiesta",
       data: [
         `From the moment you step off the plane in Phuket, it’s all about “Swag Se Swagat” But instead
 of a red carpet, there’s a pristine beach waiting to welcome your family. The kids will go nuts
@@ -33,7 +33,7 @@ the action, or the comedy, this trip has it all—minus the commercial breaks.`,
       image: familyStandard,
     },
     {
-      title: "Delux",
+      title: "Phuket family Bliss",
       data: [
         `How about an action-packed day? We’re talking elephant rides, zip-lining, and more! It’s like a
 Baahubali battle scene but with more fun and less CGI. And if you’re feeling brave, why not try
@@ -48,7 +48,7 @@ moment a scene-stealer.`,
       image: familyDelux,
     },
     {
-      title: "Premium",
+      title: "Family Funland Phuket",
       data: [
         "Premium Phuket Family ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       ],

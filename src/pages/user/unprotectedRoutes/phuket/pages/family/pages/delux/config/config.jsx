@@ -2,7 +2,7 @@
 import familyDelux from "@/assets/familyDelux.webp";
 
 export const data = {
-  title: "Deluxe Escape Plan",
+  title: "Phuket family Bliss",
   heroImg: familyDelux,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

@@ -1,9 +1,9 @@
 //Assets
-import couplePremium from "@/assets/couplePremium.webp";
+import customPremium from "@/assets/customPremium.webp";
 
 export const data = {
-  title: "Premium Escape Plan",
-  heroImg: couplePremium,
+  title: "Phuket Curated Escapes",
+  heroImg: customPremium,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,
     ` its mesmerizing beauty and rich cultural heritage. Known as the`,

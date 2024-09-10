@@ -2,7 +2,7 @@
 import friendsStandard from "@/assets/friendsStandard.webp";
 
 export const data = {
-  title: "Standard Escape Plan",
+  title: "Phuket Party patrol",
   heroImg: friendsStandard,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

@@ -1,7 +1,8 @@
 import "./mission.scss";
 
 //Assets
-import missionImg from "@/assets/mission.jpg";
+import missionImg from "@/assets/mission.webp";
+
 const Mission = () => {
   return (
     <section className="mission">

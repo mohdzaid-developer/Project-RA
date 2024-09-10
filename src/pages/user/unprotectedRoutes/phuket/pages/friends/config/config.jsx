@@ -18,7 +18,7 @@ export const data = {
   planTitle: "Friends",
   plans: [
     {
-      title: "Standard",
+      title: "Phuket Party patrol",
       data: [
         "This isn’t just another vacation—it’s a chance to recharge, reconnect, and rediscover what it means to relax. From peaceful sunsets to thrilling adventures, Phuket is where your dream vacation becomes reality. Bas ek baar chale jao you’ll want to go back again and again.",
         "With our 'Travel Now, Pay Later' option, your dream trip to Phuket is just a click away. No need to stress about the budget; just focus on packing your bags and getting ready for an unforgettable experience.",
@@ -28,7 +28,7 @@ export const data = {
       image: friendsStandard,
     },
     {
-      title: "Delux",
+      title: "Phuket BFF Escape ",
       data: [
         "Friendship isn’t just about hanging out in cafes or watching movies together. It’s about creating memories that will make you laugh years down the line. Whether it’s deep conversations by the beach, spontaneous road trips around the island, or just goofing around in the markets, Phuket is where your bond gets stronger.",
         "Whether you're celebrating a milestone or just taking a break from the daily grind, this trip is all about living your best life with your best friends by your side.",
@@ -38,7 +38,7 @@ export const data = {
       image: friendsDelux,
     },
     {
-      title: "Premium",
+      title: "Squad goals: Phuket edition",
       data: [
         "From parasailing to island hopping, Phuket’s adventure scene is calling out to your inner Mastikhor. Whether you’re daring each other to try something new or just laughing at each other’s fails, these moments will become the stuff of legends.",
         "Phuket’s street food scene is perfect for those late-night munchies with friends. Imagine roaming the vibrant markets, tasting exotic flavors, and arguing over who found the best dish. These are the memories that make trips unforgettable.",

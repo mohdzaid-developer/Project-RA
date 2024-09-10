@@ -2,7 +2,7 @@
 import familyDelux from "@/assets/familyDelux.webp";
 
 export const data = {
-  title: "Deluxe Escape Plan",
+  title: "Life's better in bali",
   heroImg: familyDelux,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

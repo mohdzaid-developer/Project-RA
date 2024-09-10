@@ -1,8 +1,8 @@
 //Assets
 import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
-import familyStandard from "@/assets/familyStandard.webp";
-import familyDelux from "@/assets/familyDelux.webp";
-import familyPremium from "@/assets/familyPremium.webp";
+import customStandard from "@/assets/customStandard.webp";
+import customDelux from "@/assets/customDelux.webp";
+import customPremium from "@/assets/customPremium.webp";
 
 export const data = {
   title: "Custom Package",
@@ -18,31 +18,31 @@ export const data = {
   planTitle: "Custom",
   plans: [
     {
-      title: "Standard",
+      title: "Bali Your Way",
       data: [
         "Standard Bali custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
       ],
       url: "/bali/custom/standard",
-      image: familyStandard,
+      image: customStandard,
     },
     {
-      title: "Delux",
+      title: "Bali Dreamscape",
       data: [
         "Delux Bali custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
       ],
       url: "/bali/custom/delux",
-      image: familyDelux,
+      image: customDelux,
     },
     {
-      title: "Premium",
+      title: "Bali Crafted Journeys",
       data: [
         "Premium Bali custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis ",
       ],
       url: "/bali/custom/premium",
-      image: familyPremium,
+      image: customPremium,
     },
   ],
 };

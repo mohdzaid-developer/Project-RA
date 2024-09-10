@@ -2,7 +2,7 @@
 import familyStandard from "@/assets/familyStandard.webp";
 
 export const data = {
-  title: "Standard Escape Plan",
+  title: "Phuket family fiesta",
   heroImg: familyStandard,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

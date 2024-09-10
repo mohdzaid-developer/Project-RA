@@ -2,7 +2,7 @@
 import coupleDelux from "@/assets/coupleDelux.webp";
 
 export const data = {
-  title: "Deluxe Escape Plan",
+  title: "Love Birds in Phuket",
   heroImg: coupleDelux,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

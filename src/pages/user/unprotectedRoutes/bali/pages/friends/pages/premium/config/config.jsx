@@ -2,7 +2,7 @@
 import friendsPremium from "@/assets/friendsPremium.webp";
 
 export const data = {
-  title: "Premium Escape Plan",
+  title: "Zindhagi Na Melige Dubara",
   heroImg: friendsPremium,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

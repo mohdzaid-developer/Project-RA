@@ -2,7 +2,7 @@
 import couplePremium from "@/assets/couplePremium.webp";
 
 export const data = {
-  title: "Premium Escape Plan",
+  title: "Valentines Week",
   heroImg: couplePremium,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

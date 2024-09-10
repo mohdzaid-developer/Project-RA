@@ -19,7 +19,7 @@ export const data = {
   planTitle: "Family",
   plans: [
     {
-      title: "Standard",
+      title: "Explore bali",
       data: [
         `Step into a Bali adventure where family bonds shine, and so that you engrave a beautiful
 chapter called Amma Nanna Oka Bali Trip. Enjoy sun-soaked beaches, exciting activities, and
@@ -36,7 +36,7 @@ sounds of Bali`,
       image: familyStandard,
     },
     {
-      title: "Delux",
+      title: "Life's better in bali",
       data: [
         `Family ka plan hai? Humare saath chalein!
         Is your family dreaming of a perfect vacation but not sure where to start? How about strolling the
@@ -55,7 +55,7 @@ sounds of Bali`,
       image: familyDelux,
     },
     {
-      title: "Premium",
+      title: "Paradise Bali",
       data: [
         `Imagine taking your family on a vacation so grand, it feels straight out of a movie, think 'Dil
 dhadakne do’ but with even more luxury. We specialize in turning your dreams into reality,

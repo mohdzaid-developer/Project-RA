@@ -2,7 +2,7 @@
 import familyPremium from "@/assets/familyPremium.webp";
 
 export const data = {
-  title: "Premium Escape Plan",
+  title: "Family Funland Phuket",
   heroImg: familyPremium,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,
