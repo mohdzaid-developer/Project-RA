@@ -1,9 +1,9 @@
 //Assets
-import friendsDelux from "@/assets/friendsDelux.webp";
+import customDelux from "@/assets/customDelux.webp";
 
 export const data = {
   title: "Deluxe Escape Plan",
-  heroImg: friendsDelux,
+  heroImg: customDelux,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,
     ` its mesmerizing beauty and rich cultural heritage. Known as the`,
