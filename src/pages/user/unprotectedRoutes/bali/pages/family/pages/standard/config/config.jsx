@@ -2,7 +2,7 @@
 import familyStandard from "@/assets/familyStandard.webp";
 
 export const data = {
-  title: "Standard Escape Plan",
+  title: "Explore bali",
   heroImg: familyStandard,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

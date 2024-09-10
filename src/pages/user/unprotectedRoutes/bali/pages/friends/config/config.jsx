@@ -18,7 +18,7 @@ export const data = {
 
   plans: [
     {
-      title: "Standard",
+      title: "Friends forever bali",
       data: [
         `As seen in the film Ee Nagaraniki Emaindi, there’s always that one friend, Vivek, who turns
 drunken conversations into grand plans for a dream vacation. Remember when Vivek said, "Life
@@ -35,7 +35,7 @@ memories.`,
       image: friendsStandard,
     },
     {
-      title: "Delux",
+      title: "Party Island bali",
       data: [
         `Are you and your friends in desperate need of a break? Tired of the endless assignments,
         exams, and sleepless nights? Is your life feeling like a never-ending reel of “Tumse Na Ho
@@ -51,7 +51,7 @@ memories.`,
       image: friendsDelux,
     },
     {
-      title: "Premium",
+      title: "Zindhagi Na Melige Dubara",
       data: [
         `We get it, ife’s hectic, and planning a vacation that’s as perfect as your Instagram feed can feel
 like an impossible task. But don’t worry, hum hain na! We specialize in turning your Bali dreams

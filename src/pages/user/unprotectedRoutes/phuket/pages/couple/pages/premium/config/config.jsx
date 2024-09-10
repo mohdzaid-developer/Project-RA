@@ -2,7 +2,7 @@
 import couplePremium from "@/assets/couplePremium.webp";
 
 export const data = {
-  title: "Premium Escape Plan",
+  title: "Sunsets & Sweethearts in Phuket",
   heroImg: couplePremium,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

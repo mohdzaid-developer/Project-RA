@@ -2,7 +2,7 @@
 import coupleDelux from "@/assets/coupleDelux.webp";
 
 export const data = {
-  title: "Deluxe Escape Plan",
+  title: "Love Island",
   heroImg: coupleDelux,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

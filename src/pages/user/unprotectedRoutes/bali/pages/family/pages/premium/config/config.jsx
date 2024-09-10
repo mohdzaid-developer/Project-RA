@@ -2,7 +2,7 @@
 import familyPremium from "@/assets/familyPremium.webp";
 
 export const data = {
-  title: "Premium Escape Plan",
+  title: "Paradise Bali",
   heroImg: familyPremium,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

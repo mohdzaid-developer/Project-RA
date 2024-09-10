@@ -1,8 +1,8 @@
 //Assets
 import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
-import familyStandard from "@/assets/familyStandard.webp";
-import familyDelux from "@/assets/familyDelux.webp";
-import familyPremium from "@/assets/familyPremium.webp";
+import customStandard from "@/assets/customStandard.webp";
+import customDelux from "@/assets/customDelux.webp";
+import customPremium from "@/assets/customPremium.webp";
 
 export const data = {
   title: "Custom Package",
@@ -18,28 +18,28 @@ export const data = {
   planTitle: "Custom",
   plans: [
     {
-      title: "Standard",
+      title: "Phuket Your Way",
       data: [
         "Standard phuket custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       ],
       url: "/phuket/custom/standard",
-      image: familyStandard,
+      image: customStandard,
     },
     {
-      title: "Delux",
+      title: "Phuket Dream Trails",
       data: [
         "Delux phuket custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       ],
       url: "/phuket/custom/delux",
-      image: familyDelux,
+      image: customDelux,
     },
     {
-      title: "Premium",
+      title: "Phuket Curated Escapes",
       data: [
         "Premium phuket custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       ],
       url: "/phuket/custom/premium",
-      image: familyPremium,
+      image: customPremium,
     },
   ],
 };

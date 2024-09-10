@@ -18,7 +18,7 @@ export const data = {
   planTitle: "Couple",
   plans: [
     {
-      title: "Standard",
+      title: "Romantic getaway",
       data: [
         `Ever dreamed of a getaway as magical as 'Yeh Jawaani Hai Deewani'? We’re here to turn that
 dream into reality. Imagine whisking your partner away to a private villa in Bali, where every
@@ -39,7 +39,7 @@ Unlock a World of Romance for Just the Two of You!`,
       image: coupleStandard,
     },
     {
-      title: "Delux",
+      title: "Love Island",
       data: [
         `Imagine: A secluded Bali villa where you and your love escape the Corporate grind and dive into
         a world of Romance. Picture this—candlelit dinners on a private beach, sultry sunset views, and
@@ -57,7 +57,7 @@ Unlock a World of Romance for Just the Two of You!`,
       image: coupleDelux,
     },
     {
-      title: "Premium",
+      title: "Valentines Week",
       data: [
         `Do you remember ‘Jab We Met’ ki train journey or‘Ye Maya Chesave’ ka garden scene?
         Imagine surprising your partner with an escape like this, but in real life.`,

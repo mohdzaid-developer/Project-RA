@@ -2,7 +2,7 @@
 import coupleStandard from "@/assets/coupleStandard.webp";
 
 export const data = {
-  title: "Standard Escape Plan",
+  title: "Phuket Romantic Retreat",
   heroImg: coupleStandard,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

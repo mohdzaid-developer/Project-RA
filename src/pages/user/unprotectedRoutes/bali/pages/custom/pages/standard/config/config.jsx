@@ -2,7 +2,7 @@
 import customStandard from "@/assets/customStandard.webp";
 
 export const data = {
-  title: "Standard Escape Plan",
+  title: "Bali Your Way",
   heroImg: customStandard,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

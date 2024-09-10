@@ -2,7 +2,7 @@
 import friendsStandard from "@/assets/friendsStandard.webp";
 
 export const data = {
-  title: "Standard Escape Plan",
+  title: "Friends forever bali",
   heroImg: friendsStandard,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

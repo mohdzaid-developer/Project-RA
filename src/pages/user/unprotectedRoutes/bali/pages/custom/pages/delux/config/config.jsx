@@ -2,7 +2,7 @@
 import customDelux from "@/assets/customDelux.webp";
 
 export const data = {
-  title: "Deluxe Escape Plan",
+  title: "Bali Dreamscape",
   heroImg: customDelux,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

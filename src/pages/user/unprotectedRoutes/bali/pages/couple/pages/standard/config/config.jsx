@@ -2,7 +2,7 @@
 import coupleStandard from "@/assets/coupleStandard.webp";
 
 export const data = {
-  title: "Standard Escape Plan",
+  title: "Romantic getaway",
   heroImg: coupleStandard,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

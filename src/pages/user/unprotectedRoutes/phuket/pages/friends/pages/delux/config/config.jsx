@@ -2,7 +2,7 @@
 import friendsDelux from "@/assets/friendsDelux.webp";
 
 export const data = {
-  title: "Deluxe Escape Plan",
+  title: "Phuket BFF Escape",
   heroImg: friendsDelux,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

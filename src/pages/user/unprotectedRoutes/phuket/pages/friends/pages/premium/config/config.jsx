@@ -2,7 +2,7 @@
 import friendsPremium from "@/assets/friendsPremium.webp";
 
 export const data = {
-  title: "Premium Escape Plan",
+  title: "Squad goals: Phuket edition",
   heroImg: friendsPremium,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

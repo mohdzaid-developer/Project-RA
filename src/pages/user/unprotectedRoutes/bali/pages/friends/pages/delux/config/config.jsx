@@ -2,7 +2,7 @@
 import friendsDelux from "@/assets/friendsDelux.webp";
 
 export const data = {
-  title: "Deluxe Escape Plan",
+  title: "Party Island bali",
   heroImg: friendsDelux,
   content: [
     `Bali, the enchanting island of Indonesia, beckons travelers with`,

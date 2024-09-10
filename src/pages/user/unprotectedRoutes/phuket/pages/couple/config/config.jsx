@@ -18,7 +18,7 @@ export const data = {
   planTitle: "Couple",
   plans: [
     {
-      title: "Standard",
+      title: "Phuket Romantic Retreat",
       data: [
         "Phuket is your ultimate playground for passion and adventure. Private villas where the only thing hotter than the tropical sun is the chemistry between you two. Sneak in some steamy beach moments, where the waves aren’t the only thing making a splash. As the sun sets, indulge in a candlelit dinner by the shore, followed by a moonlit swim, clothing optional, of course.",
         "Your private villa becomes the set for those Raabta moments, where the chemistry is so intense, even the ocean feels the heat. Whether you’re exploring its scenic viewpoints, enjoying a thrilling beach party, or indulging in a luxurious spa, Phuket promises a captivating blend to let your Jism meet Husn.",
@@ -27,7 +27,7 @@ export const data = {
       image: coupleStandard,
     },
     {
-      title: "Delux",
+      title: "Love Birds in Phuket",
       data: [
         `Hey there, lovebirds Ready to add a little ‘filmy tadka’ to your love life? Forget about those
 same-old-same-old date nights at Necklace Road or Golconda. How about we whisk you away
@@ -45,7 +45,7 @@ packages that’ll make even the strictest Indian mom say, 'Beta, tum enjoy karo
       image: coupleDelux,
     },
     {
-      title: "Premium",
+      title: "Sunsets & Sweethearts in Phuket",
       data: [
         `Namaste, Hyderabad’s most glamorous couples, Ready to swap your usual date spots for
 something a little… more ‘A-lister’? Picture this: You and your soulmate, hand in hand, stepping
