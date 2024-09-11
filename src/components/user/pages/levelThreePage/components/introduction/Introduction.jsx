@@ -27,7 +27,6 @@ const Introduction = () => {
     requestAnimationFrame(raf);
 
     return () => {
-      // Cleanup to prevent memory leaks
       cancelAnimationFrame(raf);
     };
   }, []);
