@@ -28,4 +28,5 @@ export const data = {
     baliSlider5,
     baliSlider6,
   ],
+  price: "75,000",
 };

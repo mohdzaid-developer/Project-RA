@@ -144,5 +144,30 @@
         cursor: pointer;
       }
     }
+
+    .price {
+      border-bottom: 1px solid $white;
+      border-top: 1px solid $white;
+      padding: 20px;
+      text-align: center;
+      h3 {
+        color: $white;
+        margin-bottom: 10px;
+
+        span {
+          font-size: 50px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          color: $dark-orange;
+        }
+      }
+      p {
+        color: $white;
+        font-size: 16px;
+        span {
+          color: $dark-orange;
+        }
+      }
+    }
   }
 }

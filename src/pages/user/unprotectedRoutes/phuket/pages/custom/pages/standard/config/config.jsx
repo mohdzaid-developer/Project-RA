@@ -28,4 +28,5 @@ export const data = {
     phuketSlider5,
     phuketSlider6,
   ],
+  price: "55,000",
 };

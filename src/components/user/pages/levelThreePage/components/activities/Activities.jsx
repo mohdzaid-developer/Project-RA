@@ -5,39 +5,6 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 const Activities = ({ data }) => {
-  console.log(data.sliderImg);
-  const slides = [
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+1",
-      title: "Slide 1",
-      description: "This is the first slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+2",
-      title: "Slide 2",
-      description: "This is the second slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+3",
-      title: "Slide 3",
-      description: "This is the third slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+4",
-      title: "Slide 4",
-      description: "This is the third slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+5",
-      title: "Slide 5",
-      description: "This is the third slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+6",
-      title: "Slide 6",
-      description: "This is the third slide.",
-    },
-  ];
   return (
     <div className="splide-wrapper">
       <h2>Activities we provide</h2>
@@ -66,7 +33,7 @@ const Activities = ({ data }) => {
         }}
         aria-label="My Splide Slider"
       >
-        {data.sliderImg.map((slide, index) => (
+        {data?.sliderImg.map((slide, index) => (
           <SplideSlide key={index}>
             <div className="images">
               <img src={slide} />

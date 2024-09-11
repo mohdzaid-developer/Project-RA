@@ -12,7 +12,7 @@ const LevelThreePage = ({ data }) => {
       <Introduction />
       <Activities data={data} />
       <Description />
-      <Payment />
+      <Payment data={data} />
     </section>
   );
 };
