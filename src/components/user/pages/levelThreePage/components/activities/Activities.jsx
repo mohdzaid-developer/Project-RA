@@ -4,7 +4,8 @@ import "./activities.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-const Activities = () => {
+const Activities = ({ data }) => {
+  console.log(data.sliderImg);
   const slides = [
     {
       img: "https://via.placeholder.com/800x400?text=Slide+1",
@@ -65,16 +66,10 @@ const Activities = () => {
         }}
         aria-label="My Splide Slider"
       >
-        {slides.map((slide, index) => (
+        {data.sliderImg.map((slide, index) => (
           <SplideSlide key={index}>
-            <div style={{ textAlign: "center" }}>
-              <img
-                src={slide.img}
-                alt={slide.title}
-                style={{ width: "100%", height: "auto" }}
-              />
-              <h3>{slide.title}</h3>
-              <p>{slide.description}</p>
+            <div className="images">
+              <img src={slide} />
             </div>
           </SplideSlide>
         ))}

@@ -10,7 +10,7 @@ const LevelThreePage = ({ data }) => {
     <section className="levelThreePage">
       <Hero data={data} />
       <Introduction />
-      <Activities />
+      <Activities data={data} />
       <Description />
       <Payment />
     </section>
