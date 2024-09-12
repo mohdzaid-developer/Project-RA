@@ -16,11 +16,11 @@ import { store } from "./redux/store/store.js";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Provider store={store}>
-        <ScrollToTop>
+      <ScrollToTop>
+        <Provider store={store}>
           <App />
-        </ScrollToTop>
-      </Provider>
+        </Provider>
+      </ScrollToTop>
     </BrowserRouter>
   </React.StrictMode>
 );
