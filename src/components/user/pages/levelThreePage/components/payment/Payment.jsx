@@ -30,7 +30,6 @@ import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 const Payment = ({ data }) => {
-  console.log(data.price);
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
