@@ -9,6 +9,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Assets
 import buttonArrowImg from "@/assets/rightArrow.webp";
+import nbfcLogo from "@/assets/nbfcLogo.png";
 
 // MUI
 import { Checkbox } from "@mui/material";
@@ -370,6 +371,11 @@ const Payment = ({ data }) => {
             )}
           </button>
         )}
+
+        <div className="nbfc">
+          <h3>Powered By - </h3>
+          <img src={nbfcLogo} alt="" />
+        </div>
       </form>
     </div>
   );

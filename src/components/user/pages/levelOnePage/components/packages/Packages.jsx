@@ -61,14 +61,6 @@ const Packages = ({ data }) => {
         onEnterBack: () => setIsVisible(true),
         onLeaveBack: () => setIsVisible(false),
       });
-
-      ScrollTrigger.create({
-        trigger: details[details.length - 1],
-        start: "top 50%",
-        end: "bottom bottom",
-        onLeave: () => setIsVisible(false),
-        onEnterBack: () => setIsVisible(true),
-      });
     });
 
     return () => {
@@ -121,12 +113,6 @@ const Packages = ({ data }) => {
           </div>
         </div>
       </div>
-      {isVisible && (
-        <div className="fixed-center">
-          <div className="number">{`0${currentIndex}`}</div>
-          <div className="total">/04</div>
-        </div>
-      )}
     </div>
   );
 };

@@ -1,16 +1,16 @@
 @import "@/index.scss";
 
 .filler {
-  background-image: url("@/assets/fillerBackground.webp");
   width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("@/assets/fillerImg.webp");
+  background-size: cover;
+  background-position: center;
+  margin: 100px 0;
   .container {
-    background-image: url("@/assets/fillerImg.webp");
-    background-size: cover;
-    background-position: center;
     width: 100%;
     padding: 100px 80px;
     display: flex;
