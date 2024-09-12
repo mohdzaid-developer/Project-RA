@@ -26,19 +26,6 @@ nav {
       cursor: pointer;
       position: relative;
 
-      .profile-pic {
-        position: absolute;
-        right: 70px;
-        bottom: 1px;
-        width: 62px;
-        height: 62px;
-        cursor: pointer;
-
-        img {
-          border-radius: 50%;
-        }
-      }
-
       .hamBox {
         position: relative;
         width: 30px;
@@ -46,7 +33,7 @@ nav {
         cursor: pointer;
         border-radius: 50%;
         transition: 0.3s ease;
-        padding: 1.8em;
+        padding: 1.9em;
 
         .hamBoxOpen {
           background-color: $text-orange;
@@ -187,7 +174,7 @@ nav {
   }
 }
 
-@media (max-width: 1600px) {
+@media (max-width: 1700px) {
   nav {
     .navbar {
       padding: 18px 40px;
@@ -197,28 +184,58 @@ nav {
           height: 55px;
         }
       }
+
+      .menu-toggle {
+        .hamBox {
+          width: 28px;
+          height: 28px;
+          padding: 1.8em;
+        }
+      }
     }
 
     .nav-overlay {
-      padding: 3.8em;
+      padding: 3.5em;
+
       .link {
+        gap: 60px;
         .nav-links {
-          gap: 45px;
+          gap: 40px;
           li {
             a {
-              font-size: 55px;
+              letter-spacing: 2.5px;
+              font-size: 50px;
+              &::after {
+                content: "";
+                height: 1.8px;
+              }
             }
           }
         }
       }
 
+      .socials {
+        left: 45px;
+        bottom: 45px;
+        gap: 35px;
+
+        img {
+          height: 22px;
+        }
+      }
+
       .auth {
+        right: 45px;
+        bottom: 45px;
+
         button {
           gap: 18px;
           font-size: 22px;
+          border-radius: 15px;
+          padding: 20px 18px;
 
           img {
-            height: 24px;
+            height: 26px;
           }
         }
       }
@@ -226,148 +243,297 @@ nav {
   }
 }
 
-// // @media (max-width: 1400px) {
-// //   nav {
-// //     .navbar {
-// //       padding: 5px 80px;
-// //       .logo {
-// //         font-size: 18px;
-// //       }
-// //     }
+@media (max-width: 1400px) {
+  nav {
+    .navbar {
+      padding: 18px 36px;
 
-// //     .nav-overlay {
-// //       padding: 3.6em;
-// //       .link {
-// //         .nav-links {
-// //           gap: 40px;
-// //           li {
-// //             a {
-// //               font-size: 50px;
-// //             }
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-// // }
+      .logo {
+        img {
+          height: 50px;
+        }
+      }
 
-// // @media (max-width: 1200px) {
-// //   nav {
-// //     .navbar {
-// //       padding: 5px 70px;
-// //       .logo {
-// //         font-size: 17px;
-// //       }
-// //     }
+      .menu-toggle {
+        .hamBox {
+          width: 26px;
+          height: 26px;
+          padding: 1.6em;
+        }
+      }
+    }
 
-// //     .nav-overlay {
-// //       padding: 3.4em;
-// //       .link {
-// //         .nav-links {
-// //           li {
-// //             a {
-// //               font-size: 45px;
-// //             }
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-// // }
+    .nav-overlay {
+      padding: 3.2em;
 
-// // @media (max-width: 1000px) {
-// //   nav {
-// //     .navbar {
-// //       padding: 5px 60px;
-// //       .logo {
-// //         font-size: 16px;
-// //       }
-// //     }
+      .link {
+        gap: 50px;
+        .nav-links {
+          gap: 30px;
+          li {
+            a {
+              letter-spacing: 2.2px;
+              font-size: 44px;
+              &::after {
+                content: "";
+                height: 1.6px;
+              }
+            }
+          }
+        }
+      }
 
-// //     .nav-overlay {
-// //       padding: 3.3em;
-// //       .link {
-// //         .nav-links {
-// //           gap: 30px;
-// //           li {
-// //             a {
-// //               font-size: 42px;
-// //             }
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-// // }
+      .socials {
+        left: 40px;
+        bottom: 40px;
+        gap: 30px;
 
-// // @media (max-width: 800px) {
-// //   nav {
-// //     .navbar {
-// //       padding: 5px 50px;
-// //       .logo {
-// //         font-size: 15px;
-// //       }
-// //     }
+        img {
+          height: 20px;
+        }
+      }
 
-// //     .nav-overlay {
-// //       padding: 3.1em;
-// //       .link {
-// //         .nav-links {
-// //           gap: 28px;
-// //           li {
-// //             a {
-// //               font-size: 40px;
-// //             }
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-// // }
+      .auth {
+        right: 40px;
+        bottom: 40px;
 
-// // @media (max-width: 600px) {
-// //   nav {
-// //     .navbar {
-// //       padding: 5px 40px;
-// //       .logo {
-// //         font-size: 14px;
-// //       }
-// //     }
+        button {
+          gap: 16px;
+          font-size: 20px;
+          border-radius: 15px;
+          padding: 18px 16px;
 
-// //     .nav-overlay {
-// //       padding: 3em;
-// //       .link {
-// //         .nav-links {
-// //           gap: 26px;
-// //           li {
-// //             a {
-// //               font-size: 38px;
-// //             }
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-// // }
+          img {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
 
-// // @media (max-width: 400px) {
-// //   nav {
-// //     .navbar {
-// //       padding: 5px 30px;
-// //     }
+@media (max-width: 1100px) {
+  nav {
+    .navbar {
+      padding: 16px 34px;
 
-// //     .nav-overlay {
-// //       padding: 2.8em;
-// //       .link {
-// //         .nav-links {
-// //           gap: 24px;
-// //           li {
-// //             a {
-// //               font-size: 36px;
-// //             }
-// //           }
-// //         }
-// //       }
-// //     }
-// //   }
-// // }
+      .logo {
+        img {
+          height: 45px;
+        }
+      }
+
+      .menu-toggle {
+        .hamBox {
+          width: 24px;
+          height: 24px;
+          padding: 1.5em;
+        }
+      }
+    }
+
+    .nav-overlay {
+      padding: 3em;
+
+      .link {
+        gap: 45px;
+        .nav-links {
+          gap: 35px;
+          li {
+            a {
+              letter-spacing: 2px;
+              font-size: 40px;
+              &::after {
+                content: "";
+                height: 1.4px;
+              }
+            }
+          }
+        }
+      }
+
+      .socials {
+        left: 36px;
+        bottom: 36px;
+        gap: 26px;
+
+        img {
+          height: 20px;
+        }
+      }
+
+      .auth {
+        right: 36px;
+        bottom: 36px;
+
+        button {
+          gap: 15px;
+          font-size: 18px;
+          border-radius: 14px;
+          padding: 16px 14px;
+
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    .navbar {
+      display: flex;
+      padding: 10px 20px;
+
+      .logo {
+        img {
+          height: 40px;
+        }
+      }
+
+      .menu-toggle {
+        .hamBox {
+          width: 28px;
+          height: 28px;
+          padding: 1.5em;
+
+          .lineTop,
+          .lineBottom {
+            width: 18px;
+            height: 2.1px;
+          }
+        }
+      }
+    }
+
+    .nav-overlay {
+      padding: 1em;
+
+      .link {
+        gap: 30px;
+        .nav-links {
+          gap: 20px;
+          li {
+            a {
+              letter-spacing: 2px;
+              font-size: 30px;
+
+              &::after {
+                content: "";
+                height: 1.2px;
+              }
+            }
+          }
+        }
+      }
+
+      .socials {
+        left: 30px;
+        bottom: 30px;
+        gap: 26px;
+
+        img {
+          height: 22px;
+        }
+      }
+
+      .auth {
+        right: 30px;
+        bottom: 30px;
+        button {
+          gap: 12px;
+          font-size: 18px;
+
+          border-radius: 11px;
+          padding: 16px 13px;
+
+          img {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    .navbar {
+      display: flex;
+      padding: 10px 20px;
+
+      .logo {
+        img {
+          height: 40px;
+        }
+      }
+
+      .menu-toggle {
+        .hamBox {
+          width: 28px;
+          height: 28px;
+          padding: 1.5em;
+
+          .lineTop,
+          .lineBottom {
+            width: 18px;
+            height: 2.1px;
+          }
+        }
+      }
+    }
+
+    .nav-overlay {
+      padding: 1em;
+
+      .link {
+        gap: 30px;
+        .nav-links {
+          gap: 20px;
+          li {
+            a {
+              letter-spacing: 2px;
+              font-size: 30px;
+
+              &::after {
+                content: "";
+                height: 1.2px;
+              }
+            }
+          }
+        }
+      }
+
+      .socials {
+        left: 50%;
+        bottom: 20px;
+        transform: translateX(-50%);
+        gap: 50px;
+
+        img {
+          height: 22px;
+        }
+      }
+
+      .auth {
+        right: 50%;
+        bottom: 80px;
+        transform: translateX(50%);
+
+        button {
+          gap: 12px;
+          font-size: 18px;
+
+          border-radius: 11px;
+          padding: 16px 13px;
+
+          img {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
