@@ -150,14 +150,12 @@
 
 @media (max-width: 800px) {
   .hero {
-    // height: -webkit-fill-available;
-
     .content {
       bottom: 50px;
       padding: 0 20px;
 
       .left {
-        gap: 10px;
+        gap: 15px;
         h2 {
           font-size: 18px;
           letter-spacing: 1.5px;

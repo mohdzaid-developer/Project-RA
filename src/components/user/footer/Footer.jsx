@@ -8,7 +8,7 @@ import { footerFadeInAnimation } from "@/utils/animations/animations";
 import { Link } from "react-router-dom";
 
 //Alert
-import {toast} from "react-hot-toast";
+import { toast } from "react-hot-toast";
 
 //Util
 import { userContactUsSchema } from "@/utils/validation/userValidations";
@@ -26,7 +26,6 @@ import closeImg from "@/assets/error.webp";
 
 //Redux
 import { usePostContactUsMutation } from "@/redux/slice/user/api/userApiSlice";
-
 
 const Footer = () => {
   const [PostContactUs, { isLoading }] = usePostContactUsMutation();
@@ -49,7 +48,7 @@ const Footer = () => {
     try {
       await userContactUsSchema.validate({ ...details }, { abortEarly: false });
       const response = await PostContactUs({ ...details });
-      console.log(response)
+      console.log(response);
       if (response?.data?.data) {
         toast.success(response?.data?.data?.message);
         setDetails({
@@ -86,12 +85,12 @@ const Footer = () => {
   return (
     <footer>
       <h2 className="heading">
-        Journey Beyond Boundaries, Discover the <br /> World with Us
+        Journey Beyond Boundaries, Discover the <span>World with Us</span>
       </h2>
       <AnimatePresence>
         {open && (
           <motion.div
-            className="form-test"
+            className="form-footer"
             initial="initial"
             animate="animate"
             exit="exit"
@@ -170,9 +169,11 @@ const Footer = () => {
 
       <div className="links">
         <div className="links-left">
-          <Link to="/privacy-policy">Privacy Policy</Link>
-          <Link to="/terms-and-conditions">Terms & Conditions</Link>
-          <Link to="/refund-policy">Refund Policy</Link>
+          <div className="page-links">
+            <Link to="/privacy-policy">Privacy Policy</Link>
+            <Link to="/terms-and-conditions">Terms & Conditions</Link>
+            <Link to="/refund-policy">Refund Policy</Link>
+          </div>
           <div className="socials">
             <a href="#">
               <img src={facebookImg} alt="" />

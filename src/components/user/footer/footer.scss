@@ -20,9 +20,12 @@ footer {
     text-align: center;
     color: $white;
     line-height: 55px;
+    span {
+      display: block;
+    }
   }
 
-  .form-test {
+  .form-footer {
     width: 70%;
     position: absolute;
     top: 50%;
@@ -150,9 +153,16 @@ footer {
       flex-direction: column;
       gap: 40px;
 
-      a {
-        color: $white;
-        font-size: 24px;
+      .page-links {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 30px;
+        a {
+          color: $white;
+          font-size: 22px;
+        }
       }
 
       .socials {
@@ -186,57 +196,57 @@ footer {
 
 @media (max-width: 1700px) {
   footer {
-    padding: 5vh 40px;
+    padding: 6vh 40px;
 
     .heading {
       font-size: 40px;
       line-height: 50px;
     }
 
-    .form {
-      padding: 60px 45px;
-      gap: 38px;
+    .form-footer {
+      padding: 50px 40px;
+      gap: 36px;
 
       .content {
         h2 {
-          font-size: 48px;
+          font-size: 46px;
         }
         img {
-          height: 24px;
-          top: 16px;
-          right: 16px;
+          height: 23px;
+          top: 14px;
+          right: 14px;
         }
       }
 
       .form-container {
-        gap: 90px;
+        gap: 70px;
 
         .form-container-left {
           gap: 40px;
 
           input {
-            padding: 18px 8px;
+            padding: 17px 7px;
           }
         }
 
         .form-container-right {
-          gap: 40px;
+          gap: 36px;
 
           .input {
             p {
-              margin-bottom: 8px;
+              margin-bottom: 6px;
             }
             input {
-              height: 130px;
+              height: 120px;
             }
           }
 
           button {
-            gap: 18px;
-            font-size: 22px;
+            gap: 16px;
+            font-size: 20px;
 
             img {
-              height: 24px;
+              height: 20px;
             }
           }
         }
@@ -245,16 +255,19 @@ footer {
 
     .links {
       .links-left {
-        gap: 34px;
+        gap: 32px;
 
-        a {
-          font-size: 20px;
+        .page-links {
+          gap: 26px;
+          a {
+            font-size: 18px;
+          }
         }
 
         .socials {
-          gap: 40px;
+          gap: 36px;
           img {
-            height: 26px;
+            height: 24px;
           }
         }
       }
@@ -267,6 +280,323 @@ footer {
 
           img {
             height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  footer {
+    padding: 5vh 36px;
+
+    .heading {
+      font-size: 38px;
+      line-height: 48px;
+    }
+
+    .form-footer {
+      padding: 44px 36px;
+      gap: 32px;
+
+      .content {
+        h2 {
+          font-size: 42px;
+        }
+        img {
+          height: 21px;
+          top: 12px;
+          right: 12px;
+        }
+      }
+
+      .form-container {
+        gap: 60px;
+
+        .form-container-left {
+          gap: 35px;
+
+          input {
+            padding: 16px 6px;
+          }
+        }
+
+        .form-container-right {
+          gap: 32px;
+
+          .input {
+            p {
+              margin-bottom: 5px;
+            }
+            input {
+              height: 110px;
+            }
+          }
+
+          button {
+            gap: 15px;
+            font-size: 19px;
+
+            img {
+              height: 18px;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      .links-left {
+        gap: 30px;
+
+        .page-links {
+          gap: 24px;
+          a {
+            font-size: 16px;
+          }
+        }
+
+        .socials {
+          gap: 32px;
+          img {
+            height: 22px;
+          }
+        }
+      }
+
+      .links-right {
+        button {
+          gap: 16px;
+          font-size: 18px;
+          padding: 19px 17px;
+
+          img {
+            height: 22px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  footer {
+    padding: 5vh 34px;
+
+    .heading {
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    .form-footer {
+      padding: 42px 34px;
+      gap: 30px;
+
+      .content {
+        h2 {
+          font-size: 40px;
+        }
+        img {
+          height: 20px;
+          top: 12px;
+          right: 12px;
+        }
+      }
+
+      .form-container {
+        gap: 50px;
+
+        .form-container-left {
+          gap: 32px;
+
+          input {
+            padding: 15px 5px;
+          }
+        }
+
+        .form-container-right {
+          gap: 30px;
+
+          .input {
+            p {
+              margin-bottom: 4px;
+            }
+            input {
+              height: 100px;
+            }
+          }
+
+          button {
+            gap: 14px;
+            font-size: 18px;
+
+            img {
+              height: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      .links-left {
+        gap: 28px;
+
+        .page-links {
+          gap: 22px;
+          a {
+            font-size: 14px;
+          }
+        }
+
+        .socials {
+          gap: 30px;
+          img {
+            height: 21px;
+          }
+        }
+      }
+
+      .links-right {
+        button {
+          gap: 14px;
+          font-size: 17px;
+          padding: 17px 16px;
+
+          img {
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  footer {
+    padding: 4vh 15px;
+    padding-top: 12vh;
+
+    .heading {
+      text-align: center;
+      font-size: 24px;
+      line-height: 32px;
+      text-align: center;
+      span {
+        display: inline;
+      }
+    }
+
+    .form-footer {
+      width: 85%;
+      padding: 25px 30px;
+      gap: 20px;
+
+      .content {
+        justify-content: center;
+        h2 {
+          font-size: 28px;
+        }
+        img {
+          height: 18px;
+          top: 10px;
+          right: 10px;
+        }
+      }
+
+      .form-container {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 35px;
+
+        .form-container-left {
+          width: 100%;
+          gap: 25px;
+
+          div {
+            input {
+              padding: 10px 5px;
+              &::placeholder {
+                color: $white;
+              }
+            }
+          }
+        }
+
+        .form-container-right {
+          width: 100%;
+          gap: 40px;
+
+          .input {
+            width: 100%;
+
+            .title {
+              margin-bottom: 5px;
+            }
+            textarea {
+              height: 100px;
+              padding: 8px;
+              padding-top: 8px;
+            }
+          }
+
+          button {
+            gap: 18px;
+            font-size: 20px;
+            border-radius: 16px;
+            padding: 20px 18px;
+
+            img {
+              height: 22px;
+            }
+          }
+        }
+      }
+    }
+
+    .links {
+      justify-content: center;
+      align-items: center;
+      flex-direction: column-reverse;
+      gap: 30px;
+
+      .links-left {
+        gap: 30px;
+        align-items: center;
+
+        .page-links {
+          flex-direction: row;
+          gap: 20px;
+          a {
+            text-align: center;
+            font-size: 13px;
+            letter-spacing: 0.8px;
+          }
+        }
+
+        .socials {
+          gap: 40px;
+          a {
+            img {
+              height: 25px;
+            }
+          }
+        }
+      }
+
+      .links-right {
+        button {
+          gap: 18px;
+          font-size: 20px;
+
+          border-radius: 16px;
+          padding: 20px 18px;
+
+          img {
+            height: 22px;
           }
         }
       }
