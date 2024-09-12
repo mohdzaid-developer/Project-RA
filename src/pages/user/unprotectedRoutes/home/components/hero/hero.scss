@@ -150,6 +150,8 @@
 
 @media (max-width: 800px) {
   .hero {
+    height: -webkit-fill-available;
+
     .content {
       bottom: 20px;
       padding: 0 20px;
