@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 //Assets
 import logo from "@/assets/logo.webp";
 import logout from "@/assets/navLogout.png";
-import login from "@/assets/user.webp";
+import login from "@/assets/login.png";
 import facebookImg from "@/assets/navFacebook.png";
 import twitterImg from "@/assets/navTwitter.png";
 import instagramImg from "@/assets/navInstagram.png";
