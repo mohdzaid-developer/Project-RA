@@ -1,6 +1,14 @@
 //Assets
 import coupleStandard from "@/assets/coupleStandard.webp";
 
+//Assets
+import phuketSlider1 from "@/assets/phuketSlider1.jpg";
+import phuketSlider2 from "@/assets/phuketSlider2.jpg";
+import phuketSlider3 from "@/assets/phuketSlider3.jpg";
+import phuketSlider4 from "@/assets/phuketSlider4.jpg";
+import phuketSlider5 from "@/assets/phuketSlider5.jpg";
+import phuketSlider6 from "@/assets/phuketSlider6.jpg";
+
 export const data = {
   title: "Phuket Romantic Retreat",
   heroImg: coupleStandard,
@@ -12,4 +20,13 @@ export const data = {
   ],
   xRange1: ["0%", "-22.3%"],
   xRange2: ["0%", "-20%"],
+  sliderImg: [
+    phuketSlider1,
+    phuketSlider2,
+    phuketSlider3,
+    phuketSlider4,
+    phuketSlider5,
+    phuketSlider6,
+  ],
+  price: "55,000",
 };

@@ -14,10 +14,7 @@ import buttonArrowImg from "@/assets/rightArrow.webp";
 import { Checkbox } from "@mui/material";
 
 // Validation
-import {
-  createOrderSchema,
-  createOrderSchemaSecond,
-} from "@/utils/validation/userValidations";
+import { createOrderSchemaSecond } from "@/utils/validation/userValidations";
 
 // Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
@@ -31,7 +28,8 @@ import {
 import { setParamsQuery } from "@/redux/slice/user/state/authUserSlice";
 import { useDispatch, useSelector } from "react-redux";
 
-const Payment = () => {
+const Payment = ({ data }) => {
+  console.log(data.price);
   const location = useLocation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -61,6 +59,7 @@ const Payment = () => {
       setDetails({ ...singlePendingOrder?.data });
     }
   }, [singlePendingOrder]);
+
   useEffect(() => {
     if (isAuthenticated) {
       dispatch(setParamsQuery(null));
@@ -77,7 +76,6 @@ const Payment = () => {
       }
     }
 
-    // Calculate the minimum start date (1 month from today)
     const oneMonthLater = new Date();
     oneMonthLater.setMonth(oneMonthLater.getMonth() + 1);
     const minDate = oneMonthLater.toISOString().split("T")[0];
@@ -203,7 +201,6 @@ const Payment = () => {
     try {
       await createOrderSchemaSecond.validate(details, { abortEarly: false });
       const response = await createCustomOrder({ ...details });
-      console.log(response);
       if (response?.data?.statusCode == 201) {
         toast.success(response?.data?.message);
         setDetails({});
@@ -222,7 +219,6 @@ const Payment = () => {
   };
 
   useEffect(() => {
-    console.log(singlePendingOrder)
     if (singlePendingOrder?.data[0]?.total_amount) {
       paymentWindow({ ...singlePendingOrder?.data[0] });
     }
@@ -231,6 +227,7 @@ const Payment = () => {
       navigate("/");
     }
   }, [singlePendingOrder]);
+
   return (
     <div className="payment">
       <h2>Book Your Slot</h2>
@@ -313,6 +310,15 @@ const Payment = () => {
             )}
           </div>
         </div>
+        <div className="price">
+          <h3>
+            Price starting from Rs. <span>{data.price}</span> only!
+          </h3>
+          <p>
+            Note:- You have to pay a token amount of Rs <span>3,000</span> to
+            book your slot which will be refunded to you.
+          </p>
+        </div>
 
         <div className="SigUp-Checkbox">
           <div className="checkbox">
@@ -340,6 +346,7 @@ const Payment = () => {
             <p className="error-text">{errors?.termsAndCondition}</p>
           )}
         </div>
+
         {details?.package == "custom" ? (
           <button onClick={handleCreateOrder}>
             {isLoading ? (

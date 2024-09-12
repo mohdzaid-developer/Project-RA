@@ -4,39 +4,7 @@ import "./activities.scss";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
-const Activities = () => {
-  const slides = [
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+1",
-      title: "Slide 1",
-      description: "This is the first slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+2",
-      title: "Slide 2",
-      description: "This is the second slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+3",
-      title: "Slide 3",
-      description: "This is the third slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+4",
-      title: "Slide 4",
-      description: "This is the third slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+5",
-      title: "Slide 5",
-      description: "This is the third slide.",
-    },
-    {
-      img: "https://via.placeholder.com/800x400?text=Slide+6",
-      title: "Slide 6",
-      description: "This is the third slide.",
-    },
-  ];
+const Activities = ({ data }) => {
   return (
     <div className="splide-wrapper">
       <h2>Activities we provide</h2>
@@ -65,16 +33,10 @@ const Activities = () => {
         }}
         aria-label="My Splide Slider"
       >
-        {slides.map((slide, index) => (
+        {data?.sliderImg.map((slide, index) => (
           <SplideSlide key={index}>
-            <div style={{ textAlign: "center" }}>
-              <img
-                src={slide.img}
-                alt={slide.title}
-                style={{ width: "100%", height: "auto" }}
-              />
-              <h3>{slide.title}</h3>
-              <p>{slide.description}</p>
+            <div className="images">
+              <img src={slide} />
             </div>
           </SplideSlide>
         ))}

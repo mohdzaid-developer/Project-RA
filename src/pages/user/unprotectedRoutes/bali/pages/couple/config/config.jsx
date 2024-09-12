@@ -21,19 +21,19 @@ export const data = {
       title: "Romantic getaway",
       data: [
         `Ever dreamed of a getaway as magical as 'Yeh Jawaani Hai Deewani'? We’re here to turn that
-dream into reality. Imagine whisking your partner away to a private villa in Bali, where every
-sunrise feels like a scene from a Hollywood flick. Indulge in a candlelit dinner by the beach,
-creating memories that outshine any romantic movie moment.`,
+         dream into reality. Imagine whisking your partner away to a private villa in Bali, where every
+         sunrise feels like a scene from a Hollywood flick. Indulge in a candlelit dinner by the beach,
+         creating memories that outshine any romantic movie moment.`,
 
         `Gifting your loved one a lifetime of beautiful moments has never been easier, or more
-affordable. From private spa treatments to exploring stunning locales, every detail is crafted to
-make your love story unforgettable.`,
+         affordable. From private spa treatments to exploring stunning locales, every detail is crafted to
+         make your love story unforgettable.`,
 
         `Spend your happiest moments in a place where romance and luxury come together, without
-breaking the bank. Celebrate your love with experiences that will be cherished forever, making
-your journey as enchanting as any movie. Ready to unlock the ultimate romantic escape? We’re
-here to turn your love story into a timeless tale.
-Unlock a World of Romance for Just the Two of You!`,
+         breaking the bank. Celebrate your love with experiences that will be cherished forever, making
+         your journey as enchanting as any movie. Ready to unlock the ultimate romantic escape? We’re
+         here to turn your love story into a timeless tale.
+         Unlock a World of Romance for Just the Two of You!`,
       ],
       url: "/bali/couple/standard",
       image: coupleStandard,
