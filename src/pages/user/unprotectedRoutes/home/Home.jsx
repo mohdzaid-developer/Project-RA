@@ -14,13 +14,13 @@ const Home = () => {
     <section className="home">
       <Hero />
       {/* <NewsLetter /> */}
-      <Introduction />
-      <BaliSection />
+      {/* <Introduction /> */}
+      {/* <BaliSection />
       <PhuketSection />
       <Gallery />
       <Why />
       <Faq />
-      <Testimonial />
+      <Testimonial /> */}
     </section>
   );
 };
