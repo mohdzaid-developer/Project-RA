@@ -30,3 +30,97 @@ export const data = {
   ],
   price: "55,000",
 };
+
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Activities",
+        data: ["Visit nearby places", "Local shopping"],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Cultural and Nature Exploration",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Tanah Lot Temple",
+          "Ubud Monkey Forest",
+          "Elephant Care experience",
+        ],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Southern Bali Highlights",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Garuda Wisnu Kencana (GWK) Cultural Park",
+          "Uluwatu Temple",
+          "Watch the Kecak Dance / visit the southernmost point of Bali",
+          "Pandawa Beach",
+        ],
+      },
+      {
+        title: "Dinner",
+        data: ["Enjoy seafood at Jimbaran Beach"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Rest day",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax the entire day"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Waterfalls and Relaxation",
+    plans: [
+      {
+        title: "Activities",
+        data: ["ATV / River Rafting"],
+      },
+      {
+        title: "Visit",
+        data: ["Kanto lampo waterfalls", "Tegalalang Rice Terrace"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Adventure and Fun",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Tegenungan Waterfall", "Waterbom Bali (water park)"],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];
