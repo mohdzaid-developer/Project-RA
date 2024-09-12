@@ -23,9 +23,13 @@ $white: #fff;
   box-sizing: border-box;
   font-family: "Cygre Light";
 }
+html {
+  height: -webkit-fill-available;
+}
 
 body {
   background-color: $black;
+  height: -webkit-fill-available;
 }
 
 body::-webkit-scrollbar {
