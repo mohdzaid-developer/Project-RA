@@ -7,8 +7,8 @@ const Introduction = () => {
   const content = [
     `Uncover a world of unforgettable experiences with "Come Fly With Me". We don't just plan trips —`,
     "we create journeys that inspire. Imagine savoring local flavors, forging new friendships, and embracing vibrant cultures.",
-    "Let your wanderlust guide you to places beyond your imagination. Don’t just dream—explore, connect, and live the ",
-    " extraordinary. Your adventure starts now.",
+    "Let your wanderlust guide you to places beyond your imagination. Don’t just dream—explore, connect, and live the extraordinary. ",
+    "Your adventure starts now.",
   ];
 
   return (

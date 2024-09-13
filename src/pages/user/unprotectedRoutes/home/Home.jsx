@@ -14,10 +14,10 @@ const Home = () => {
     <section className="home">
       <Hero />
       {/* <NewsLetter /> */}
-      {/* <Introduction /> */}
+      <Introduction />
       {/* <BaliSection />
-      <PhuketSection />
-      <Gallery />
+      <PhuketSection /> */}
+      {/*<Gallery />
       <Why />
       <Faq />
       <Testimonial /> */}
