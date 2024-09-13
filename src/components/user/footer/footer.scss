@@ -476,8 +476,8 @@ footer {
 
 @media (max-width: 800px) {
   footer {
-    padding: 4vh 15px;
-    padding-top: 12vh;
+    padding: 5vh 15px;
+    padding-top: 15vh;
 
     .heading {
       text-align: center;
@@ -511,7 +511,7 @@ footer {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap: 35px;
+        gap: 30px;
 
         .form-container-left {
           width: 100%;
@@ -519,6 +519,8 @@ footer {
 
           div {
             input {
+              font-size: 13px;
+
               padding: 10px 5px;
               &::placeholder {
                 color: $white;
@@ -536,8 +538,10 @@ footer {
 
             .title {
               margin-bottom: 5px;
+              font-size: 13px;
             }
             textarea {
+              font-size: 13px;
               height: 100px;
               padding: 8px;
               padding-top: 8px;
@@ -546,12 +550,12 @@ footer {
 
           button {
             gap: 18px;
-            font-size: 20px;
+            font-size: 18px;
             border-radius: 16px;
-            padding: 20px 18px;
+            padding: 16px 14px;
 
             img {
-              height: 22px;
+              height: 20px;
             }
           }
         }
