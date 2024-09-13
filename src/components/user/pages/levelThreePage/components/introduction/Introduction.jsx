@@ -11,6 +11,7 @@ import { projects } from "./data";
 
 const Introduction = () => {
   const container = useRef(null);
+
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start start", "end end"],
@@ -30,6 +31,7 @@ const Introduction = () => {
       cancelAnimationFrame(raf);
     };
   }, []);
+
   return (
     <main ref={container} className="main">
       {projects.map((project, i) => {
@@ -40,7 +42,7 @@ const Introduction = () => {
             i={i}
             {...project}
             progress={scrollYProgress}
-            range={[i * 0.25, 1]}
+            range={[i / (projects.length - 1), 1]}
             targetScale={targetScale}
           />
         );
