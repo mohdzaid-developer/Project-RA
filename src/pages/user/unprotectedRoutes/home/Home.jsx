@@ -15,8 +15,8 @@ const Home = () => {
       <Hero />
       {/* <NewsLetter /> */}
       <Introduction />
-      {/* <BaliSection />
-      <PhuketSection /> */}
+      <BaliSection />
+      <PhuketSection />
       {/*<Gallery />
       <Why />
       <Faq />
