@@ -17,10 +17,10 @@ const Home = () => {
       <Introduction />
       <BaliSection />
       <PhuketSection />
-      {/*<Gallery />
+      {/*<Gallery />*/}
       <Why />
-      <Faq />
-      <Testimonial /> */}
+      {/* <Faq /> */}
+      {/* <Testimonial />  */}
     </section>
   );
 };

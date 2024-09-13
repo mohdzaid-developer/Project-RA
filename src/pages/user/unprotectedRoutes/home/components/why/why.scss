@@ -147,3 +147,236 @@
     }
   }
 }
+
+@media (max-width: 1500px) {
+  .why {
+    padding: 60px 90px;
+
+    .why-container {
+      border-radius: 16x;
+      gap: 60px;
+      padding: 50px 80px;
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .progress {
+        .progress-box {
+          .progress-bar {
+            right: 95px;
+            top: 105px;
+            width: 200px;
+            height: 9px !important;
+
+            .MuiLinearProgress-root {
+              height: 9px !important;
+
+              .MuiLinearProgress-bar {
+                border-radius: 5px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 30px;
+            gap: 38px;
+
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+
+        .show {
+          gap: 36px;
+          img {
+            height: 220px;
+          }
+          p {
+            font-size: 17px;
+            line-height: 28px;
+            letter-spacing: 0.9px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .why {
+    padding: 50px;
+
+    .why-container {
+      border-radius: 14x;
+      gap: 50px;
+      padding: 40px 30px;
+
+      h2 {
+        font-size: 40px;
+      }
+
+      .progress {
+        .progress-box {
+          .progress-bar {
+            right: 85px;
+            top: 98px;
+            width: 180px;
+            height: 8px !important;
+
+            .MuiLinearProgress-root {
+              height: 8px !important;
+
+              .MuiLinearProgress-bar {
+                border-radius: 4px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 28px;
+            gap: 34px;
+
+            p {
+              font-size: 19px;
+            }
+          }
+        }
+
+        .show {
+          gap: 32px;
+          img {
+            height: 180px;
+          }
+          p {
+            font-size: 16px;
+            line-height: 25px;
+            letter-spacing: 0.8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .why {
+    padding: 30px;
+
+    .why-container {
+      border-radius: 16px;
+      gap: 50px;
+      padding: 50px;
+
+      h2 {
+        font-size: 32px;
+      }
+
+      .progress {
+        justify-content: center;
+        flex-direction: column;
+        gap: 60px;
+        .progress-box {
+          .progress-bar {
+            right: 90px;
+            top: 100px;
+            width: 180px;
+            height: 10px !important;
+
+            .MuiLinearProgress-root {
+              height: 6px !important;
+              border-radius: 3px;
+
+              .MuiLinearProgress-bar {
+                border-radius: 3px;
+              }
+            }
+          }
+
+          .text-container {
+            padding-left: 30px;
+
+            gap: 30;
+
+            p {
+              font-size: 20px;
+            }
+          }
+        }
+
+        .show {
+          width: 100%;
+          align-items: center;
+          flex-direction: row;
+          gap: 30px;
+          img {
+            height: 180px;
+          }
+          p {
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: 1.2px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .why {
+    padding: 40px 20px;
+
+    .why-container {
+      border-radius: 14px;
+      gap: 40px;
+      padding: 20px;
+      align-items: center;
+
+      h2 {
+        font-size: 28px;
+        text-align: center;
+      }
+
+      .progress {
+        gap: 50px;
+        .progress-box {
+          .progress-bar {
+            right: 100px;
+            top: 110px;
+            width: 210px;
+            height: 8px !important;
+
+            .MuiLinearProgress-root {
+              height: 5px !important;
+            }
+          }
+
+          .text-container {
+            padding-left: 20px;
+            gap: 20;
+
+            p {
+              font-size: 18px;
+            }
+          }
+        }
+
+        .show {
+          flex-direction: column;
+          gap: 20px;
+          img {
+            height: 160px;
+          }
+          p {
+            font-size: 14.5px;
+            line-height: 24px;
+            letter-spacing: 1px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
