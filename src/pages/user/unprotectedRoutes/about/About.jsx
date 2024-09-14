@@ -12,8 +12,8 @@ const About = () => {
     <section className="about">
       <Hero />
       <Filler />
-      {/* <Freedom />
-      <Story />
+      <Freedom />
+      {/* <Story />
       <Mission /> */}
     </section>
   );
