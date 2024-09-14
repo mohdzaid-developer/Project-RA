@@ -1,5 +1,3 @@
-import "./about.scss";
-
 //Components
 import Hero from "./components/hero/Hero";
 import Freedom from "./components/freedom/Freedom";
