@@ -14,13 +14,12 @@ const Faq = () => {
 
   const faqData = [
     {
-      question:
-        "What makes 'Come Fly With Me' different from other travel agencies?",
+      question: "What makes 'Come Fly With Me' different?",
       answer:
         "At 'Come Fly With Me', we focus on a select few destinations to offer uniquely crafted travel experiences. Unlike other agencies with endless options, we provide personalized, customizable itineraries that cater specifically to your preferences and budget. Our “Travel Now, Pay Later” option also makes luxury travel more accessible and stress-free.",
     },
     {
-      question: "How does the “Travel Now, Pay Later” option work?",
+      question: "How does the “Travel Now, Pay Later” work?",
       answer:
         "Our “Travel Now, Pay Later” option allows you to book your holiday and pay in installments. This flexible payment plan helps you manage your travel expenses better without delaying your dream vacation. For more details, please contact our customer service team.",
     },
