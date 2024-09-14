@@ -7,11 +7,10 @@
   background-image: url("@/assets/aboutHeroImg.webp");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-attachment: fixed;
+  // background-attachment: fixed;
   h2 {
     text-shadow: 1px 1px $black;
     font-size: 70px;
