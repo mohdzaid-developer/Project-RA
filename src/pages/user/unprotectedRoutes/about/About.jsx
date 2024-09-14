@@ -14,7 +14,7 @@ const About = () => {
       <Filler />
       <Freedom />
       <Story />
-      {/*  <Mission /> */}
+      <Mission />
     </section>
   );
 };
