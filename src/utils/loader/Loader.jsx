@@ -1,12 +1,12 @@
-import { Watch } from "react-loader-spinner";
+import { TailSpin } from "react-loader-spinner";
 
 const Loader = () => {
   return (
     <div>
-      <Watch
-        radius="35"
+      <TailSpin
+        radius="1"
         color="#fefae0"
-        ariaLabel="watch-loading"
+        ariaLabel="tail-spin-loading"
         wrapperStyle={{
           height: "100vh",
           display: "flex",
