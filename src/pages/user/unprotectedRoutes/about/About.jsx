@@ -12,9 +12,9 @@ const About = () => {
     <section className="about">
       <Hero />
       <Filler />
-      <Freedom />
+      {/* <Freedom />
       <Story />
-      <Mission />
+      <Mission /> */}
     </section>
   );
 };
