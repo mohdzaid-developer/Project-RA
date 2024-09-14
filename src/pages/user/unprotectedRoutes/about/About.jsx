@@ -13,8 +13,8 @@ const About = () => {
       <Hero />
       <Filler />
       <Freedom />
-      {/* <Story />
-      <Mission /> */}
+      <Story />
+      {/*  <Mission /> */}
     </section>
   );
 };

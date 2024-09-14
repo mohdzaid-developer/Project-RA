@@ -23,7 +23,7 @@
 
     .baliSection-left {
       h2 {
-        text-shadow: $black;
+        text-shadow: 1px 1px $black;
         color: $white;
         font-size: 48px;
         margin-bottom: 20px;
@@ -34,8 +34,7 @@
       }
 
       p {
-        text-shadow: $black;
-
+        text-shadow: 1px 1px $black;
         color: $white;
         font-size: 24px;
         line-height: 40px;
@@ -54,6 +53,7 @@
         border: 1px solid $white;
         border-radius: 18px;
         padding: 24px 22px;
+        text-shadow: 1px 1px $black;
 
         img {
           height: 30px;
