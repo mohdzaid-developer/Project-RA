@@ -83,9 +83,9 @@ const SignUp = () => {
       <div className="content">
         <h2>Signup</h2>
       </div>
-      <div className="form-container">
-        <div className="form-container-right">
-          <div>
+      <div className="form">
+        <div className="form-container">
+          <div className="input">
             <label htmlFor="">Full name : </label>
             <input
               type="text"
@@ -98,7 +98,7 @@ const SignUp = () => {
               <p className="error-text">{errors?.fullName}</p>
             )}
           </div>
-          <div>
+          <div className="input">
             <label htmlFor="">Email : </label>
             <input
               type="email"
@@ -108,7 +108,7 @@ const SignUp = () => {
             />
             {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
-          <div>
+          <div className="input">
             <label htmlFor="">Phone number : </label>
             <input
               type="phone"
@@ -118,7 +118,7 @@ const SignUp = () => {
             />
             {errors?.phone && <p className="error-text">{errors?.phone}</p>}
           </div>
-          <div>
+          <div className="input">
             <label htmlFor="">Password : </label>
             <input
               type="password"

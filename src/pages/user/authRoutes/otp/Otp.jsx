@@ -85,9 +85,9 @@ const Otp = () => {
       <div className="content">
         <h2>Verify Otp</h2>
       </div>
-      <div className="form-container">
-        <div className="form-container-right">
-          <div>
+      <div className="form">
+        <div className="form-container">
+          <div className="input">
             <label htmlFor="">Otp : </label>
             <input
               type="text"

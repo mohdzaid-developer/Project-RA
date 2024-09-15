@@ -103,9 +103,9 @@ const ChangePassword = () => {
       <div className="content">
         <h2>Change Password</h2>
       </div>
-      <div className="form-container">
-        <div className="form-container-right">
-          <div>
+      <div className="form">
+        <div className="form-container">
+          <div className="input">
             <label htmlFor="">Password : </label>
             <input type="password" name="password" onChange={handleChange} />
             {errors?.password && (
@@ -113,7 +113,7 @@ const ChangePassword = () => {
             )}
           </div>
 
-          <div>
+          <div className="input">
             <label htmlFor="">Confirm Password : </label>
             <input
               type="password"

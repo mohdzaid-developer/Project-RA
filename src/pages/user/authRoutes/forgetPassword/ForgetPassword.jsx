@@ -78,9 +78,9 @@ const ForgetPassword = () => {
       <div className="content">
         <h2>Forget Password</h2>
       </div>
-      <div className="form-container">
-        <div className="form-container-right">
-          <div>
+      <div className="form">
+        <div className="form-container">
+          <div className="input">
             <label htmlFor="">Email : </label>
             <input type="text" name="email" onChange={handleChange} />
             {errors?.email && <p className="error-text">{errors?.email}</p>}
