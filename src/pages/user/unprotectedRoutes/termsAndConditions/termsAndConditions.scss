@@ -3,14 +3,18 @@
 .terms-and-conditions {
   .hero {
     height: 70vh;
-    background-color: $dark-green;
+    height: 70dvh;
+    transition: all 0.8s ease-out;
     background-image: url("@/assets/restHeroImg.webp");
     background-position: bottom;
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
+
     h2 {
+      text-shadow: 1px 1px $black;
+      text-align: center;
       font-size: 60px;
       color: $text-orange;
       letter-spacing: 2px;
@@ -63,6 +67,185 @@
               line-height: 28px;
               margin-bottom: 15px;
               letter-spacing: 1px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .terms-and-conditions {
+    .hero {
+      h2 {
+        font-size: 50px;
+        letter-spacing: 1.8px;
+      }
+    }
+    .content {
+      padding: 80px 160px;
+      gap: 50px;
+
+      .data {
+        gap: 24px;
+
+        h3 {
+          font-size: 19px;
+        }
+        .details {
+          gap: 15px;
+          p {
+            font-size: 15px;
+            line-height: 30px;
+            margin-bottom: 18px;
+          }
+
+          .subData {
+            gap: 14px;
+            ul {
+              margin-left: 26px;
+              li {
+                font-size: 14px;
+                line-height: 28px;
+                margin-bottom: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .terms-and-conditions {
+    .hero {
+      padding: 0 30px;
+      h2 {
+        font-size: 44px;
+        letter-spacing: 1.6px;
+      }
+    }
+
+    .content {
+      padding: 60px 120px;
+      gap: 50px;
+
+      .data {
+        gap: 22px;
+
+        h3 {
+          font-size: 18px;
+        }
+        .details {
+          gap: 14px;
+          p {
+            font-size: 14px;
+            line-height: 28px;
+            margin-bottom: 16px;
+          }
+
+          .subData {
+            gap: 14px;
+            ul {
+              margin-left: 24px;
+              li {
+                font-size: 13px;
+                line-height: 26px;
+                margin-bottom: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .terms-and-conditions {
+    .hero {
+      padding: 0 30px;
+
+      h2 {
+        font-size: 42px;
+      }
+    }
+
+    .content {
+      padding: 50px 100px;
+      gap: 40px;
+
+      .data {
+        gap: 21px;
+
+        h3 {
+          font-size: 17px;
+        }
+        .details {
+          gap: 13px;
+          p {
+            font-size: 14px;
+            line-height: 28px;
+            margin-bottom: 16px;
+          }
+
+          .subData {
+            gap: 13px;
+            ul {
+              margin-left: 14px;
+              li {
+                font-size: 13px;
+                line-height: 26px;
+                margin-bottom: 13px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .terms-and-conditions {
+    .hero {
+      padding: 0 26px;
+
+      h2 {
+        font-size: 35px;
+      }
+    }
+
+    .content {
+      padding: 30px;
+      gap: 30px;
+
+      .data {
+        gap: 20px;
+
+        h3 {
+          font-size: 16px;
+          line-height: 25px;
+        }
+        .details {
+          gap: 12px;
+          p {
+            font-size: 13px;
+            line-height: 26px;
+            margin-bottom: 15px;
+          }
+
+          .subData {
+            gap: 12px;
+            ul {
+              margin-left: 10px;
+              li {
+                font-size: 12px;
+                line-height: 24px;
+                margin-bottom: 12px;
+              }
             }
           }
         }

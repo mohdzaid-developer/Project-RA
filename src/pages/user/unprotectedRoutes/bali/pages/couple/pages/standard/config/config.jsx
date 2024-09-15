@@ -30,3 +30,97 @@ export const data = {
   ],
   price: "55,000",
 };
+
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Activities",
+        data: ["Visit nearby beaches or local places", "Shopping"],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Cultural and Scenic Exploration",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Garuda Wisnu Kencana (GWK) Cultural Park",
+          "Uluwatu Temple",
+          "(Optional) Watch the Kecak Dance",
+          "Karang Boma Cliff",
+          "Padang Padang Beach",
+        ],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Temples and Nature",
+    plans: [
+      {
+        title: "Activities",
+        data: [
+          "Choose between an ATV Ride or River Rafting",
+          "Enjoy the famous Bali Swing",
+        ],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Adventure and Scenic Views",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Tanah Lot Temple",
+          "Tegenungan Waterfall",
+          "Ulun Danu Beratan Temple (Lake Beratan)",
+        ],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Villages and Walks",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Penglipuran Village",
+          "Alas Harum Bali (for swing, coffee plantation, and more)",
+          "Campuhan Ridge Walk",
+        ],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "No Data!",
+    plans: [
+      {
+        title: "Visit",
+        data: [""],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

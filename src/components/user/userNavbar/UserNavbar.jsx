@@ -7,7 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 //Assets
 import logo from "@/assets/logo.webp";
 import logout from "@/assets/navLogout.png";
-import login from "@/assets/user.webp";
+import login from "@/assets/login.png";
 import facebookImg from "@/assets/navFacebook.png";
 import twitterImg from "@/assets/navTwitter.png";
 import instagramImg from "@/assets/navInstagram.png";
@@ -116,32 +116,34 @@ const UserNavbar = () => {
             </ul>
           </div>
 
-          <div className="auth">
-            {isAuthenticated && user ? (
-              <button onClick={handleLogout}>
-                <img src={logout} alt="" />
-                Logout
-              </button>
-            ) : (
-              <button onClick={handleLogin}>
-                <img src={login} alt="" />
-                Login
-              </button>
-            )}
-          </div>
-          <div className="socials">
-            <a href="#">
-              <img src={facebookImg} alt="" />
-            </a>
-            <a href="#">
-              <img src={instagramImg} alt="" />
-            </a>
-            <a href="#">
-              <img src={twitterImg} alt="" />
-            </a>
-            <a href="#">
-              <img src={linkendInImg} alt="" />
-            </a>
+          <div className="bottom">
+            <div className="auth">
+              {isAuthenticated && user ? (
+                <button onClick={handleLogout}>
+                  <img src={logout} alt="" />
+                  Logout
+                </button>
+              ) : (
+                <button onClick={handleLogin}>
+                  <img src={login} alt="" />
+                  Login
+                </button>
+              )}
+            </div>
+            <div className="socials">
+              <a href="#">
+                <img src={facebookImg} alt="" />
+              </a>
+              <a href="#">
+                <img src={instagramImg} alt="" />
+              </a>
+              <a href="#">
+                <img src={twitterImg} alt="" />
+              </a>
+              <a href="#">
+                <img src={linkendInImg} alt="" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

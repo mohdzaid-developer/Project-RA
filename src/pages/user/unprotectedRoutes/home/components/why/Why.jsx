@@ -90,7 +90,7 @@ const Why = () => {
                 onClick={() => handleProgressClick(100)}
                 className={progress >= 100 ? "active" : ""}
               >
-                Personalized Attention from Start to Finish
+                Personalized Attention
               </p>
             </div>
           </Box>

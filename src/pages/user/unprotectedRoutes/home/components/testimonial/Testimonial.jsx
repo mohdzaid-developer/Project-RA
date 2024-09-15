@@ -46,6 +46,7 @@ const Testimonial = () => {
         <img src={quotes} alt="" />
       </div>
       <Swiper
+        spaceBetween={20}
         pagination={{
           dynamicBullets: true,
         }}
