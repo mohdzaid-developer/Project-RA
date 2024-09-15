@@ -84,14 +84,14 @@ const SignIn = () => {
       <div className="content">
         <h2>Login</h2>
       </div>
-      <div className="form-container">
-        <div className="form-container-right">
-          <div>
+      <div className="form">
+        <div className="form-container">
+          <div className="input">
             <label htmlFor="">Email : </label>
             <input type="email" name="email" onChange={handleChange} />
             {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
-          <div>
+          <div className="input">
             <label htmlFor="">Password : </label>
             <input type="password" name="password" onChange={handleChange} />
             {errors?.password && (

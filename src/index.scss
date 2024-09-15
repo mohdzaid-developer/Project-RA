@@ -110,3 +110,68 @@ h2 {
     height: 28px;
   }
 }
+
+@media (max-width: 1700px) {
+  .authButton {
+    gap: 16px;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 18px 16px;
+
+    img {
+      height: 26px;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .authButton {
+    gap: 14px;
+    font-size: 18px;
+    border-radius: 14px;
+    padding: 17px 15px;
+
+    img {
+      height: 24px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .authButton {
+    gap: 12px;
+    font-size: 17px;
+    border-radius: 13px;
+    padding: 16px 14px;
+
+    img {
+      height: 22px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .authButton {
+    gap: 11px;
+    font-size: 16px;
+    border-radius: 12px;
+    padding: 15px 13px;
+
+    img {
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .authButton {
+    gap: 10px;
+    font-size: 15px;
+    border-radius: 11px;
+    padding: 14px 12px;
+
+    img {
+      height: 18px;
+    }
+  }
+}
