@@ -1,12 +1,15 @@
 import { useState, useEffect } from "react";
 import "./newsLetter.scss";
 
+//Alert
+import { toast } from "react-hot-toast";
+
 //Animations
 import { motion } from "framer-motion";
 import { footerFadeInAnimation } from "@/utils/animations/animations";
 
-//Util
-import { userContactUsSchema } from "@/utils/validation/userValidations";
+//Mui
+import { Checkbox } from "@mui/material";
 
 //Assets
 import closeImg from "@/assets/error.webp";
@@ -16,8 +19,11 @@ import tick from "@/assets/checked.png";
 //Global Component
 import CircularProgressBar from "@/components/global/circularProgressBar/CircularProgressBar";
 
+//Validation
+import { userNewsLetterSchema } from "@/utils/validation/userValidations";
+
 //Redux
-import { usePostContactUsMutation } from "@/redux/slice/user/api/userApiSlice";
+import { usePostNewsLetterMutation } from "@/redux/slice/user/api/userApiSlice";
 
 const NewsLetter = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,38 +39,39 @@ const NewsLetter = () => {
     }
   }, []);
 
-  const [PostContactUs, { isLoading }] = usePostContactUsMutation();
+  const [postNewsLetter, { isLoading }] = usePostNewsLetterMutation();
 
   const [errors, setErrors] = useState({});
-  const [details, setDetails] = useState(null);
-
+  const [details, setDetails] = useState({
+    email: "",
+    phone: "",
+    termsAndCondition: "",
+  });
   const handleChange = async (e) => {
-    const { name, value } = e.target;
+    const { name, value, type, checked } = e.target;
+    const newValue = type === "checkbox" ? checked : value;
 
-    setDetails({ ...details, [name]: value });
-    try {
-      await userContactUsSchema.validateAt(name, { [name]: value });
-      setErrors((prevErrors) => ({ ...prevErrors, [name]: "" }));
-    } catch (err) {
-      setErrors((prevErrors) => ({ ...prevErrors, [name]: err.message }));
-    }
+    setDetails((prevDetails) => ({
+      ...prevDetails,
+      [name]: newValue,
+    }));
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     try {
-      await userContactUsSchema.validate({ ...details }, { abortEarly: false });
-      const response = await PostContactUs({ ...details });
-      if (response && response.data) {
-        sessionStorage.setItem("otpInfo", JSON.stringify(response.data.data));
-        toast.success(response.data.data.message);
-        setIsVisible(false);
+      await userNewsLetterSchema.validate(details, { abortEarly: false });
+      const response = await postNewsLetter(details);
+      if (response.data) {
+        toast.success(response?.data.data.message);
         setDetails({
-          fullName: "",
-          phone: "",
           email: "",
-          message: "",
+          phone: "",
+          termsAndCondition: false,
         });
         setErrors({});
+        setIsVisible(false);
+        sessionStorage.setItem("isContactClosed", "true");
       }
 
       if (response?.error?.data?.message) {
@@ -74,7 +81,7 @@ const NewsLetter = () => {
     } catch (err) {
       const newErrors = {};
       if (err) {
-        err.inner.forEach((err) => {
+        err?.inner?.forEach((err) => {
           newErrors[err.path] = err.message;
         });
         setErrors(newErrors);
@@ -101,23 +108,43 @@ const NewsLetter = () => {
       </div>
       <div className="form-container">
         <div className="form-container-left">
-          <div>
+          <div className="input">
             <input
               type="text"
               placeholder="Phone"
               name="phone"
+              value={details?.phone}
               onChange={handleChange}
             />
-            {errors?.phone && <p className="error-text">{errors?.phone}</p>}
+            {errors?.email && <p className="error-text">{errors?.email}</p>}{" "}
           </div>
-          <div>
+          <div className="input">
             <input
               type="text"
               placeholder="Email"
               name="email"
+              value={details.email}
               onChange={handleChange}
             />
-            {errors?.email && <p className="error-text">{errors?.email}</p>}
+            {errors?.phone && <p className="error-text">{errors?.phone}</p>}
+          </div>
+          <div className="checkbox-container">
+            <div className="checkbox">
+              <Checkbox
+                required
+                checked={details?.termsAndCondition}
+                name="termsAndCondition"
+                onChange={handleChange}
+                className="checkbox-box"
+              />
+              <p className="checkbox-para">
+                By accepting, you agree to subscribe to our newsletter and
+                receive updates, exclusive offers, and the latest news directly
+              </p>
+            </div>
+            {errors?.termsAndCondition && (
+              <p className="error-text">{errors?.termsAndCondition}</p>
+            )}
           </div>
           <button onClick={handleSubmit} className="authButton">
             {isLoading ? (
