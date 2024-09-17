@@ -24,11 +24,7 @@ export const data = {
     `Once you visit, you’ll never want to leave this magical island.`,
   ],
   xRange1: ["0%", "-28%"],
-  xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "-25%"],
-  xRange4: ["0%", "-23%"],
-  xRange5: ["0%", "-21.5%"],
-  xRange6: ["0%", "18%"],
+  xRange2: ["0%", "-20000%"],
 
   galleryImg: [img1, img2, img3, img4, img5],
   packageData: [

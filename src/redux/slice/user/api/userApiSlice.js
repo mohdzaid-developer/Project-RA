@@ -10,6 +10,7 @@ export const userApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: `${import.meta.env.VITE_API_BASE_URL}`,
   }),
+
   endpoints: (builder) => ({
     //Authentication
     userLogin: builder.mutation({
@@ -94,7 +95,7 @@ export const userApi = createApi({
         headers: {
           Authorization: `Bearer ${getUserAccessToken()}`,
         },
-        body:orderDetails,
+        body: orderDetails,
       }),
     }),
     verifyPayment: builder.mutation({
@@ -146,7 +147,7 @@ export const userApi = createApi({
         headers: {
           Authorization: `Bearer ${getUserAccessToken()}`,
         },
-        body:orderDetails,
+        body: orderDetails,
       }),
     }),
     userGetCustomPendingOrder: builder.query({
@@ -177,5 +178,5 @@ export const {
   usePostNewsLetterMutation,
   useUserGetTripsQuery,
   useCreateCustomOrderMutation,
-  useUserGetCustomPendingOrderQuery
+  useUserGetCustomPendingOrderQuery,
 } = userApi;

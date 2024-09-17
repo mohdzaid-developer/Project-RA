@@ -7,8 +7,8 @@ const LevelTwoPage = ({ data }) => {
   return (
     <section className="levelTwoPage">
       <Hero data={data} />
-      <Filler />
-      <Plans data={data} />
+      {/* <Filler />
+      <Plans data={data} /> */}
     </section>
   );
 };
