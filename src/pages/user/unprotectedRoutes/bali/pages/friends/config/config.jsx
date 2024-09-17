@@ -14,8 +14,8 @@ export const data = {
   ],
   xRange1: ["0%", "-28%"],
   xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "-24%"],
-  xRange4: ["0%", "-22%"],
+  xRange3: ["0%", "0%"],
+
   planTitle: "Friends",
 
   plans: [

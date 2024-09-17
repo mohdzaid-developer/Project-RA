@@ -21,10 +21,20 @@ const Hero = ({ data }) => {
           yRange: ["0%", "32%"],
           xRange: data.xRange1,
         });
-      } else if (window.innerWidth > 1500 && window.innerWidth > 1700) {
+      } else if (window.innerWidth > 1500 && window.innerWidth < 1700) {
         setTransformValues({
-          yRange: ["0%", "28%"],
+          yRange: ["0%", "30%"],
           xRange: data.xRange2,
+        });
+      } else if (window.innerWidth > 600 && window.innerWidth < 900) {
+        setTransformValues({
+          yRange: ["0%", "40%"],
+          xRange: data.xRange3,
+        });
+      } else if (window.innerWidth > 300 && window.innerWidth < 600) {
+        setTransformValues({
+          yRange: ["0%", "35%"],
+          xRange: data.xRange3,
         });
       }
     };
