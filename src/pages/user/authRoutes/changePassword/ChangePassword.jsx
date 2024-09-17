@@ -100,12 +100,12 @@ const ChangePassword = () => {
 
   return (
     <div className="changePassword-container">
-      <div className="content">
+      <div className="changePassword-content">
         <h2>Change Password</h2>
       </div>
-      <div className="form">
-        <div className="form-container">
-          <div className="input">
+      <div className="changePassword-form">
+        <div className="changePassword-form-container">
+          <div className="changePassword-input">
             <label htmlFor="">Password : </label>
             <input type="password" name="password" onChange={handleChange} />
             {errors?.password && (
@@ -113,7 +113,7 @@ const ChangePassword = () => {
             )}
           </div>
 
-          <div className="input">
+          <div className="changePassword-input">
             <label htmlFor="">Confirm Password : </label>
             <input
               type="password"

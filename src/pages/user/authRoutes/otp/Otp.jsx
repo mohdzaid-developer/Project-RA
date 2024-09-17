@@ -82,12 +82,12 @@ const Otp = () => {
 
   return (
     <div className="otp-container">
-      <div className="content">
+      <div className="otp-content">
         <h2>Verify Otp</h2>
       </div>
-      <div className="form">
-        <div className="form-container">
-          <div className="input">
+      <div className="otp-form">
+        <div className="otp-form-container">
+          <div className="otp-input">
             <label htmlFor="">Otp : </label>
             <input
               type="text"
@@ -97,7 +97,7 @@ const Otp = () => {
             />
             {errors?.otp && <p className="error-text">{errors?.otp}</p>}
 
-            <div className="resend">
+            <div className="otp-resend">
               <p onClick={handleResendOtp}>
                 {resendOtpLoading ? <CircularProgressBar /> : " Resend Otp"}
               </p>
@@ -114,7 +114,7 @@ const Otp = () => {
             )}
           </button>
 
-          <div className="forget-password">
+          <div className="otp-forget-password">
             <p>
               Want to change Email?{" "}
               <span onClick={() => navigate("/forget-password")}>

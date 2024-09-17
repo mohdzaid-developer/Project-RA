@@ -13,7 +13,7 @@
   flex-direction: column;
   gap: 40px;
 
-  .content {
+  .otp-content {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@
     }
   }
 
-  .form {
+  .otp-form {
     width: 50%;
     border-radius: 10px;
     padding: 50px 0;
@@ -36,7 +36,7 @@
     background: $gray;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    .form-container {
+    .otp-form-container {
       width: 80%;
       display: flex;
       justify-content: center;
@@ -44,7 +44,7 @@
       flex-direction: column;
       gap: 40px;
 
-      .input {
+      .otp-input {
         width: 100%;
 
         label {
@@ -67,7 +67,7 @@
             color: $text-orange;
           }
         }
-        .resend {
+        .otp-resend {
           margin-top: 20px;
           text-align: right;
           p {
@@ -79,7 +79,7 @@
         }
       }
 
-      .forget-password {
+      .otp-forget-password {
         p {
           text-align: center;
           font-size: 16px;
@@ -101,22 +101,22 @@
     padding: 18px 45px;
     gap: 38px;
 
-    .content {
+    .otp-content {
       h2 {
         font-size: 55px;
       }
     }
 
-    .form {
+    .otp-form {
       width: 55%;
       padding: 45px 0;
       gap: 45px;
 
-      .form-container {
+      .otp-form-container {
         width: 80%;
         gap: 36px;
 
-        .input {
+        .otp-input {
           label {
             font-size: 17px;
           }
@@ -124,7 +124,7 @@
             padding: 4.5px 0;
             padding-top: 9px;
           }
-          .resend {
+          .otp-resend {
             margin-top: 18px;
 
             p {
@@ -133,7 +133,7 @@
           }
         }
 
-        .forget-password {
+        .otp-forget-password {
           p {
             font-size: 15px;
           }
@@ -148,22 +148,22 @@
     padding: 18px 40px;
     gap: 36px;
 
-    .content {
+    .otp-content {
       h2 {
         font-size: 50px;
       }
     }
 
-    .form {
+    .otp-form {
       width: 60%;
       padding: 40px 0;
       gap: 40px;
 
-      .form-container {
+      .otp-form-container {
         width: 85%;
         gap: 34px;
 
-        .input {
+        .otp-input {
           label {
             font-size: 17px;
           }
@@ -171,7 +171,7 @@
             padding: 4px 0;
             padding-top: 8px;
           }
-          .resend {
+          .otp-resend {
             margin-top: 17px;
 
             p {
@@ -180,7 +180,7 @@
           }
         }
 
-        .forget-password {
+        .otp-forget-password {
           p {
             font-size: 14px;
           }
@@ -195,22 +195,22 @@
     padding: 16px 35px;
     gap: 34px;
 
-    .content {
+    .otp-content {
       h2 {
         font-size: 45px;
       }
     }
 
-    .form {
+    .otp-form {
       width: 65%;
       padding: 35px 0;
       gap: 35px;
 
-      .form-container {
+      .otp-form-container {
         width: 90%;
         gap: 32px;
 
-        .input {
+        .otp-input {
           label {
             font-size: 16px;
           }
@@ -218,7 +218,7 @@
             padding: 4px 0;
             padding-top: 7px;
           }
-          .resend {
+          .otp-resend {
             margin-top: 17px;
 
             p {
@@ -227,7 +227,7 @@
           }
         }
 
-        .forget-password {
+        .otp-forget-password {
           p {
             font-size: 14px;
           }
@@ -238,27 +238,27 @@
 }
 
 @media (max-width: 900px) {
-  .otp-container {
+  .otp-otp-container {
     padding: 16px 35px;
     gap: 34px;
 
-    .content {
+    .otp-content {
       h2 {
         font-size: 40px;
       }
     }
 
-    .form {
+    .otp-form {
       width: 100%;
       padding: 30px 0;
       gap: 32px;
 
-      .form-container {
+      .otp-form-container {
         padding: 30px;
         width: 100%;
         gap: 32px;
 
-        .input {
+        .otp-input {
           label {
             font-size: 15px;
           }
@@ -275,7 +275,7 @@
           }
         }
 
-        .forget-password {
+        .otp-forget-password {
           p {
             font-size: 14px;
           }
@@ -290,23 +290,23 @@
     padding: 30px;
     gap: 32px;
 
-    .content {
+    .otp-content {
       h2 {
         font-size: 35px;
       }
     }
 
-    .form {
+    .otp-form {
       width: 100%;
       padding: 20px 0;
       gap: 32px;
 
-      .form-container {
+      .otp-form-container {
         padding: 20px;
         width: 100%;
         gap: 32px;
 
-        .input {
+        .otp-input {
           label {
             font-size: 14.5px;
           }
@@ -314,7 +314,7 @@
             padding: 3px 0;
             padding-top: 5px;
           }
-          .resend {
+          .otp-resend {
             margin-top: 14px;
 
             p {
@@ -322,7 +322,7 @@
             }
           }
         }
-        .forget-password {
+        .otp-forget-password {
           p {
             font-size: 13.5px;
           }

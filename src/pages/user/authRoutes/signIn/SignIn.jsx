@@ -81,24 +81,24 @@ const SignIn = () => {
 
   return (
     <div className="signIn-container">
-      <div className="content">
+      <div className="signIn-content">
         <h2>Login</h2>
       </div>
-      <div className="form">
-        <div className="form-container">
-          <div className="input">
+      <div className="signIn-form">
+        <div className="signIn-form-container">
+          <div className="signIn-input">
             <label htmlFor="">Email : </label>
             <input type="email" name="email" onChange={handleChange} />
             {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
-          <div className="input">
+          <div className="signIn-input">
             <label htmlFor="">Password : </label>
             <input type="password" name="password" onChange={handleChange} />
             {errors?.password && (
               <p className="error-text">{errors?.password}</p>
             )}
 
-            <div className="forgetPassword">
+            <div className="signIn-forgetPassword">
               <Link to="/forget-password">Forget Password</Link>
             </div>
           </div>
@@ -113,7 +113,7 @@ const SignIn = () => {
             )}
           </button>
 
-          <div className="signUp">
+          <div className="signIn-signUp">
             <p>
               Don't have an account!{" "}
               <span onClick={() => navigate("/signup")}> Sign Up</span>

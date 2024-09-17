@@ -80,12 +80,12 @@ const SignUp = () => {
 
   return (
     <div className="signUp-container">
-      <div className="content">
+      <div className="signUp-content">
         <h2>Signup</h2>
       </div>
-      <div className="form">
-        <div className="form-container">
-          <div className="input">
+      <div className="signUp-form">
+        <div className="signUp-form-container">
+          <div className="signUp-input">
             <label htmlFor="">Full name : </label>
             <input
               type="text"
@@ -98,7 +98,7 @@ const SignUp = () => {
               <p className="error-text">{errors?.fullName}</p>
             )}
           </div>
-          <div className="input">
+          <div className="signUp-input">
             <label htmlFor="">Email : </label>
             <input
               type="email"
@@ -108,7 +108,7 @@ const SignUp = () => {
             />
             {errors?.email && <p className="error-text">{errors?.email}</p>}
           </div>
-          <div className="input">
+          <div className="signUp-input">
             <label htmlFor="">Phone number : </label>
             <input
               type="phone"
@@ -118,7 +118,7 @@ const SignUp = () => {
             />
             {errors?.phone && <p className="error-text">{errors?.phone}</p>}
           </div>
-          <div className="input">
+          <div className="signUp-input">
             <label htmlFor="">Password : </label>
             <input
               type="password"
@@ -141,7 +141,7 @@ const SignUp = () => {
             )}
           </button>
 
-          <div className="signIn">
+          <div className="signUp-signIn">
             <p>
               Already have an account!{" "}
               <span onClick={() => navigate("/login")}> login</span>
