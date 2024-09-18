@@ -67,3 +67,128 @@
     }
   }
 }
+
+@media (max-width: 1500px) {
+  .faq-outer {
+    .faq-inner {
+      p {
+        line-height: 1.2;
+
+        .faq-text-container {
+          margin-bottom: 6px;
+          font-size: 42px;
+
+          .faq-highlighted-text {
+            &:before {
+              font-size: 42px;
+            }
+          }
+
+          .faq-static-text {
+            font-size: 42px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .faq-outer {
+    .faq-inner {
+      p {
+        line-height: 1.1;
+
+        .faq-text-container {
+          margin-bottom: 5px;
+          font-size: 38px;
+
+          .faq-highlighted-text {
+            &:before {
+              font-size: 38px;
+            }
+          }
+
+          .faq-static-text {
+            font-size: 38px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 950px) {
+  .faq-outer {
+    .faq-inner {
+      p {
+        line-height: 1.2;
+
+        .faq-text-container {
+          margin-bottom: 5px;
+          font-size: 32px;
+
+          .faq-highlighted-text {
+            &:before {
+              font-size: 32px;
+            }
+          }
+
+          .faq-static-text {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .faq-outer {
+    .faq-inner {
+      p {
+        line-height: 1.2;
+
+        .faq-text-container {
+          margin-bottom: 5px;
+          font-size: 28px;
+
+          .faq-highlighted-text {
+            &:before {
+              font-size: 28px;
+            }
+          }
+
+          .faq-static-text {
+            font-size: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-outer {
+    .faq-inner {
+      p {
+        line-height: 1.2;
+
+        .faq-text-container {
+          margin-bottom: 4px;
+          font-size: 27px;
+
+          .faq-highlighted-text {
+            &:before {
+              font-size: 27px;
+            }
+          }
+
+          .faq-static-text {
+            font-size: 27px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -3,17 +3,16 @@
 .packages {
   margin: 100px 0;
   padding: 0 50px;
-  background-color: $light-orange;
+  background-color: $dark-green;
 
   .gallery {
     display: flex;
+    flex-direction: row;
 
     .packages-left {
       width: 50%;
 
       .desktopContent {
-        margin: auto;
-        width: 80%;
         .desktopContentSection {
           min-height: 100vh;
           display: flex;
@@ -31,12 +30,12 @@
             top: 30px;
             left: 0;
             h2 {
-              font-size: 48px;
+              font-size: 40px;
               color: $white;
             }
 
             img {
-              height: 50px;
+              height: 45px;
             }
           }
 
@@ -47,9 +46,9 @@
             flex-direction: column;
             gap: 50px;
             padding: 20px 50px;
-
+            margin-right: 100px;
             .logo {
-              height: 130px;
+              height: 120px;
               display: flex;
               justify-content: center;
               img {
@@ -58,7 +57,7 @@
             }
 
             .line {
-              background-color: $dark-orange;
+              background-color: $white;
               height: 1px;
               width: 100%;
             }
@@ -70,12 +69,12 @@
               gap: 20px;
               flex-direction: column;
               h2 {
-                font-size: 96px;
+                font-size: 80px;
                 color: $white;
               }
 
               p {
-                font-size: 24px;
+                font-size: 20px;
                 color: $white;
                 line-height: 34px;
                 text-align: center;
@@ -136,7 +135,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: $white;
-    color: $light-orange;
+    color: $light-green;
     width: 200px;
     height: 250px;
     padding: 20px;
@@ -179,6 +178,7 @@
             .content {
               gap: 40px;
               padding: 10px 40px;
+              margin-right: 70px;
 
               .logo {
                 height: 110px;

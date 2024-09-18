@@ -2,18 +2,28 @@ import { useState } from "react";
 import "./userNavbar.scss";
 
 //Routing
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Assets
-import logo from "@/assets/logo.svg";
-import logout from "@/assets/logout.png";
-import login from "@/assets/user.png";
-import facebookImg from "@/assets/facebookImg.svg";
-import twitterImg from "@/assets/instagramImg.svg";
-import instagramImg from "@/assets/twitterImg.svg";
-import linkendInImg from "@/assets/linkedInImg.svg";
+import logo from "@/assets/logo.webp";
+import logout from "@/assets/navLogout.png";
+import login from "@/assets/login.png";
+import facebookImg from "@/assets/navFacebook.png";
+import twitterImg from "@/assets/navTwitter.png";
+import instagramImg from "@/assets/navInstagram.png";
+import linkendInImg from "@/assets/navlinkedin.png";
+
+//Redux
+import { useDispatch, useSelector } from "react-redux";
+import { setLogout } from "@/redux/slice/user/state/authUserSlice";
 
 const UserNavbar = () => {
+  const user = sessionStorage.getItem("user");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const { isAuthenticated } = useSelector((state) => state.authUser);
+
   const navDataFirst = [
     {
       name: "Home",
@@ -31,18 +41,33 @@ const UserNavbar = () => {
 
   const navDataSecond = [
     {
+      name: "About",
+      path: "/about-us",
+    },
+    {
       name: "Profile",
-      path: "/",
+      path: "/profile",
     },
     {
       name: "Trips",
-      path: "/bali",
+      path: "/my-trips",
     },
   ];
 
   const [navOpen, setNavOpen] = useState(false);
 
   const handleNavClick = () => {
+    setNavOpen(!navOpen);
+  };
+  const handleLogin = () => {
+    navigate("/login");
+    setNavOpen(!navOpen);
+  };
+
+  const handleLogout = () => {
+    dispatch(setLogout());
+    sessionStorage.removeItem("user");
+    navigate("/login");
     setNavOpen(!navOpen);
   };
 
@@ -91,25 +116,34 @@ const UserNavbar = () => {
             </ul>
           </div>
 
-          <div className="auth">
-            <button>
-              <img src={logout} alt="" />
-              Logout
-            </button>
-          </div>
-          <div className="socials">
-            <a href="#">
-              <img src={facebookImg} alt="" />
-            </a>
-            <a href="#">
-              <img src={instagramImg} alt="" />
-            </a>
-            <a href="#">
-              <img src={twitterImg} alt="" />
-            </a>
-            <a href="#">
-              <img src={linkendInImg} alt="" />
-            </a>
+          <div className="bottom">
+            <div className="auth">
+              {isAuthenticated && user ? (
+                <button onClick={handleLogout}>
+                  <img src={logout} alt="" />
+                  Logout
+                </button>
+              ) : (
+                <button onClick={handleLogin}>
+                  <img src={login} alt="" />
+                  Login
+                </button>
+              )}
+            </div>
+            <div className="socials">
+              <a href="#">
+                <img src={facebookImg} alt="" />
+              </a>
+              <a href="#">
+                <img src={instagramImg} alt="" />
+              </a>
+              <a href="#">
+                <img src={twitterImg} alt="" />
+              </a>
+              <a href="#">
+                <img src={linkendInImg} alt="" />
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,185 @@
+@import "@/index.scss";
+
+.payment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  margin-bottom: 100px;
+  padding: 0 100px;
+
+  h2 {
+    color: $white;
+    font-size: 48px;
+  }
+
+  .payment-form {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .input-fields {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 100px;
+      width: 100%;
+
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 40px;
+        width: 100%;
+
+        .input {
+          width: 100%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-end;
+          gap: 20px;
+          position: relative;
+
+          label {
+            width: 30%;
+            color: $white;
+            font-size: 18px;
+            text-align: left;
+          }
+
+          input {
+            width: 70%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $white;
+            color: $white;
+            padding: 10px 5px;
+
+            &::-webkit-calendar-picker-indicator {
+              filter: invert(1);
+              cursor: pointer;
+            }
+          }
+
+          select {
+            cursor: pointer;
+            border: none;
+            outline: none;
+            width: 70%;
+            background-color: transparent;
+            border: none;
+            border-bottom: 1px solid $white;
+            color: $white;
+            padding-bottom: 10px;
+
+            option {
+              background-color: $black;
+              color: $white;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    button {
+      background-color: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
+      font-size: 22px;
+      color: $white;
+      border: 1px solid $white;
+      border-radius: 16px;
+      padding: 20px 18px;
+
+      img {
+        height: 28px;
+      }
+    }
+
+    .SigUp-Checkbox {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      .checkbox {
+        width: 100%;
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1440px) {
+          gap: 10px;
+        }
+        .checkbox-box {
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+      }
+      #Checkbox-Para {
+        font-size: 14px;
+        color: $white;
+        line-height: 20px;
+        font-weight: 400;
+        @media (max-width: 1450px) {
+          font-size: 12px;
+        }
+      }
+
+      .Checkbox {
+        color: $text-orange;
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+
+    .price {
+      border-bottom: 1px solid $white;
+      border-top: 1px solid $white;
+      padding: 20px;
+      text-align: center;
+      h3 {
+        color: $white;
+        margin-bottom: 10px;
+
+        span {
+          font-size: 50px;
+          font-weight: 700;
+          letter-spacing: 2px;
+          color: $dark-orange;
+        }
+      }
+      p {
+        color: $white;
+        font-size: 16px;
+        span {
+          color: $dark-orange;
+        }
+      }
+    }
+
+    .nbfc {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      h3 {
+        color: $dark-orange;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+    }
+  }
+}

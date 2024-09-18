@@ -1,31 +1,33 @@
 //Assets
-import heroImg from "@/assets/phuketHero.svg";
-import img1 from "@/assets/phuket1.svg";
-import img2 from "@/assets/phuket2.svg";
-import img3 from "@/assets/homePhuket.svg";
-import img4 from "@/assets/phuket3.svg";
-import img5 from "@/assets/phuket4.svg";
-import levelOnePackageLogo from "@/assets/levelOnePackageLogo.svg";
-import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.svg";
-import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.svg";
-import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.svg";
-import levelOneCustomLogo from "@/assets/levelOneCustomLogo.svg";
-import levelOneFriendsImage from "@/assets/levelOneFriendsImage.svg";
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.svg";
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.svg";
-import levelOneCustomImage from "@/assets/levelOneCustomImage.svg";
+import heroImg from "@/assets/phuketHero.webp";
+import img1 from "@/assets/phuket1.webp";
+import img2 from "@/assets/phuket2.webp";
+import img3 from "@/assets/homePhuket.webp";
+import img4 from "@/assets/phuket3.webp";
+import img5 from "@/assets/phuket4.webp";
+import levelOnePackageLogo from "@/assets/levelOnePackageLogo.webp";
+import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.webp";
+import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.webp";
+import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
+import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
+import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
+import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 
 export const data = {
   title: "Enchanted Phuket",
   heroImg: heroImg,
   content: [
-    `Phuket, the enchanting island of Indonesia, beckons travelers with`,
-    ` its mesmerizing beauty and rich cultural heritage. Known as the`,
-    `"Island of the Gods,"Bali offers a diverse range of experiences,making `,
-    `it a top destination for tourists from around the world.`,
+    `Phuket is a slice of paradise where turquoise waters kiss golden sands, and every sunset paints`,
+    `the sky in dreamy hues. Lush greenery, vibrant markets, and hidden coves make this island a`,
+    `treasure trove of natural beauty and cultural charm. Whether you're soaking up the sun or`,
+    `exploring its wonders, Phuket's allure is simply irresistible.`,
   ],
   xRange1: ["0%", "-25.5%"],
   xRange2: ["0%", "-23%"],
+  xRange3: ["0%", "0%"],
+
   galleryImg: [img1, img2, img3, img4, img5],
   packageData: [
     {
@@ -36,34 +38,44 @@ export const data = {
         </div>
       ),
       packageName: "Friends",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `Imagine this: You and your gang chilling like the Bollywood cast, but this time, the backdrop isn’t
+Goa, it's Phuket! Jet skis, beach volleyball, and a private yacht, perfect for your Insta reels,
+because "Phuket mein jo hota hai, woh Hyderabad mein viral hota hai"
+Book Now and make your travel dreams a reality—Hyderabadi style Shero ki tarah yaaro ke
+saath Phuket ki yaadon mein kho jao`,
       logo: levelOneFriendsLogo,
-      url: "test",
+      url: "/phuket/friends",
       leftImg: levelOneFriendsImage,
     },
     {
       packageName: "Family",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `For the Entire Kutumbh Who Loves a Good Time "Family ke saath Phuket ka trip? Here’s the
+plan: You, your parents, your kiddos—basically, the entire crew on a fun-filled adventure where
+the only thing more memorable than the beaches are the laughs you’ll share. It’s like Hum
+Saath Saath Hain, but with more sunscreen and less saas-bahu drama`,
       logo: levelOneFamilyLogo,
-      url: "test",
+      url: "/phuket/family",
       leftImg: levelOneFamilyImage,
     },
     {
       packageName: "Couples",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `"For the Lovebirds Who Want Their Own Bollywood Romance "Ab yeh nasha tumko Phuket le
+chal!" Picture this: A romantic dinner on the beach, with the soft strumming of a guitar in the
+background, just like in Aashiqui 2. Walk hand-in-hand down the shore, and before you know it,
+you're living the Celebrity-couple dream."`,
       logo: levelOneCoupleLogo,
-      url: "test",
+      url: "/phuket/couple",
       leftImg: levelOneCoupleImage,
     },
     {
       packageName: "Custom",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `Why settle for the usual when you can have a Phuket experience tailored just for us? Let’s
+design our dream escape—whether it’s sunset yacht rides or private beach dinners, we’ll turn
+every ‘what if’ into ‘oh yes!’ Our customized plan isn’t just a trip; it’s our very own love story,
+scripted and directed by us. Ready to make every moment unforgettable? Let’s start planning
+our perfect getaway, one cheeky detail at a time.`,
       logo: levelOneCustomLogo,
-      url: "test",
+      url: "/phuket/custom",
       leftImg: levelOneCustomImage,
     },
   ],

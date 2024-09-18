@@ -6,9 +6,6 @@ import { Routes, Route } from "react-router-dom";
 //ALert
 import { Toaster } from "react-hot-toast";
 
-//Utils
-import ScrollToTop from "./utils/scrollToTop/ScrollToTop";
-
 //Loader
 import Loader from "./utils/loader/Loader";
 
@@ -19,13 +16,13 @@ import AdminAuthProtectedRoutes from "./protectedRoutes/admin/AdminAuthProtected
 import AdminAccountProtectedRoutes from "./protectedRoutes/admin/AdminAccountProtectedRoutes";
 
 //Layouts
-import AuthRouteLayout from "./layouts/auth/AuthRouteLayout";
 import UserRouteLayout from "./layouts/user/UserRouteLayout";
+import AuthRouteLayout from "./layouts/auth/AuthRouteLayout";
 import AdminRouteLayout from "./layouts/admin/AdminRouteLayout";
 
 //Pages
-import Fallback from "./utils/fallback/Fallback";
-import MobileScreen from "./components/admin/mobileScreen/MobileScreen";
+import Fallback from "./components/global/fallback/Fallback";
+import MobileScreen from "./components/global/mobileScreen/MobileScreen";
 
 //Routes
 import {
@@ -34,35 +31,59 @@ import {
   UserChangePassword,
   UserForgetPassword,
   UserOtp,
+  UserProfile,
+  UserMyTrips,
   UserHome,
+  UserAbout,
+  UserPrivacyPolicy,
+  UserRefundPolicy,
   UserTermsAndCondition,
-  UserPayment,
   UserBali,
-  UserPhuket,
   UserBaliFriends,
   UserBaliFriendsStandard,
   UserBaliFriendsDelux,
   UserBaliFriendsPremium,
   UserBaliFamily,
+  UserBaliFamilyStandard,
+  UserBaliFamilyDelux,
+  UserBaliFamilyPremium,
   UserBaliCouple,
+  UserBaliCoupleStandard,
+  UserBaliCoupleDelux,
+  UserBaliCouplePremium,
   UserBaliCustom,
+  UserBaliCustomStandard,
+  UserBaliCustomDelux,
+  UserBaliCustomPremium,
+  UserPhuket,
+  UserPhuketFriends,
+  UserPhuketFriendsStandard,
+  UserPhuketFriendsDelux,
+  UserPhuketFriendsPremium,
+  UserPhuketCouple,
+  UserPhuketCoupleStandard,
+  UserPhuketCoupleDelux,
+  UserPhuketCouplePremium,
+  UserPhuketFamily,
+  UserPhuketFamilyStandard,
+  UserPhuketFamilyDelux,
+  UserPhuketFamilyPremium,
+  UserPhuketCustom,
+  UserPhuketCustomStandard,
+  UserPhuketCustomDelux,
+  UserPhuketCustomPremium,
 } from "./pageConfig/UserPageConfig";
 import {
   AdminLogin,
-  AdminForgetPassword,
-  AdminChangePassword,
   AdminOtp,
   AdminDashboard,
-  AdminAllUsers,
-  AdminSingleUser,
-  AdminAllTrips,
-  AdminSingleTrip,
+  AdminUsers,
+  AdminTrips,
+  AdminSingleTripDetails,
+  AdminCustom,
   AdminPayment,
   AdminQueries,
-  AdminAllActivities,
-  AdminAddActivity,
-  AdminAllLocations,
-  AdminAddLocation,
+  AdminNewsLetter,
 } from "./pageConfig/AdminPageConfig";
 
 // Routes Data
@@ -94,6 +115,10 @@ const userUnprotectedRoutesData = [
     element: <UserHome />,
   },
   {
+    path: "/about-us",
+    element: <UserAbout />,
+  },
+  {
     path: "/bali",
     element: <UserBali />,
   },
@@ -118,16 +143,124 @@ const userUnprotectedRoutesData = [
     element: <UserBaliFamily />,
   },
   {
+    path: "/bali/family/standard",
+    element: <UserBaliFamilyStandard />,
+  },
+  {
+    path: "/bali/family/delux",
+    element: <UserBaliFamilyDelux />,
+  },
+  {
+    path: "/bali/family/premium",
+    element: <UserBaliFamilyPremium />,
+  },
+  {
     path: "/bali/couple",
     element: <UserBaliCouple />,
+  },
+  {
+    path: "/bali/couple/standard",
+    element: <UserBaliCoupleStandard />,
+  },
+  {
+    path: "/bali/couple/delux",
+    element: <UserBaliCoupleDelux />,
+  },
+  {
+    path: "/bali/couple/premium",
+    element: <UserBaliCouplePremium />,
   },
   {
     path: "/bali/custom",
     element: <UserBaliCustom />,
   },
   {
+    path: "/bali/custom/standard",
+    element: <UserBaliCustomStandard />,
+  },
+  {
+    path: "/bali/custom/delux",
+    element: <UserBaliCustomDelux />,
+  },
+  {
+    path: "/bali/custom/premium",
+    element: <UserBaliCustomPremium />,
+  },
+  {
     path: "/phuket",
     element: <UserPhuket />,
+  },
+  {
+    path: "/phuket/friends",
+    element: <UserPhuketFriends />,
+  },
+  {
+    path: "/phuket/friends/standard",
+    element: <UserPhuketFriendsStandard />,
+  },
+  {
+    path: "/phuket/friends/delux",
+    element: <UserPhuketFriendsDelux />,
+  },
+  {
+    path: "/phuket/friends/premium",
+    element: <UserPhuketFriendsPremium />,
+  },
+  {
+    path: "/phuket/family",
+    element: <UserPhuketFamily />,
+  },
+  {
+    path: "/phuket/family/standard",
+    element: <UserPhuketFamilyStandard />,
+  },
+  {
+    path: "/phuket/family/delux",
+    element: <UserPhuketFamilyDelux />,
+  },
+  {
+    path: "/phuket/family/premium",
+    element: <UserPhuketFamilyPremium />,
+  },
+  {
+    path: "/phuket/couple",
+    element: <UserPhuketCouple />,
+  },
+  {
+    path: "/phuket/couple/standard",
+    element: <UserPhuketCoupleStandard />,
+  },
+  {
+    path: "/phuket/couple/delux",
+    element: <UserPhuketCoupleDelux />,
+  },
+  {
+    path: "/phuket/couple/premium",
+    element: <UserPhuketCouplePremium />,
+  },
+  {
+    path: "/phuket/custom",
+    element: <UserPhuketCustom />,
+  },
+  {
+    path: "/phuket/custom/standard",
+    element: <UserPhuketCustomStandard />,
+  },
+  {
+    path: "/phuket/custom/delux",
+    element: <UserPhuketCustomDelux />,
+  },
+  {
+    path: "/phuket/custom/premium",
+    element: <UserPhuketCustomPremium />,
+  },
+  {
+    path: "/refund-policy",
+    element: <UserRefundPolicy />,
+  },
+  {
+    path: "/privacy-policy",
+    element: <UserPrivacyPolicy />,
   },
   {
     path: "/terms-and-conditions",
@@ -136,22 +269,18 @@ const userUnprotectedRoutesData = [
 ];
 const userProtectedRoutesData = [
   {
-    path: "/payment",
-    element: <UserPayment />,
+    path: "/profile",
+    element: <UserProfile />,
+  },
+  {
+    path: "/my-trips",
+    element: <UserMyTrips />,
   },
 ];
 const adminAuthRoutesData = [
   {
     path: "/admin/login",
     element: <AdminLogin />,
-  },
-  {
-    path: "/admin/forget-password",
-    element: <AdminForgetPassword />,
-  },
-  {
-    path: "/admin/change-password",
-    element: <AdminChangePassword />,
   },
   {
     path: "/admin/otp",
@@ -165,19 +294,19 @@ const adminProtectedRoutesData = [
   },
   {
     path: "/admin/users",
-    element: <AdminAllUsers />,
-  },
-  {
-    path: "/admin/user/:id",
-    element: <AdminSingleUser />,
+    element: <AdminUsers />,
   },
   {
     path: "/admin/trips",
-    element: <AdminAllTrips />,
+    element: <AdminTrips />,
   },
   {
     path: "/admin/trip/:id",
-    element: <AdminSingleTrip />,
+    element: <AdminSingleTripDetails />,
+  },
+  {
+    path: "/admin/custom",
+    element: <AdminCustom />,
   },
   {
     path: "/admin/payment",
@@ -188,23 +317,12 @@ const adminProtectedRoutesData = [
     element: <AdminQueries />,
   },
   {
-    path: "/admin/activities",
-    element: <AdminAllActivities />,
-  },
-  {
-    path: "/admin/activity",
-    element: <AdminAddActivity />,
-  },
-  {
-    path: "/admin/locations",
-    element: <AdminAllLocations />,
-  },
-  {
-    path: "/admin/location",
-    element: <AdminAddLocation />,
+    path: "/admin/news-letter",
+    element: <AdminNewsLetter />,
   },
 ];
 
+//test
 const App = () => {
   return (
     <>
@@ -217,7 +335,7 @@ const App = () => {
             element={
               <Suspense fallback={<Loader />}>
                 <UserAuthProtectedRoutes>
-                  <AuthRouteLayout>{route.element}</AuthRouteLayout>
+                  <AuthRouteLayout> {route.element}</AuthRouteLayout>
                 </UserAuthProtectedRoutes>
               </Suspense>
             }
@@ -255,7 +373,7 @@ const App = () => {
               <Suspense fallback={<Loader />}>
                 {window.innerWidth > 1000 ? (
                   <AdminAuthProtectedRoutes>
-                    <AuthRouteLayout>{route.element}</AuthRouteLayout>
+                    {route.element}
                   </AdminAuthProtectedRoutes>
                 ) : (
                   <MobileScreen />

@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
   padding: 50px;
 
   h2 {
@@ -16,10 +16,30 @@
 
 @media (max-width: 1700px) {
   .introduction {
-    gap: 16px;
+    gap: 20px;
     padding: 40px;
     h2 {
       font-size: 40px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .introduction {
+    gap: 18px;
+    padding: 35px;
+    h2 {
+      font-size: 35px;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .introduction {
+    gap: 16px;
+    padding: 30px;
+    h2 {
+      font-size: 32px;
     }
   }
 }

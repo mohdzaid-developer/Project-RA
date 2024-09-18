@@ -7,14 +7,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 //Assets
-import quotes from "@/assets/quotes.svg";
-import profileImg from "@/assets/profile.svg";
+import quotes from "@/assets/quotes.webp";
+import user1 from "@/assets/user1.jpg";
+import user2 from "@/assets/user2.jpg";
+import user3 from "@/assets/user3.jpg";
 
 const Testimonial = () => {
   const data = [
     {
       name: "Jayanth",
-      profilePic: profileImg,
+      profilePic: user1,
       para1:
         "I recently spent a week in Phuket, and thanks to Vishnu and his team, it was an unforgettable experience. Our stay at the luxurious 10-bedroom villa was incredible, featuring a private pool and games room. Vishnu's meticulous planning ensured we enjoyed a mix of both iconic and hidden gems in Phuket.",
       para2:
@@ -22,7 +24,7 @@ const Testimonial = () => {
     },
     {
       name: "Tarun",
-      profilePic: profileImg,
+      profilePic: user2,
       para1:
         "Phuket has always been on my travel bucket list, and Vishnu and his team made this trip beyond exceptional. Staying in a sprawling 10-bedroom villa with a private pool was the perfect start to our adventure.",
       para2:
@@ -30,7 +32,7 @@ const Testimonial = () => {
     },
     {
       name: "Eshwar",
-      profilePic: profileImg,
+      profilePic: user3,
       para1:
         "Our recent trip to Phuket was absolutely perfect, thanks to Vishnu and his amazing team. We stayed in a magnificent 10-bedroom villa, complete with a pool and a games room that kept everyone entertained.",
       para2:
@@ -44,6 +46,7 @@ const Testimonial = () => {
         <img src={quotes} alt="" />
       </div>
       <Swiper
+        spaceBetween={20}
         pagination={{
           dynamicBullets: true,
         }}

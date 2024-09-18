@@ -1,7 +1,15 @@
-import React from "react";
+//Components
+import LevelTwoPage from "@/components/user/pages/levelTwoPage/LevelTwoPage";
+
+//Config
+import { data } from "./config/config";
 
 const Friends = () => {
-  return <div>Friends</div>;
+  return (
+    <section>
+      <LevelTwoPage data={data} />
+    </section>
+  );
 };
 
 export default Friends;

@@ -9,7 +9,7 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 //Assets
-import buttonArrowImg from "@/assets/rightArrow.svg";
+import buttonArrowImg from "@/assets/rightArrow.webp";
 
 const Packages = ({ data }) => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -52,7 +52,6 @@ const Packages = ({ data }) => {
         });
       });
 
-      // Control the visibility of the fixed center div
       ScrollTrigger.create({
         trigger: ".packages",
         start: "top top",
@@ -61,15 +60,6 @@ const Packages = ({ data }) => {
         onLeave: () => setIsVisible(false),
         onEnterBack: () => setIsVisible(true),
         onLeaveBack: () => setIsVisible(false),
-      });
-
-      // Make the fixed container disappear when the last section is 50% out of view
-      ScrollTrigger.create({
-        trigger: details[details.length - 1],
-        start: "top 50%",
-        end: "bottom bottom",
-        onLeave: () => setIsVisible(false),
-        onEnterBack: () => setIsVisible(true),
       });
     });
 
@@ -123,12 +113,6 @@ const Packages = ({ data }) => {
           </div>
         </div>
       </div>
-      {isVisible && (
-        <div className="fixed-center">
-          <div className="number">{`0${currentIndex}`}</div>
-          <div className="total">/04</div>
-        </div>
-      )}
     </div>
   );
 };

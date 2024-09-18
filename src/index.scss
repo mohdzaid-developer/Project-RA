@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Italiana&display=swap");
-@import url("https://db.onlinewebfonts.com/c/2e46652a2dcb3173f0d40d4266f1debe?family=Cygre+Light");
+
+@font-face {
+  font-family: "Cygre Light";
+  src: url("./assets/Cygre-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 
 $dark-orange: #bc6c25;
 $light-orange: #dda15e;
@@ -17,9 +23,13 @@ $white: #fff;
   box-sizing: border-box;
   font-family: "Cygre Light";
 }
+html {
+  height: -webkit-fill-available;
+}
 
 body {
   background-color: $black;
+  height: -webkit-fill-available;
 }
 
 body::-webkit-scrollbar {
@@ -33,6 +43,18 @@ button {
 }
 input {
   outline: none;
+  &:-webkit-autofill {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: $text-orange !important;
+    transition: background-color 5000s ease-in-out 0s;
+  }
+
+  &:-webkit-autofill:focus {
+    background-color: transparent !important;
+    -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+    -webkit-text-fill-color: $text-orange !important;
+  }
 }
 
 li {
@@ -52,4 +74,104 @@ h2 {
   font-family: "Italiana", sans-serif;
   letter-spacing: 2px;
   font-weight: 100;
+}
+
+.error-text {
+  color: #ff3333;
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.error-text-booking {
+  color: #ff3333;
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 100%;
+  left: 40%;
+}
+
+.authButton {
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  font-size: 22px;
+  color: $text-orange;
+  border: 1px solid $text-orange;
+  border-radius: 16px;
+  padding: 20px 18px;
+
+  img {
+    height: 28px;
+  }
+}
+
+@media (max-width: 1700px) {
+  .authButton {
+    gap: 16px;
+    font-size: 20px;
+    border-radius: 15px;
+    padding: 18px 16px;
+
+    img {
+      height: 26px;
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .authButton {
+    gap: 14px;
+    font-size: 18px;
+    border-radius: 14px;
+    padding: 17px 15px;
+
+    img {
+      height: 24px;
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .authButton {
+    gap: 12px;
+    font-size: 17px;
+    border-radius: 13px;
+    padding: 16px 14px;
+
+    img {
+      height: 22px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .authButton {
+    gap: 11px;
+    font-size: 16px;
+    border-radius: 12px;
+    padding: 15px 13px;
+
+    img {
+      height: 20px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .authButton {
+    gap: 10px;
+    font-size: 15px;
+    border-radius: 11px;
+    padding: 14px 12px;
+
+    img {
+      height: 18px;
+    }
+  }
 }

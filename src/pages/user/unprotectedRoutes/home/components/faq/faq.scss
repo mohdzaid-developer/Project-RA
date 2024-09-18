@@ -68,3 +68,239 @@
     }
   }
 }
+
+@media (max-width: 1700px) {
+  .faq-container {
+    margin: 80px 45px;
+    gap: 45px;
+    .accordion {
+      .faq {
+        margin-bottom: 45px;
+        padding-bottom: 45px;
+
+        .title {
+          .test {
+            gap: 90px;
+            h1 {
+              font-size: 1.4rem;
+            }
+          }
+
+          img {
+            height: 28px;
+          }
+        }
+
+        .content {
+          p {
+            margin-left: 140px;
+            margin-top: 45px;
+            line-height: 45px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.4rem;
+
+          p {
+            margin-left: 145px;
+            margin-top: 28px;
+            line-height: 28px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .faq-container {
+    margin: 70px 40px;
+    gap: 40px;
+    .accordion {
+      .faq {
+        width: 80%;
+        margin-bottom: 40px;
+        padding-bottom: 40px;
+
+        .title {
+          .test {
+            gap: 80px;
+            h1 {
+              font-size: 1.3rem;
+            }
+          }
+
+          img {
+            height: 26px;
+          }
+        }
+
+        .content {
+          padding-top: 0.35rem;
+          p {
+            font-size: 15px;
+            margin-left: 140px;
+            margin-top: 26px;
+            line-height: 26px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.35rem;
+
+          p {
+            font-size: 15px;
+            margin-left: 140px;
+            margin-top: 26px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .faq-container {
+    margin: 60px 35px;
+    gap: 36px;
+    .accordion {
+      .faq {
+        width: 90%;
+        margin-bottom: 36px;
+        padding-bottom: 36px;
+
+        .title {
+          .test {
+            gap: 70px;
+            h1 {
+              font-size: 1.1rem;
+            }
+          }
+
+          img {
+            height: 25px;
+          }
+        }
+
+        .content {
+          padding-top: 0.3rem;
+
+          p {
+            font-size: 14px;
+            margin-left: 125px;
+            margin-top: 24px;
+            line-height: 24px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.3rem;
+
+          p {
+            font-size: 14px;
+            margin-left: 125px;
+            margin-top: 24px;
+            line-height: 24px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .faq-container {
+    margin: 50px 30px;
+    gap: 32px;
+    .accordion {
+      .faq {
+        width: 100%;
+        margin-bottom: 34px;
+        padding-bottom: 34px;
+
+        .title {
+          .test {
+            gap: 60px;
+            h1 {
+              font-size: 1rem;
+            }
+          }
+
+          img {
+            height: 24px;
+          }
+        }
+
+        .content {
+          padding-top: 0.25rem;
+
+          p {
+            font-size: 13px;
+            margin-left: 115px;
+            margin-top: 22px;
+            line-height: 26px;
+          }
+        }
+
+        .content.show {
+          padding-top: 0.25rem;
+
+          p {
+            font-size: 13px;
+            margin-left: 115px;
+            margin-top: 22px;
+            line-height: 26px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-container {
+    margin: 30px;
+    gap: 30px;
+    .accordion {
+      .faq {
+        margin-bottom: 30px;
+        padding-bottom: 30px;
+
+        .title {
+          .test {
+            gap: 15px;
+            h1 {
+              font-size: 0.7rem;
+            }
+            p {
+              font-size: 6px;
+            }
+          }
+
+          img {
+            height: 18px;
+          }
+        }
+        .content {
+          p {
+            font-size: 12px;
+            margin-left: 30px;
+            margin-top: 20px;
+            line-height: 22px;
+          }
+        }
+
+        .content.show {
+          p {
+            font-size: 12px;
+            margin-left: 30px;
+            margin-top: 20px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+  }
+}

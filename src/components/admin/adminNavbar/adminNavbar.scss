@@ -1,1 +1,42 @@
-@import "../../../index.scss";
+@import "@/index.scss";
+
+.admin-navbar {
+  width: 85vw;
+  height: 10vh;
+  border-bottom: 0.1px solid rgb(36, 36, 36);
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  z-index: 999;
+
+  img {
+    width: 30px;
+    height: 30px;
+  }
+  h1 {
+    font-size: 25px;
+    color: $text-orange;
+  }
+}
+
+@media (max-width: 1700px) {
+  .admin-navbar {
+    padding: 0 26px;
+    gap: 10px;
+
+    img {
+      width: 20px;
+      height: 20px;
+    }
+
+    h1 {
+      font-size: 22px;
+    }
+  }
+}

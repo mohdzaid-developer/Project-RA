@@ -1,6 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { isAuthenticated: false };
+const initialState = {
+  isAuthenticated:
+    JSON.parse(sessionStorage.getItem("admin")) &&
+    JSON.parse(sessionStorage.getItem("admin"))?.accessToken
+      ? true
+      : false,
+};
 
 const authAdminSlice = createSlice({
   name: "authAdmin",

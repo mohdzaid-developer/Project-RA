@@ -1,1 +1,333 @@
-@import "../../../../index.scss";
+@import "@/index.scss";
+
+.otp-container {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  transition: all 0.8s ease-out;
+  background-color: $black;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+
+  .otp-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 60px;
+      color: $text-orange;
+    }
+  }
+
+  .otp-form {
+    width: 50%;
+    border-radius: 10px;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: $gray;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    .otp-form-container {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+
+      .otp-input {
+        width: 100%;
+
+        label {
+          color: $text-orange;
+          font-size: 18px;
+        }
+        input {
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          outline: none !important;
+          border-radius: 0 !important;
+          border-bottom: 1px solid $text-orange;
+          color: $text-orange;
+          padding: 5px 0;
+          padding-top: 10px;
+          font-size: 16px;
+
+          &::placeholder {
+            color: $text-orange;
+          }
+        }
+        .otp-resend {
+          margin-top: 20px;
+          text-align: right;
+          p {
+            cursor: pointer;
+            color: $text-orange;
+            font-weight: 600;
+            font-size: 18px;
+          }
+        }
+      }
+
+      .otp-forget-password {
+        p {
+          text-align: center;
+          font-size: 16px;
+          color: $text-orange;
+          span {
+            color: $text-orange;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .otp-container {
+    padding: 18px 45px;
+    gap: 38px;
+
+    .otp-content {
+      h2 {
+        font-size: 55px;
+      }
+    }
+
+    .otp-form {
+      width: 55%;
+      padding: 45px 0;
+      gap: 45px;
+
+      .otp-form-container {
+        width: 80%;
+        gap: 36px;
+
+        .otp-input {
+          label {
+            font-size: 17px;
+          }
+          input {
+            padding: 4.5px 0;
+            padding-top: 9px;
+          }
+          .otp-resend {
+            margin-top: 18px;
+
+            p {
+              font-size: 16px;
+            }
+          }
+        }
+
+        .otp-forget-password {
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .otp-container {
+    padding: 18px 40px;
+    gap: 36px;
+
+    .otp-content {
+      h2 {
+        font-size: 50px;
+      }
+    }
+
+    .otp-form {
+      width: 60%;
+      padding: 40px 0;
+      gap: 40px;
+
+      .otp-form-container {
+        width: 85%;
+        gap: 34px;
+
+        .otp-input {
+          label {
+            font-size: 17px;
+          }
+          input {
+            padding: 4px 0;
+            padding-top: 8px;
+          }
+          .otp-resend {
+            margin-top: 17px;
+
+            p {
+              font-size: 15.5px;
+            }
+          }
+        }
+
+        .otp-forget-password {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .otp-container {
+    padding: 16px 35px;
+    gap: 34px;
+
+    .otp-content {
+      h2 {
+        font-size: 45px;
+      }
+    }
+
+    .otp-form {
+      width: 65%;
+      padding: 35px 0;
+      gap: 35px;
+
+      .otp-form-container {
+        width: 90%;
+        gap: 32px;
+
+        .otp-input {
+          label {
+            font-size: 16px;
+          }
+          input {
+            padding: 4px 0;
+            padding-top: 7px;
+          }
+          .otp-resend {
+            margin-top: 17px;
+
+            p {
+              font-size: 15px;
+            }
+          }
+        }
+
+        .otp-forget-password {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .otp-otp-container {
+    padding: 16px 35px;
+    gap: 34px;
+
+    .otp-content {
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    .otp-form {
+      width: 100%;
+      padding: 30px 0;
+      gap: 32px;
+
+      .otp-form-container {
+        padding: 30px;
+        width: 100%;
+        gap: 32px;
+
+        .otp-input {
+          label {
+            font-size: 15px;
+          }
+          input {
+            padding: 3.5px 0;
+            padding-top: 6px;
+          }
+          .resend {
+            margin-top: 16px;
+
+            p {
+              font-size: 14.5px;
+            }
+          }
+        }
+
+        .otp-forget-password {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .otp-container {
+    padding: 30px;
+    gap: 32px;
+
+    .otp-content {
+      h2 {
+        font-size: 35px;
+      }
+    }
+
+    .otp-form {
+      width: 100%;
+      padding: 20px 0;
+      gap: 32px;
+
+      .otp-form-container {
+        padding: 20px;
+        width: 100%;
+        gap: 32px;
+
+        .otp-input {
+          label {
+            font-size: 14.5px;
+          }
+          input {
+            padding: 3px 0;
+            padding-top: 5px;
+          }
+          .otp-resend {
+            margin-top: 14px;
+
+            p {
+              font-size: 14px;
+            }
+          }
+        }
+        .otp-forget-password {
+          p {
+            font-size: 13.5px;
+          }
+        }
+      }
+    }
+  }
+}

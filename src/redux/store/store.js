@@ -3,18 +3,18 @@ import { configureStore } from "@reduxjs/toolkit";
 import authAdminSlice from "../slice/admin/state/authAdminSlice";
 import authUserSlice from "../slice/user/state/authUserSlice";
 
-import { authAdminApi } from "../slice/admin/api/authAdminApiSlice";
-import { authUserApi } from "../slice/user/api/authUserApiSlice";
+import { adminApi } from "../slice/admin/api/adminApiSlice";
+import { userApi } from "../slice/user/api/userApiSlice";
 
 export const store = configureStore({
   reducer: {
     authAdmin: authAdminSlice,
-    [authAdminApi.reducerPath]: authAdminApi.reducer,
+    [adminApi.reducerPath]: adminApi.reducer,
     authUser: authUserSlice,
-    [authUserApi.reducerPath]: authUserApi.reducer,
+    [userApi.reducerPath]: userApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()
-      .concat(authAdminApi.middleware)
-      .concat(authUserApi.middleware),
+      .concat(adminApi.middleware)
+      .concat(userApi.middleware),
 });

@@ -12,6 +12,7 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
+    z-index: 1;
 
     h2 {
       color: $white;
@@ -44,7 +45,9 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        gap: 10px;
         position: relative;
+        z-index: 2;
         top: -50px;
         left: 70px;
         box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px,
@@ -53,6 +56,7 @@
           rgba(0, 0, 0, 0.07) 0px 32px 64px;
         img {
           height: 80px;
+          border-radius: 50%;
         }
       }
       .bottom-card {
@@ -85,5 +89,311 @@
 
   .swiper-pagination-bullet {
     background-color: $light-green !important;
+  }
+}
+
+@media (max-width: 1700px) {
+  .testimonial {
+    margin: 90px 0;
+    padding-bottom: 180px;
+    padding: 90px;
+
+    .content {
+      margin-bottom: 50px;
+
+      h2 {
+        font-size: 48px;
+      }
+
+      img {
+        top: -18px;
+        right: 350px;
+        height: 45px;
+      }
+    }
+
+    .swiper-wrapper {
+      .swiper-slide {
+        margin: 45px 0;
+
+        .top-card {
+          border-radius: 18px;
+          height: 290px;
+          width: 290px;
+          gap: 10px;
+          top: -40px;
+          left: 60px;
+
+          img {
+            height: 75px;
+          }
+
+          h4 {
+            font-size: 22px;
+          }
+          p {
+            font-size: 15px;
+          }
+        }
+        .bottom-card {
+          height: 290px;
+          width: 880px;
+          padding: 45px;
+          padding-left: 90px;
+
+          .message {
+            gap: 22px;
+            p {
+              font-size: 16px;
+              line-height: 26px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .testimonial {
+    margin: 80px 0;
+    padding: 70px 20px;
+
+    .content {
+      margin-bottom: 45px;
+
+      h2 {
+        font-size: 44px;
+      }
+
+      img {
+        top: -15px;
+        right: 250px;
+        height: 40px;
+      }
+    }
+
+    .swiper-wrapper {
+      .swiper-slide {
+        margin: 40px 0;
+
+        .top-card {
+          border-radius: 16px;
+          height: 280px;
+          width: 280px;
+          gap: 9px;
+          top: -35px;
+          left: 45px;
+
+          img {
+            height: 70px;
+          }
+
+          h4 {
+            font-size: 21px;
+          }
+          p {
+            font-size: 14px;
+          }
+        }
+        .bottom-card {
+          height: 290px;
+          width: 850px;
+          padding: 40px;
+          padding-left: 80px;
+
+          .message {
+            gap: 21px;
+            p {
+              font-size: 15px;
+              line-height: 25px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1280px) {
+  .testimonial {
+    margin: 70px 0;
+    padding: 70px 50px;
+    width: 100%;
+
+    .content {
+      margin-bottom: 40px;
+
+      h2 {
+        font-size: 40px;
+      }
+
+      img {
+        top: -12px;
+        right: 170px;
+        height: 35px;
+      }
+    }
+
+    .swiper-wrapper {
+      .swiper-slide {
+        margin: 35px 0;
+        margin-left: 25px;
+
+        .top-card {
+          position: absolute;
+          height: 230px;
+          width: 200px;
+          gap: 8px;
+          top: -30px;
+          left: 15px;
+
+          img {
+            height: 60px;
+          }
+
+          h4 {
+            font-size: 20px;
+          }
+          p {
+            font-size: 13px;
+          }
+        }
+        .bottom-card {
+          height: 280px;
+          width: 80%;
+          padding: 30px;
+          padding-left: 160px;
+
+          .message {
+            gap: 21px;
+            p {
+              font-size: 14px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .testimonial {
+    margin: 50px 0;
+    padding: 50px 20px;
+
+    .content {
+      margin-bottom: 35px;
+
+      h2 {
+        font-size: 38px;
+      }
+
+      img {
+        top: -10px;
+        right: 180px;
+        height: 30px;
+      }
+    }
+
+    .swiper-wrapper {
+      .swiper-slide {
+        margin: 30px 0;
+        margin-left: 5px;
+
+        .top-card {
+          height: 220px;
+          width: 180px;
+          gap: 7px;
+          top: -30px;
+          left: 15px;
+
+          img {
+            height: 50px;
+          }
+
+          h4 {
+            font-size: 18px;
+          }
+          p {
+            font-size: 12px;
+          }
+        }
+        .bottom-card {
+          height: 260px;
+          width: 90%;
+          padding: 30px;
+          padding-left: 180px;
+
+          .message {
+            gap: 20px;
+            p {
+              font-size: 13px;
+              line-height: 24px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .testimonial {
+    margin: 30px 0;
+    padding: 40px 20px;
+
+    .content {
+      margin-bottom: 0px;
+
+      h2 {
+        font-size: 38px;
+      }
+
+      img {
+        position: absolute;
+        top: -5px;
+        right: 30px;
+        height: 20px;
+      }
+    }
+
+    .swiper-wrapper {
+      .swiper-slide {
+        flex-direction: column;
+        margin: 20px 0;
+        margin-bottom: 30px;
+
+        .top-card {
+          border-radius: 14px;
+          height: 180px;
+          width: 160px;
+          gap: 8px;
+          position: relative;
+          top: 30px;
+          left: 0;
+
+          img {
+            height: 40px;
+          }
+        }
+        .bottom-card {
+          border-radius: 14px;
+          height: 450px;
+          width: 100%;
+          padding-left: 0;
+          padding: 20px;
+
+          .message {
+            gap: 20px;
+            p {
+              font-size: 15px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
   }
 }

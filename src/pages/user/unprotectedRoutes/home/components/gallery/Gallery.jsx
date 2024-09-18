@@ -1,28 +1,33 @@
 import { useEffect, useState } from "react";
 import "./gallery.scss";
 
+//Animations
+import { AnimatePresence, motion } from "framer-motion";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import imagesLoaded from "imagesloaded";
+import { footerFadeInAnimation } from "@/utils/animations/animations";
 
-import img1 from "@/assets/galleryImg1.svg";
-import img2 from "@/assets/galleryImg2.svg";
-import img3 from "@/assets/galleryImg3.svg";
-import img4 from "@/assets/galleryImg4.svg";
-import img5 from "@/assets/galleryImg5.svg";
-import img6 from "@/assets/galleryImg6.svg";
-import img7 from "@/assets/galleryImg7.svg";
-import img8 from "@/assets/galleryImg8.svg";
-import img9 from "@/assets/galleryImg9.svg";
-import img10 from "@/assets/galleryImg10.svg";
-import img11 from "@/assets/galleryImg11.svg";
-import img12 from "@/assets/galleryImg12.svg";
+import img1 from "@/assets/galleryImg1.webp";
+import img2 from "@/assets/galleryImg2.webp";
+import img3 from "@/assets/galleryImg3.webp";
+import img4 from "@/assets/galleryImg4.webp";
+import img5 from "@/assets/galleryImg5.webp";
+import img6 from "@/assets/galleryImg6.webp";
+import img7 from "@/assets/galleryImg7.webp";
+import img8 from "@/assets/galleryImg8.webp";
+import img9 from "@/assets/galleryImg9.webp";
+import img10 from "@/assets/galleryImg10.webp";
+import img11 from "@/assets/galleryImg11.webp";
+import img12 from "@/assets/galleryImg12.webp";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Gallery = () => {
   const [loading, setLoading] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentImage, setCurrentImage] = useState(null);
   let lenis;
 
   const preloadImages = (selector = "img") => {
@@ -94,6 +99,16 @@ const Gallery = () => {
     });
   };
 
+  const handleImageClick = (image) => {
+    setCurrentImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setCurrentImage(null);
+  };
+
   useEffect(() => {
     preloadImages(".column__item-img").then(() => {
       initSmoothScrolling();
@@ -101,129 +116,84 @@ const Gallery = () => {
       setLoading(false);
     });
   }, []);
+
   return (
     <>
-      <div className="gallery">
+      <div className="home-gallery">
         <h2>Gallery</h2>
         <p>An Experience filled with love</p>
       </div>
       <div className={`demo-2 ${loading ? "loading" : ""}`}>
-        <main>
+        <main className="gallery-slide">
           <div className="columns">
             <div className="column">
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img1})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img2})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img3})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img4})` }}
-                  ></div>
-                </div>
-              </figure>
+              {[img1, img2, img3, img4].map((img, idx) => (
+                <figure
+                  className="column__item"
+                  key={idx}
+                  onClick={() => handleImageClick(img)}
+                >
+                  <div className="column__item-imgwrap">
+                    <div
+                      className="column__item-img"
+                      style={{ backgroundImage: `url(${img})` }}
+                    ></div>
+                  </div>
+                </figure>
+              ))}
             </div>
             <div className="column">
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img5})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img6})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img7})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img8})` }}
-                  ></div>
-                </div>
-              </figure>
+              {[img9, img10, img11, img12].map((img, idx) => (
+                <figure
+                  className="column__item"
+                  key={idx}
+                  onClick={() => handleImageClick(img)}
+                >
+                  <div className="column__item-imgwrap">
+                    <div
+                      className="column__item-img"
+                      style={{ backgroundImage: `url(${img})` }}
+                    ></div>
+                  </div>
+                </figure>
+              ))}
             </div>
             <div className="column">
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img9})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img10})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img11})` }}
-                  ></div>
-                </div>
-              </figure>
-
-              <figure className="column__item">
-                <div className="column__item-imgwrap">
-                  <div
-                    className="column__item-img"
-                    style={{ backgroundImage: `url(${img12})` }}
-                  ></div>
-                </div>
-              </figure>
+              {[img5, img6, img7, img8].map((img, idx) => (
+                <figure
+                  className="column__item"
+                  key={idx}
+                  onClick={() => handleImageClick(img)}
+                >
+                  <div className="column__item-imgwrap">
+                    <div
+                      className="column__item-img"
+                      style={{ backgroundImage: `url(${img})` }}
+                    ></div>
+                  </div>
+                </figure>
+              ))}
             </div>
           </div>
         </main>
       </div>
+
+      <AnimatePresence>
+        {isModalOpen && (
+          <motion.div
+            className="modal"
+            onClick={closeModal}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            variants={footerFadeInAnimation}
+          >
+            <div className="modal-content">
+              <img src={currentImage} alt="Modal Content" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

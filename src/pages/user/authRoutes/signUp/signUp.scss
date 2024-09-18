@@ -1,0 +1,288 @@
+@import "@/index.scss";
+
+.signUp-container {
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  transition: all 0.8s ease-out;
+  background-color: $black;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+
+  .signUp-content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+      font-size: 60px;
+      color: $text-orange;
+    }
+  }
+
+  .signUp-form {
+    width: 50%;
+    border-radius: 10px;
+    padding: 50px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    background: $gray;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+    .signUp-form-container {
+      width: 80%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+
+      .signUp-input {
+        width: 100%;
+
+        label {
+          color: $text-orange;
+          font-size: 18px;
+        }
+        input {
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          outline: none !important;
+          border-radius: 0 !important;
+          border-bottom: 1px solid $text-orange;
+          color: $text-orange;
+          padding: 5px 0;
+          padding-top: 10px;
+          font-size: 16px;
+
+          &::placeholder {
+            color: $text-orange;
+          }
+        }
+      }
+
+      .signUp-signIn {
+        p {
+          text-align: center;
+          font-size: 16px;
+          color: $text-orange;
+          span {
+            color: $text-orange;
+            cursor: pointer;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .signUp-container {
+    padding: 18px 45px;
+    gap: 38px;
+
+    .signUp-content {
+      h2 {
+        font-size: 55px;
+      }
+    }
+
+    .signUp-form {
+      width: 55%;
+      padding: 45px 0;
+      gap: 45px;
+
+      .signUp-form-container {
+        width: 80%;
+        gap: 36px;
+
+        .signUp-input {
+          label {
+            font-size: 17px;
+          }
+          input {
+            padding: 4.5px 0;
+            padding-top: 9px;
+          }
+        }
+
+        .signUp-signIn {
+          p {
+            font-size: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .signUp-container {
+    padding: 18px 40px;
+    gap: 36px;
+
+    .signUp-content {
+      h2 {
+        font-size: 50px;
+      }
+    }
+
+    .signUp-form {
+      width: 60%;
+      padding: 40px 0;
+      gap: 40px;
+
+      .signUp-form-container {
+        width: 85%;
+        gap: 34px;
+
+        .signUp-input {
+          label {
+            font-size: 17px;
+          }
+          input {
+            padding: 4px 0;
+            padding-top: 8px;
+          }
+        }
+
+        .signUp-signIn {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .signUp-container {
+    padding: 16px 35px;
+    gap: 34px;
+
+    .signUp-content {
+      h2 {
+        font-size: 45px;
+      }
+    }
+
+    .signUp-form {
+      width: 65%;
+      padding: 35px 0;
+      gap: 35px;
+
+      .signUp-form-container {
+        width: 90%;
+        gap: 32px;
+
+        .signUp-input {
+          label {
+            font-size: 16px;
+          }
+          input {
+            padding: 4px 0;
+            padding-top: 7px;
+          }
+        }
+
+        .signUp-signIn {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .signUp-container {
+    padding: 16px 35px;
+    gap: 34px;
+
+    .signUp-content {
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    .signUp-form {
+      width: 100%;
+      padding: 30px 0;
+      gap: 32px;
+
+      .signUp-form-container {
+        padding: 30px;
+        width: 100%;
+        gap: 32px;
+
+        .signUp-input {
+          label {
+            font-size: 15px;
+          }
+          input {
+            padding: 3.5px 0;
+            padding-top: 6px;
+          }
+        }
+
+        .signUp-signIn {
+          p {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .signUp-container {
+    padding: 30px;
+    gap: 32px;
+
+    .signUp-content {
+      h2 {
+        font-size: 35px;
+      }
+    }
+
+    .signUp-form {
+      width: 100%;
+      padding: 20px 0;
+      gap: 32px;
+
+      .signUp-form-container {
+        padding: 20px;
+        width: 100%;
+        gap: 32px;
+
+        .signUp-input {
+          label {
+            font-size: 14.5px;
+          }
+          input {
+            padding: 3px 0;
+            padding-top: 5px;
+          }
+        }
+        .signUp-signIn {
+          p {
+            font-size: 13.5px;
+          }
+        }
+      }
+    }
+  }
+}

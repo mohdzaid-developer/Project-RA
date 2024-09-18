@@ -1,13 +1,21 @@
 import { Navigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-const UserAuthProtectedRoutes = ({ children }) => {
-  const { isAuthenticated } = useSelector((state) => state.authUser);
+export const UserAuthProtectedRoutes = ({ children }) => {
+  const { isAuthenticated,paramsQuery } = useSelector((state) => state.authUser);
+  const { isAuthenticated:AdminIsAuthenticated } = useSelector((state) => state.authAdmin);
 
-  if (!isAuthenticated) {
+  if (!isAuthenticated && !AdminIsAuthenticated) {
     return children;
   }
-  return <Navigate to="/profile" />;
+  if(AdminIsAuthenticated){
+    return <Navigate to="/admin/dashboard" />;
+  }
+  if(paramsQuery){
+    return <Navigate to={paramsQuery} />;
+  }if(!paramsQuery){
+    return <Navigate to="/profile" />;
+  }
 };
 
 export default UserAuthProtectedRoutes;

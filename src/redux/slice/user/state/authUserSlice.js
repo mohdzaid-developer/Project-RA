@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { isAuthenticated: false };
+const initialState = {
+  isAuthenticated: JSON.parse(sessionStorage.getItem("user"))?.accessToken
+    ? true
+    : false,
+  paramsQuery:null
+};
 
 const authUserSlice = createSlice({
   name: "authUser",
@@ -12,8 +17,11 @@ const authUserSlice = createSlice({
     setLogout(state) {
       state.isAuthenticated = false;
     },
+    setParamsQuery(state,action) {
+      state.paramsQuery = action.payload;
+    },
   },
 });
 
-export const { setLogin, setLogout } = authUserSlice.actions;
+export const { setLogin, setLogout ,setParamsQuery} = authUserSlice.actions;
 export default authUserSlice.reducer;

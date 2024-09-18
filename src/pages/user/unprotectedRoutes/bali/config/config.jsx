@@ -1,31 +1,32 @@
 //Assets
-import heroImg from "@/assets/baliHero.svg";
-import img1 from "@/assets/bali1.svg";
-import img2 from "@/assets/bali2.svg";
-import img3 from "@/assets/homeBali.svg";
-import img4 from "@/assets/bali3.svg";
-import img5 from "@/assets/bali4.svg";
-import levelOnePackageLogo from "@/assets/levelOnePackageLogo.svg";
-import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.svg";
-import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.svg";
-import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.svg";
-import levelOneCustomLogo from "@/assets/levelOneCustomLogo.svg";
-import levelOneFriendsImage from "@/assets/levelOneFriendsImage.svg";
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.svg";
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.svg";
-import levelOneCustomImage from "@/assets/levelOneCustomImage.svg";
+import heroImg from "@/assets/baliHero.webp";
+import img1 from "@/assets/bali1.webp";
+import img2 from "@/assets/bali2.webp";
+import img3 from "@/assets/homeBali.webp";
+import img4 from "@/assets/bali3.webp";
+import img5 from "@/assets/bali4.webp";
+import levelOnePackageLogo from "@/assets/levelOnePackageLogo.webp";
+import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.webp";
+import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.webp";
+import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
+import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
+import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
+import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 
 export const data = {
   title: "Enchanted Bali",
   heroImg: heroImg,
   content: [
-    `Bali, the enchanting island of Indonesia, beckons travelers with`,
-    ` its mesmerizing beauty and rich cultural heritage. Known as the`,
-    `"Island of the Gods,"Bali offers a diverse range of experiences,making `,
-    `it a top destination for tourists from around the world.`,
+    `It’s a paradise of golden beaches, ancient temples, and endless adventures.`,
+    `Whether you’re craving peace or thrill, Bali has it all.`,
+    `Once you visit, you’ll never want to leave this magical island.`,
   ],
   xRange1: ["0%", "-28%"],
   xRange2: ["0%", "-26%"],
+  xRange3: ["0%", "0%"],
+
   galleryImg: [img1, img2, img3, img4, img5],
   packageData: [
     {
@@ -36,34 +37,53 @@ export const data = {
         </div>
       ),
       packageName: "Friends",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `Feel the thrill of diving into the unknown, just like Hrithik, Farhan, and Abhay in Zindagi Na
+      Milegi Dobara. Our curated experiences ensure that you not only travel but live every moment,
+      be it a daring adventure or a serene sunset. Channel your inner Bunny from Yeh Jawani Hai Deewani and chase after that wanderlust. With our ‘Travel Now, Pay Later’ option, you don’t have to wait to explore the world. Go ahead, book
+      that trip, and let the adventure begin!`,
       logo: levelOneFriendsLogo,
-      url: "test",
+      url: "/bali/friends",
       leftImg: levelOneFriendsImage,
     },
     {
       packageName: "Family",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `Managing a big family vacation can feel as epic as Baahubali. But unlike Amarendra Baahubali,
+      you don’t have to go it alone. Whether it’s coordinating multiple flights, booking large
+      accommodations, or planning activities for everyone, we’ve got you covered. Think of us as your
+      Katappa, loyal and ready to handle any challenge.
+      Remember how Allu Arjun’s character enjoys the good life in Ala Vaikunthapurramuloo? But
+      unlike him, you don’t need to be super-rich to give your family a luxurious vacation! With our
+      ‘Travel Now, Pay Later’ plan, you can experience premium stays and lavish experiences without
+      worrying about the budget. Pamper your family, while we handle the finances`,
       logo: levelOneFamilyLogo,
-      url: "test",
+      url: "/bali/family",
       leftImg: levelOneFamilyImage,
     },
     {
       packageName: "Couples",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `Remember how Jessie and Karthik’s love story in Ye Maaya Chesave was beautifully captured
+      in scenic locales? We’ll help you create your own cinematic romance. From strolls on pristine
+      beaches to romantic dinners with breathtaking views, your love story deserves a stunning
+      backdrop.
+      Like the intense love story of Animal, our couple’s vacations are designed for those who live and
+      love with passion. Private beach villas, candlelit dinners, and exclusive experiences ensure that
+      your trip is as fiery and unforgettable as your love without the interference of Bhabhi 2, just
+      kidding.`,
       logo: levelOneCoupleLogo,
-      url: "test",
+      url: "/bali/couple",
       leftImg: levelOneCoupleImage,
     },
     {
       packageName: "Custom",
-      description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      description: `Tired of the same old scenes? Time to script your own story. Whether it's a breakfast on a
+      beach, moment on a mountaintop, we’ve got the perfect package custom-tailored for your
+      dream escape.
+      “Kaha chalna hai bhai?” Wherever your heart desires! We’ll handle the details, you just focus on
+      living your main character life. Be it a romantic duet, or a full-on gang war, your adventure starts
+      here.
+      This trip is your script. How will you write your next epic? `,
       logo: levelOneCustomLogo,
-      url: "test",
+      url: "/bali/custom",
       leftImg: levelOneCustomImage,
     },
   ],

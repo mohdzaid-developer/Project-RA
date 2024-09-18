@@ -1,0 +1,101 @@
+@import "@/index.scss";
+
+.admin-trips-container {
+  margin-left: 15vw;
+  margin-top: 15vh;
+
+  .loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+  }
+
+  .single-trip-details {
+    padding: 30px;
+    margin: 30px;
+    height: 80vh;
+
+    background-color: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+
+    .top-container {
+      display: flex;
+      justify-content: flex-start;
+      gap: 100px;
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+
+        .trip-heading {
+          h3 {
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: $dark-green;
+          }
+        }
+
+        .detail-container {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .detail-slot {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            gap: 10px;
+            h2 {
+              font-size: 18px;
+              font-weight: 600;
+              color: $gray;
+            }
+            h3 {
+              color: $black;
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    .bottom-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+      .trip-heading {
+        h3 {
+          font-size: 30px;
+          font-weight: 600;
+          letter-spacing: 1px;
+          color: $dark-green;
+        }
+      }
+      .status-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        .status-btn {
+          padding: 15px 25px;
+          border-radius: 10px;
+          background-color: transparent;
+          color: $dark-green;
+          border: 1px solid $dark-green;
+        }
+
+        #selected {
+          color: $white;
+          background-color: $dark-green;
+        }
+      }
+    }
+  }
+}
