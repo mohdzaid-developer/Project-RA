@@ -18,7 +18,6 @@ import {
 
 import { useUserGetTripsQuery } from "@/redux/slice/user/api/userApiSlice";
 
-
 const MyTrips = () => {
   const [page, setPage] = useState(1);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -80,16 +79,6 @@ const MyTrips = () => {
           </TableContainer>
         )}
       </section>
-      <TablePagination
-        rowsPerPageOptions={[5, 10, 20]}
-        component="div"
-        count={tripDetails?.data?.totalResultsCount}
-        rowsPerPage={rowsPerPage}
-        page={page - 1}
-        onPageChange={handleChangePage}
-        onRowsPerPageChange={handleChangeRowsPerPage}
-        className="table-pagination"
-      />
     </div>
   );
 };

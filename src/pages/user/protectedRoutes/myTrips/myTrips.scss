@@ -34,10 +34,10 @@
         outline: none;
         background-color: $dark-green;
         border-radius: 10px;
-        border: 1px solid gray;
+        border: 1px solid rgb(40, 40, 40);
 
         tr {
-          border: 1px solid gray;
+          border: 1px solid rgb(40, 40, 40);
           th {
             font-family: "Cygre Light";
             padding: 20px 0;
@@ -45,15 +45,16 @@
             font-size: 18px;
             letter-spacing: 1px;
             color: $white;
+            border: 1px solid rgb(40, 40, 40);
           }
         }
       }
 
       .table-body {
         background-color: $black;
-        border: 1px solid gray;
+        border: 1px solid rgb(40, 40, 40);
         tr {
-          border: 1px solid gray;
+          border: 1px solid rgb(40, 40, 40);
           td {
             padding: 20px 0;
             color: $gray;
@@ -61,6 +62,7 @@
             font-family: "Cygre Light";
             letter-spacing: 1px;
             color: $white;
+            border: 1px solid rgb(40, 40, 40);
           }
         }
 

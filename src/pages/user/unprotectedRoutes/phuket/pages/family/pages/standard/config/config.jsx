@@ -1,7 +1,5 @@
 //Assets
 import familyStandard from "@/assets/familyStandard.webp";
-
-//Assets
 import phuketSlider1 from "@/assets/phuketSlider1.jpg";
 import phuketSlider2 from "@/assets/phuketSlider2.jpg";
 import phuketSlider3 from "@/assets/phuketSlider3.jpg";
@@ -31,4 +29,94 @@ export const data = {
     phuketSlider6,
   ],
   price: "55,000",
+};
+
+export const activities = {
+  image: "",
+  itinerary: [
+    {
+      day: 0,
+      title: "Arrival Day",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Relax after your arrival"],
+        },
+        {
+          title: "Visit",
+          data: [
+            "(Only possible if arrived before mid-day)",
+            "Aquaria Phuket",
+            "Tiger Park",
+            "If we miss, we can do it on the rest day",
+          ],
+        },
+      ],
+    },
+    {
+      day: 1,
+      title: "Dolphin Day Out",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Dolphin Show", "Crocodile Farm"],
+        },
+      ],
+    },
+    {
+      day: 2,
+      title: "Island Explorers",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Phi Phi Island (Standard) or James Bond Island"],
+        },
+      ],
+    },
+    {
+      day: 3,
+      title: "Rest Day",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Rest day"],
+        },
+      ],
+    },
+    {
+      day: 4,
+      title: "Cultural Exploration",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Bird Farm", "Big Buddha", "Phuket Town"],
+        },
+      ],
+    },
+    {
+      day: 5,
+      title: "Family Fun Day",
+      plans: [
+        {
+          title: "Visit",
+          data: [
+            "Souvenir Shop",
+            "Monkey Hill",
+            "Sunset View Point",
+            "Night Market Patong",
+          ],
+        },
+      ],
+    },
+    {
+      day: 6,
+      title: "Departure Day",
+      plans: [
+        {
+          title: "Departure",
+          data: ["Prepare for your flight home"],
+        },
+      ],
+    },
+  ],
 };
