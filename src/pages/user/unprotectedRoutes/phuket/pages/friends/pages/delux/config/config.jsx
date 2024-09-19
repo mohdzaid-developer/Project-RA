@@ -1,7 +1,5 @@
 //Assets
 import friendsDelux from "@/assets/friendsDelux.webp";
-
-//Assets
 import phuketSlider1 from "@/assets/phuketSlider1.jpg";
 import phuketSlider2 from "@/assets/phuketSlider2.jpg";
 import phuketSlider3 from "@/assets/phuketSlider3.jpg";
@@ -31,4 +29,106 @@ export const data = {
     phuketSlider6,
   ],
   price: "75,000",
+};
+
+export const activities = {
+  image: "",
+  itinerary: [
+    {
+      day: 0,
+      title: "Arrival Day",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Relax after your arrival"],
+        },
+        {
+          title: "Activities",
+          data: [
+            "(Only possible if arrived before mid-day)",
+            "Elephant Riding",
+            "ATV",
+            "If we miss, we can do it on the rest day",
+          ],
+        },
+      ],
+    },
+    {
+      day: 1,
+      title: "Island Hoppers",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Phi Phi Island or James Bond Island"],
+        },
+      ],
+    },
+    {
+      day: 2,
+      title: "Culture Quest",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Chalong Temple", "Big Buddha", "Phuket Town", "Premium Spa"],
+        },
+        {
+          title: "Activities",
+          data: ["Zipline", "Tiger Park"],
+        },
+      ],
+    },
+    {
+      day: 3,
+      title: "Recharge & Relax",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Rest day"],
+        },
+      ],
+    },
+    {
+      day: 4,
+      title: "Nature & Nibbles",
+      plans: [
+        {
+          title: "Activities",
+          data: ["Horse riding on the beach"],
+        },
+        {
+          title: "Visit",
+          data: [
+            "Commune Cafe",
+            "Kayaking at Yanui Beach",
+            "Sunset View Point",
+          ],
+        },
+      ],
+    },
+    {
+      day: 5,
+      title: "Night Market Mania",
+      plans: [
+        {
+          title: "Visit",
+          data: [
+            "Cashew Nut Factory",
+            "Big Bee Farm and Souvenir Shop",
+            "Monkey Hill",
+            "Phuket Night Market (only on Saturday)",
+          ],
+        },
+      ],
+    },
+    {
+      day: 6,
+      title: "Departure Day",
+      plans: [
+        {
+          title: "Departure",
+          data: ["Prepare for your flight home"],
+        },
+      ],
+    },
+  ],
 };

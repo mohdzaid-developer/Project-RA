@@ -1,7 +1,5 @@
 //Assets
 import familyDelux from "@/assets/familyDelux.webp";
-
-//Assets
 import phuketSlider1 from "@/assets/phuketSlider1.jpg";
 import phuketSlider2 from "@/assets/phuketSlider2.jpg";
 import phuketSlider3 from "@/assets/phuketSlider3.jpg";
@@ -31,4 +29,102 @@ export const data = {
     phuketSlider6,
   ],
   price: "75,000",
+};
+
+export const activities = {
+  image: "",
+  itinerary: [
+    {
+      day: 0,
+      title: "Arrival Day",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Relax after your arrival"],
+        },
+        {
+          title: "Visit",
+          data: [
+            "(Only possible if arrived before mid-day)",
+            "Aquaria Phuket (Adult)",
+            "AR Trickeye Museum (Child)",
+            "If we miss, we can do it on the rest day",
+          ],
+        },
+      ],
+    },
+    {
+      day: 1,
+      title: "Dolphin Delights",
+      plans: [
+        {
+          title: "Activities",
+          data: ["Elephant riding"],
+        },
+        {
+          title: "Visit",
+          data: [
+            "Crocodile Farm",
+            "Dolphins Bay Phuket - Deluxe Row",
+            "Three Monkey Cafe",
+          ],
+        },
+      ],
+    },
+    {
+      day: 2,
+      title: "Sacred Journeys",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Phi Phi Island Day Tour or James Bond Island"],
+        },
+      ],
+    },
+    {
+      day: 3,
+      title: "Day of Rest",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Rest day"],
+        },
+      ],
+    },
+    {
+      day: 4,
+      title: "Beachside Bliss",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Tiger Park", "Monkey Show", "Carnival Magic"],
+        },
+      ],
+    },
+    {
+      day: 5,
+      title: "Market Marvels",
+      plans: [
+        {
+          title: "Visit",
+          data: [
+            "Cashew Nut Factory",
+            "Big Bee Farm and Souvenir Shop",
+            "Monkey Hill",
+            "Phuket Night Market (Saturday)",
+          ],
+        },
+      ],
+    },
+    {
+      day: 6,
+      title: "Departure Day",
+      plans: [
+        {
+          title: "Departure",
+          data: ["Prepare for your flight home"],
+        },
+      ],
+    },
+  ],
 };

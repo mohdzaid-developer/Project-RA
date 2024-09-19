@@ -1,7 +1,5 @@
 //Assets
 import friendsDelux from "@/assets/friendsDelux.webp";
-
-//Assets
 import baliSlider1 from "@/assets/baliSlider1.jpg";
 import baliSlider2 from "@/assets/baliSlider2.jpg";
 import baliSlider3 from "@/assets/baliSlider3.jpg";
@@ -31,4 +29,112 @@ export const data = {
     baliSlider6,
   ],
   price: "75,000",
+};
+
+export const activities = {
+  image: "",
+  itinerary: [
+    {
+      day: 0,
+      title: "Arrival Day",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Relax after your arrival"],
+        },
+        {
+          title: "Visit",
+          data: ["A nearby place or relax at the beach"],
+        },
+        {
+          title: "Dinner",
+          data: ["Dinner at a beachside restaurant"],
+        },
+      ],
+    },
+    {
+      day: 1,
+      title: "Temples and Waterfalls",
+      plans: [
+        {
+          title: "Visit",
+          data: [
+            "Tanah Lot Temple",
+            "Kanto Lampo Waterfalls",
+            "Ubud Monkey Forest",
+          ],
+        },
+      ],
+    },
+    {
+      day: 2,
+      title: "Adventure and Cultural Exploration",
+      plans: [
+        {
+          title: "Activities",
+          data: ["Water sports activities (e.g., jet skiing or parasailing)"],
+        },
+        {
+          title: "Visit",
+          data: [
+            "Garuda Wisnu Kencana (GWK) Cultural Park",
+            "Uluwatu Temple",
+            "Karang Boma Cliff or Kecak Dance",
+          ],
+        },
+        {
+          title: "Dinner",
+          data: ["Seafood dinner at Jimbaran Beach"],
+        },
+      ],
+    },
+    {
+      day: 3,
+      title: "Island Adventure",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Explore Nusa Penida Island"],
+        },
+      ],
+    },
+    {
+      day: 4,
+      title: "Rest and Relaxation",
+      plans: [
+        {
+          title: "Activities",
+          data: [
+            "Local shopping at nearby markets",
+            "Spa session for relaxation",
+            "Visit Finns Beach Club",
+          ],
+        },
+      ],
+    },
+    {
+      day: 5,
+      title: "Temples and Activities",
+      plans: [
+        {
+          title: "Activities",
+          data: ["Choose between river rafting or an ATV ride"],
+        },
+        {
+          title: "Visit",
+          data: ["Ulun Danu Beratan Temple", "Bali Handara Gate"],
+        },
+      ],
+    },
+    {
+      day: 6,
+      title: "Departure Day",
+      plans: [
+        {
+          title: "Departure",
+          data: ["Prepare for your flight home"],
+        },
+      ],
+    },
+  ],
 };

@@ -1,7 +1,5 @@
 //Assets
 import coupleDelux from "@/assets/coupleDelux.webp";
-
-//Assets
 import phuketSlider1 from "@/assets/phuketSlider1.jpg";
 import phuketSlider2 from "@/assets/phuketSlider2.jpg";
 import phuketSlider3 from "@/assets/phuketSlider3.jpg";
@@ -31,4 +29,102 @@ export const data = {
     phuketSlider6,
   ],
   price: "75,000",
+};
+
+export const activities = {
+  image: "",
+  itinerary: [
+    {
+      day: 0,
+      title: "Arrival Day",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Relax after your arrival"],
+        },
+        {
+          title: "Visit",
+          data: [
+            "(Only possible if arrived before mid-day)",
+            "Tiger Park",
+            "Cafe Phuket View Point",
+            "If we miss, we can do it on the rest day",
+          ],
+        },
+      ],
+    },
+    {
+      day: 1,
+      title: "Zip Through Adventure",
+      plans: [
+        {
+          title: "Activities",
+          data: ["Zipline"],
+        },
+        {
+          title: "Visit",
+          data: ["Chalong Temple", "Big Buddha", "Phuket Town"],
+        },
+      ],
+    },
+    {
+      day: 2,
+      title: "Lovers’ Island Escape",
+      plans: [
+        {
+          title: "Visit",
+          data: ["Phi Phi Island Day Tour or James Bond Island Day Catamaran"],
+        },
+      ],
+    },
+    {
+      day: 3,
+      title: "Day of Serenity",
+      plans: [
+        {
+          title: "Rest",
+          data: ["Rest day"],
+        },
+      ],
+    },
+    {
+      day: 4,
+      title: "Sunset Lovers’ Cruise",
+      plans: [
+        {
+          title: "Activities",
+          data: ["Elephant Riding", "ATV, River Rafting"],
+        },
+        {
+          title: "Visit",
+          data: ["Sunset Dinner on Boat"],
+        },
+      ],
+    },
+    {
+      day: 5,
+      title: "Beachside Treasures",
+      plans: [
+        {
+          title: "Visit",
+          data: [
+            "Cashew Nut Factory",
+            "Big Bee Farm and Souvenir Shop",
+            "Monkey Hill",
+            "Phuket Night Market",
+          ],
+        },
+      ],
+    },
+    {
+      day: 6,
+      title: "Departure Day",
+      plans: [
+        {
+          title: "Departure",
+          data: ["Prepare for your flight home"],
+        },
+      ],
+    },
+  ],
 };
