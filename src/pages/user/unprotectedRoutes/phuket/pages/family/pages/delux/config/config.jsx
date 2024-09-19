@@ -31,100 +31,111 @@ export const data = {
   price: "75,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Visit",
-          data: [
-            "(Only possible if arrived before mid-day)",
-            "Aquaria Phuket (Adult)",
-            "AR Trickeye Museum (Child)",
-            "If we miss, we can do it on the rest day",
-          ],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Dolphin Delights",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Elephant riding"],
-        },
-        {
-          title: "Visit",
-          data: [
-            "Crocodile Farm",
-            "Dolphins Bay Phuket - Deluxe Row",
-            "Three Monkey Cafe",
-          ],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Sacred Journeys",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Phi Phi Island Day Tour or James Bond Island"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Day of Rest",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Rest day"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Beachside Bliss",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Tiger Park", "Monkey Show", "Carnival Magic"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Market Marvels",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Cashew Nut Factory",
-            "Big Bee Farm and Souvenir Shop",
-            "Monkey Hill",
-            "Phuket Night Market (Saturday)",
-          ],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Visit",
+        data: [
+          "(Only possible if arrived before mid-day)",
+          "Aquaria Phuket (Adult)",
+          "AR Trickeye Museum (Child)",
+          "If we miss, we can do it on the rest day",
+        ],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Dolphin Delights",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Elephant riding"],
+      },
+      {
+        title: "Visit",
+        data: [
+          "Crocodile Farm",
+          "Dolphins Bay Phuket - Deluxe Row",
+          "Three Monkey Cafe",
+        ],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Sacred Journeys",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Phi Phi Island Day Tour or James Bond Island"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Day of Rest",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Rest day"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Beachside Bliss",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Tiger Park", "Monkey Show", "Carnival Magic"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Market Marvels",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Cashew Nut Factory",
+          "Big Bee Farm and Souvenir Shop",
+          "Monkey Hill",
+          "Phuket Night Market (Saturday)",
+        ],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

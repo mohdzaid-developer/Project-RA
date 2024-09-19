@@ -31,99 +31,110 @@ export const data = {
   price: "55,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Visit",
-          data: [
-            "(Only possible if arrived before mid-day)",
-            "Commune Cafe Kata",
-            "Tiger Park",
-            "Promthep Cape Sunset View Point",
-            "If we miss, we can do it on the rest day",
-          ],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Zipline Thrills & Chills",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Zipline", "Tiger Park"],
-        },
-        {
-          title: "Visit",
-          data: ["Big Buddha", "Three Monkey Cafe (food not included)"],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Island Romance",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Phi Phi Island or James Bond Island"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Couples Retreat",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Rest day"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Wild Encounters",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Elephant Riding", "Horse Riding"],
-        },
-        {
-          title: "Visit",
-          data: ["Phuket Town", "Cafe' Phuket View Point"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Sunsets & Souvenirs",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Cashew Nut Factory & Pearl Factory & Souvenir Shop",
-            "Rock Swing Beach & Sunset Point",
-          ],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Visit",
+        data: [
+          "(Only possible if arrived before mid-day)",
+          "Commune Cafe Kata",
+          "Tiger Park",
+          "Promthep Cape Sunset View Point",
+          "If we miss, we can do it on the rest day",
+        ],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Zipline Thrills & Chills",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Zipline", "Tiger Park"],
+      },
+      {
+        title: "Visit",
+        data: ["Big Buddha", "Three Monkey Cafe (food not included)"],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Island Romance",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Phi Phi Island or James Bond Island"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Couples Retreat",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Rest day"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Wild Encounters",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Elephant Riding", "Horse Riding"],
+      },
+      {
+        title: "Visit",
+        data: ["Phuket Town", "Cafe' Phuket View Point"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Sunsets & Souvenirs",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Cashew Nut Factory & Pearl Factory & Souvenir Shop",
+          "Rock Swing Beach & Sunset Point",
+        ],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

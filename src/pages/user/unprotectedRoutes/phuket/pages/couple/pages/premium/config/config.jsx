@@ -31,127 +31,142 @@ export const data = {
   price: "1,00,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Visit",
-          data: [
-            "(Only possible if arrived before mid-day)",
-            "Cafe Phuket View Point",
-          ],
-        },
-        {
-          title: "Activities",
-          data: [
-            "Horse Riding on the Beach",
-            "Jet Ski or Banana Boat or Parasailing (any one)",
-            "If we miss, we can do it on the rest day",
-          ],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Private Island Romance",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Phi Phi Island Premium By Catamaran Boat",
-            "James Bond Island by Private Boat",
-          ],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Nature's Love Affair",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Elephant Riding", "River Rafting"],
-        },
-        {
-          title: "Visit",
-          data: ["Andamanda"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Spa & Serenity",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Rest day"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Explore Phuket",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Three Monkey Restaurant (food not included)",
-            "Rang Hill & Phuket Town Tour",
-          ],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Firearms & Flames (Sunset)",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Shooting Gun 10 Shots - Pistol", "Yona Beach Club Pool Bed"],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Swing into Sunset",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Commune Cafe (food not included)",
-            "Rock Swing Beach",
-            "Sunset View Point",
-          ],
-        },
-      ],
-    },
-    {
-      day: 7,
-      title: "Free Spirits Day",
-      plans: [
-        {
-          title: "Custom",
-          data: ["You can choose anything that you want to do in Phuket"],
-        },
-      ],
-    },
-    {
-      day: 8,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Visit",
+        data: [
+          "(Only possible if arrived before mid-day)",
+          "Cafe Phuket View Point",
+        ],
+      },
+      {
+        title: "Activities",
+        data: [
+          "Horse Riding on the Beach",
+          "Jet Ski or Banana Boat or Parasailing (any one)",
+          "If we miss, we can do it on the rest day",
+        ],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Private Island Romance",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Phi Phi Island Premium By Catamaran Boat",
+          "James Bond Island by Private Boat",
+        ],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Nature's Love Affair",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Elephant Riding", "River Rafting"],
+      },
+      {
+        title: "Visit",
+        data: ["Andamanda"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Spa & Serenity",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Rest day"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Explore Phuket",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Three Monkey Restaurant (food not included)",
+          "Rang Hill & Phuket Town Tour",
+        ],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Firearms & Flames (Sunset)",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Shooting Gun 10 Shots - Pistol", "Yona Beach Club Pool Bed"],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Swing into Sunset",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Commune Cafe (food not included)",
+          "Rock Swing Beach",
+          "Sunset View Point",
+        ],
+      },
+    ],
+  },
+  {
+    day: 7,
+    title: "Free Spirits Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Custom",
+        data: ["You can choose anything that you want to do in Phuket"],
+      },
+    ],
+  },
+  {
+    day: 8,
+    title: "Departure Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

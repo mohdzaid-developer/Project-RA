@@ -31,119 +31,130 @@ export const data = {
   price: "1,00,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Activities",
-          data: [
-            "(Only possible if arrived before mid-day)",
-            "Elephant Riding",
-            "ATV",
-            "If we miss, we can do it on the rest day",
-          ],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Island Hoppers",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Phi Phi Island or James Bond Island"],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Wildlife & Wonders",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Elephant riding", "ATV, River Rafting"],
-        },
-        {
-          title: "Visit",
-          data: ["Sunset View Point"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Rest & Recharge",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Rest day"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Beach Bash",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Shooting gun 10 shot - pistol", "Yona Beach Club Pool Bed"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Killer Day Out",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Dolphin Show", "Crocodile Farm"],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Phuket Nights",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Horse riding on the beach"],
-        },
-        {
-          title: "Visit",
-          data: [
-            "Commune Cafe",
-            "Kayaking at Yanui Beach",
-            "Sunset View Point",
-          ],
-        },
-      ],
-    },
-    {
-      day: 7,
-      title: "Choose Your Phuket",
-      plans: [
-        {
-          title: "Custom",
-          data: ["You can choose anything that you want to do in Phuket"],
-        },
-      ],
-    },
-    {
-      day: 8,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Activities",
+        data: [
+          "(Only possible if arrived before mid-day)",
+          "Elephant Riding",
+          "ATV",
+          "If we miss, we can do it on the rest day",
+        ],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Island Hoppers",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Phi Phi Island or James Bond Island"],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Wildlife & Wonders",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Elephant riding", "ATV, River Rafting"],
+      },
+      {
+        title: "Visit",
+        data: ["Sunset View Point"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Rest & Recharge",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Rest day"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Beach Bash",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Shooting gun 10 shot - pistol", "Yona Beach Club Pool Bed"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Killer Day Out",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Dolphin Show", "Crocodile Farm"],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Phuket Nights",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Horse riding on the beach"],
+      },
+      {
+        title: "Visit",
+        data: ["Commune Cafe", "Kayaking at Yanui Beach", "Sunset View Point"],
+      },
+    ],
+  },
+  {
+    day: 7,
+    title: "Choose Your Phuket",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Custom",
+        data: ["You can choose anything that you want to do in Phuket"],
+      },
+    ],
+  },
+  {
+    day: 8,
+    title: "Departure Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

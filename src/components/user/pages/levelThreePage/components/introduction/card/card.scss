@@ -7,42 +7,71 @@
   top: 0px;
   .card {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
     flex-direction: column;
     position: relative;
     top: -25%;
-    height: 500px;
+    height: 600px;
     width: 1000px;
     border-radius: 25px;
     padding: 50px;
     transform-origin: top;
-    h2 {
-      text-align: center;
-      margin: 0px;
-      font-size: 28px;
+    .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      h2 {
+        text-align: center;
+        margin: 0px;
+        font-size: 30px;
+        font-weight: 600;
+      }
     }
     .body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100%;
       gap: 50px;
 
       .description {
         width: 40%;
-        padding: 20px;
-
-        p {
-          font-size: 16px;
-          &::first-letter {
-            font-size: 28px;
-            font-family: "Title";
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        padding: 0px;
+        border: none;
+        margin: 0px;
+        .plans {
+          border: 1px solid white;
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 10px;
+          padding: 15px;
+          h3 {
+            font-size: 24px;
+            letter-spacing: 1px;
+          }
+          p {
+            font-size: 16px;
+            color: rgb(86, 86, 86);
+            text-align: left;
+            line-height: 20px;
+            font-weight: 600;
+            letter-spacing: 1px;
           }
         }
       }
 
       .imageContainer {
         position: relative;
-        width: 70%;
+        width: 50%;
         height: 100%;
         overflow: hidden;
         margin-top: 50px;
@@ -53,7 +82,7 @@
           height: 100%;
         }
         img {
-          width: 300px;
+          width: 100%;
           border-radius: 10px;
         }
       }

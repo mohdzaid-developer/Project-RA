@@ -31,92 +31,103 @@ export const data = {
   price: "55,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Visit",
-          data: [
-            "(Only possible if arrived before mid-day)",
-            "Aquaria Phuket",
-            "Tiger Park",
-            "If we miss, we can do it on the rest day",
-          ],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Dolphin Day Out",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Dolphin Show", "Crocodile Farm"],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Island Explorers",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Phi Phi Island (Standard) or James Bond Island"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Rest Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Rest day"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Cultural Exploration",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Bird Farm", "Big Buddha", "Phuket Town"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Family Fun Day",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Souvenir Shop",
-            "Monkey Hill",
-            "Sunset View Point",
-            "Night Market Patong",
-          ],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Visit",
+        data: [
+          "(Only possible if arrived before mid-day)",
+          "Aquaria Phuket",
+          "Tiger Park",
+          "If we miss, we can do it on the rest day",
+        ],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Dolphin Day Out",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Dolphin Show", "Crocodile Farm"],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Island Explorers",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Phi Phi Island (Standard) or James Bond Island"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Rest Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Rest day"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Cultural Exploration",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Bird Farm", "Big Buddha", "Phuket Town"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Family Fun Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Souvenir Shop",
+          "Monkey Hill",
+          "Sunset View Point",
+          "Night Market Patong",
+        ],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];
