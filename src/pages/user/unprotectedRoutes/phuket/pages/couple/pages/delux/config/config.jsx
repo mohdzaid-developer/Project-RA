@@ -36,7 +36,7 @@ export const activities = [
     day: 0,
     title: "Arrival Day",
     image: "",
-    color: "",
+    color: "DDA15E",
     plans: [
       {
         title: "Rest",
@@ -57,7 +57,7 @@ export const activities = [
     day: 1,
     title: "Zip Through Adventure",
     image: "",
-    color: "",
+    color: "F5CFDE",
     plans: [
       {
         title: "Activities",
@@ -73,7 +73,7 @@ export const activities = [
     day: 2,
     title: "Lovers’ Island Escape",
     image: "",
-    color: "",
+    color: "EB7E67",
     plans: [
       {
         title: "Visit",
@@ -85,7 +85,7 @@ export const activities = [
     day: 3,
     title: "Day of Serenity",
     image: "",
-    color: "",
+    color: "FFE894",
     plans: [
       {
         title: "Rest",
@@ -97,7 +97,7 @@ export const activities = [
     day: 4,
     title: "Sunset Lovers’ Cruise",
     image: "",
-    color: "",
+    color: "83D3FC",
     plans: [
       {
         title: "Activities",
@@ -113,7 +113,7 @@ export const activities = [
     day: 5,
     title: "Beachside Treasures",
     image: "",
-    color: "",
+    color: "C7E788",
     plans: [
       {
         title: "Visit",
@@ -130,7 +130,7 @@ export const activities = [
     day: 6,
     title: "Departure Day",
     image: "",
-    color: "",
+    color: "F2A7B3",
     plans: [
       {
         title: "Departure",

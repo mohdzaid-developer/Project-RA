@@ -36,7 +36,7 @@ export const activities = [
     day: 0,
     title: "Arrival Day",
     image: "",
-    color: "",
+    color: "DDA15E",
     plans: [
       {
         title: "Rest",
@@ -52,7 +52,7 @@ export const activities = [
     day: 1,
     title: "Temples and Culture",
     image: "",
-    color: "",
+    color: "F5CFDE",
     plans: [
       {
         title: "Activities",
@@ -72,7 +72,7 @@ export const activities = [
     day: 2,
     title: "Adventure and Nature",
     image: "",
-    color: "",
+    color: "EB7E67",
     plans: [
       {
         title: "Activities",
@@ -88,7 +88,7 @@ export const activities = [
     day: 3,
     title: "Island Adventure",
     image: "",
-    color: "",
+    color: "FFE894",
     plans: [
       {
         title: "Visit",
@@ -100,7 +100,7 @@ export const activities = [
     day: 4,
     title: "Relaxation and Leisure",
     image: "",
-    color: "",
+    color: "83D3FC",
     plans: [
       {
         title: "Activities",
@@ -112,7 +112,7 @@ export const activities = [
     day: 5,
     title: "Gili Trawangan Day 1",
     image: "",
-    color: "",
+    color: "C7E788",
     plans: [
       {
         title: "Visit",
@@ -124,7 +124,7 @@ export const activities = [
     day: 6,
     title: "Gili Trawangan Day 2",
     image: "",
-    color: "",
+    color: "F2A7B3",
     plans: [
       {
         title: "Return",
@@ -140,7 +140,7 @@ export const activities = [
     day: 7,
     title: "Volcano and Temple Tour",
     image: "",
-    color: "",
+    color: "8EC8C5",
     plans: [
       {
         title: "Visit",
@@ -157,7 +157,7 @@ export const activities = [
     day: 8,
     title: "Departure Day",
     image: "",
-    color: "",
+    color: "D4A5A5",
     plans: [
       {
         title: "Departure",

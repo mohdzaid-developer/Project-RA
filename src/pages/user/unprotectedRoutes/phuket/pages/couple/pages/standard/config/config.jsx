@@ -36,7 +36,7 @@ export const activities = [
     day: 0,
     title: "Arrival Day",
     image: "",
-    color: "",
+    color: "DDA15E",
     plans: [
       {
         title: "Rest",
@@ -58,7 +58,7 @@ export const activities = [
     day: 1,
     title: "Zipline Thrills & Chills",
     image: "",
-    color: "",
+    color: "F5CFDE",
     plans: [
       {
         title: "Activities",
@@ -74,7 +74,7 @@ export const activities = [
     day: 2,
     title: "Island Romance",
     image: "",
-    color: "",
+    color: "EB7E67",
     plans: [
       {
         title: "Visit",
@@ -86,7 +86,7 @@ export const activities = [
     day: 3,
     title: "Couples Retreat",
     image: "",
-    color: "",
+    color: "FFE894",
     plans: [
       {
         title: "Rest",
@@ -98,7 +98,7 @@ export const activities = [
     day: 4,
     title: "Wild Encounters",
     image: "",
-    color: "",
+    color: "83D3FC",
     plans: [
       {
         title: "Activities",
@@ -114,7 +114,7 @@ export const activities = [
     day: 5,
     title: "Sunsets & Souvenirs",
     image: "",
-    color: "",
+    color: "C7E788",
     plans: [
       {
         title: "Visit",
@@ -129,7 +129,7 @@ export const activities = [
     day: 6,
     title: "Departure Day",
     image: "",
-    color: "",
+    color: "F2A7B3",
     plans: [
       {
         title: "Departure",

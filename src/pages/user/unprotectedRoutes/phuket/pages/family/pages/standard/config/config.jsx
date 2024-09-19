@@ -36,7 +36,7 @@ export const activities = [
     day: 0,
     title: "Arrival Day",
     image: "",
-    color: "",
+    color: "DDA15E",
     plans: [
       {
         title: "Rest",
@@ -57,7 +57,7 @@ export const activities = [
     day: 1,
     title: "Dolphin Day Out",
     image: "",
-    color: "",
+    color: "F5CFDE",
     plans: [
       {
         title: "Visit",
@@ -69,7 +69,7 @@ export const activities = [
     day: 2,
     title: "Island Explorers",
     image: "",
-    color: "",
+    color: "EB7E67",
     plans: [
       {
         title: "Visit",
@@ -81,7 +81,7 @@ export const activities = [
     day: 3,
     title: "Rest Day",
     image: "",
-    color: "",
+    color: "FFE894",
     plans: [
       {
         title: "Rest",
@@ -93,7 +93,7 @@ export const activities = [
     day: 4,
     title: "Cultural Exploration",
     image: "",
-    color: "",
+    color: "83D3FC",
     plans: [
       {
         title: "Visit",
@@ -105,7 +105,7 @@ export const activities = [
     day: 5,
     title: "Family Fun Day",
     image: "",
-    color: "",
+    color: "C7E788",
     plans: [
       {
         title: "Visit",
@@ -122,7 +122,7 @@ export const activities = [
     day: 6,
     title: "Departure Day",
     image: "",
-    color: "",
+    color: "F2A7B3",
     plans: [
       {
         title: "Departure",

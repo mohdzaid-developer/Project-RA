@@ -36,7 +36,7 @@ export const activities = [
     day: 0,
     title: "Arrival Day",
     image: "",
-    color: "",
+    color: "DDA15E",
     plans: [
       {
         title: "Rest",
@@ -62,7 +62,7 @@ export const activities = [
     day: 1,
     title: "Sail to Paradise",
     image: "",
-    color: "",
+    color: "F5CFDE",
     plans: [
       {
         title: "Visit",
@@ -74,7 +74,7 @@ export const activities = [
     day: 2,
     title: "Tiger Trails & Town Tales",
     image: "",
-    color: "",
+    color: "EB7E67",
     plans: [
       {
         title: "Activities",
@@ -90,7 +90,7 @@ export const activities = [
     day: 3,
     title: "Family R&R",
     image: "",
-    color: "",
+    color: "FFE894",
     plans: [
       {
         title: "Rest",
@@ -102,7 +102,7 @@ export const activities = [
     day: 4,
     title: "Thrill Seekers Unite",
     image: "",
-    color: "",
+    color: "83D3FC",
     plans: [
       {
         title: "Activities",
@@ -114,7 +114,7 @@ export const activities = [
     day: 5,
     title: "Temple Treasures",
     image: "",
-    color: "",
+    color: "C7E788",
     plans: [
       {
         title: "Activities",
@@ -130,7 +130,7 @@ export const activities = [
     day: 6,
     title: "Carnival Magic Day",
     image: "",
-    color: "",
+    color: "F2A7B3",
     plans: [
       {
         title: "Visit",
@@ -142,7 +142,7 @@ export const activities = [
     day: 7,
     title: "Choose Your Own Adventure",
     image: "",
-    color: "",
+    color: "8EC8C5",
     plans: [
       {
         title: "Custom",
@@ -154,7 +154,7 @@ export const activities = [
     day: 8,
     title: "Departure Day",
     image: "",
-    color: "",
+    color: "D4A5A5",
     plans: [
       {
         title: "Departure",
