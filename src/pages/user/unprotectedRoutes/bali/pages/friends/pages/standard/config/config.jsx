@@ -31,102 +31,113 @@ export const data = {
   price: "55,000",
 };
 
-export const Activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Activities",
-          data: [
-            "Visit a nearby beach or local attraction",
-            "Visit a club to enjoy Bali’s nightlife",
-          ],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Temples and Nature",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Tanah Lot Temple",
-            "Ubud Monkey Forest",
-            "Elephant Care experience",
-          ],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Southern Bali Highlights",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Garuda Wisnu Kencana (GWK) Cultural Park",
-            "Uluwatu Temple",
-            "Optional: Kecak Dance or visit Bali's southernmost point",
-            "Pandawa Beach",
-          ],
-        },
-        {
-          title: "Dinner",
-          data: ["Enjoy seafood at Jimbaran Beach"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Adventure and Scenic Views",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Optional activity: ATV or River Rafting"],
-        },
-        {
-          title: "Visit",
-          data: ["Kanto Lampo Waterfalls", "Tegalalang Rice Terrace"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Rest Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax the entire day"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Culture and Waterfalls",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Tegenungan Waterfall", "Alas Harum", "Elephant Caves"],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Activities",
+        data: [
+          "Visit a nearby beach or local attraction",
+          "Visit a club to enjoy Bali’s nightlife",
+        ],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Temples and Nature",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Tanah Lot Temple",
+          "Ubud Monkey Forest",
+          "Elephant Care experience",
+        ],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Southern Bali Highlights",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Garuda Wisnu Kencana (GWK) Cultural Park",
+          "Uluwatu Temple",
+          "Optional: Kecak Dance or visit Bali's southernmost point",
+          "Pandawa Beach",
+        ],
+      },
+      {
+        title: "Dinner",
+        data: ["Enjoy seafood at Jimbaran Beach"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Adventure and Scenic Views",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Optional activity: ATV or River Rafting"],
+      },
+      {
+        title: "Visit",
+        data: ["Kanto Lampo Waterfalls", "Tegalalang Rice Terrace"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Rest Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax the entire day"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Culture and Waterfalls",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Tegenungan Waterfall", "Alas Harum", "Elephant Caves"],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

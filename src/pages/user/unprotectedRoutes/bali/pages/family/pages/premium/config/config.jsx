@@ -33,131 +33,130 @@ export const data = {
   price: "1,00,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Visit",
-          data: ["Nearby places"],
-        },
-        {
-          title: "Dinner",
-          data: ["At a beachfront restaurant"],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Temples and Culture",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Garuda Wisnu Kencana (GWK) Cultural Park",
-            "Pandawa Beach",
-            "Uluwatu Temple",
-            "Kecak Dance Performance",
-          ],
-        },
-        {
-          title: "Dinner",
-          data: ["Seafood dinner at Jimbaran Beach"],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Adventure and Scenic Views",
-      plans: [
-        {
-          title: "Activities",
-          data: [
-            "Choose an activity of your choice (e.g., ATV ride or river rafting)",
-          ],
-        },
-        {
-          title: "Visit",
-          data: [
-            "Ulun Danu Beratan Temple",
-            "Bali Handara Gate",
-            "Sunset at Tanah Lot Temple",
-          ],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Island Adventure",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Explore Nusa Penida Island"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Rest Day: Relaxation and Exploration",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Rest Day", "Spa session", "Local shopping"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Culture and Nature",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Watch Barong Dance",
-            "Visit an Art Village",
-            "Tegenungan Waterfall",
-            "Explore Rice Terraces",
-            "Tirta Empul Temple",
-          ],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Temples",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Lempuyang Temple (Gate of Heaven)", "Besakih Temple"],
-        },
-      ],
-    },
-    {
-      day: 7,
-      title: "Indo Animals",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Bali Zoo"],
-        },
-      ],
-    },
-    {
-      day: 8,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Visit",
+        data: ["Nearby places"],
+      },
+      {
+        title: "Dinner",
+        data: ["At a beachfront restaurant"],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Temples and Culture",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Garuda Wisnu Kencana (GWK) Cultural Park",
+          "Pandawa Beach",
+          "Uluwatu Temple",
+          "Kecak Dance Performance",
+        ],
+      },
+      {
+        title: "Dinner",
+        data: ["Seafood dinner at Jimbaran Beach"],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Adventure and Scenic Views",
+    plans: [
+      {
+        title: "Activities",
+        data: [
+          "Choose an activity of your choice (e.g., ATV ride or river rafting)",
+        ],
+      },
+      {
+        title: "Visit",
+        data: [
+          "Ulun Danu Beratan Temple",
+          "Bali Handara Gate",
+          "Sunset at Tanah Lot Temple",
+        ],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Island Adventure",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Explore Nusa Penida Island"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Rest Day: Relaxation and Exploration",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Rest Day", "Spa session", "Local shopping"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Culture and Nature",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Watch Barong Dance",
+          "Visit an Art Village",
+          "Tegenungan Waterfall",
+          "Explore Rice Terraces",
+          "Tirta Empul Temple",
+        ],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Temples",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Lempuyang Temple (Gate of Heaven)", "Besakih Temple"],
+      },
+    ],
+  },
+  {
+    day: 7,
+    title: "Indo Animals",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Bali Zoo"],
+      },
+    ],
+  },
+  {
+    day: 8,
+    title: "Departure Day",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

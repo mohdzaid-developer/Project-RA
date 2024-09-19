@@ -33,106 +33,105 @@ export const data = {
   price: "75,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Visit",
-          data: ["A nearby place or relax at the beach"],
-        },
-        {
-          title: "Dinner",
-          data: ["Dinner at a beachside restaurant"],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Temples and Nature",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Tanah Lot Temple",
-            "Tegenungan Waterfall",
-            "Ubud Monkey Forest",
-          ],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Cultural Exploration",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Garuda Wisnu Kencana (GWK) Cultural Park",
-            "Uluwatu Temple",
-            "Watch the Kecak Dance",
-          ],
-        },
-        {
-          title: "Dinner",
-          data: ["Enjoy seafood at Jimbaran Beach"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Adventure and Relaxation",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Choose between an ATV Ride or River Rafting"],
-        },
-        {
-          title: "Visit",
-          data: ["Ulun Danu Beratan Temple (Lake Beratan)"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Rest Day",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Relax and take it easy", "Local shopping at nearby markets"],
-        },
-        {
-          title: "Rest",
-          data: ["Spa experience for relaxation"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Island Adventure",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Explore Nusa Penida Island"],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Visit",
+        data: ["A nearby place or relax at the beach"],
+      },
+      {
+        title: "Dinner",
+        data: ["Dinner at a beachside restaurant"],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Temples and Nature",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Tanah Lot Temple",
+          "Tegenungan Waterfall",
+          "Ubud Monkey Forest",
+        ],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Cultural Exploration",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Garuda Wisnu Kencana (GWK) Cultural Park",
+          "Uluwatu Temple",
+          "Watch the Kecak Dance",
+        ],
+      },
+      {
+        title: "Dinner",
+        data: ["Enjoy seafood at Jimbaran Beach"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Adventure and Relaxation",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Choose between an ATV Ride or River Rafting"],
+      },
+      {
+        title: "Visit",
+        data: ["Ulun Danu Beratan Temple (Lake Beratan)"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Rest Day",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Relax and take it easy", "Local shopping at nearby markets"],
+      },
+      {
+        title: "Rest",
+        data: ["Spa experience for relaxation"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Island Adventure",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Explore Nusa Penida Island"],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];

@@ -8,22 +8,17 @@ import Payment from "./components/payment/Payment";
 //Routing
 import { useLocation } from "react-router-dom";
 
-const LevelThreePage = ({ data }) => {
+const LevelThreePage = ({ data, activities }) => {
   const location = useLocation();
-  console.log(location.pathname);
+
   return (
     <section className="levelThreePage">
       <Hero data={data} />
-      {location.pathname === "/bali/custom/standard" ||
-      location.pathname === "/bali/custom/premium" ||
-      location.pathname === "/bali/custom/delux" ||
-      location.pathname === "/phuket/custom/standard" ||
-      location.pathname === "/phuket/custom/premium" ||
-      location.pathname === "/phuket/custom/delux" ? (
+      {location.pathname.includes("custom") ? (
         <div style={{ marginBottom: "150px" }}></div>
       ) : (
         <>
-          <Introduction />
+          <Introduction activities={activities} />
           <Activities data={data} />
           <Description />
         </>

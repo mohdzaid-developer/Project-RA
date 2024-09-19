@@ -2,12 +2,12 @@
 import LevelThreePage from "@/components/user/pages/levelThreePage/LevelThreePage";
 
 //Config
-import { data } from "./config/config";
+import { data, activities } from "./config/config";
 
 const Premium = () => {
   return (
     <section>
-      <LevelThreePage data={data} />
+      <LevelThreePage data={data} activities={activities} />
     </section>
   );
 };
