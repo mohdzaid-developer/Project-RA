@@ -1,12 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import "./hero.scss";
-
 import { motion, useScroll, useTransform } from "framer-motion";
 import ScrollText from "./scrollText/ScrollText";
 
 const Hero = ({ data }) => {
   const targetRef = useRef();
-
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["end end", "end start"],
@@ -16,7 +14,6 @@ const Hero = ({ data }) => {
     yRange: ["0%", "40%"],
     xRange: ["0%", "-30%"],
   });
-
   useEffect(() => {
     const updateTransformValues = () => {
       if (window.innerWidth > 1700) {
@@ -29,31 +26,15 @@ const Hero = ({ data }) => {
           yRange: ["0%", "30%"],
           xRange: data.xRange2,
         });
-      } else if (window.innerWidth > 1400 && window.innerWidth < 1500) {
+      } else if (window.innerWidth > 600 && window.innerWidth < 900) {
         setTransformValues({
-          yRange: ["0%", "28%"],
+          yRange: ["0%", "40%"],
           xRange: data.xRange3,
         });
-      } else if (window.innerWidth > 1300 && window.innerWidth < 1400) {
+      } else if (window.innerWidth > 300 && window.innerWidth < 600) {
         setTransformValues({
-          yRange: ["0%", "28%"],
-          xRange: data.xRange4,
-        });
-      } else if (window.innerWidth > 1200 && window.innerWidth < 1300) {
-        setTransformValues({
-          yRange: ["0%", "28%"],
-          xRange: data.xRange5,
-        });
-      } else if (window.innerWidth > 1100 && window.innerWidth < 1200) {
-        setTransformValues({
-          yRange: ["0%", "28%"],
-          xRange: data.xRange6,
-        });
-      } else {
-        setTransformValues({
-          yRange: ["0%", "20%"],
-          xRange: ["0%", "-30%"],
-          scaleRange: ["100%", "80%"],
+          yRange: ["0%", "35%"],
+          xRange: data.xRange3,
         });
       }
     };
@@ -64,7 +45,7 @@ const Hero = ({ data }) => {
     return () => {
       window.removeEventListener("resize", updateTransformValues);
     };
-  }, []);
+  }, [data]);
 
   const y = useTransform(scrollYProgress, [0, 0.4], transformValues.yRange);
   const x = useTransform(scrollYProgress, [0, 0.4], transformValues.xRange);

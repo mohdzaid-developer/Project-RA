@@ -13,7 +13,7 @@
   flex-direction: column;
   gap: 40px;
 
-  .content {
+  .signIn-content {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@
     }
   }
 
-  .form {
+  .signIn-form {
     width: 50%;
     border-radius: 10px;
     padding: 50px 0;
@@ -36,7 +36,7 @@
     background: $gray;
     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
-    .form-container {
+    .signIn-form-container {
       width: 80%;
       display: flex;
       justify-content: center;
@@ -44,7 +44,7 @@
       flex-direction: column;
       gap: 40px;
 
-      .input {
+      .signIn-input {
         width: 100%;
 
         label {
@@ -54,7 +54,7 @@
         input {
           width: 100%;
           background-color: transparent;
-          border: none !important;
+          border: none;
           outline: none !important;
           border-radius: 0 !important;
           border-bottom: 1px solid $text-orange;
@@ -68,7 +68,7 @@
           }
         }
       }
-      .forgetPassword {
+      .signIn-forgetPassword {
         margin-top: 20px;
         text-align: right;
         a {
@@ -78,7 +78,7 @@
           letter-spacing: 0.5px;
         }
       }
-      .signUp {
+      .signIn-signUp {
         p {
           text-align: center;
           font-size: 16px;
@@ -100,22 +100,22 @@
     padding: 18px 45px;
     gap: 38px;
 
-    .content {
+    .signIn-content {
       h2 {
         font-size: 55px;
       }
     }
 
-    .form {
+    .signIn-form {
       width: 55%;
       padding: 45px 0;
       gap: 45px;
 
-      .form-container {
+      .signIn-form-container {
         width: 80%;
         gap: 36px;
 
-        .input {
+        .signIn-input {
           label {
             font-size: 17px;
           }
@@ -124,13 +124,13 @@
             padding-top: 9px;
           }
         }
-        .forgetPassword {
+        .signIn-forgetPassword {
           margin-top: 18px;
           a {
             font-size: 17px;
           }
         }
-        .signUp {
+        .signIn-signUp {
           p {
             font-size: 15px;
           }
@@ -145,22 +145,22 @@
     padding: 18px 40px;
     gap: 36px;
 
-    .content {
+    .signIn-content {
       h2 {
         font-size: 50px;
       }
     }
 
-    .form {
+    .signIn-form {
       width: 60%;
       padding: 40px 0;
       gap: 40px;
 
-      .form-container {
+      .signIn-form-container {
         width: 85%;
         gap: 34px;
 
-        .input {
+        .signIn-input {
           label {
             font-size: 17px;
           }
@@ -169,13 +169,13 @@
             padding-top: 8px;
           }
         }
-        .forgetPassword {
+        .signIn-forgetPassword {
           margin-top: 16px;
           a {
             font-size: 16px;
           }
         }
-        .signUp {
+        .signIn-signUp {
           p {
             font-size: 14px;
           }
@@ -190,22 +190,22 @@
     padding: 16px 35px;
     gap: 34px;
 
-    .content {
+    .signIn-content {
       h2 {
         font-size: 45px;
       }
     }
 
-    .form {
+    .signIn-form {
       width: 65%;
       padding: 35px 0;
       gap: 35px;
 
-      .form-container {
+      .signIn-form-container {
         width: 90%;
         gap: 32px;
 
-        .input {
+        .signIn-input {
           label {
             font-size: 16px;
           }
@@ -214,13 +214,13 @@
             padding-top: 7px;
           }
         }
-        .forgetPassword {
+        .signIn-forgetPassword {
           margin-top: 15px;
           a {
             font-size: 15px;
           }
         }
-        .signUp {
+        .signIn-signUp {
           p {
             font-size: 14px;
           }
@@ -235,23 +235,23 @@
     padding: 16px 35px;
     gap: 34px;
 
-    .content {
+    .signIn-content {
       h2 {
         font-size: 40px;
       }
     }
 
-    .form {
+    .signIn-form {
       width: 100%;
       padding: 30px 0;
       gap: 32px;
 
-      .form-container {
+      .signIn-form-container {
         padding: 30px;
         width: 100%;
         gap: 32px;
 
-        .input {
+        .signIn-input {
           label {
             font-size: 15px;
           }
@@ -260,13 +260,13 @@
             padding-top: 6px;
           }
         }
-        .forgetPassword {
+        .signIn-forgetPassword {
           margin-top: 14px;
           a {
             font-size: 14px;
           }
         }
-        .signUp {
+        .signIn-signUp {
           p {
             font-size: 14px;
           }
@@ -281,23 +281,23 @@
     padding: 30px;
     gap: 32px;
 
-    .content {
+    .signIn-content {
       h2 {
         font-size: 35px;
       }
     }
 
-    .form {
+    .signIn-form {
       width: 100%;
       padding: 20px 0;
       gap: 32px;
 
-      .form-container {
+      .signIn-form-container {
         padding: 20px;
         width: 100%;
         gap: 32px;
 
-        .input {
+        .signIn-input {
           label {
             font-size: 14.5px;
           }
@@ -306,13 +306,13 @@
             padding-top: 5px;
           }
         }
-        .forgetPassword {
+        .signIn-forgetPassword {
           margin-top: 13px;
           a {
             font-size: 13px;
           }
         }
-        .signUp {
+        .signIn-signUp {
           p {
             font-size: 13.5px;
           }

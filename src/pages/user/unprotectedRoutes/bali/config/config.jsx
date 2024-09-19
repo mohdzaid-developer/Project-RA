@@ -25,10 +25,7 @@ export const data = {
   ],
   xRange1: ["0%", "-28%"],
   xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "-25%"],
-  xRange4: ["0%", "-23%"],
-  xRange5: ["0%", "-21.5%"],
-  xRange6: ["0%", "18%"],
+  xRange3: ["0%", "0%"],
 
   galleryImg: [img1, img2, img3, img4, img5],
   packageData: [

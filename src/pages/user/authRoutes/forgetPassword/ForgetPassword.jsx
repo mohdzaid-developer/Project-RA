@@ -75,12 +75,12 @@ const ForgetPassword = () => {
   };
   return (
     <div className="forgetPassword-container">
-      <div className="content">
+      <div className="forgetPassword-content">
         <h2>Forget Password</h2>
       </div>
-      <div className="form">
-        <div className="form-container">
-          <div className="input">
+      <div className="forgetPassword-form">
+        <div className="forgetPassword-form-container">
+          <div className="forgetPassword-input">
             <label htmlFor="">Email : </label>
             <input type="text" name="email" onChange={handleChange} />
             {errors?.email && <p className="error-text">{errors?.email}</p>}
@@ -96,7 +96,7 @@ const ForgetPassword = () => {
             )}
           </button>
 
-          <div className="login">
+          <div className="forgetPassword-login">
             <p>
               Want to go Login?{" "}
               <span onClick={() => navigate("/login")}>Login</span>

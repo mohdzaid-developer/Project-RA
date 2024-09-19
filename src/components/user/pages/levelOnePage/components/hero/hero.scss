@@ -2,6 +2,8 @@
 .levelOneHero {
   width: 100%;
   height: 120vh;
+  height: 120dvh;
+  transition: all 0.8s ease-out;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,13 +47,45 @@
   .levelOneHero {
     .container {
       h2 {
-        font-size: 85px;
+        font-size: 80px;
       }
     }
 
     .text {
-      margin-left: 145px;
+      margin-left: 160px;
       margin-top: -75px;
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .levelOneHero {
+    padding: 30px;
+    .container {
+      h2 {
+        font-size: 60px;
+        text-align: center;
+      }
+    }
+
+    .text {
+      margin-left: 0px;
+      margin-top: -65px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .levelOneHero {
+    padding: 30px;
+    .container {
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    .text {
+      margin-top: -60px;
     }
   }
 }
