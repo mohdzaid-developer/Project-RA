@@ -19,8 +19,10 @@ export const data = {
     `it a top destination for tourists from around the world.`,
   ],
   xRange1: ["0%", "-24.3%"],
-  xRange2: ["0%", "-22%"],
-  xRange3: ["0%", "0%"],
+  xRange2: ["0%", "-24.5%"],
+  xRange3: ["0%", "-22.5%"],
+  xRange4: ["0%", "-19.5%"],
+  xRangeLast: ["0%", "0%"],
 
   sliderImg: [
     baliSlider1,

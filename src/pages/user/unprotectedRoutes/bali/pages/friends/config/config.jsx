@@ -13,8 +13,10 @@ export const data = {
     ` without it. Get ready for an all-thrill, nochill vacation`,
   ],
   xRange1: ["0%", "-28%"],
-  xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "0%"],
+  xRange2: ["0%", "-25%"],
+  xRange3: ["0%", "-23%"],
+  xRange4: ["0%", "-20%"],
+  xRangeLast: ["0%", "0%"],
 
   planTitle: "Friends",
 
