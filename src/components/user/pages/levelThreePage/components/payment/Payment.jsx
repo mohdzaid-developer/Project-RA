@@ -119,13 +119,13 @@ const Payment = ({ data }) => {
 
   const paymentWindow = (orderResponse) => {
     const options = {
-      key: "rzp_test_e6zf5ZgkpupNAu",
+      key: `${import.meta.env.VITE_API_RAZOR_PAY_KEY}`,
       amount: orderResponse?.amount_due ?? orderResponse?.total_amount,
       currency: orderResponse?.currency ?? "INR",
       name: "Come Fly With Me",
       description: "Transaction",
       order_id: orderResponse?.id ?? orderResponse?.order_id,
-      callback_url: "http://localhost:3000/payment-success",
+      callback_url: "https://comeflywithme.co.in/payment-success",
       handler: async function (response) {
         try {
           toast.success("Payment successful!");
