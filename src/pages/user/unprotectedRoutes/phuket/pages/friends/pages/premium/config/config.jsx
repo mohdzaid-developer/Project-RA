@@ -6,6 +6,14 @@ import phuketSlider3 from "@/assets/phuketSlider3.jpg";
 import phuketSlider4 from "@/assets/phuketSlider4.jpg";
 import phuketSlider5 from "@/assets/phuketSlider5.jpg";
 import phuketSlider6 from "@/assets/phuketSlider6.jpg";
+import phuketActivity1 from "@/assets/phuketActivity1.jpg";
+import phuketActivity2 from "@/assets/phuketActivity2.jpg";
+import phuketActivity3 from "@/assets/phuketActivity3.jpg";
+import phuketActivity4 from "@/assets/phuketActivity4.jpg";
+import phuketActivity5 from "@/assets/phuketActivity5.jpg";
+import phuketActivity6 from "@/assets/phuketActivity6.jpg";
+import phuketActivity7 from "@/assets/phuketActivity7.jpg";
+import phuketActivity8 from "@/assets/phuketActivity8.jpg";
 
 export const data = {
   title: "Squad goals: Phuket edition",
@@ -37,7 +45,7 @@ export const activities = [
   {
     day: 0,
     title: "Arrival Day",
-    image: "",
+    image: phuketActivity1,
     color: "DDA15E",
     plans: [
       {
@@ -58,7 +66,7 @@ export const activities = [
   {
     day: 1,
     title: "Island Hoppers",
-    image: "",
+    image: phuketActivity2,
     color: "F5CFDE",
     plans: [
       {
@@ -70,7 +78,7 @@ export const activities = [
   {
     day: 2,
     title: "Wildlife & Wonders",
-    image: "",
+    image: phuketActivity3,
     color: "EB7E67",
     plans: [
       {
@@ -86,7 +94,7 @@ export const activities = [
   {
     day: 3,
     title: "Rest & Recharge",
-    image: "",
+    image: phuketActivity4,
     color: "FFE894",
     plans: [
       {
@@ -98,7 +106,7 @@ export const activities = [
   {
     day: 4,
     title: "Beach Bash",
-    image: "",
+    image: phuketActivity5,
     color: "83D3FC",
     plans: [
       {
@@ -110,7 +118,7 @@ export const activities = [
   {
     day: 5,
     title: "Killer Day Out",
-    image: "",
+    image: phuketActivity6,
     color: "C7E788",
     plans: [
       {
@@ -122,7 +130,7 @@ export const activities = [
   {
     day: 6,
     title: "Phuket Nights",
-    image: "",
+    image: phuketActivity7,
     color: "F2A7B3",
     plans: [
       {
@@ -138,7 +146,7 @@ export const activities = [
   {
     day: 7,
     title: "Choose Your Phuket",
-    image: "",
+    image: phuketActivity8,
     color: "8EC8C5",
     plans: [
       {
@@ -150,7 +158,7 @@ export const activities = [
   {
     day: 8,
     title: "Departure Day",
-    image: "",
+    image: phuketActivity3,
     color: "D4A5A5",
     plans: [
       {
