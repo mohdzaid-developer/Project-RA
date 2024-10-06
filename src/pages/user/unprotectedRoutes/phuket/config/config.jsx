@@ -11,8 +11,8 @@ import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.webp";
 import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
 import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
 import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.jpg";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.jpg";
 import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 
 export const data = {
@@ -26,7 +26,9 @@ export const data = {
   ],
   xRange1: ["0%", "-25.5%"],
   xRange2: ["0%", "-23%"],
-  xRange3: ["0%", "0%"],
+  xRange3: ["0%", "-21.5%"],
+  xRange4: ["0%", "-18%"],
+  xRangeLast: ["0%", "0%"],
 
   galleryImg: [img1, img2, img3, img4, img5],
   packageData: [

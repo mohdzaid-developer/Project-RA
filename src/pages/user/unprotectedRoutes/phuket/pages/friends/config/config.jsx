@@ -1,8 +1,8 @@
 //Assets
 import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
-import friendsStandard from "@/assets/friendsStandard.webp";
-import friendsDelux from "@/assets/friendsDelux.webp";
-import friendsPremium from "@/assets/friendsPremium.webp";
+import friendsStandard from "@/assets/friendsStandard.jpg";
+import friendsDelux from "@/assets/friendsDelux.jpg";
+import friendsPremium from "@/assets/friendsPremium.jpg";
 
 export const data = {
   title: "Friends Package",
@@ -14,8 +14,10 @@ export const data = {
     `you didn’t know you needed. it a top destination for tourists from around the world.`,
   ],
   xRange1: ["0%", "-28%"],
-  xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "0%"],
+  xRange2: ["0%", "-25%"],
+  xRange3: ["0%", "-23%"],
+  xRange4: ["0%", "-20%"],
+  xRangeLast: ["0%", "0%"],
 
   planTitle: "Friends",
   plans: [

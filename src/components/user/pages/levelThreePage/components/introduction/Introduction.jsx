@@ -7,9 +7,8 @@ import Lenis from "@studio-freight/lenis";
 
 //Components
 import Card from "./card/Card";
-import { projects } from "./data";
 
-const Introduction = () => {
+const Introduction = ({ activities }) => {
   const container = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -33,16 +32,16 @@ const Introduction = () => {
   }, []);
 
   return (
-    <main ref={container} className="main">
-      {projects.map((project, i) => {
-        const targetScale = 1 - (projects.length - i) * 0.05;
+    <main ref={container} className="activities-introduction">
+      {activities.map((activity, i) => {
+        const targetScale = 1 - (activities.length - i) * 0.05;
         return (
           <Card
+            activity={activity}
             key={`p_${i}`}
             i={i}
-            {...project}
             progress={scrollYProgress}
-            range={[i / (projects.length - 1), 1]}
+            range={[i / (activities.length - 1), 1]}
             targetScale={targetScale}
           />
         );

@@ -1,8 +1,8 @@
 //Assets
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
-import familyStandard from "@/assets/familyStandard.webp";
-import familyDelux from "@/assets/familyDelux.webp";
-import familyPremium from "@/assets/familyPremium.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.jpg";
+import familyStandard from "@/assets/familyStandard.jpg";
+import familyDelux from "@/assets/familyDelux.jpg";
+import familyPremium from "@/assets/familyPremium.jpg";
 
 export const data = {
   title: "Family Package",
@@ -15,8 +15,10 @@ export const data = {
 `,
   ],
   xRange1: ["0%", "-28%"],
-  xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "0%"],
+  xRange2: ["0%", "-25.5%"],
+  xRange3: ["0%", "-24%"],
+  xRange4: ["0%", "-21%"],
+  xRangeLast: ["0%", "0%"],
 
   planTitle: "Family",
   plans: [

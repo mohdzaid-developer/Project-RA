@@ -26,15 +26,25 @@ const Hero = ({ data }) => {
           yRange: ["0%", "30%"],
           xRange: data.xRange2,
         });
+      } else if (window.innerWidth > 1400 && window.innerWidth < 1500) {
+        setTransformValues({
+          yRange: ["0%", "32%"],
+          xRange: data.xRange3,
+        });
+      } else if (window.innerWidth > 1200 && window.innerWidth < 1400) {
+        setTransformValues({
+          yRange: ["0%", "32%"],
+          xRange: data.xRange4,
+        });
       } else if (window.innerWidth > 600 && window.innerWidth < 900) {
         setTransformValues({
           yRange: ["0%", "40%"],
-          xRange: data.xRange3,
+          xRange: data.xRangeLast,
         });
       } else if (window.innerWidth > 300 && window.innerWidth < 600) {
         setTransformValues({
           yRange: ["0%", "35%"],
-          xRange: data.xRange3,
+          xRange: data.xRangeLast,
         });
       }
     };

@@ -1,19 +1,12 @@
 import { useRef } from "react";
 import "./card.scss";
 
+import img from "@/assets/baliHero.webp";
+
 //Animation
 import { useTransform, motion, useScroll } from "framer-motion";
 
-const Card = ({
-  i,
-  title,
-  description,
-  src,
-  color,
-  progress,
-  range,
-  targetScale,
-}) => {
+const Card = ({ i, activity, progress, range, targetScale }) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -27,21 +20,34 @@ const Card = ({
     <div ref={container} className="cardContainer">
       <motion.div
         style={{
-          backgroundColor: color,
+          backgroundColor: `#${activity.color}`,
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="card"
+        className="intro-card"
       >
-        <h2>{title}</h2>
+        <div className="title">
+          <h2>Day {activity.day}</h2>
+          <h2>:</h2>
+          <h2>{activity.title}</h2>
+        </div>
         <div className="body">
           <div className="description">
-            <p>{description}</p>
+            {activity.plans.map((item, index1) => (
+              <div className="plans" key={index1}>
+                <h3>{item.title} -</h3>
+                {item.data.map((content, index2) => (
+                  <p key={index2}>
+                    {index2 + 1}. {content}
+                  </p>
+                ))}
+              </div>
+            ))}
           </div>
 
           <div className="imageContainer">
             <motion.div className="inner" style={{ scale: imageScale }}>
-              <img src={src} alt={title} className="cardImage" />
+              <img src={img} className="cardImage" />
             </motion.div>
           </div>
         </div>

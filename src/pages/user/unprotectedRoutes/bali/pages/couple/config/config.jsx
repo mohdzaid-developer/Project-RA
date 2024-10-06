@@ -1,8 +1,8 @@
 //Assets
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
-import coupleStandard from "@/assets/coupleStandard.webp";
-import coupleDelux from "@/assets/coupleDelux.webp";
-import couplePremium from "@/assets/couplePremium.webp";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.jpg";
+import coupleStandard from "@/assets/coupleStandard.jpg";
+import coupleDelux from "@/assets/coupleDelux.jpg";
+import couplePremium from "@/assets/couplePremium.jpg";
 
 export const data = {
   title: "Couple Package",
@@ -14,8 +14,10 @@ export const data = {
     `your love story into a timeless tale.`,
   ],
   xRange1: ["0%", "-28%"],
-  xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "0%"],
+  xRange2: ["0%", "-25.5%"],
+  xRange3: ["0%", "-23.5%"],
+  xRange4: ["0%", "-20.5%"],
+  xRangeLast: ["0%", "0%"],
 
   planTitle: "Couple",
   plans: [

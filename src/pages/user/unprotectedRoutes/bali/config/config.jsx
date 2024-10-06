@@ -3,7 +3,7 @@ import heroImg from "@/assets/baliHero.webp";
 import img1 from "@/assets/bali1.webp";
 import img2 from "@/assets/bali2.webp";
 import img3 from "@/assets/homeBali.webp";
-import img4 from "@/assets/bali3.webp";
+import img4 from "@/assets/bali3.jpeg";
 import img5 from "@/assets/bali4.webp";
 import levelOnePackageLogo from "@/assets/levelOnePackageLogo.webp";
 import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.webp";
@@ -11,8 +11,8 @@ import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.webp";
 import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
 import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
 import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.jpg";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.jpg";
 import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 
 export const data = {
@@ -25,7 +25,9 @@ export const data = {
   ],
   xRange1: ["0%", "-28%"],
   xRange2: ["0%", "-26%"],
-  xRange3: ["0%", "0%"],
+  xRange3: ["0%", "-24.5%"],
+  xRange4: ["0%", "-21%"],
+  xRangeLast: ["0%", "0%"],
 
   galleryImg: [img1, img2, img3, img4, img5],
   packageData: [

@@ -322,7 +322,6 @@ const adminProtectedRoutesData = [
   },
 ];
 
-//test
 const App = () => {
   return (
     <>

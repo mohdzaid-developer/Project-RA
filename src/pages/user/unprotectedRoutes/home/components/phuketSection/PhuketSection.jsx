@@ -14,7 +14,7 @@ const PhuketSection = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="phuketSection">
+    <section className="phuketSection" onClick={() => navigate("/phuket")}>
       <motion.div
         className="container"
         variants={fadeInAnimation}
@@ -37,7 +37,7 @@ const PhuketSection = () => {
         </motion.div>
 
         <motion.div className="phuketSection-right" variants={fadeInAnimation}>
-          <button onClick={() => navigate("/phuket")}>
+          <button>
             Know More <img src={rightArrow} alt="" />
           </button>
         </motion.div>

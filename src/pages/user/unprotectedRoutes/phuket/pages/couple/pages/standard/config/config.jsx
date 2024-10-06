@@ -1,5 +1,5 @@
 //Assets
-import coupleStandard from "@/assets/coupleStandard.webp";
+import coupleStandard from "@/assets/coupleStandard.jpg";
 import phuketSlider1 from "@/assets/phuketSlider1.jpg";
 import phuketSlider2 from "@/assets/phuketSlider2.jpg";
 import phuketSlider3 from "@/assets/phuketSlider3.jpg";
@@ -17,8 +17,10 @@ export const data = {
     `it a top destination for tourists from around the world.`,
   ],
   xRange1: ["0%", "-22.3%"],
-  xRange2: ["0%", "-20%"],
-  xRange3: ["0%", "0%"],
+  xRange2: ["0%", "-16.8%"],
+  xRange3: ["0%", "-14.8%"],
+  xRange4: ["0%", "-10.5%"],
+  xRangeLast: ["0%", "0%"],
 
   sliderImg: [
     phuketSlider1,
@@ -31,99 +33,110 @@ export const data = {
   price: "55,000",
 };
 
-export const activities = {
-  image: "",
-  itinerary: [
-    {
-      day: 0,
-      title: "Arrival Day",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Relax after your arrival"],
-        },
-        {
-          title: "Visit",
-          data: [
-            "(Only possible if arrived before mid-day)",
-            "Commune Cafe Kata",
-            "Tiger Park",
-            "Promthep Cape Sunset View Point",
-            "If we miss, we can do it on the rest day",
-          ],
-        },
-      ],
-    },
-    {
-      day: 1,
-      title: "Zipline Thrills & Chills",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Zipline", "Tiger Park"],
-        },
-        {
-          title: "Visit",
-          data: ["Big Buddha", "Three Monkey Cafe (food not included)"],
-        },
-      ],
-    },
-    {
-      day: 2,
-      title: "Island Romance",
-      plans: [
-        {
-          title: "Visit",
-          data: ["Phi Phi Island or James Bond Island"],
-        },
-      ],
-    },
-    {
-      day: 3,
-      title: "Couples Retreat",
-      plans: [
-        {
-          title: "Rest",
-          data: ["Rest day"],
-        },
-      ],
-    },
-    {
-      day: 4,
-      title: "Wild Encounters",
-      plans: [
-        {
-          title: "Activities",
-          data: ["Elephant Riding", "Horse Riding"],
-        },
-        {
-          title: "Visit",
-          data: ["Phuket Town", "Cafe' Phuket View Point"],
-        },
-      ],
-    },
-    {
-      day: 5,
-      title: "Sunsets & Souvenirs",
-      plans: [
-        {
-          title: "Visit",
-          data: [
-            "Cashew Nut Factory & Pearl Factory & Souvenir Shop",
-            "Rock Swing Beach & Sunset Point",
-          ],
-        },
-      ],
-    },
-    {
-      day: 6,
-      title: "Departure Day",
-      plans: [
-        {
-          title: "Departure",
-          data: ["Prepare for your flight home"],
-        },
-      ],
-    },
-  ],
-};
+export const activities = [
+  {
+    day: 0,
+    title: "Arrival Day",
+    image: "",
+    color: "DDA15E",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Relax after your arrival"],
+      },
+      {
+        title: "Visit",
+        data: [
+          "(Only possible if arrived before mid-day)",
+          "Commune Cafe Kata",
+          "Tiger Park",
+          "Promthep Cape Sunset View Point",
+          "If we miss, we can do it on the rest day",
+        ],
+      },
+    ],
+  },
+  {
+    day: 1,
+    title: "Zipline Thrills & Chills",
+    image: "",
+    color: "F5CFDE",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Zipline", "Tiger Park"],
+      },
+      {
+        title: "Visit",
+        data: ["Big Buddha", "Three Monkey Cafe (food not included)"],
+      },
+    ],
+  },
+  {
+    day: 2,
+    title: "Island Romance",
+    image: "",
+    color: "EB7E67",
+    plans: [
+      {
+        title: "Visit",
+        data: ["Phi Phi Island or James Bond Island"],
+      },
+    ],
+  },
+  {
+    day: 3,
+    title: "Couples Retreat",
+    image: "",
+    color: "FFE894",
+    plans: [
+      {
+        title: "Rest",
+        data: ["Rest day"],
+      },
+    ],
+  },
+  {
+    day: 4,
+    title: "Wild Encounters",
+    image: "",
+    color: "83D3FC",
+    plans: [
+      {
+        title: "Activities",
+        data: ["Elephant Riding", "Horse Riding"],
+      },
+      {
+        title: "Visit",
+        data: ["Phuket Town", "Cafe' Phuket View Point"],
+      },
+    ],
+  },
+  {
+    day: 5,
+    title: "Sunsets & Souvenirs",
+    image: "",
+    color: "C7E788",
+    plans: [
+      {
+        title: "Visit",
+        data: [
+          "Cashew Nut Factory & Pearl Factory & Souvenir Shop",
+          "Rock Swing Beach & Sunset Point",
+        ],
+      },
+    ],
+  },
+  {
+    day: 6,
+    title: "Departure Day",
+    image: "",
+    color: "F2A7B3",
+    plans: [
+      {
+        title: "Departure",
+        data: ["Prepare for your flight home"],
+      },
+    ],
+  },
+];
