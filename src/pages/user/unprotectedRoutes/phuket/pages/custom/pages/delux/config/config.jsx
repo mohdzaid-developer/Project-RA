@@ -20,7 +20,9 @@ export const data = {
   ],
   xRange1: ["0%", "-24.3%"],
   xRange2: ["0%", "-22%"],
-  xRange3: ["0%", "0%"],
+  xRange3: ["0%", "-14.8%"],
+  xRange4: ["0%", "-10.5%"],
+  xRangeLast: ["0%", "0%"],
 
   sliderImg: [
     phuketSlider1,
