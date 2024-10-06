@@ -24,7 +24,7 @@ export const data = {
     {
       title: "Phuket Your Way",
       data: [
-        "Standard phuket custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Thoda adjust kar lenge, Bhaiyya but not with this trip! Get all the must-see spots without breaking the bank. Think of it like the pav bhaji of vacations, simple but super satisfying. Soak in the energy at Patong Beach, snap your photos at the Big Buddha, and lagao a selfie at Phi Phi Islands. It’s a dream for beach lovers and adventure enthusiasts alike mass masala guaranteed! Ideal for those who believe in exploring the world on a budget while still having full-on fun",
       ],
       url: "/phuket/custom/standard",
       image: customStandard,
@@ -32,7 +32,7 @@ export const data = {
     {
       title: "Phuket Dream Trails",
       data: [
-        "Delux phuket custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Kuch toh bada soch, bhai! You deserve a little upgrade! This one’s for those who want thoda extra but don’t want to go all out. Picture this: the comfort of Paneer Butter Masala – not too flashy, just perfect. From private island-hopping tours to rejuvenating at elephant sanctuaries, this package elevates your holiday game. Think beachside barbecues, cultural shows, and luxury spas, but without breaking the bank For those who love thoda luxury but manageable Na zyada fancy, na simple, just sahi hai",
       ],
       url: "/phuket/custom/delux",
       image: customDelux,
@@ -40,7 +40,7 @@ export const data = {
     {
       title: "Phuket Curated Escapes",
       data: [
-        "Premium phuket custom ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Why be basic when you can be boss? Get ready to flex, this package is pure indulgence, like ordering biryani with double masala—you know it’s going to be extra, but it’s worth every bite! For those who want to go all out and feel like a VIP, this one’s for you. From sailing on private yachts to unwinding with spa sessions that make you feel like a raja, Phuket becomes your personal playground. Enjoy VIP entry to nightclubs, sunset dinners on the beach, and even a personal butler to cater to your every need. This is the Lamborghini of travel packages. If you’ve got a taste for the finer things in life, why not experience them on vacation too?",
       ],
       url: "/phuket/custom/premium",
       image: customPremium,
