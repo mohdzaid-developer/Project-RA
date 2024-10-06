@@ -8,7 +8,10 @@ import Lenis from "@studio-freight/lenis";
 //Components
 import Card from "./card/Card";
 
+//Assets
+
 const Introduction = ({ activities }) => {
+  console.log(activities);
   const container = useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -43,6 +46,7 @@ const Introduction = ({ activities }) => {
             progress={scrollYProgress}
             range={[i / (activities.length - 1), 1]}
             targetScale={targetScale}
+            image={activity.image}
           />
         );
       })}

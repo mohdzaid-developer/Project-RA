@@ -6,6 +6,13 @@ import baliSlider3 from "@/assets/baliSlider3.jpg";
 import baliSlider4 from "@/assets/baliSlider4.jpg";
 import baliSlider5 from "@/assets/baliSlider5.jpg";
 import baliSlider6 from "@/assets/baliSlider6.jpg";
+import baliActivity1 from "@/assets/baliActivity1.jpeg";
+import baliActivity2 from "@/assets/baliActivity2.jpeg";
+import baliActivity3 from "@/assets/baliActivity3.jpeg";
+import baliActivity4 from "@/assets/baliActivity4.jpeg";
+import baliActivity5 from "@/assets/baliActivity5.jpeg";
+import baliActivity6 from "@/assets/baliActivity6.jpeg";
+import baliActivity7 from "@/assets/baliActivity7.jpeg";
 
 export const data = {
   title: "Friends forever bali",
@@ -37,7 +44,7 @@ export const activities = [
   {
     day: 0,
     title: "Arrival Day",
-    image: "",
+    image: baliActivity1,
     color: "DDA15E",
     plans: [
       {
@@ -56,7 +63,7 @@ export const activities = [
   {
     day: 1,
     title: "Temples and Nature",
-    image: "",
+    image: baliActivity2,
     color: "F5CFDE",
     plans: [
       {
@@ -72,7 +79,7 @@ export const activities = [
   {
     day: 2,
     title: "Southern Bali Highlights",
-    image: "",
+    image: baliActivity3,
     color: "EB7E67",
     plans: [
       {
@@ -93,7 +100,7 @@ export const activities = [
   {
     day: 3,
     title: "Adventure and Scenic Views",
-    image: "",
+    image: baliActivity4,
     color: "FFE894",
     plans: [
       {
@@ -109,7 +116,7 @@ export const activities = [
   {
     day: 4,
     title: "Rest Day",
-    image: "",
+    image: baliActivity5,
     color: "83D3FC",
     plans: [
       {
@@ -121,7 +128,7 @@ export const activities = [
   {
     day: 5,
     title: "Culture and Waterfalls",
-    image: "",
+    image: baliActivity6,
     color: "C7E788",
     plans: [
       {
@@ -133,7 +140,7 @@ export const activities = [
   {
     day: 6,
     title: "Departure Day",
-    image: "",
+    image: baliActivity7,
     color: "F2A7B3",
     plans: [
       {

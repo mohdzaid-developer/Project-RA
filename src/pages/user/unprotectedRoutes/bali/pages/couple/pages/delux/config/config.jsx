@@ -6,6 +6,13 @@ import baliSlider3 from "@/assets/baliSlider3.jpg";
 import baliSlider4 from "@/assets/baliSlider4.jpg";
 import baliSlider5 from "@/assets/baliSlider5.jpg";
 import baliSlider6 from "@/assets/baliSlider6.jpg";
+import baliActivity1 from "@/assets/baliActivity1.jpeg";
+import baliActivity2 from "@/assets/baliActivity2.jpeg";
+import baliActivity3 from "@/assets/baliActivity3.jpeg";
+import baliActivity4 from "@/assets/baliActivity4.jpeg";
+import baliActivity5 from "@/assets/baliActivity5.jpeg";
+import baliActivity6 from "@/assets/baliActivity6.jpeg";
+import baliActivity7 from "@/assets/baliActivity7.jpeg";
 
 export const data = {
   title: "Love Island",
@@ -38,7 +45,7 @@ export const activities = [
     day: 0,
     title: "Arrival Day",
     color: "DDA15E",
-    image: "",
+    image: baliActivity1,
     plans: [
       {
         title: "Rest",
@@ -57,7 +64,7 @@ export const activities = [
     day: 1,
     title: "Temples and Waterfalls",
     color: "F5CFDE",
-    image: "",
+    image: baliActivity2,
     plans: [
       {
         title: "Visit",
@@ -73,7 +80,7 @@ export const activities = [
     day: 2,
     title: "Adventure and Culture",
     color: "EB7E67",
-    image: "",
+    image: baliActivity3,
     plans: [
       {
         title: "Activities",
@@ -93,7 +100,7 @@ export const activities = [
     day: 3,
     title: "Island Adventure",
     color: "FFE894",
-    image: "",
+    image: baliActivity4,
     plans: [
       {
         title: "Visit",
@@ -105,7 +112,7 @@ export const activities = [
     day: 4,
     title: "Relaxation and Leisure",
     color: "83D3FC",
-    image: "",
+    image: baliActivity5,
     plans: [
       {
         title: "Activities",
@@ -121,7 +128,7 @@ export const activities = [
     day: 5,
     title: "Scenic Adventure and Cultural Sites",
     color: "C7E788",
-    image: "",
+    image: baliActivity6,
     plans: [
       {
         title: "Activities",
@@ -137,7 +144,7 @@ export const activities = [
     day: 6,
     title: "Departure Day",
     color: "F2A7B3",
-    image: "",
+    image: baliActivity7,
     plans: [
       {
         title: "Departure",

@@ -1,12 +1,10 @@
 import { useRef } from "react";
 import "./card.scss";
 
-import img from "@/assets/baliHero.webp";
-
 //Animation
 import { useTransform, motion, useScroll } from "framer-motion";
 
-const Card = ({ i, activity, progress, range, targetScale }) => {
+const Card = ({ i, activity, progress, range, targetScale, image }) => {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
@@ -47,7 +45,7 @@ const Card = ({ i, activity, progress, range, targetScale }) => {
 
           <div className="imageContainer">
             <motion.div className="inner" style={{ scale: imageScale }}>
-              <img src={img} className="cardImage" />
+              <img src={image} className="cardImage" />
             </motion.div>
           </div>
         </div>

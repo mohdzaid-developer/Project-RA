@@ -6,6 +6,15 @@ import baliSlider3 from "@/assets/baliSlider3.jpg";
 import baliSlider4 from "@/assets/baliSlider4.jpg";
 import baliSlider5 from "@/assets/baliSlider5.jpg";
 import baliSlider6 from "@/assets/baliSlider6.jpg";
+import baliActivity1 from "@/assets/baliActivity1.jpeg";
+import baliActivity2 from "@/assets/baliActivity2.jpeg";
+import baliActivity3 from "@/assets/baliActivity3.jpeg";
+import baliActivity4 from "@/assets/baliActivity4.jpeg";
+import baliActivity5 from "@/assets/baliActivity5.jpeg";
+import baliActivity6 from "@/assets/baliActivity6.jpeg";
+import baliActivity7 from "@/assets/baliActivity7.jpeg";
+import baliActivity8 from "@/assets/baliActivity8.jpeg";
+import baliActivity9 from "@/assets/baliActivity9.jpeg";
 
 export const data = {
   title: "Zindhagi Na Melige Dubara",
@@ -37,7 +46,7 @@ export const activities = [
   {
     day: 0,
     title: "Arrival Day",
-    image: "",
+    image: baliActivity1,
     color: "DDA15E",
     plans: [
       {
@@ -53,7 +62,7 @@ export const activities = [
   {
     day: 1,
     title: "Temples and Culture",
-    image: "",
+    image: baliActivity2,
     color: "F5CFDE",
     plans: [
       {
@@ -73,7 +82,7 @@ export const activities = [
   {
     day: 2,
     title: "Adventure and Nature",
-    image: "",
+    image: baliActivity3,
     color: "EB7E67",
     plans: [
       {
@@ -89,7 +98,7 @@ export const activities = [
   {
     day: 3,
     title: "Island Adventure",
-    image: "",
+    image: baliActivity4,
     color: "FFE894",
     plans: [
       {
@@ -101,7 +110,7 @@ export const activities = [
   {
     day: 4,
     title: "Relaxation and Leisure",
-    image: "",
+    image: baliActivity5,
     color: "83D3FC",
     plans: [
       {
@@ -113,7 +122,7 @@ export const activities = [
   {
     day: 5,
     title: "Gili Trawangan Day 1",
-    image: "",
+    image: baliActivity6,
     color: "C7E788",
     plans: [
       {
@@ -125,7 +134,7 @@ export const activities = [
   {
     day: 6,
     title: "Gili Trawangan Day 2",
-    image: "",
+    image: baliActivity7,
     color: "F2A7B3",
     plans: [
       {
@@ -141,7 +150,7 @@ export const activities = [
   {
     day: 7,
     title: "Volcano and Temple Tour",
-    image: "",
+    image: baliActivity8,
     color: "8EC8C5",
     plans: [
       {
@@ -158,7 +167,7 @@ export const activities = [
   {
     day: 8,
     title: "Departure Day",
-    image: "",
+    image: baliActivity9,
     color: "D4A5A5",
     plans: [
       {
