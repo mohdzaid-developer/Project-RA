@@ -41,7 +41,7 @@ const Payment = ({ data }) => {
     no_of_adults: "",
     no_of_children: "",
     termsAndCondition: "",
-    total_amount: 5000,
+    // total_amount: 5000,
   });
   const [minStartDate, setMinStartDate] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -93,9 +93,10 @@ const Payment = ({ data }) => {
   };
 
   useEffect(() => {
+    let totalDays=location?.pathname.includes("premium")?8:6;
     if (details.start_date) {
       const startDate = new Date(details.start_date);
-      startDate.setDate(startDate.getDate() + 6);
+      startDate.setDate(startDate.getDate() + totalDays);
       const endDate = startDate.toISOString().split("T")[0];
 
       setDetails((prevDetails) => ({
