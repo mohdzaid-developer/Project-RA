@@ -1,5 +1,5 @@
 //Assets
-import familyStandard from "@/assets/familyStandard.webp";
+import familyStandard from "@/assets/familyStandard.jpg";
 
 //Assets
 import baliSlider1 from "@/assets/baliSlider1.jpg";

@@ -1,5 +1,5 @@
 //Assets
-import familyStandard from "@/assets/familyStandard.webp";
+import familyStandard from "@/assets/familyStandard.jpg";
 import phuketSlider1 from "@/assets/phuketSlider1.jpg";
 import phuketSlider2 from "@/assets/phuketSlider2.jpg";
 import phuketSlider3 from "@/assets/phuketSlider3.jpg";

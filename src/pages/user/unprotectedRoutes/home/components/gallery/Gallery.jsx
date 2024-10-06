@@ -9,18 +9,18 @@ import Lenis from "lenis";
 import imagesLoaded from "imagesloaded";
 import { footerFadeInAnimation } from "@/utils/animations/animations";
 
-import img1 from "@/assets/galleryImg1.webp";
-import img2 from "@/assets/galleryImg2.webp";
+import img1 from "@/assets/galleryImg1.jpeg";
+import img2 from "@/assets/galleryImg2.jpeg";
 import img3 from "@/assets/galleryImg3.webp";
-import img4 from "@/assets/galleryImg4.webp";
+import img4 from "@/assets/galleryImg4.jpeg";
 import img5 from "@/assets/galleryImg5.webp";
 import img6 from "@/assets/galleryImg6.webp";
-import img7 from "@/assets/galleryImg7.webp";
-import img8 from "@/assets/galleryImg8.webp";
+import img7 from "@/assets/galleryImg7.jpeg";
+import img8 from "@/assets/galleryImg8.jpeg";
 import img9 from "@/assets/galleryImg9.webp";
-import img10 from "@/assets/galleryImg10.webp";
+import img10 from "@/assets/galleryImg10.jpeg";
 import img11 from "@/assets/galleryImg11.webp";
-import img12 from "@/assets/galleryImg12.webp";
+import img12 from "@/assets/galleryImg12.jpeg";
 
 gsap.registerPlugin(ScrollTrigger);
 

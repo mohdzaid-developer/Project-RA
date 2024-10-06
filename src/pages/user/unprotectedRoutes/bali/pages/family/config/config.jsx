@@ -1,8 +1,8 @@
 //Assets
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
-import familyStandard from "@/assets/familyStandard.webp";
-import familyDelux from "@/assets/familyDelux.webp";
-import familyPremium from "@/assets/familyPremium.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.jpg";
+import familyStandard from "@/assets/familyStandard.jpg";
+import familyDelux from "@/assets/familyDelux.jpg";
+import familyPremium from "@/assets/familyPremium.jpg";
 
 export const data = {
   title: "Family Package",

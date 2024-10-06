@@ -3,7 +3,7 @@ import heroImg from "@/assets/baliHero.webp";
 import img1 from "@/assets/bali1.webp";
 import img2 from "@/assets/bali2.webp";
 import img3 from "@/assets/homeBali.webp";
-import img4 from "@/assets/bali3.webp";
+import img4 from "@/assets/bali3.jpeg";
 import img5 from "@/assets/bali4.webp";
 import levelOnePackageLogo from "@/assets/levelOnePackageLogo.webp";
 import levelOneFriendsLogo from "@/assets/levelOneFriendsLogo.webp";
@@ -11,7 +11,7 @@ import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.webp";
 import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
 import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
 import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.jpg";
 import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
 import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 

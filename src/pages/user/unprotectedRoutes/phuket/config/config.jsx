@@ -11,7 +11,7 @@ import levelOneFamilyLogo from "@/assets/levelOneFamilyLogo.webp";
 import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
 import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
 import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
-import levelOneFamilyImage from "@/assets/levelOneFamilyImage.webp";
+import levelOneFamilyImage from "@/assets/levelOneFamilyImage.jpg";
 import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
 import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 

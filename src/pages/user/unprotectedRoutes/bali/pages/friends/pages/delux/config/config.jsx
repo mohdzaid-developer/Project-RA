@@ -2,7 +2,7 @@
 import friendsDelux from "@/assets/friendsDelux.webp";
 import baliSlider1 from "@/assets/bali1.webp";
 import baliSlider2 from "@/assets/bali2.webp";
-import baliSlider3 from "@/assets/bali3.webp";
+import baliSlider3 from "@/assets/bali3.jpeg";
 import baliSlider4 from "@/assets/bali4.webp";
 
 export const data = {
