@@ -1,11 +1,9 @@
 //Assets
 import friendsDelux from "@/assets/friendsDelux.webp";
-import baliSlider1 from "@/assets/baliSlider1.jpg";
-import baliSlider2 from "@/assets/baliSlider2.jpg";
-import baliSlider3 from "@/assets/baliSlider3.jpg";
-import baliSlider4 from "@/assets/baliSlider4.jpg";
-import baliSlider5 from "@/assets/baliSlider5.jpg";
-import baliSlider6 from "@/assets/baliSlider6.jpg";
+import baliSlider1 from "@/assets/bali1.webp";
+import baliSlider2 from "@/assets/bali2.webp";
+import baliSlider3 from "@/assets/bali3.webp";
+import baliSlider4 from "@/assets/bali4.webp";
 
 export const data = {
   title: "Party Island bali",
@@ -20,14 +18,7 @@ export const data = {
   xRange2: ["0%", "-22%"],
   xRange3: ["0%", "0%"],
 
-  sliderImg: [
-    baliSlider1,
-    baliSlider2,
-    baliSlider3,
-    baliSlider4,
-    baliSlider5,
-    baliSlider6,
-  ],
+  sliderImg: [baliSlider1, baliSlider2, baliSlider3, baliSlider4],
   price: "75,000",
 };
 

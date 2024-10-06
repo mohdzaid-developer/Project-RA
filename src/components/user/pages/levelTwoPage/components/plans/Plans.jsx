@@ -17,7 +17,7 @@ const Plans = ({ data }) => {
   return (
     <section className="plans">
       <div className="left">
-        <h2>{data.planTitle} Escape Plans</h2>
+        <h2>{data.planTitle} Explore Plans</h2>
         <div className="buttons">
           {data.plans.map((item, index) => (
             <button
@@ -38,7 +38,7 @@ const Plans = ({ data }) => {
 
         <div className="urlButton">
           <button onClick={() => navigate(`${plan.url}`)}>
-            Escape Plan <img src={buttonArrowImg} alt="Arrow" />
+            Explore Plan <img src={buttonArrowImg} alt="Arrow" />
           </button>
         </div>
       </div>

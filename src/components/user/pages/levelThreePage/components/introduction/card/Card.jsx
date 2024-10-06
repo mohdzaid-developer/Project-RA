@@ -16,8 +16,6 @@ const Card = ({ i, activity, progress, range, targetScale }) => {
   const imageScale = useTransform(scrollYProgress, [0, 1], [2, 1]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
-  console.log(activity);
-
   return (
     <div ref={container} className="cardContainer">
       <motion.div
@@ -26,7 +24,7 @@ const Card = ({ i, activity, progress, range, targetScale }) => {
           scale,
           top: `calc(-5vh + ${i * 25}px)`,
         }}
-        className="card"
+        className="intro-card"
       >
         <div className="title">
           <h2>Day {activity.day}</h2>
