@@ -1,5 +1,5 @@
 //Assets
-import couplePremium from "@/assets/couplePremium.webp";
+import couplePremium from "@/assets/couplePremium.jpg";
 
 //Assets
 import baliSlider1 from "@/assets/baliSlider1.jpg";

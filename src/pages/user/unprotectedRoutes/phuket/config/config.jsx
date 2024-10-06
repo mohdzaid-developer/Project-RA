@@ -12,7 +12,7 @@ import levelOneCoupleLogo from "@/assets/levelOneCoupleLogo.webp";
 import levelOneCustomLogo from "@/assets/levelOneCustomLogo.webp";
 import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
 import levelOneFamilyImage from "@/assets/levelOneFamilyImage.jpg";
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.jpg";
 import levelOneCustomImage from "@/assets/levelOneCustomImage.webp";
 
 export const data = {

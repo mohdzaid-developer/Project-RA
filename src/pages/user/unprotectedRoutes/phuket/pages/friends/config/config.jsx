@@ -1,8 +1,8 @@
 //Assets
 import levelOneFriendsImage from "@/assets/levelOneFriendsImage.webp";
-import friendsStandard from "@/assets/friendsStandard.webp";
-import friendsDelux from "@/assets/friendsDelux.webp";
-import friendsPremium from "@/assets/friendsPremium.webp";
+import friendsStandard from "@/assets/friendsStandard.jpg";
+import friendsDelux from "@/assets/friendsDelux.jpg";
+import friendsPremium from "@/assets/friendsPremium.jpg";
 
 export const data = {
   title: "Friends Package",

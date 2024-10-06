@@ -1,8 +1,8 @@
 //Assets
-import levelOneCoupleImage from "@/assets/levelOneCoupleImage.webp";
-import coupleStandard from "@/assets/coupleStandard.webp";
-import coupleDelux from "@/assets/coupleDelux.webp";
-import couplePremium from "@/assets/couplePremium.webp";
+import levelOneCoupleImage from "@/assets/levelOneCoupleImage.jpg";
+import coupleStandard from "@/assets/coupleStandard.jpg";
+import coupleDelux from "@/assets/coupleDelux.jpg";
+import couplePremium from "@/assets/couplePremium.jpg";
 
 export const data = {
   title: "Couple Package",

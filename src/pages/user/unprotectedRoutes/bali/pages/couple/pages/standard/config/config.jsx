@@ -1,5 +1,5 @@
 //Assets
-import coupleStandard from "@/assets/coupleStandard.webp";
+import coupleStandard from "@/assets/coupleStandard.jpg";
 import baliSlider1 from "@/assets/baliSlider1.jpg";
 import baliSlider2 from "@/assets/baliSlider2.jpg";
 import baliSlider3 from "@/assets/baliSlider3.jpg";

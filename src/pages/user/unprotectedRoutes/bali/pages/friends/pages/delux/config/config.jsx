@@ -1,5 +1,5 @@
 //Assets
-import friendsDelux from "@/assets/friendsDelux.webp";
+import friendsDelux from "@/assets/friendsDelux.jpg";
 import baliSlider1 from "@/assets/bali1.webp";
 import baliSlider2 from "@/assets/bali2.webp";
 import baliSlider3 from "@/assets/bali3.jpeg";
