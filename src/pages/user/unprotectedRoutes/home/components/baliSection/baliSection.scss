@@ -6,7 +6,6 @@
   height: 100dvh;
   transition: all 0.8s ease-out;
   background-image: url("@/assets/homeBali.webp");
-
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -15,7 +14,7 @@
   align-items: flex-start;
   flex-direction: column;
   padding: 50px;
-
+  cursor: pointer;
   .container {
     width: 100%;
     display: flex;

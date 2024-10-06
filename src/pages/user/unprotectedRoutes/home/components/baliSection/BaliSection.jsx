@@ -13,7 +13,7 @@ import rightArrow from "@/assets/colorRightArrow.webp";
 const BaliSection = () => {
   const navigate = useNavigate();
   return (
-    <section className="baliSection">
+    <section className="baliSection" onClick={() => navigate("/bali")}>
       <motion.div
         className="container"
         variants={fadeInAnimation}
@@ -36,7 +36,7 @@ const BaliSection = () => {
         </motion.div>
 
         <motion.div className="baliSection-right" variants={fadeInAnimation}>
-          <button onClick={() => navigate("/bali")}>
+          <button>
             Know More <img src={rightArrow} alt="" />
           </button>
         </motion.div>
