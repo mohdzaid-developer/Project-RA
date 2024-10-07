@@ -14,7 +14,7 @@ export const data = {
     `your trip doesn’t turn into a ‘Brahmotsavam’.
 `,
   ],
-  xRange1: ["0%", "-28%"],
+  xRange1: ["0%", "-27.8%"],
   xRange2: ["0%", "-25.5%"],
   xRange3: ["0%", "-24%"],
   xRange4: ["0%", "-21%"],

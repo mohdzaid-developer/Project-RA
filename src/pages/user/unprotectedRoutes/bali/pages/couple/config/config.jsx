@@ -13,7 +13,7 @@ export const data = {
     `favorite movie memories. Ready to unlock the ultimate romantic escape? We’re here to turn`,
     `your love story into a timeless tale.`,
   ],
-  xRange1: ["0%", "-28%"],
+  xRange1: ["0%", "-27.5%"],
   xRange2: ["0%", "-25.5%"],
   xRange3: ["0%", "-23.5%"],
   xRange4: ["0%", "-20.5%"],

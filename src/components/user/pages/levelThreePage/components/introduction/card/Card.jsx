@@ -15,7 +15,7 @@ const Card = ({ i, activity, progress, range, targetScale, image }) => {
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div ref={container} className="cardContainer">
+    <div ref={container} className="intro-cardContainer">
       <motion.div
         style={{
           backgroundColor: `#${activity.color}`,
@@ -24,15 +24,15 @@ const Card = ({ i, activity, progress, range, targetScale, image }) => {
         }}
         className="intro-card"
       >
-        <div className="title">
+        <div className="intro-title">
           <h2>Day {activity.day}</h2>
           <h2>:</h2>
           <h2>{activity.title}</h2>
         </div>
-        <div className="body">
-          <div className="description">
+        <div className="intro-body">
+          <div className="intro-description">
             {activity.plans.map((item, index1) => (
-              <div className="plans" key={index1}>
+              <div className="intro-plans" key={index1}>
                 <h3>{item.title} -</h3>
                 {item.data.map((content, index2) => (
                   <p key={index2}>
@@ -43,8 +43,8 @@ const Card = ({ i, activity, progress, range, targetScale, image }) => {
             ))}
           </div>
 
-          <div className="imageContainer">
-            <motion.div className="inner" style={{ scale: imageScale }}>
+          <div className="intro-imageContainer">
+            <motion.div className="intro-inner" style={{ scale: imageScale }}>
               <img src={image} className="cardImage" />
             </motion.div>
           </div>

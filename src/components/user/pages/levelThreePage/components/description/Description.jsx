@@ -9,7 +9,7 @@ import descImg4 from "@/assets/descImg4.webp";
 const Description = () => {
   return (
     <section className="description">
-      <h2>laboris nisi ut aliquip</h2>
+      <h2>Your Perfect Getaway: Effortless and All-Inclusive</h2>
 
       <div className="images">
         <img src={descImg1} alt="" />
@@ -19,11 +19,10 @@ const Description = () => {
       </div>
 
       <p>
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-        velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-        occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-        mollit anim id est laborum." Deluxe Escape Plan"Lorem ipsum
+        Experience the perfect holiday with us, where we handle everything,
+        stay, local commute, activities, and flights. Whether it's Bali or
+        Phuket, we've got your dream vacation covered from start to finish. Just
+        relax, and leave the rest to us.
       </p>
     </section>
   );

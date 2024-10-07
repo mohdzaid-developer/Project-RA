@@ -15,7 +15,7 @@ import phuketActivity6 from "@/assets/phuketActivity6.jpg";
 import phuketActivity7 from "@/assets/phuketActivity7.jpg";
 
 export const data = {
-  title: "Phuket Party patrol",
+  title: "Phuket Party Petrol",
   heroImg: friendsStandard,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,
@@ -23,7 +23,7 @@ export const data = {
     `"Island of the Gods,"Bali offers a diverse range of experiences,making `,
     `it a top destination for tourists from around the world.`,
   ],
-  xRange1: ["0%", "-22.3%"],
+  xRange1: ["0%", "-24.3%"],
   xRange2: ["0%", "-22%"],
   xRange3: ["0%", "-20%"],
   xRange4: ["0%", "-16.5%"],
