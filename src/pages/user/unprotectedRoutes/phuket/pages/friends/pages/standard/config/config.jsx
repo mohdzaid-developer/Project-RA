@@ -15,7 +15,7 @@ import phuketActivity6 from "@/assets/phuketActivity6.jpg";
 import phuketActivity7 from "@/assets/phuketActivity7.jpg";
 
 export const data = {
-  title: "Phuket Party patrol",
+  title: "Phuket Party Petrol",
   heroImg: friendsStandard,
   content: [
     `Phuket, the enchanting island of Indonesia, beckons travelers with`,

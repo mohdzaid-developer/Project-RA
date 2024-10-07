@@ -19,7 +19,7 @@ const LevelThreePage = ({ data, activities }) => {
       ) : (
         <>
           <Introduction activities={activities} />
-          {/* <Activities data={data} /> */}
+          <Activities data={data} />
         </>
       )}
 
