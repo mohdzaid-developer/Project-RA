@@ -12,7 +12,7 @@ export const data = {
     `this trip is your ultimate escape, making you wonder how you ever lived`,
     ` without it. Get ready for an all-thrill, nochill vacation`,
   ],
-  xRange1: ["0%", "-28%"],
+  xRange1: ["0%", "-27%"],
   xRange2: ["0%", "-25%"],
   xRange3: ["0%", "-23%"],
   xRange4: ["0%", "-20%"],

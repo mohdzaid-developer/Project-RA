@@ -25,7 +25,7 @@ export const data = {
     `"Island of the Gods,"Bali offers a diverse range of experiences,making `,
     `it a top destination for tourists from around the world.`,
   ],
-  xRange1: ["0%", "-24.3%"],
+  xRange1: ["0%", "-25.2%"],
   xRange2: ["0%", "-23%"],
   xRange3: ["0%", "-21%"],
   xRange4: ["0%", "-17.5%"],
@@ -46,7 +46,7 @@ export const activities = [
   {
     day: 0,
     title: "Arrival Day",
-    image: "",
+    image: baliActivity1,
     color: "DDA15E",
     plans: [
       {
@@ -66,7 +66,7 @@ export const activities = [
   {
     day: 1,
     title: "Temples and Nature",
-    image: "",
+    image: baliActivity2,
     color: "F5CFDE",
     plans: [
       {
@@ -82,7 +82,7 @@ export const activities = [
   {
     day: 2,
     title: "Cultural Exploration",
-    image: "",
+    image: baliActivity3,
     color: "EB7E67",
     plans: [
       {
@@ -102,7 +102,7 @@ export const activities = [
   {
     day: 3,
     title: "Adventure and Relaxation",
-    image: "",
+    image: baliActivity4,
     color: "FFE894",
     plans: [
       {
@@ -118,7 +118,7 @@ export const activities = [
   {
     day: 4,
     title: "Rest Day",
-    image: "",
+    image: baliActivity5,
     color: "83D3FC",
     plans: [
       {
@@ -134,7 +134,7 @@ export const activities = [
   {
     day: 5,
     title: "Island Adventure",
-    image: "",
+    image: baliActivity6,
     color: "C7E788",
     plans: [
       {
@@ -146,7 +146,7 @@ export const activities = [
   {
     day: 6,
     title: "Departure Day",
-    image: "",
+    image: baliActivity7,
     color: "F2A7B3",
     plans: [
       {

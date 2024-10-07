@@ -13,7 +13,7 @@ export const data = {
     `smoothies under a palm tree. Phuket isn’t just a destination; it’s the paradise`,
     `you didn’t know you needed. it a top destination for tourists from around the world.`,
   ],
-  xRange1: ["0%", "-28%"],
+  xRange1: ["0%", "-27%"],
   xRange2: ["0%", "-25%"],
   xRange3: ["0%", "-23%"],
   xRange4: ["0%", "-20%"],

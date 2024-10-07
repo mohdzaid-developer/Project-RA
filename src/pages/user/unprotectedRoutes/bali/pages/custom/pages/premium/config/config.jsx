@@ -18,7 +18,7 @@ export const data = {
     `"Island of the Gods,"Bali offers a diverse range of experiences,making `,
     `it a top destination for tourists from around the world.`,
   ],
-  xRange1: ["0%", "-22.3%"],
+  xRange1: ["0%", "-22.8%"],
   xRange2: ["0%", "-20.5%"],
   xRange3: ["0%", "-18.2%"],
   xRange4: ["0%", "-14.5%"],
