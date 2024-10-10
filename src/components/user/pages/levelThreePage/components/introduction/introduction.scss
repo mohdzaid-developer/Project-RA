@@ -3,3 +3,33 @@
 .activities-introduction {
   margin-top: 100px;
 }
+
+@media (max-width: 1700px) {
+  .activities-introduction {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 1500px) {
+  .activities-introduction {
+    margin-top: 70px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .activities-introduction {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 900px) {
+  .activities-introduction {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  .activities-introduction {
+    margin-top: 40px;
+  }
+}

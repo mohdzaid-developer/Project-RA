@@ -19,15 +19,15 @@ const Activities = ({ data }) => {
           perMove: 1,
           gap: "2rem",
           breakpoints: {
-            640: {
+            900: {
               perPage: 2,
               gap: ".7rem",
-              height: "6rem",
+              height: "12rem",
             },
-            480: {
+            600: {
               perPage: 1,
               gap: ".7rem",
-              height: "6rem",
+              height: "12rem",
             },
           },
         }}
