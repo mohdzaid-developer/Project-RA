@@ -39,6 +39,9 @@ const Otp = () => {
     try {
       await otpValidationSchema.validate({ otp: otp }, { abortEarly: false });
       const response = await adminOtpVerify(otp);
+      if(response?.error?.data?.data){
+        toast.error(response?.error?.data?.data?.message);
+      }
       if (response?.data?.data) {
         console.log(response);
         if (response?.data?.data?.isLogin == true) {
@@ -48,7 +51,7 @@ const Otp = () => {
             JSON.stringify({ ...response?.data?.data })
           );
           dispatch(setLogin());
-          navigate("/admin/dashboard");
+          navigate("/admin/trips");
         } else {
           toast.success("Email verification successful!");
           sessionStorage?.removeItem("adminOtpInfo");

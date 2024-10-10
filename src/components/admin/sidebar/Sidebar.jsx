@@ -1,7 +1,7 @@
 import "./sidebar.scss";
 
 //Routing
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 //Assets
 import logo from "../../../assets/logo.webp";
@@ -11,8 +11,19 @@ import query from "../../../assets/query.png";
 import payment from "../../../assets/payment.png";
 import trip from "../../../assets/trip.png";
 import logout from "../../../assets/logout.webp";
+import { useDispatch } from "react-redux";
+import { setLogout } from "@/redux/slice/admin/state/authAdminSlice";
 
 const Sidebar = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+
+  const logOut=()=>{
+    sessionStorage.clear();
+    dispatch(setLogout());
+    navigate("/admin/login");
+  }
   return (
     <>
       <section className="sidebar">
@@ -25,10 +36,10 @@ const Sidebar = () => {
           </div>
 
           <div className="links">
-            <div className="link">
+            {/* <div className="link">
               <img src={dashboard} alt="" />
               <Link to="/admin/dashboard">Dashboard</Link>
-            </div>
+            </div> */}
             <div className="link">
               <img src={trip} alt="" />
               <Link to="/admin/trips">Trips</Link>
@@ -56,7 +67,10 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className="logout">
+        <div
+          className="logout"
+          onClick={logOut}
+        >
           <div className="link">
             <img src={logout} alt="" />
             <button>Logout</button>

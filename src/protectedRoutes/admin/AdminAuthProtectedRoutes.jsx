@@ -10,13 +10,12 @@ const AdminAuthProtectedRoutes = ({ children }) => {
     return children;
   }
   if (userIsAuthenticated==true) {
-    console.log("object")
     return <Navigate to="/profile"/>;
   }
   if (otpData) {
     return <Navigate to="/otp"/>;
   }
-  return <Navigate to="/admin/dashboard" />;
+  return <Navigate to="/admin/trips" />;
 };
 
 export default AdminAuthProtectedRoutes;
