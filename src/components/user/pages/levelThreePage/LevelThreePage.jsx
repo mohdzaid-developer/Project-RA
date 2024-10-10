@@ -18,13 +18,13 @@ const LevelThreePage = ({ data, activities }) => {
         <div style={{ marginBottom: "150px" }}></div>
       ) : (
         <>
-          <Introduction activities={activities} />
+          {/* <Introduction activities={activities} /> */}
           <Activities data={data} />
         </>
       )}
 
-      <Description />
-      <Payment data={data} />
+      {/* <Description />
+      <Payment data={data} /> */}
     </section>
   );
 };
