@@ -75,7 +75,7 @@ const Payment = () => {
                           {row?.email ?? "--"}
                         </TableCell>
                         <TableCell align="center">
-                          {row?.transactionType ?? "--"}
+                          {row?.transaction_type ?? "--"}
                         </TableCell>
                         <TableCell align="center">
                           {row?.programName ?? "--"}
