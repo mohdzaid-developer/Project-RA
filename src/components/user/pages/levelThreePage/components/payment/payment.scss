@@ -119,9 +119,6 @@
         align-items: center;
         justify-content: center;
 
-        @media (max-width: 1440px) {
-          gap: 10px;
-        }
         .checkbox-box {
           display: flex;
           align-items: flex-start;
@@ -133,9 +130,6 @@
         color: $white;
         line-height: 20px;
         font-weight: 400;
-        @media (max-width: 1450px) {
-          font-size: 12px;
-        }
       }
 
       .Checkbox {
@@ -179,6 +173,447 @@
         color: $dark-orange;
         font-size: 16px;
         margin-top: 10px;
+      }
+      img {
+        height: 60px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1700px) {
+  .payment {
+    gap: 45px;
+    margin-bottom: 90px;
+    padding: 0 90px;
+
+    h2 {
+      font-size: 46px;
+    }
+
+    .payment-form {
+      gap: 65px;
+
+      .input-fields {
+        gap: 90px;
+
+        .container {
+          gap: 36px;
+
+          .input {
+            gap: 18px;
+
+            label {
+              font-size: 17px;
+            }
+
+            input {
+              padding: 10px 5px;
+            }
+
+            select {
+              padding-bottom: 10px;
+            }
+          }
+        }
+      }
+
+      button {
+        gap: 17px;
+        font-size: 21px;
+        padding: 19px 17px;
+
+        img {
+          height: 26px;
+        }
+      }
+
+      .SigUp-Checkbox {
+        .checkbox {
+          gap: 11px;
+        }
+        #Checkbox-Para {
+          font-size: 14px;
+        }
+      }
+
+      .price {
+        padding: 18px;
+        h3 {
+          margin-bottom: 10px;
+
+          span {
+            font-size: 48px;
+            letter-spacing: 1.8px;
+          }
+        }
+        p {
+          font-size: 15.5px;
+        }
+      }
+
+      .nbfc {
+        gap: 18px;
+        h3 {
+          font-size: 15.5px;
+          margin-top: 9px;
+        }
+        img {
+          height: 55px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1500px) {
+  .payment {
+    gap: 40px;
+    margin-bottom: 85px;
+    padding: 0 85px;
+
+    h2 {
+      font-size: 42px;
+    }
+
+    .payment-form {
+      gap: 60px;
+
+      .input-fields {
+        gap: 85px;
+
+        .container {
+          gap: 32px;
+
+          .input {
+            gap: 16px;
+
+            label {
+              font-size: 16px;
+            }
+
+            input {
+              padding: 9px 4px;
+            }
+
+            select {
+              padding-bottom: 9px;
+            }
+          }
+        }
+      }
+
+      button {
+        gap: 16px;
+        font-size: 20px;
+        padding: 18px 16px;
+
+        img {
+          height: 25px;
+        }
+      }
+
+      .SigUp-Checkbox {
+        .checkbox {
+          gap: 10px;
+        }
+        #Checkbox-Para {
+          font-size: 13.5px;
+        }
+      }
+
+      .price {
+        padding: 16px;
+        h3 {
+          margin-bottom: 9px;
+
+          span {
+            font-size: 44px;
+            letter-spacing: 1.6px;
+          }
+        }
+        p {
+          font-size: 15px;
+        }
+      }
+
+      .nbfc {
+        gap: 16px;
+        h3 {
+          font-size: 15px;
+          margin-top: 8px;
+        }
+        img {
+          height: 50px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .payment {
+    gap: 35px;
+    margin-bottom: 75px;
+    padding: 0 75px;
+
+    h2 {
+      font-size: 38px;
+    }
+
+    .payment-form {
+      gap: 55px;
+
+      .input-fields {
+        gap: 75px;
+
+        .container {
+          gap: 28px;
+
+          .input {
+            gap: 15px;
+
+            label {
+              font-size: 15px;
+            }
+
+            input {
+              padding: 8px 3.5px;
+            }
+
+            select {
+              padding-bottom: 8px;
+            }
+          }
+        }
+      }
+
+      button {
+        gap: 15px;
+        font-size: 18px;
+        padding: 17px 15px;
+
+        img {
+          height: 24px;
+        }
+      }
+
+      .SigUp-Checkbox {
+        .checkbox {
+          gap: 9px;
+        }
+        #Checkbox-Para {
+          font-size: 13px;
+        }
+      }
+
+      .price {
+        padding: 15px;
+        h3 {
+          margin-bottom: 8px;
+
+          span {
+            font-size: 40px;
+            letter-spacing: 1.4px;
+          }
+        }
+        p {
+          font-size: 14px;
+        }
+      }
+
+      .nbfc {
+        gap: 15px;
+        h3 {
+          font-size: 14px;
+          margin-top: 7px;
+        }
+        img {
+          height: 45px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 900px) {
+  .payment {
+    gap: 30px;
+    margin-bottom: 60px;
+    padding: 0 40px;
+
+    h2 {
+      font-size: 34px;
+    }
+
+    .payment-form {
+      gap: 45px;
+
+      .input-fields {
+        flex-direction: column;
+        gap: 25px;
+
+        .container {
+          gap: 26px;
+
+          .input {
+            gap: 12px;
+
+            label {
+              width: 20%;
+              font-size: 14px;
+            }
+
+            input {
+              width: 80%;
+              padding: 6px 3px;
+            }
+
+            select {
+              width: 80%;
+              padding-bottom: 6px;
+            }
+          }
+        }
+      }
+
+      button {
+        gap: 14px;
+        font-size: 16px;
+        padding: 16px 14px;
+
+        img {
+          height: 22px;
+        }
+      }
+
+      .SigUp-Checkbox {
+        .checkbox {
+          gap: 8px;
+        }
+        #Checkbox-Para {
+          font-size: 12.5px;
+        }
+      }
+
+      .price {
+        padding: 14px;
+        h3 {
+          margin-bottom: 7px;
+
+          span {
+            font-size: 34px;
+            letter-spacing: 1.2px;
+          }
+        }
+        p {
+          font-size: 14px;
+          line-height: 25px;
+        }
+      }
+
+      .nbfc {
+        gap: 14px;
+        h3 {
+          font-size: 13px;
+          margin-top: 6px;
+        }
+        img {
+          height: 40px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .payment {
+    gap: 28px;
+    margin-bottom: 55px;
+    padding: 0 30px;
+
+    h2 {
+      font-size: 32px;
+    }
+
+    .payment-form {
+      gap: 40px;
+
+      .input-fields {
+        flex-direction: column;
+        gap: 30px;
+
+        .container {
+          gap: 30px;
+
+          .input {
+            flex-direction: column;
+            gap: 10px;
+
+            label {
+              width: 100%;
+              font-size: 13px;
+            }
+
+            input {
+              width: 100%;
+            }
+
+            select {
+              width: 100%;
+            }
+          }
+        }
+      }
+
+      button {
+        width: 100%;
+        gap: 12px;
+        font-size: 14.5px;
+        padding: 14px 12px;
+        border-radius: 10px;
+
+        img {
+          height: 22px;
+        }
+      }
+
+      .SigUp-Checkbox {
+        .checkbox {
+          gap: 5px;
+        }
+        #Checkbox-Para {
+          font-size: 12px;
+        }
+      }
+
+      .price {
+        padding: 13.5px;
+        h3 {
+          font-size: 16px;
+          margin-bottom: 6px;
+          line-height: 30px;
+
+          span {
+            font-size: 30px;
+            letter-spacing: 1.2px;
+          }
+        }
+        p {
+          font-size: 13px;
+          line-height: 22px;
+        }
+      }
+
+      .nbfc {
+        gap: 13px;
+        h3 {
+          font-size: 12.5px;
+          margin-top: 5px;
+        }
+        img {
+          height: 35px;
+        }
       }
     }
   }
