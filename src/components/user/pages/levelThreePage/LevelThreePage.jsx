@@ -23,8 +23,8 @@ const LevelThreePage = ({ data, activities }) => {
         </>
       )}
 
-      {/* <Description />
-      <Payment data={data} /> */}
+      <Description />
+      {/* <Payment data={data} /> */}
     </section>
   );
 };

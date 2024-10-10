@@ -31,3 +31,37 @@
     text-align: center;
   }
 }
+
+@media (max-width: 1700px) {
+  .description {
+    border: 1px solid $white;
+    margin: 100px;
+    padding: 60px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 80px;
+    h2 {
+      color: $white;
+      font-size: 40px;
+    }
+
+    .images {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 100px;
+      img {
+        height: 90px;
+      }
+    }
+
+    p {
+      color: $white;
+      font-size: 16px;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
+}
