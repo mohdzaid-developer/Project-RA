@@ -24,7 +24,7 @@ const LevelThreePage = ({ data, activities }) => {
       )}
 
       <Description />
-      {/* <Payment data={data} /> */}
+      <Payment data={data} />
     </section>
   );
 };
