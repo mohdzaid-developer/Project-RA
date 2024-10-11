@@ -8,23 +8,24 @@ import "swiper/css/pagination";
 
 //Assets
 import quotes from "@/assets/quotes.webp";
-import user1 from "@/assets/user1.jpg";
-import user2 from "@/assets/user2.jpg";
-import user3 from "@/assets/user3.jpg";
+import tarun from "@/assets/tarun.jpg";
+import eshwar from "@/assets/eshwar.jpg";
+import kaushik from "@/assets/kaushik.jpg";
+import jayanth from "@/assets/jayanth.jpg";
 
 const Testimonial = () => {
   const data = [
     {
       name: "Jayanth",
-      profilePic: user1,
+      profilePic: jayanth,
       para1:
-        "I recently spent a week in Phuket, and thanks to Vishnu and his team, it was an unforgettable experience. Our stay at the luxurious 10-bedroom villa was incredible, featuring a private pool and games room. Vishnu's meticulous planning ensured we enjoyed a mix of both iconic and hidden gems in Phuket.",
+        "I recently spent a week in Phuket, and thanks to Vishnu and his team, it was an unforgettable experience. Our stay at the luxurious 10-bedroom villa was incredible. Vishnu's meticulous planning ensured we enjoyed a mix of both iconic and hidden gems in Phuket.",
       para2:
         "One of the highlights was a day trip to the Phi Phi Islands, where we snorkeled in crystal-clear waters and relaxed on pristine beaches. The trip to James Bond Island and Phang Nga Bay was another standout, offering breathtaking views and an exhilarating experience exploring sea caves by kayak.",
     },
     {
       name: "Tarun",
-      profilePic: user2,
+      profilePic: tarun,
       para1:
         "Phuket has always been on my travel bucket list, and Vishnu and his team made this trip beyond exceptional. Staying in a sprawling 10-bedroom villa with a private pool was the perfect start to our adventure.",
       para2:
@@ -32,7 +33,7 @@ const Testimonial = () => {
     },
     {
       name: "Eshwar",
-      profilePic: user3,
+      profilePic: eshwar,
       para1:
         "Our recent trip to Phuket was absolutely perfect, thanks to Vishnu and his amazing team. We stayed in a magnificent 10-bedroom villa, complete with a pool and a games room that kept everyone entertained.",
       para2:
@@ -40,9 +41,9 @@ const Testimonial = () => {
     },
     {
       name: "Sai Kaushik Nampalli",
-      profilePic: user2,
+      profilePic: kaushik,
       para1:
-        "Our honeymoon in Bali was a dream come true, filled with breathtaking landscapes and memorable experiences. From a warm welcome in Ubud to witnessing a hilltop sunrise, visiting a local coffee plantation, and kayaking through stunning waters, each day was a new adventure. The scenic drive to Uluwatu Temple, complete with an ocean-view sunset and Kechak dance, made for unforgettable moments.",
+        "Our honeymoon in Bali was a dream come true, filled with breathtaking landscapes and memorable experiences. From a warm welcome in Ubud to witnessing a hilltop sunrise, and kayaking through stunning waters, each day was a new adventure. The scenic drive to Uluwatu Temple, and Kechak dance, made for unforgettable moments.",
       para2:
         "We ended our trip with some shopping, poolside relaxation, and a couple’s massage. A huge thank you to Badri from the travel agency for making every detail perfect. We can't wait to return and explore even more of Bali’s beauty!",
     },
