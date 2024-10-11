@@ -7,7 +7,7 @@ const LevelOnePage = ({ data }) => {
   return (
     <section className="levelOnePage">
       <Hero data={data} />
-      {/* <Gallery data={data} /> */}
+      <Gallery data={data} />
       <Packages data={data} />
     </section>
   );
