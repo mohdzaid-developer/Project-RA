@@ -33,7 +33,7 @@ const NewsLetter = () => {
     if (!isComponentClosed) {
       const timer = setTimeout(() => {
         setIsVisible(true);
-      }, 2000);
+      }, 8000);
 
       return () => clearTimeout(timer);
     }

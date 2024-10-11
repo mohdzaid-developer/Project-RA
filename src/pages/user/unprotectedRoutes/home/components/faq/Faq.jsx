@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./faq.scss";
 
 //Assets
-import downArrow from "../../../../../../assets/downArrow.webp";
-import rightArrow from "../../../../../../assets/rightArrow.webp";
+import downArrow from "@/assets/downArrow.webp";
+import rightArrow from "@/assets/rightArrow.webp";
 import ScrollText from "./scrollText/ScrollText";
 
 const Faq = () => {
@@ -59,7 +59,7 @@ const Faq = () => {
             <div key={index} className="faq" onClick={() => toggleFaq(index)}>
               <div className="title">
                 <div className="test">
-                  <p>12-12-12</p>
+                  <p>{index + 1}. </p>
                   <h1>{item.question}</h1>
                 </div>
                 {isClicked === index ? (

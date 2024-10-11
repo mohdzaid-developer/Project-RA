@@ -15,11 +15,18 @@ const LevelThreePage = ({ data, activities }) => {
     <section className="levelThreePage">
       <Hero data={data} />
       {location.pathname.includes("custom") ? (
-        <div style={{ marginBottom: "150px" }}></div>
+        <div style={{ marginBottom: "100px" }}></div>
       ) : (
         <>
           <Introduction activities={activities} />
-          <Activities data={data} />
+          {location.pathname.includes("premium") ? (
+            <div style={{ marginBottom: "180px" }}></div>
+          ) : (
+            <>
+              <div style={{ marginBottom: "100px" }}></div>
+              <Activities data={data} />
+            </>
+          )}
         </>
       )}
 
