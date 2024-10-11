@@ -1,6 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import "./gallery.scss";
 
+//Routing
+import { useLocation } from "react-router-dom";
+
 //Animation
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -10,12 +13,37 @@ import { footerFadeInAnimation } from "@/utils/animations/animations";
 gsap.registerPlugin(ScrollTrigger);
 
 const Gallery = ({ data }) => {
+  const location = useLocation();
+
+  const [content, setContent] = useState({});
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentImage, setCurrentImage] = useState(null);
 
   const containerRef = useRef(null);
   const textOverlayRef = useRef(null);
   const imagesRef = useRef([]);
+
+  useEffect(() => {
+    if (location.pathname === "/phuket") {
+      setContent({
+        line1:
+          "Phuket is a slice of paradise where turquoise waters kiss golden sands, and every sunset paints",
+        line2:
+          "the sky in dreamy hues. Lush greenery, vibrant markets, and hidden coves make this island a",
+        line3:
+          "treasure trove of natural beauty and cultural charm. Whether you're soaking up the sun or exploring its wonders",
+      });
+    }
+    if (location.pathname === "/bali") {
+      setContent({
+        line1:
+          "It’s a paradise of golden beaches, ancient temples, and endless adventures.",
+        line2: "Whether you’re craving peace or thrill, Bali has it all.",
+        line3:
+          " Once you visit, you’ll never want to leave this magical island.",
+      });
+    }
+  }, []);
 
   useEffect(() => {
     const images = imagesRef.current;
@@ -123,13 +151,11 @@ const Gallery = ({ data }) => {
         ))}
         <div className="text-overlay" ref={textOverlayRef}>
           <p>
-            Within this meticulously arranged AI-generated ensemble lies a
+            {content.line1}
             <br />
-            tantalizing facade, captivating our gaze. Yet, as we search for the
+            {content.line2}
             <br />
-            soul of human expression, we question whether algorithms can truly
-            <br />
-            embody the essence of authentic art.
+            {content.line3}
           </p>
         </div>
       </div>

@@ -9,8 +9,8 @@ import "./scrollText.scss";
 
 const ScrollText = ({ content }) => {
   return (
-    <div className="introduction-outer">
-      <div className="introduction-inner">
+    <div className="introduction-scroll-outer">
+      <div className="introduction-scroll-inner">
         <p>
           {content.map((item, index) => (
             <ContentLine key={index} content={item} />
