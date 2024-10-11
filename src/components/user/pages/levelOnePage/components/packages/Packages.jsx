@@ -69,7 +69,6 @@ const Packages = ({ data }) => {
     };
   }, []);
 
-  console.log(data.packageData[0].test);
   return (
     <div className="packages">
       <div className="gallery">
