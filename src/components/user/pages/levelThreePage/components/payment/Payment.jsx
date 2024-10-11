@@ -143,11 +143,18 @@ const Payment = ({ data }) => {
       theme: {
         color: "#151515",
       },
+      modal: {
+        ondismiss: () => {
+          setIsLoading(false);
+          toast.error("Payment was not completed.");
+        },
+      },
     };
 
     const rzp = new window.Razorpay(options);
     rzp.open();
   };
+
   const handlePayment = async (e) => {
     e.preventDefault();
     setIsLoading(true);
