@@ -69,6 +69,7 @@ const Packages = ({ data }) => {
     };
   }, []);
 
+  console.log(data.packageData[0].test);
   return (
     <div className="packages">
       <div className="gallery">
@@ -111,6 +112,38 @@ const Packages = ({ data }) => {
               ></div>
             ))}
           </div>
+        </div>
+      </div>
+
+      <div className="mobile-gallery">
+        <div className="mobileContent">
+          {data.packageData.map((item, index) => (
+            <div className="mobileContentSection" key={index}>
+              {item.test}
+
+              <div className="content">
+                <div className="image">
+                  <img src={item.leftImg} alt="" />
+                </div>
+                <div className="logo">
+                  <img src={item.logo} alt="" />
+                </div>
+
+                <div className="line"></div>
+
+                <div className="text">
+                  <h2>{item.packageName}</h2>
+                  <p>{item.description}</p>
+                </div>
+
+                <div className="button">
+                  <Link to={`${item.url}`}>
+                    View Package <img src={buttonArrowImg} alt="" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

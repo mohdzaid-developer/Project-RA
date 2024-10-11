@@ -38,7 +38,16 @@ const Testimonial = () => {
       para2:
         "The itinerary was diverse and thrilling. We enjoyed a day trip to Phi Phi Islands, where the turquoise waters and sandy beaches were nothing short of paradise. Another memorable outing was the zipline adventure at Hanuman World, offering an adrenaline rush with stunning views from the treetops.",
     },
+    {
+      name: "Sai Kaushik Nampalli",
+      profilePic: user2,
+      para1:
+        "Our honeymoon in Bali was a dream come true, filled with breathtaking landscapes and memorable experiences. From a warm welcome in Ubud to witnessing a hilltop sunrise, visiting a local coffee plantation, and kayaking through stunning waters, each day was a new adventure. The scenic drive to Uluwatu Temple, complete with an ocean-view sunset and Kechak dance, made for unforgettable moments.",
+      para2:
+        "We ended our trip with some shopping, poolside relaxation, and a couple’s massage. A huge thank you to Badri from the travel agency for making every detail perfect. We can't wait to return and explore even more of Bali’s beauty!",
+    },
   ];
+
   return (
     <section className="testimonial">
       <div className="content">
