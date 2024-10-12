@@ -57,7 +57,7 @@ memories.`,
     {
       title: "Zindhagi Na Melige Dubara",
       data: [
-        `We get it, ife’s hectic, and planning a vacation that’s as perfect as your Instagram feed can feel
+        `We get it, Life’s hectic, and planning a vacation that’s as perfect as your Instagram feed can feel
 like an impossible task. But don’t worry, hum hain na! We specialize in turning your Bali dreams
 into a luxurious reality that’s so seamless, you’ll think, "Yeh log kaise kar lete hain?"`,
 
